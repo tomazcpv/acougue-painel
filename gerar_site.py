@@ -6,8 +6,9 @@ arquivo_json = "produtos.json"
 
 ITENS_POR_SLIDE = 12
 
-# Palavras que DEFINITIVAMENTE são carnes
+# SOMENTE carnes reais
 CARNES = [
+    # Bovino
     "PICANHA",
     "ALCATRA",
     "MAMINHA",
@@ -20,81 +21,35 @@ CARNES = [
     "CONTRA",
     "CUPIM",
     "COSTELA",
-    "BISTECA",
-    "LINGUI",
-    "LINGUIÇA",
+    "MUSCULO",
+    "MÚSCULO",
+    "PALETA",
+
+    # Frango
     "FRANGO",
     "PEITO",
     "ASA",
     "COXA",
     "SOBRECOXA",
+
+    # Suíno
     "SUINO",
     "SUÍNO",
     "PERNIL",
     "LOMBO",
+    "BISTECA",
     "BACON",
-    "CARNE",
-    "MUSCULO",
-    "MÚSCULO",
-    "PALETA"
-]
 
-# Palavras que DEFINITIVAMENTE NÃO são carnes
-NAO_CARNES = [
-    "BOLO",
-    "PAO",
-    "PÃO",
-    "AMENDOIM",
-    "AVEIA",
-    "CHA",
-    "CHÁ",
-    "FARINHA",
-    "COLAGENO",
-    "COLÁGENO",
-    "TEMPERO",
-    "SAL",
-    "ACUCAR",
-    "AÇUCAR",
-    "ARROZ",
-    "FEIJAO",
-    "FEIJÃO",
-    "MACARRAO",
-    "MACARRÃO",
-    "AZEITE",
-    "OLEO",
-    "ÓLEO",
-    "VINAGRE",
-    "LEITE",
-    "QUEIJO",
-    "IOGURTE",
-    "MANTEIGA",
-    "MARGARINA",
-    "SUCO",
-    "REFRIGERANTE",
-    "BISCOITO",
-    "BOLACHA",
-    "DOCE",
-    "BALA",
-    "HORTA",
-    "VERDE",
-    "TOMATE",
-    "CEBOLA",
-    "BATATA",
-    "CENOURA",
-    "ALHO",
-    "PIMENTA"
+    # Embutidos
+    "LINGUI",
+    "LINGUIÇA",
+    "TOSCANA",
+    "CALABRESA"
 ]
-
 
 def eh_carne(nome):
     nome = nome.upper()
 
-    # Se tiver algo proibido, descarta
-    for item in NAO_CARNES:
-        if item in nome:
-            return False
-
-    # Se tiver carne, aceita
     for carne in CARNES:
         if carne in nome:
             return True
@@ -125,6 +80,7 @@ for linha in linhas:
     preco_str = partes[-1]
     nome = " ".join(partes[:-1])
 
+    # FILTRO DE CARNE
     if eh_carne(nome):
 
         preco_str = preco_str.replace(",", ".")
