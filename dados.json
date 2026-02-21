@@ -1,0 +1,3442 @@
+[
+  {
+    "nome": "PATINHO KG",
+    "preco": "42.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "BOLO DE MILHO VERDE REDONDO KG",
+    "preco": "22.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA BRAGANÇA KG",
+    "preco": "17.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PESSÊGO KG",
+    "preco": "10.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CALABRESA PERDIGÃO KG",
+    "preco": "23.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BISCOITO GANGALHA 350G KG",
+    "preco": "3.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "VERDURA KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "DOCE CASEIRO KG",
+    "preco": "15.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALSICHA SADIA KG",
+    "preco": "16.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FERMENTO BIOLOGICO ( PEÇA) KG",
+    "preco": "12.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUIABO KG",
+    "preco": "18.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO INTEGRAL KG",
+    "preco": "0.80",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CAQUI KG",
+    "preco": "6.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "APRESUNTADO SADIA KG KG",
+    "preco": "29.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PRESUNTO SADIA KG KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MUSSARELA PAIOLZINHO KG KG",
+    "preco": "54.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALSICHA AURORA KG KG",
+    "preco": "14.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALSICHA PERDIGÃO KG KG",
+    "preco": "16.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MORTADELA MARBA KG KG",
+    "preco": "19.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MORTADELA OURO PERDIGÃO DEFUMADA KG",
+    "preco": "27.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE SAL KG",
+    "preco": "0.70",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE SAL KG",
+    "preco": "13.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CARTELA COM 30 OVOS KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AÇAFRAO CURCUMA MOIDO KG",
+    "preco": "35.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AÇUCAR DE COCO KG",
+    "preco": "59.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CALABRESA SADIA KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUEIJO PRATO KG",
+    "preco": "59.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUEIJO FRESCAL COMEVAP KG",
+    "preco": "45.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUEIJO MEIA CURA KG",
+    "preco": "63.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUEIJO RALADO PARMESÃO KG KG",
+    "preco": "69.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUEIJO RALADO MUSSARELA KG",
+    "preco": "65.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA TOSCANA SADIA KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA TOSCANA AURORA KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PEITO DE PERU KG KG",
+    "preco": "54.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "EMPANADINHO DE FRANGO KG",
+    "preco": "26.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "FARINHA DE ROSCA KG",
+    "preco": "12.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FERMENTO P\\ PÃO KG",
+    "preco": "40.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BACON KG",
+    "preco": "36.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PONTA DE FRIOS KG",
+    "preco": "12.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI PÃO DE QUEIJO KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE QUEIJO KG",
+    "preco": "2.70",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CEBOLA KG",
+    "preco": "3.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ALHO KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BATATA KG",
+    "preco": "4.60",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MUSSARELA KG",
+    "preco": "38.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CARTELA C/ 12 OVOS KG",
+    "preco": "12.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CARTELA C/ 6 OVOS KG",
+    "preco": "6.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ROSQUINHA SAMANTA KG",
+    "preco": "35.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO PEDAÇO KG",
+    "preco": "2.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO C\\COBERTURA KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO DE CHOCOLATE KG",
+    "preco": "8.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO DE CENOURA KG",
+    "preco": "8.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO DOCE KG",
+    "preco": "1.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DOCE CARECA KG",
+    "preco": "0.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BROA KG",
+    "preco": "2.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SONHO KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE FRIOS KG",
+    "preco": "4.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO AMANHECIDO KG",
+    "preco": "0.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI PÃO CARECA KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI PÃO DOCE KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "EMPADA DE FRANGO KG",
+    "preco": "5.50",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "SALGADO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "OVOS UNIDADE KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AÇUCAR MASCAVO JOCAL KG",
+    "preco": "9.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AÇUCAR DEMERARA KG",
+    "preco": "15.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ALHO EM FLOCOS DESIDATRADO KG",
+    "preco": "69.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ALHO EM PÓ KG",
+    "preco": "44.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ALHO FRITO DESIDRATADO KG",
+    "preco": "58.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMEIXA SEM CAROÇO KG",
+    "preco": "52.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ALECRIM KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GRANOLA C/ FRUTAS LIGHT KG",
+    "preco": "36.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOIN CROC SALSA\\CEBOLA KG",
+    "preco": "53.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOIN CROCANTE KG",
+    "preco": "44.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOIN CR PICANTE KG",
+    "preco": "49.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOIN OVINHO KG",
+    "preco": "41.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOIM  C/ SAL S/ PELE TORRADO KG",
+    "preco": "27.70",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOIM  S/ SAL S/ PELE TORRADO KG",
+    "preco": "31.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOIM DOCE KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOA TORRADA S/SAL KG",
+    "preco": "74.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMIDO DE MILHO KG",
+    "preco": "12.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AVEIA FLOCOS FINO KG",
+    "preco": "24.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AVEIA FLOCOS GRAUDO KG",
+    "preco": "15.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BALA DELIKET GOMA KG",
+    "preco": "48.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BALA DE GOMA KG",
+    "preco": "34.80",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHIPS BANANA SALG. KG",
+    "preco": "79.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BICARBONATO KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CACAU EM PÓ 50% KG",
+    "preco": "36.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CAMOMILA FLORES KG",
+    "preco": "64.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CANELA EM CASCA KG",
+    "preco": "112.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CANELA EM PÓ KG",
+    "preco": "38.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CAPIM CIDREIRA KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CASTANHA DE CAJU C\\SAL KG",
+    "preco": "99.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CASTANHA CAJU S\\SAL KG",
+    "preco": "99.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CASTANHA DO PARÁ KG",
+    "preco": "126.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHOCO BOOL  CEREAL ALCAFOODS KG",
+    "preco": "39.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHÁ VERDE KG",
+    "preco": "32.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHIMI CHURRI KG",
+    "preco": "89.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COCO RALADO FINO KG",
+    "preco": "48.70",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COLAGENO EM PÓ KG",
+    "preco": "149.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COLORIFICO KG",
+    "preco": "45.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CREME DE CEBOLA KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "DAMASCO TURCO KG",
+    "preco": "124.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ERITRITOL KG",
+    "preco": "69.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ERVA DOCE KG",
+    "preco": "49.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FRUT RINGS KG",
+    "preco": "29.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARINHA DE AMENDOA KG",
+    "preco": "98.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARINHA DE AMENDOIN KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARINHA ARROZ CRU KG",
+    "preco": "12.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARINHA DE AVEIA KG",
+    "preco": "17.70",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARINHA CASTANHA CAJU KG",
+    "preco": "63.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARINHA DE COCO KG",
+    "preco": "33.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARINHA LINHAÇA DOURADA KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FIBRA MARACUJA KG",
+    "preco": "26.80",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FAR TRIGO INTEGRAL KG",
+    "preco": "11.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARELO DE AVEIA KG",
+    "preco": "14.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FAR.LINHAÇA MARRON KG",
+    "preco": "21.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GRANOLA C\\FRUTAS KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GIRASSOL SEM CASCA KG",
+    "preco": "25.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "HIBISCO FLOR KG",
+    "preco": "89.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FAR/GRAO BICO KG",
+    "preco": "24.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FECULA DE BATATA KG",
+    "preco": "15.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FUMAÇA EM PÓ KG",
+    "preco": "41.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FAR/MACA PERUANA KG",
+    "preco": "50.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GERGILIN DESPELICULADO KG",
+    "preco": "61.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GRANOLA BIOSOFT KG",
+    "preco": "42.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LEMON PEPPER TRADICIONAL KG",
+    "preco": "99.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LENTILHA CANADENSE KG",
+    "preco": "28.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LIMÃO/ERVAS FINAS KG",
+    "preco": "94.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINHAÇA MARRON KG",
+    "preco": "18.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINHAÇA DOURADA KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MILHO DEFUMADO KG",
+    "preco": "68.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MILHO BARBECUE KG",
+    "preco": "74.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "NOZ DE MACADAMIA S\\ SAL KG",
+    "preco": "145.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "NOZES MARIPOSA KG",
+    "preco": "91.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "OREGANO KG",
+    "preco": "49.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAPRICA DOCE KG",
+    "preco": "37.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAPRICA DOCE DEFUMADA KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAPRICA PICANTE KG",
+    "preco": "34.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAPRICA PICANTE DEF KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIMENTA DO REINO KG",
+    "preco": "47.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "POLVILHO DOCE KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "POLVILHO AZEDO KG",
+    "preco": "10.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PSYLLIUM KG",
+    "preco": "189.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SENE EM FOLHAS KG",
+    "preco": "15.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PTS GRANULADO GALINHA KG",
+    "preco": "31.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SAL DE HIMALAIA FINO KG",
+    "preco": "6.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SAL MARINHO KG",
+    "preco": "32.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SEMENTE DE CHIA KG",
+    "preco": "82.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALSA/CEBOLA/TOMATE KG",
+    "preco": "57.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TAMARA SEM CAROÇO KG",
+    "preco": "43.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TEMPERO ANA MARIA KG",
+    "preco": "90.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TEMPERO BAIANO KG",
+    "preco": "17.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TEMPERO EDU GUEDES KG",
+    "preco": "44.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "UVA PASSA S/SEMENTE KG",
+    "preco": "44.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "VINAGRETE EM FLOCOS KG",
+    "preco": "54.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "XEREM DE AMENDOIM KG",
+    "preco": "28.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ALHO /CEBOLA/SALSA KG",
+    "preco": "75.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "XILITOL KG",
+    "preco": "87.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO DE MILHO KG",
+    "preco": "4.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO DE MILHO KG",
+    "preco": "4.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO SOVADO KG",
+    "preco": "7.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE HAMBURGUER KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO AMANTEGADO KG",
+    "preco": "0.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FERMENTO BIOLOGIO(PEÇA) KG",
+    "preco": "15.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FERMENTO BIOLOGICO KG",
+    "preco": "12.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO INTEGRAL KG",
+    "preco": "7.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA PERDIGÃO NA BRASA KG",
+    "preco": "26.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "BROCOLIS KG",
+    "preco": "7.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMORA SEM ESPINHO KG",
+    "preco": "36.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ARROZ NEGRO KG",
+    "preco": "46.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CEBOLA EM PÓ KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHA DE CAVALINHA KG",
+    "preco": "69.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHA DE MELISSA KG",
+    "preco": "43.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COMINHO EM PÓ KG",
+    "preco": "32.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CRAVO EM PÓ KG",
+    "preco": "35.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CRAVO KG",
+    "preco": "181.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CONFETE KG",
+    "preco": "31.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GENGIBRE EM PÓ KG",
+    "preco": "35.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "HORTELÃ EM FLOCOS KG",
+    "preco": "22.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LOURO EM FOLHA KG",
+    "preco": "71.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MIX DE CASTANHA KG",
+    "preco": "139.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "NOZ MOSCADA EM PÓ KG",
+    "preco": "79.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIMENTA CALABRESA EM FLOCOS KG",
+    "preco": "43.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIMENTA DO REINO EM GRÃO KG",
+    "preco": "56.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUINOA EM GRÃO KG",
+    "preco": "31.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SEMENTE DE ABOBORA S/CASCA KG",
+    "preco": "55.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PTS GRANULADO CARAMELO KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PCT PAO DE HAMBURGUER 4UN KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MARSHMALLOWS RECHEADO KG",
+    "preco": "49.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUEIJO COALHO COMEVAP KG",
+    "preco": "67.20",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MARSHMALLOWS KG",
+    "preco": "49.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LIMÃO KG",
+    "preco": "4.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TORRADA KG",
+    "preco": "3.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI PALITO DE QUEIJO KG",
+    "preco": "1.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMEIXA KG",
+    "preco": "14.60",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "HAMBURGAO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHOCOTONE KG",
+    "preco": "14.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUIJO MINAS SANTIAGO KG",
+    "preco": "55.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUEIJO MINAS SANTIAGO KG",
+    "preco": "55.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMARANTO EM GRÃO KG",
+    "preco": "49.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHA DE BOLDO KG",
+    "preco": "135.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO KG",
+    "preco": "7.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CARDAMONO KG",
+    "preco": "320.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPINHEIRA SANTA KG",
+    "preco": "59.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GRANULADO EM FLOCOS KG",
+    "preco": "39.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHOCO BOLL KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARINHA DE BERINGELA KG",
+    "preco": "34.80",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FRUTAS CRISTALIZADAS KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GOTAS DE CHOCOLATE KG",
+    "preco": "52.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GRANOLA SEM AÇUCAR KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÓ DE GUARANA KG",
+    "preco": "47.80",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PANETONE FRUTA KG",
+    "preco": "12.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MANJERICÃO KG",
+    "preco": "32.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SPIRULINA KG",
+    "preco": "20.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TEMPERO SIRIO KG",
+    "preco": "110.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TOMILHO KG",
+    "preco": "24.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BETERRABA KG",
+    "preco": "5.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ABOBRINHA KG",
+    "preco": "8.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BANANA PRATA KG",
+    "preco": "6.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BANANA NANICA KG",
+    "preco": "4.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHUCHU KG",
+    "preco": "13.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LARANJA PERA KG",
+    "preco": "4.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LARANJA LIMA KG",
+    "preco": "9.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TOMATE KG",
+    "preco": "6.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CENOURA KG",
+    "preco": "2.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "VAGEM KG",
+    "preco": "15.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TOMATE CEREJA KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MELÃO KG",
+    "preco": "7.60",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIMENTÃO KG",
+    "preco": "8.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ABOBORA KG",
+    "preco": "3.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIMENTÃO COLORIDO KG",
+    "preco": "18.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MORANGO KG",
+    "preco": "8.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MELANCIA KG",
+    "preco": "3.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LEITE DE COCO KG",
+    "preco": "79.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PERA KG",
+    "preco": "17.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MARACUJA KG",
+    "preco": "9.70",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "UVA KG",
+    "preco": "15.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PEPINO CAIPIRA KG",
+    "preco": "5.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MAÇÃ KG",
+    "preco": "14.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BATATA DOCE KG",
+    "preco": "4.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO DE QUEIJO RECHEADO KG",
+    "preco": "49.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "UVA ROSADA 1,500G KG",
+    "preco": "21.60",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "UVA VERDE KG",
+    "preco": "9.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COCO SECO KG",
+    "preco": "5.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MANDIOQUINHA  SALSA KG",
+    "preco": "11.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "INHAME KG",
+    "preco": "8.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GOIABA KG",
+    "preco": "13.70",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "JILO KG",
+    "preco": "10.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BERINGELA KG",
+    "preco": "12.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MANGA KG",
+    "preco": "5.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ABACATE KG",
+    "preco": "5.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BATATA KG",
+    "preco": "1.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PEPINO JAPONES KG",
+    "preco": "13.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COUVE PICADA KG",
+    "preco": "3.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "POCAN KG",
+    "preco": "7.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALGADO C/50UNI KG",
+    "preco": "20.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE BATATA RECHEADO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "castanha de caju caramelizada KG",
+    "preco": "69.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COCO RALADO EM FLOCOS KG",
+    "preco": "55.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO INDIANO KG",
+    "preco": "21.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO FUBA CREMOSO KG",
+    "preco": "35.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALGADO ASSADO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "presunto aurora KG",
+    "preco": "34.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "OVO CAIPIRA 12UN KG",
+    "preco": "14.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "OVO CAIPIRA C\\6 UN KG",
+    "preco": "7.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "OVO CAIPIRA KG",
+    "preco": "1.20",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ENROLADINHO DE SALSICHA KG",
+    "preco": "35.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "apresuntado perdigão lanche KG",
+    "preco": "24.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALGADO CONGELADO 50UNI KG",
+    "preco": "25.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MUSSARELA RANCHO DE MINAS KG",
+    "preco": "48.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BAGUETE DA CASA KG",
+    "preco": "5.00",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "QUEIJO MINAS FRESCAL SERRAMAR KG",
+    "preco": "41.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO CANUDO KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALGADO FOLHADO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALGADO CROASSAN KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ROCAMBOLE KG",
+    "preco": "4.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BROA GOTA CHOCOLATE KG",
+    "preco": "3.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ROSCA DE AÇUCAR KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ROSCA DE CREME KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO TATU KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FATIA HUNGARA C/ CHOCOLATE KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MUSSARELA CRISTAL LAT KG",
+    "preco": "58.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ROSCA DE COCO KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO DE BANANA CARAMELIZADO KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO DE BANANA CARAM KG",
+    "preco": "3.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI SALGADO KG",
+    "preco": "39.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHÁ VALERIANA KG",
+    "preco": "225.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "DENTE DE LEÃO KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESTRELA DE ANIS KG",
+    "preco": "127.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TEMPERO PEGA MARIDO KG",
+    "preco": "69.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TORTA DOCE KG",
+    "preco": "16.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI PÃO DE FRIOS KG",
+    "preco": "25.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO SOVADO KG",
+    "preco": "4.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CAJU KG",
+    "preco": "13.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "massa de pizza da casa c/ 2 un KG",
+    "preco": "7.00",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "MASSA DE PIZZA KG",
+    "preco": "3.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CAROLINA KG",
+    "preco": "69.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI PAO DE SAL KG",
+    "preco": "0.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI PAO CARECA KG",
+    "preco": "0.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CREATINA MONOHIDRATADA KG",
+    "preco": "550.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "APRESUNTADO REZENDE KG",
+    "preco": "23.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIZZA PEDAÇO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "mini pão de sal KG",
+    "preco": "12.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "bolo prestigio KG",
+    "preco": "15.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "bolo laranja s cobertura KG",
+    "preco": "7.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BROA C/ GOIABADA KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FUBA C/ERVA DOCE KG",
+    "preco": "13.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO  C/ CALDA KG",
+    "preco": "13.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO REDONDO C COBERTURA KG",
+    "preco": "18.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "APRESUNTADO SEARA KG",
+    "preco": "22.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TORTA CHEESECAKE KG",
+    "preco": "8.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA FINA MISTA KG",
+    "preco": "15.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO DE POTE KG",
+    "preco": "12.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TORTA HOLANDESA KG",
+    "preco": "13.70",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AZEITONA COM CAROÇO KG",
+    "preco": "59.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AZEITONA FATIADA KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CEREJA EM CALDA C/ CABO KG",
+    "preco": "99.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "NOZ MOSCADA BOLA KG",
+    "preco": "149.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PUDIM PEDAÇO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PUDIM INTEIRO KG",
+    "preco": "25.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "mousse KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "mortadela rezende KG",
+    "preco": "14.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO INDIANO KG",
+    "preco": "7.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PUDIM DE PÃO KG",
+    "preco": "3.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO INTEGRAL KG",
+    "preco": "1.20",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE MILHO KG",
+    "preco": "1.20",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "farofa caseira KG",
+    "preco": "15.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SEMENTE DE GIRASOL KG",
+    "preco": "1.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GOMA DE TAPIOCA KG",
+    "preco": "14.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CURRY KG",
+    "preco": "22.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAO CASEIRO KG",
+    "preco": "2.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "bolo redondo brig grande KG",
+    "preco": "22.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOA CRUA KG",
+    "preco": "79.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MORTADELA AURORA KG",
+    "preco": "15.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "bolo de laranja KG",
+    "preco": "4.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE HOT DOG KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ORA PRO NOBIS KG",
+    "preco": "140.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FARINHA DE MAÇA KG",
+    "preco": "47.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BETERRABA EM PO KG",
+    "preco": "64.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FATIA DE BOLO DE CENOURA C/ CHOC KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIMENTA DO REINO BRANCA KG",
+    "preco": "69.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALSICHA RESFRIADA SEARA KG",
+    "preco": "14.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ENROLADO DE FRANGO KG",
+    "preco": "6.00",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "ENROLADO DE CALABRESA KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CUP COKES KG",
+    "preco": "6.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MOUSSE KG",
+    "preco": "8.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FATIA DE BOLO FESTA KG",
+    "preco": "19.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "DOCINHOS KG",
+    "preco": "2.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO INTEGRAL 7 GRÃOS KG",
+    "preco": "9.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PALITO DE PARMESÃO KG",
+    "preco": "54.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PUDIM KG",
+    "preco": "30.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TEMPERO CASEIRO KG",
+    "preco": "9.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PRESUNTO PERDIGÃO KG",
+    "preco": "37.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE QUEIJO PARMESÃO KG",
+    "preco": "3.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIZZA FATIA CALABRESA KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "apresuntado aurora KG",
+    "preco": "22.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FIBRA DE MAÇA KG",
+    "preco": "31.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CEBOLA ROXA KG",
+    "preco": "6.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CEVADA SOLUVEL KG",
+    "preco": "99.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GERMEN DE TRIGO KG",
+    "preco": "16.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FIBRA DE MARACUJA KG",
+    "preco": "22.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FLOR  DE SAL KG",
+    "preco": "75.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO REDONDO DE LARANJA KG",
+    "preco": "20.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALSICHA PIF PAF KG",
+    "preco": "12.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CACAU EM PO 100% KG",
+    "preco": "119.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BALA FINI MINHOCA KG",
+    "preco": "85.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PRESUNTO COZIDO MAGRO SEARA KG",
+    "preco": "31.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PELE SUINA KG",
+    "preco": "4.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "DONUTS KG",
+    "preco": "6.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BAURU ASSADO KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHIPITA DE GOIABA KG",
+    "preco": "48.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE BATATA DE FRANGO C/ REQ KG",
+    "preco": "5.00",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "SALGADO ASSADO KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PRIME RIB SUÍNO KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PICANHA KG",
+    "preco": "79.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "CROISSANT PRESUNTO C/ MUSSARELA KG",
+    "preco": "6.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI TORTA DE FRANGO C/REQUEIJÃO KG",
+    "preco": "8.50",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "BOLO MILHO VERDE CREMOSO KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MAMINHA KG",
+    "preco": "56.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "MIOLO DE ALCATRA KG",
+    "preco": "82.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "ALCATRA EM PEÇA KG",
+    "preco": "44.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "CONTRA FILE KG",
+    "preco": "62.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CONTRA FILE EM PEÇA KG",
+    "preco": "45.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COXÃO DURO KG",
+    "preco": "46.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COXÃO DURO EM PEÇA KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COUVE FLOR KG",
+    "preco": "6.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LAGARTO KG",
+    "preco": "48.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ALCATRA COM MAMINHA KG",
+    "preco": "59.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "CHULETA DE CONTRA FILE KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FILE MIGNOM KG",
+    "preco": "79.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CAPA DE FILE KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ACEM KG",
+    "preco": "34.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PALETA KG",
+    "preco": "37.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PEIXINHO KG",
+    "preco": "34.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TRUFA KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PEITO BOVINO KG",
+    "preco": "36.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COSTELA DE RIPA KG",
+    "preco": "26.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "COSTELA PONTA DE AGULHA KG",
+    "preco": "24.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "COSTELA DE PEITO KG",
+    "preco": "23.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "CHULETA PONTA DE AGULHA KG",
+    "preco": "28.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHULETA GAUCHA KG",
+    "preco": "22.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PICADÃO KG",
+    "preco": "34.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FIGADO BOVINO KG",
+    "preco": "16.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BUCHO KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "RABO KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MOCOTO KG",
+    "preco": "13.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "coxinha da asa temperada KG",
+    "preco": "16.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "MEIO DA ASA TEMPERADA KG",
+    "preco": "26.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "FRANGO INTEIRO KG",
+    "preco": "9.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "frango a passarinho temperado KG",
+    "preco": "14.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "PEITO COM OSSO KG",
+    "preco": "16.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LOMBO SUINO KG",
+    "preco": "29.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "PEITO SEM OSSO KG",
+    "preco": "21.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MEIO REPOLHO KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO DE CENOURA CASEIRO KG",
+    "preco": "6.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TORTA CHEESECAKE FRUTAS VERMELHA KG",
+    "preco": "15.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COXA SOBRECOXA KG",
+    "preco": "8.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "SOBRECOXA KG",
+    "preco": "16.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "COXINHA DA ASA KG",
+    "preco": "15.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "ASA DE FRANGO KG",
+    "preco": "16.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "MEIO DA ASA KG",
+    "preco": "22.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "MOELA KG",
+    "preco": "8.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FIGADO KG",
+    "preco": "6.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FRANGO A PASSARINHO KG",
+    "preco": "12.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "CORAÇAO KG",
+    "preco": "29.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÉ DE FRANGO KG",
+    "preco": "8.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "TOICINHO KG",
+    "preco": "22.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BARRIGA KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COSTELINHA KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BISTECA KG",
+    "preco": "24.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "BIFE DE PERNIL KG",
+    "preco": "22.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "PERNIL PICADO KG",
+    "preco": "22.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "COSTELINHA COM COURO KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PERNIL COM OSSO KG",
+    "preco": "19.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "PERNIL SEM OSSO KG",
+    "preco": "29.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "PALETA SUINA PARA CHURRASCO KG",
+    "preco": "22.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PERNIL FATIADO COM OSSO KG",
+    "preco": "14.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "JOELHO KG",
+    "preco": "16.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÉ SUÍNO KG",
+    "preco": "9.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MILANESA BOVINA KG",
+    "preco": "48.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MILANESA DE FRANGO KG",
+    "preco": "36.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "ALMONDEGA KG",
+    "preco": "36.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BIFE A ROLE KG",
+    "preco": "44.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PCT MINI ASSADO KG",
+    "preco": "19.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "linguiça fina de lombo KG",
+    "preco": "26.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "PIMENTA KG",
+    "preco": "27.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "linguiça fina pernil KG",
+    "preco": "29.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "linguiça clabresa com pimenta KG",
+    "preco": "24.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "linguiça pura de pernil KG",
+    "preco": "28.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "BOLO DE LEITE NINHO KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA DE ALHO PORO COM BACON KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "linguiça queijo com azeitona KG",
+    "preco": "28.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIZZA DA CASA KG",
+    "preco": "14.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "EMPANADA DE CARNE KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA MISTA KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COPA LOMBO KG",
+    "preco": "29.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "TORTA HOLANDESA KG",
+    "preco": "13.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO BOVINO KG",
+    "preco": "4.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO DE PICANHA KG",
+    "preco": "9.00",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "picanha congelada KG",
+    "preco": "59.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "FILE DE COXA TEMPERADA KG",
+    "preco": "19.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "LINGUIÇA FINA DE ALHO KG",
+    "preco": "24.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COXÃO MOLE KG",
+    "preco": "46.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FILÉ DE PEITO DE FRANGO KG",
+    "preco": "21.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "OSSOBUGO KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PATINHO KG",
+    "preco": "44.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "MIOLO DA PALETA KG",
+    "preco": "34.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ASSADOS DE TIRAS DE COSTELA KG",
+    "preco": "26.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "MUSCULO KG",
+    "preco": "34.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BATATA ASTERIX KG",
+    "preco": "5.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO DE CORAÇÃO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO DE TULIPA KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO DE MEDALHÃO DE FRANGO KG",
+    "preco": "9.00",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "ESPETINHO DE MEDALHÃO DE ALCATRA KG",
+    "preco": "8.00",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "ESPETINHO DE FRANGO KG",
+    "preco": "3.50",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "ESP MEDALHÃO DE QUEIJO COALHO KG",
+    "preco": "8.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LING C/ PIM BIQUINHO KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO DE KAFTA KG",
+    "preco": "4.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO DE LOMBO KG",
+    "preco": "4.00",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "FRALDINHA KG",
+    "preco": "44.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "SUÃN KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COXÃO DURO RECHEADO E TEMPERADO KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LAGARTO RECHEADO E TEMPERADO KG",
+    "preco": "56.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO DE PANCETA KG",
+    "preco": "3.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CARNE MOÍDA DE BANDEIJA KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PICANHA SUÍNA KG",
+    "preco": "26.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "PÃO CARACOL KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO CONFEITADO EM FATIA KG",
+    "preco": "10.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO RED VELVET REDONDO KG",
+    "preco": "50.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO DOCE DE LEITE C/ AMEIXA PDC KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO DOCE DE LEITE C/ AMEIXA RED KG",
+    "preco": "50.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TRANCINHA COM CREME KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BAGUETINHA DE CREME KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BENGALA COM CREME KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO TATUZINHO KG",
+    "preco": "1.20",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO TRANÇA KG",
+    "preco": "3.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO CHINES KG",
+    "preco": "3.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DO PADRE C/ AÇUCAR KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA PERNIL (DEDO DE MOÇA ) KG",
+    "preco": "26.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "BANANINHA DO CONTRA FILÉ KG",
+    "preco": "36.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "mini pão de queijo recheado KG",
+    "preco": "49.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHIPA KG",
+    "preco": "2.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE ALHO KG",
+    "preco": "4.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GENGIBRE KG",
+    "preco": "12.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHÁ QUEBRA PEDRA KG",
+    "preco": "87.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TRIBULUS TERRESTRE KG",
+    "preco": "197.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE CEBOLA KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TORTA DE FRIOS KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TOICINHO PICADO KG",
+    "preco": "17.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA FINA C/ PIMENTA KG",
+    "preco": "24.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALSA, CEBOLA E BACON KG",
+    "preco": "54.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO KG",
+    "preco": "3.30",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PRETZEL KG",
+    "preco": "1.70",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CUPIM KG",
+    "preco": "42.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO MINUTO KG",
+    "preco": "1.70",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MARIA MOLE KG",
+    "preco": "2.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO DE LINGUIÇA KG",
+    "preco": "4.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TRANÇA DE FRIOS KG",
+    "preco": "7.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TRANÇA DOCE KG",
+    "preco": "7.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LANCHE NATURAL KG",
+    "preco": "10.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SHORT RIB BOVINO KG",
+    "preco": "54.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PANCETA DE ROLO KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ESPETINHO DE ALCATRA KG",
+    "preco": "5.00",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "POLPA DE FRUTA KG",
+    "preco": "7.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PANCETA PRA CHURRASCO KG",
+    "preco": "28.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FRANGO TEMP CONG SEARA FIESTA KG",
+    "preco": "29.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "CORTES DE LEITÃO KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA ROMEU E JULIETA KG",
+    "preco": "28.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BAGUETE RECHEADA KG",
+    "preco": "10.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BAGUETE GRANDE PT DE PERU KG",
+    "preco": "13.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CEVADA KG",
+    "preco": "14.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI CANUDO RECHEADO KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLINHO DE CHUVA KG",
+    "preco": "20.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BANANA DA TERRA KG",
+    "preco": "8.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PICANHA SUÍNA TEMPERADA KG",
+    "preco": "29.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "QUICHE DE ESPINAFRE KG",
+    "preco": "9.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TORTA KG",
+    "preco": "7.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BAGUETE KG",
+    "preco": "7.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COSTELA TEMPERADA KG",
+    "preco": "24.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "SONHO ABERTO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SONHO ABERTO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE LEITE NINHO KG",
+    "preco": "7.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINEIRINHO KG",
+    "preco": "3.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CANGALA KG",
+    "preco": "3.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIRULITO FR FRALDINHA KG",
+    "preco": "36.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "rosquinha KG",
+    "preco": "1.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PEITO DE FRANGO SADIA FATIADO KG",
+    "preco": "34.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "PÃO RECHEADO KG",
+    "preco": "8.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MORTADELA GOURMET SEARA DEFUMADA KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BIFE ANCHO KG",
+    "preco": "44.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ROSQUINHA DE PINGA KG",
+    "preco": "3.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO BRIOCHI KG",
+    "preco": "2.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "bife ancho KG",
+    "preco": "59.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO BRIOCHI SALGADO KG",
+    "preco": "9.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI SONHO KG",
+    "preco": "1.20",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PALETA DE CORDEIRO KG",
+    "preco": "56.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TIBONE DE CORDEIRO KG",
+    "preco": "59.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MORTADELA SADIA DEFUMADA KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LÍNGUA DE SOGRA KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BAQUETE DOCE KG",
+    "preco": "2.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TEMPERO 200G KG",
+    "preco": "6.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA TOSCANA SEARA KG",
+    "preco": "24.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PAIO SEARA KG",
+    "preco": "28.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CARRE DE CORDEIRO KG",
+    "preco": "69.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ASSADOS DE TIRAS DE CONTRA FILÉ KG",
+    "preco": "79.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ORELHA SUÍNA SALGADA KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "RABO SUÍNO SALGADO KG",
+    "preco": "27.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COSTELINHA SUÍNA SALGADA KG",
+    "preco": "27.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÉ SUÍNO SALGADO KG",
+    "preco": "14.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PICANHA FATIADA KG",
+    "preco": "59.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "LARANJA BHAIA KG",
+    "preco": "8.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MORT PERDIGÃO TRADICIONAL KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALSA DESIDRATADA KG",
+    "preco": "40.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CARQUEIJA DOCE KG",
+    "preco": "80.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COSTELINHA DE CORDEIRO KG",
+    "preco": "44.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COSTELA BOVINA 4 OSSOS KG",
+    "preco": "26.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "EXTRATO DE SOJA KG",
+    "preco": "30.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TEMPERO MINEIRO KG",
+    "preco": "70.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LOURO EM PO KG",
+    "preco": "98.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO GELADO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOMBA DE CHOCOLATE KG",
+    "preco": "7.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COSTELA PICADA KG",
+    "preco": "19.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "KIT DOS PAIS KG",
+    "preco": "169.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COXINHA DE MORANGO KG",
+    "preco": "10.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE FORMA C/ FRIOS KG",
+    "preco": "7.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CARQUEJA DOCE KG",
+    "preco": "12.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALSA DESIDRATADA KG",
+    "preco": "34.80",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOIM GRAUDO TORRADO E SALGADO KG",
+    "preco": "25.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LOURO EM PÓ KG",
+    "preco": "18.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "EXTRATO DE SOJÁ NUTRIALY KG",
+    "preco": "19.60",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CHOCOLATE EM PÓ SOLUVEL PADRE KG",
+    "preco": "29.30",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GOMA DO NORTE KG",
+    "preco": "10.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA TOSCANA FIRMESA KG",
+    "preco": "22.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA CUIBANA KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ROSCA DOCE KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PCT DE MINI PÃO DE CENOURA KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO CARACOL KG",
+    "preco": "1.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LING ARTESANAL DE TORRESMO KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "queijo meia cura serra de minas KG",
+    "preco": "55.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BALA SENSAÇÃO DUTACHO 100G KG",
+    "preco": "7.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "HAMBURGUER ARTESANAL 120G KG",
+    "preco": "4.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ASSADO DE TIRA DE PICANHA KG",
+    "preco": "64.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "ESFIRRINHA KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "contra file KG",
+    "preco": "52.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ALCATRA COM MAMINHA KG",
+    "preco": "48.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "CUPIM KG",
+    "preco": "44.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PANCETA KG",
+    "preco": "22.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COSTELA JANELA KG",
+    "preco": "25.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "LINGUIÇA TOSCANA KG",
+    "preco": "21.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "chips de mandioquinha KG",
+    "preco": "88.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "KIWI KG",
+    "preco": "13.60",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PEITO SEM OSSO KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PICANHA PARAGUAIA KG",
+    "preco": "59.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "CONE TRUFADO KG",
+    "preco": "6.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MUSSARELA MANDAKA KG",
+    "preco": "36.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO CASEIRO KG",
+    "preco": "31.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO CASEIRO KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CORTES DE LEITÃO KG",
+    "preco": "22.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "NECTARINA KG",
+    "preco": "16.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO CASEIRO KG",
+    "preco": "24.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COXINHA DA ASA EMPANADA KG",
+    "preco": "39.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "BATATA PIRULITO KG",
+    "preco": "3.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUEIJO MINAS PADRÃO SERRAMAR KG",
+    "preco": "65.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BAGUETE PRESUNTO E QUEIJO KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO DE BANANA(PEDAÇO) KG",
+    "preco": "3.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MAMINHA RECHEADA KG",
+    "preco": "59.90",
+    "categoria": "Bovino"
+  },
+  {
+    "nome": "BOLO CASEIRO KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PRESUNTO MIOGNONETO SADIA KG",
+    "preco": "34.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO CASEIRO KG",
+    "preco": "24.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO CASEIRO KG",
+    "preco": "33.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BOLO CASEIRO KG",
+    "preco": "31.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MORANGA KG",
+    "preco": "2.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BATATA DOCE BRANCA KG",
+    "preco": "8.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LANCHE NATURAL KG",
+    "preco": "4.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "NINI LANCHE NATURAL KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FILÉ DE PANGA EMPANADO KG",
+    "preco": "42.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI BROA KG",
+    "preco": "39.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALGADO INTEGRAL KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PRESUNTO PERDIGÃO EMBUTIDO DE PER KG",
+    "preco": "26.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ATEMOIA KG",
+    "preco": "17.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PESCOÇO DE FRANGO KG",
+    "preco": "9.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "CARNE SECA SUINA KG",
+    "preco": "24.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LUA DE MEL KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE HAMBURGUER 1 UNI KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MUSSARELA CPMEVAP ZERO LACTOSE KG",
+    "preco": "54.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MAMAO FORMOSA KG",
+    "preco": "7.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "linguiça de pernil pimnta bodinho KG",
+    "preco": "28.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "MUSSARELA COMEVAP KG",
+    "preco": "38.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MASSA DE MANDIOCA CONGELADA KG",
+    "preco": "7.80",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MINI ESFIHA KG",
+    "preco": "2.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FILEZINHO DE FRANGO BAITA EMPANAD KG",
+    "preco": "34.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "LARANJA MORGOTE KG",
+    "preco": "7.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MEDALHÃO DE ROMEU E JULIETA KG",
+    "preco": "8.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE LARANJA KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA TOSCANA FRESCAL PERDIGÃO KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE BRIOCHE RECHEADO KG",
+    "preco": "6.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE TORRESMO KG",
+    "preco": "7.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE SAL COM QUEIJO KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TEMPERO PARA FEIJÃO KG",
+    "preco": "59.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "SALADA DE FRUTAS KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CAÇÃO EM POSTA KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE CENOURA KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "COSTELINHA TEMPERADA KG",
+    "preco": "26.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE FRIOS MASSA BATATA KG",
+    "preco": "3.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PÃO DE BATATA KG",
+    "preco": "1.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "CUCA DE BANANA KG",
+    "preco": "4.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PIZZA ENROLADA MASSA DE BATATA KG",
+    "preco": "5.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "MOLHO ARTESANAL BLACK KG",
+    "preco": "1.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QJO MONTANHÊS SERRA DO QUILOMBO KG",
+    "preco": "61.40",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "QUEIJO ARTESANAL DINART JR KG",
+    "preco": "61.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA CALABRESA RESENDE KG",
+    "preco": "24.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LINGUIÇA QUEIJO PIMENTA KG",
+    "preco": "29.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FATIA DE BOLO SALGADO KG",
+    "preco": "8.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "ROSCA RECHEADA KG",
+    "preco": "9.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "GORDURA DE PORCO CASEIRA KG",
+    "preco": "15.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "POLPA DE MORANGO KG",
+    "preco": "5.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "FILEZINHO DE SASSAMI KG",
+    "preco": "22.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "PRIME RIB SUINO KG",
+    "preco": "29.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "AMEIXA AMARELA KG",
+    "preco": "13.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "TIBONE SUINO KG",
+    "preco": "29.90",
+    "categoria": "Suino"
+  },
+  {
+    "nome": "FILE DE COXA EMPANADA KG",
+    "preco": "33.90",
+    "categoria": "Aves"
+  },
+  {
+    "nome": "AVE FIESTA SEARA KG",
+    "preco": "24.50",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "DOCE SOBREMESA KG",
+    "preco": "110.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "DOCE SOBREMESA KG",
+    "preco": "75.00",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "BANANA MAÇA KG",
+    "preco": "8.40",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "AMENDOIN SEM PELE E SEM SAL KG",
+    "preco": "19.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "QUEIJO PARMESAO COMEVAP KG",
+    "preco": "139.90",
+    "categoria": "Outros"
+  },
+  {
+    "nome": "LICHIA KG",
+    "preco": "13.40",
+    "categoria": "Outros"
+  }
+]
