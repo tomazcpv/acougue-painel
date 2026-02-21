@@ -1,53 +1,106 @@
 import json
+import math
 
-ARQUIVO_TXT = "ITENSMGV.txt"
-ARQUIVO_JSON = "dados.json"
+# Nome do arquivo TXT exportado pelo ERP/balança
+arquivo_txt = "ITENSMGV.txt"
 
-def categorizar(nome):
+# Nome do JSON que será gerado
+arquivo_json = "produtos.json"
+
+# Quantidade de itens por slide
+ITENS_POR_SLIDE = 14
+
+# Lista de palavras que identificam carnes
+CARNES = [
+    "PICANHA",
+    "ALCATRA",
+    "MAMINHA",
+    "FRALDA",
+    "PATINHO",
+    "ACEM",
+    "ACÉM",
+    "COXAO",
+    "COXÃO",
+    "CONTRA",
+    "CUPIM",
+    "COSTELA",
+    "BISTECA",
+    "LINGUI",
+    "FRANGO",
+    "PEITO",
+    "ASA",
+    "COXA",
+    "SOBRECOXA",
+    "SUINO",
+    "SUÍNO",
+    "PERNIL",
+    "LOMBO",
+    "BACON",
+    "CARNE",
+    "FILE",
+    "FILÉ"
+]
+
+def eh_carne(nome):
     nome = nome.upper()
+    for carne in CARNES:
+        if carne in nome:
+            return True
+    return False
 
-    bovinos = ["PATINHO", "ALCATRA", "PICANHA", "MAMINHA", "COXAO", "FRALDINHA", "COSTELA"]
-    suinos = ["SUINO", "BISTECA", "PERNIL", "LOMBO"]
-    aves = ["FRANGO", "ASA", "COXA", "SOBRECOXA"]
+def formatar_preco(valor):
+    try:
+        valor = float(valor)
+        return f"R$ {valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    except:
+        return "R$ 0,00"
 
-    for item in bovinos:
-        if item in nome:
-            return "Bovino"
+produtos = []
 
-    for item in suinos:
-        if item in nome:
-            return "Suino"
+with open(arquivo_txt, "r", encoding="latin-1") as f:
+    linhas = f.readlines()
 
-    for item in aves:
-        if item in nome:
-            return "Aves"
+for linha in linhas:
+    partes = linha.strip().split()
 
-    return "Outros"
+    if len(partes) < 2:
+        continue
 
+    # Último campo é o preço
+    preco_str = partes[-1]
 
-def ler_txt():
-    produtos = []
+    # O resto é o nome
+    nome = " ".join(partes[:-1])
 
-    with open(ARQUIVO_TXT, "r", encoding="latin1") as f:
-        for linha in f:
-            nome = linha[18:60].strip()
-            preco = linha[9:14].strip()
+    # Remove espaços extras
+    nome = nome.strip()
 
-            if nome and preco.isdigit():
-                preco = float(preco) / 10
+    # Filtra apenas carnes
+    if eh_carne(nome):
 
-                produtos.append({
-                    "nome": nome + " KG",
-                    "preco": f"{preco:.2f}",
-                    "categoria": categorizar(nome)
-                })
+        # Troca vírgula por ponto
+        preco_str = preco_str.replace(",", ".")
 
-    return produtos
+        produto = {
+            "nome": nome + " KG",
+            "preco": formatar_preco(preco_str)
+        }
 
+        produtos.append(produto)
 
-produtos = ler_txt()
+# Divide em slides
+slides = []
+total_slides = math.ceil(len(produtos) / ITENS_POR_SLIDE)
 
-with open(ARQUIVO_JSON, "w", encoding="utf-8") as f:
-    json.dump(produtos, f, indent=2, ensure_ascii=False)
+for i in range(total_slides):
+    inicio = i * ITENS_POR_SLIDE
+    fim = inicio + ITENS_POR_SLIDE
+    slides.append(produtos[inicio:fim])
 
-print("Arquivo dados.json gerado!")
+# Salva JSON
+with open(arquivo_json, "w", encoding="utf-8") as f:
+    json.dump(slides, f, indent=2, ensure_ascii=False)
+
+print("Arquivo produtos.json gerado com sucesso!")
+print(f"{len(produtos)} produtos encontrados")
+print(f"{total_slides} slides gerados")
