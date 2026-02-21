@@ -1,16 +1,12 @@
 import json
 import math
 
-# Nome do arquivo TXT exportado pelo ERP/balança
 arquivo_txt = "ITENSMGV.txt"
-
-# Nome do JSON que será gerado
 arquivo_json = "produtos.json"
 
-# Quantidade de itens por slide
-ITENS_POR_SLIDE = 14
+ITENS_POR_SLIDE = 12
 
-# Lista de palavras que identificam carnes
+# Palavras que DEFINITIVAMENTE são carnes
 CARNES = [
     "PICANHA",
     "ALCATRA",
@@ -26,6 +22,7 @@ CARNES = [
     "COSTELA",
     "BISTECA",
     "LINGUI",
+    "LINGUIÇA",
     "FRANGO",
     "PEITO",
     "ASA",
@@ -37,16 +34,73 @@ CARNES = [
     "LOMBO",
     "BACON",
     "CARNE",
-    "FILE",
-    "FILÉ"
+    "MUSCULO",
+    "MÚSCULO",
+    "PALETA"
 ]
+
+# Palavras que DEFINITIVAMENTE NÃO são carnes
+NAO_CARNES = [
+    "BOLO",
+    "PAO",
+    "PÃO",
+    "AMENDOIM",
+    "AVEIA",
+    "CHA",
+    "CHÁ",
+    "FARINHA",
+    "COLAGENO",
+    "COLÁGENO",
+    "TEMPERO",
+    "SAL",
+    "ACUCAR",
+    "AÇUCAR",
+    "ARROZ",
+    "FEIJAO",
+    "FEIJÃO",
+    "MACARRAO",
+    "MACARRÃO",
+    "AZEITE",
+    "OLEO",
+    "ÓLEO",
+    "VINAGRE",
+    "LEITE",
+    "QUEIJO",
+    "IOGURTE",
+    "MANTEIGA",
+    "MARGARINA",
+    "SUCO",
+    "REFRIGERANTE",
+    "BISCOITO",
+    "BOLACHA",
+    "DOCE",
+    "BALA",
+    "HORTA",
+    "VERDE",
+    "TOMATE",
+    "CEBOLA",
+    "BATATA",
+    "CENOURA",
+    "ALHO",
+    "PIMENTA"
+]
+
 
 def eh_carne(nome):
     nome = nome.upper()
+
+    # Se tiver algo proibido, descarta
+    for item in NAO_CARNES:
+        if item in nome:
+            return False
+
+    # Se tiver carne, aceita
     for carne in CARNES:
         if carne in nome:
             return True
+
     return False
+
 
 def formatar_preco(valor):
     try:
@@ -55,30 +109,24 @@ def formatar_preco(valor):
     except:
         return "R$ 0,00"
 
+
 produtos = []
 
 with open(arquivo_txt, "r", encoding="latin-1") as f:
     linhas = f.readlines()
 
 for linha in linhas:
+
     partes = linha.strip().split()
 
     if len(partes) < 2:
         continue
 
-    # Último campo é o preço
     preco_str = partes[-1]
-
-    # O resto é o nome
     nome = " ".join(partes[:-1])
 
-    # Remove espaços extras
-    nome = nome.strip()
-
-    # Filtra apenas carnes
     if eh_carne(nome):
 
-        # Troca vírgula por ponto
         preco_str = preco_str.replace(",", ".")
 
         produto = {
@@ -101,6 +149,6 @@ for i in range(total_slides):
 with open(arquivo_json, "w", encoding="utf-8") as f:
     json.dump(slides, f, indent=2, ensure_ascii=False)
 
-print("Arquivo produtos.json gerado com sucesso!")
-print(f"{len(produtos)} produtos encontrados")
-print(f"{total_slides} slides gerados")
+print("OK!")
+print("Produtos encontrados:", len(produtos))
+print("Slides:", total_slides)
