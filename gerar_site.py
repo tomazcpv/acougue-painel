@@ -5,15 +5,43 @@ import html as html_lib
 # =========================
 # CONFIG
 # =========================
-ITENS_POR_SLIDE = 10            # recomendo 9~11 pra ficar bem grande na TV
-TEMPO_SLIDE_MS = 10000          # 10s
+ITENS_POR_SLIDE = 21        # 1 promo + 10 bovinos + 10 suínos (ajuste se quiser)
+TEMPO_SLIDE_MS = 10000      # 10s
 
-NOME_ACOUGUE = "Aliança Supermercado"
-CATEGORIA_TEXTO = "Bovino / Suíno / Aves"
+NOME_EMPRESA = "Aliança Supermercado"
 TEXTO_PROMO = "OFERTA DO DIA"
 
-# Se quiser, dá pra esconder o logo (mas você pediu para colocar)
-MOSTRAR_LOGO = True
+# Quantos itens por coluna (direita)
+MAX_BOVINOS = 10
+MAX_SUINOS = 10
+
+def esc(s: str) -> str:
+    return html_lib.escape(s or "")
+
+# =========================
+# Heurística de categoria
+# =========================
+def categoria(nome: str) -> str:
+    n = (nome or "").upper()
+
+    # SUÍNOS
+    suinos_kw = [
+        "SUIN", "SUÍN", "PORCO", "PERNIL", "BISTECA", "COSTELINHA", "PANCETA",
+        "TOICINHO", "TORRESMO", "PAIO", "LINGUIÇA", "LINGUICA", "CUIBANA",
+        "JOELHO", "ORELHA", "RABO SU", "PELE SU", "PRIME RIB SU", "TIBONE SU"
+    ]
+    # AVES (a referência não mostra "AVES", então eu NÃO vou criar 3ª coluna.
+    # Itens de aves vão para "BOVINOS" por padrão, a não ser que você queira uma 3ª coluna depois.)
+    aves_kw = [
+        "FRANGO", "ASA", "COXA", "SOBRECOXA", "SASSAMI", "PERU",
+        "PESCOÇO", "PÉ DE FRANGO", "PE DE FRANGO", "MOELA"
+    ]
+
+    if any(k in n for k in suinos_kw):
+        return "SUINOS"
+    if any(k in n for k in aves_kw):
+        return "BOVINOS"  # fica na coluna da esquerda pra manter layout igual ao da imagem
+    return "BOVINOS"
 
 # =========================
 # CARREGAR produtos.json
@@ -21,7 +49,7 @@ MOSTRAR_LOGO = True
 with open("produtos.json", encoding="utf-8") as f:
     data = json.load(f)
 
-# Achatar listas (se vier como lista de listas)
+# Achatar listas
 produtos = []
 if isinstance(data, list) and len(data) > 0 and isinstance(data[0], list):
     for grupo in data:
@@ -30,80 +58,106 @@ if isinstance(data, list) and len(data) > 0 and isinstance(data[0], list):
 else:
     produtos = data
 
-total_produtos = len(produtos)
-total_slides = math.ceil(total_produtos / ITENS_POR_SLIDE)
-
-print("Total de produtos:", total_produtos)
-print("Total de slides:", total_slides)
-
 def chunk(lista, n):
     for i in range(0, len(lista), n):
-        yield lista[i:i + n]
-
-def esc(x: str) -> str:
-    return html_lib.escape(x or "")
+        yield lista[i:i+n]
 
 # =========================
-# MONTAR SLIDES (promo = 1º item)
+# MONTAR SLIDES
 # =========================
 slides_html = ""
+
 for idx, bloco in enumerate(chunk(produtos, ITENS_POR_SLIDE)):
     if not bloco:
         continue
 
-    promo = bloco[0]        # 1º item do slide vira oferta grande
-    tabela = bloco[1:]      # resto vira lista
+    promo = bloco[0]
+    resto = bloco[1:]
 
-    linhas_lista = ""
-    for p in tabela:
-        nome = esc(p.get("nome", ""))
-        preco = esc(p.get("preco", ""))
-        linhas_lista += f"""
-          <div class="linha">
-            <div class="linha-conteudo">
-              <span class="item-nome">{nome}</span>
-              <span class="item-preco">{preco}</span>
+    bovinos = []
+    suinos = []
+
+    for p in resto:
+        nome = p.get("nome", "")
+        if categoria(nome) == "SUINOS":
+            if len(suinos) < MAX_SUINOS:
+                suinos.append(p)
+        else:
+            if len(bovinos) < MAX_BOVINOS:
+                bovinos.append(p)
+
+    def render_linhas(lista):
+        out = ""
+        for p in lista:
+            nome = esc(p.get("nome", ""))
+            preco = esc(p.get("preco", ""))
+            out += f"""
+            <div class="row">
+              <div class="row-name">{nome}</div>
+              <div class="row-price">{preco}</div>
             </div>
-            <div class="seta"></div>
-          </div>
-        """
+            """
+        return out
 
     promo_nome = esc(promo.get("nome", ""))
     promo_preco = esc(promo.get("preco", ""))
 
+    # preço sem "R$" duplicar na arte
+    promo_preco_num = promo_preco.replace("R$", "").strip()
+
     slides_html += f"""
-    <section class="slide {'ativo' if idx == 0 else ''}">
-      <div class="layout">
+    <section class="slide {'active' if idx == 0 else ''}">
+      <div class="screen">
 
-        <!-- LISTA (70%) -->
-        <div class="lista">
-          <div class="lista-header">
-            <div class="lista-titulo">{CATEGORIA_TEXTO}</div>
-          </div>
+        <!-- LADO ESQUERDO: OFERTA -->
+        <aside class="left">
+          <div class="wood-plaque">{TEXTO_PROMO}</div>
 
-          <div class="lista-body">
-            {linhas_lista}
-          </div>
-        </div>
+          <div class="promo-card">
+            <div class="promo-title">{promo_nome}</div>
 
-        <!-- PROMOÇÃO (30%) -->
-        <div class="promo">
-          <div class="promo-box">
-            <div class="promo-topo">
-              {"<img src='logo.png' class='promo-logo' alt='Logo'>" if MOSTRAR_LOGO else ""}
-              <div class="promo-badge">{TEXTO_PROMO}</div>
+            <div class="promo-image">
+              <!-- opcional: coloque promo.jpg na pasta -->
+              <img src="promo.jpg" alt="" onerror="this.style.display='none'">
             </div>
 
-            <div class="promo-nome">{promo_nome}</div>
-
-            <div class="promo-preco-wrap">
-              <div class="promo-rs">R$</div>
-              <div class="promo-preco">{promo_preco.replace("R$","").strip()}</div>
+            <div class="promo-price">
+              <span class="rs">R$</span>
+              <span class="big">{promo_preco_num}</span>
+              <span class="unit">/KG</span>
             </div>
-
-            <!-- Se no futuro você quiser imagem do produto, a gente coloca aqui -->
           </div>
-        </div>
+        </aside>
+
+        <!-- LADO DIREITO: LISTAS -->
+        <main class="right">
+          <div class="top-banner">
+            <div class="banner-photo">
+              <!-- opcional: coloque banner.jpg na pasta -->
+              <img src="banner.jpg" alt="" onerror="this.style.display='none'">
+            </div>
+            <div class="brand">
+              <img class="logo" src="logo.png" alt="Logo">
+              <div class="brand-name">{NOME_EMPRESA}</div>
+            </div>
+          </div>
+
+          <div class="tables">
+            <section class="table-box">
+              <div class="table-title">BOVINOS</div>
+              <div class="table-body">
+                {render_linhas(bovinos)}
+              </div>
+            </section>
+
+            <section class="table-box">
+              <div class="table-title">SUÍNOS</div>
+              <div class="table-body">
+                {render_linhas(suinos)}
+              </div>
+            </section>
+          </div>
+        </main>
 
       </div>
     </section>
@@ -112,35 +166,18 @@ for idx, bloco in enumerate(chunk(produtos, ITENS_POR_SLIDE)):
 # =========================
 # HTML FINAL
 # =========================
-html = f"""<!DOCTYPE html>
+html = f"""<!doctype html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>{NOME_ACOUGUE}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel - {NOME_EMPRESA}</title>
 
 <style>
-  :root {{
-    --bg: #070707;
-    --red1: #b10000;
-    --red2: #7a0000;
-    --red3: #4d0000;
-    --white: #ffffff;
-    --shadow: rgba(0,0,0,0.55);
-    --yellow: #ffd700;
-  }}
-
   * {{ box-sizing: border-box; }}
+  body {{ margin:0; background:#000; font-family: Arial, Helvetica, sans-serif; overflow:hidden; }}
 
-  body {{
-    margin: 0;
-    background: var(--bg);
-    color: var(--white);
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
-  }}
-
-  /* Slide + animação */
+  /* Transição suave entre slides */
   .slide {{
     position: absolute;
     inset: 0;
@@ -149,215 +186,253 @@ html = f"""<!DOCTYPE html>
     transition: opacity 700ms ease, transform 700ms ease;
     pointer-events: none;
   }}
-  .slide.ativo {{
+  .slide.active {{
     opacity: 1;
     transform: translateX(0);
     pointer-events: auto;
   }}
 
-  /* Layout 70/30 */
-  .layout {{
+  .screen {{
+    width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 30% 70%; /* como você pediu */
   }}
 
-  /* LISTA (lado esquerdo 70%) com fundo imagem */
-  .lista {{
-    position: relative;
-    padding: 26px 34px;
+  /* Fundo madeira “fake” (não precisa imagem) */
+  .wood {{
     background:
-      linear-gradient(90deg, rgba(0,0,0,0.70), rgba(0,0,0,0.40)),
-      url("bg.jpg");
-    background-size: cover;
-    background-position: center;
+      linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.35)),
+      repeating-linear-gradient(
+        90deg,
+        #3a2a1d 0px,
+        #3a2a1d 22px,
+        #2f2218 22px,
+        #2f2218 44px
+      );
   }}
 
-  /* Overlay extra para leitura */
-  .lista::before {{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.65), rgba(0,0,0,0.45));
-    pointer-events: none;
+  /* ======= ESQUERDA (OFERTA) ======= */
+  .left {{
+    padding: 22px;
+  }}
+  .left {{
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
+      repeating-linear-gradient(
+        90deg,
+        #3a2a1d 0px,
+        #3a2a1d 22px,
+        #2f2218 22px,
+        #2f2218 44px
+      );
   }}
 
-  .lista > * {{
-    position: relative;
-    z-index: 1;
-  }}
-
-  .lista-header {{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }}
-
-  .lista-titulo {{
-    font-size: 46px;
+  .wood-plaque {{
+    background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+    border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+    color: #fff;
     font-weight: 900;
-    text-shadow: 0 6px 16px var(--shadow);
-    padding: 6px 14px;
-    border-radius: 10px;
-    background: rgba(177,0,0,0.65);
-    border: 2px solid rgba(255,255,255,0.14);
-    display: inline-block;
+    letter-spacing: 1px;
+    font-size: 34px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.45);
+    margin-bottom: 18px;
+    text-transform: uppercase;
   }}
 
-  .lista-body {{
-    margin-top: 8px;
-  }}
-
-  /* Linha estilo referência (barra vermelha + seta) */
-  .linha {{
-    position: relative;
-    margin: 10px 0;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 18px rgba(0,0,0,0.35);
-    border: 1px solid rgba(255,255,255,0.10);
-    background: linear-gradient(180deg, var(--red1), var(--red2));
-  }}
-
-  .linha-conteudo {{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 18px;
-    gap: 16px;
-  }}
-
-  .item-nome {{
-    font-size: 36px;
-    font-weight: 900;
-    letter-spacing: 0.4px;
-    text-shadow: 0 4px 10px var(--shadow);
-    max-width: 72%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }}
-
-  /* Preço com borda branca + sombra (bem TV) */
-  .item-preco {{
-    font-size: 38px;
-    font-weight: 900;
-    color: var(--white);
-    text-shadow:
-      0 3px 10px rgba(0,0,0,0.55),
-      0 0 1px rgba(255,255,255,0.9);
-    -webkit-text-stroke: 1px rgba(255,255,255,0.70);
-    white-space: nowrap;
-  }}
-
-  /* Seta no fim (triângulo) */
-  .seta {{
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-top: 33px solid transparent;
-    border-bottom: 33px solid transparent;
-    border-left: 30px solid rgba(255,255,255,0.18);
-    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.35));
-  }}
-
-  /* PROMO (lado direito 30%) */
-  .promo {{
-    background: #f6f6f6;
-    padding: 22px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }}
-
-  .promo-box {{
-    width: 100%;
-    height: 100%;
+  .promo-card {{
+    height: calc(100% - 92px);
     border-radius: 18px;
-    background: #ffffff;
-    border: 3px solid rgba(177,0,0,0.35);
-    box-shadow: 0 16px 28px rgba(0,0,0,0.30);
+    background: radial-gradient(circle at 30% 20%, #fff3a3, #ffd400 60%, #f0b400);
+    border: 3px solid rgba(255,255,255,0.40);
+    box-shadow: 0 18px 28px rgba(0,0,0,0.55);
     padding: 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }}
 
-  .promo-topo {{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-  }}
-
-  .promo-logo {{
-    height: 74px;
-    width: auto;
-    border-radius: 12px;
-    padding: 6px;
-    background: rgba(0,0,0,0.04);
-  }}
-
-  .promo-badge {{
-    font-size: 20px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    color: #b10000;
-    border: 2px solid rgba(177,0,0,0.25);
-    border-radius: 999px;
-    padding: 10px 12px;
-    background: rgba(177,0,0,0.06);
-    text-align: center;
-    white-space: nowrap;
-  }}
-
-  .promo-nome {{
-    margin-top: 8px;
-    font-size: 40px;
+  .promo-title {{
+    font-size: 44px;
     font-weight: 900;
     color: #b10000;
     text-align: center;
+    text-transform: uppercase;
     line-height: 1.05;
+    text-shadow: 0 2px 0 rgba(255,255,255,0.35);
   }}
 
-  .promo-preco-wrap {{
-    display: flex;
+  .promo-image {{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding: 10px 0;
+  }}
+  .promo-image img {{
+    width: 88%;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 10px 18px rgba(0,0,0,0.30);
+    background: rgba(255,255,255,0.35);
+  }}
+
+  .promo-price {{
+    display:flex;
     align-items: baseline;
     justify-content: center;
     gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 6px;
+    padding-bottom: 8px;
   }}
-
-  .promo-rs {{
+  .promo-price .rs {{
     font-size: 42px;
     font-weight: 900;
     color: #b10000;
   }}
-
-  .promo-preco {{
+  .promo-price .big {{
     font-size: 92px;
     font-weight: 900;
     color: #b10000;
     letter-spacing: 1px;
-    text-shadow: 0 6px 14px rgba(0,0,0,0.20);
+    text-shadow: 0 8px 16px rgba(0,0,0,0.20);
+  }}
+  .promo-price .unit {{
+    font-size: 26px;
+    font-weight: 900;
+    color: #222;
   }}
 
-  /* Responsivo mínimo (caso abra no PC) */
-  @media (max-width: 1200px) {{
-    .item-nome {{ font-size: 28px; }}
-    .item-preco {{ font-size: 30px; }}
-    .promo-preco {{ font-size: 72px; }}
-    .promo-nome {{ font-size: 32px; }}
-    .lista-titulo {{ font-size: 36px; }}
+  /* ======= DIREITA (TABELAS) ======= */
+  .right {{
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.35)),
+      repeating-linear-gradient(
+        90deg,
+        #3a2a1d 0px,
+        #3a2a1d 22px,
+        #2f2218 22px,
+        #2f2218 44px
+      );
+    padding: 18px 22px 22px 22px;
   }}
+
+  .top-banner {{
+    height: 120px;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 18px;
+    margin-bottom: 16px;
+    align-items: stretch;
+  }}
+
+  .banner-photo {{
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.12);
+  }}
+  .banner-photo img {{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }}
+
+  .brand {{
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.92);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 14px;
+    padding: 10px 12px;
+    border: 2px solid rgba(255,255,255,0.15);
+  }}
+  .brand .logo {{
+    height: 82px;
+    width: auto;
+  }}
+  .brand-name {{
+    font-size: 24px;
+    font-weight: 900;
+    color: #111;
+    text-align:center;
+    line-height: 1.1;
+  }}
+
+  .tables {{
+    height: calc(100% - 136px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }}
+
+  .table-box {{
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.12);
+    box-shadow: 0 14px 24px rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.18);
+    display:flex;
+    flex-direction: column;
+  }}
+
+  .table-title {{
+    padding: 12px 14px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 900;
+    color: #fff;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }}
+
+  .table-body {{
+    padding: 12px 14px;
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+  }}
+
+  .row {{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.22);
+    border: 1px solid rgba(255,255,255,0.10);
+  }}
+
+  .row-name {{
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+    max-width: 72%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }}
+
+  /* Preço com borda + sombra (bem legível na TV) */
+  .row-price {{
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    white-space: nowrap;
+    text-shadow: 0 6px 14px rgba(0,0,0,0.55);
+    -webkit-text-stroke: 1px rgba(255,255,255,0.55);
+  }}
+
 </style>
 </head>
-
 <body>
+
 {slides_html}
 
 <script>
@@ -365,20 +440,19 @@ html = f"""<!DOCTYPE html>
   let idx = 0;
   const slides = document.querySelectorAll(".slide");
 
-  function mostrar(i) {{
-    slides.forEach(s => s.classList.remove("ativo"));
-    slides[i].classList.add("ativo");
+  function show(i) {{
+    slides.forEach(s => s.classList.remove("active"));
+    slides[i].classList.add("active");
   }}
 
-  function avancar() {{
-    if (slides.length === 0) return;
+  function next() {{
+    if (!slides.length) return;
     idx = (idx + 1) % slides.length;
-    mostrar(idx);
+    show(idx);
   }}
 
-  // inicia
-  if (slides.length > 0) mostrar(0);
-  setInterval(avancar, TEMPO);
+  if (slides.length) show(0);
+  setInterval(next, TEMPO);
 </script>
 
 </body>
@@ -388,4 +462,4 @@ html = f"""<!DOCTYPE html>
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html)
 
-print("✅ index.html gerado (layout referência + 1 coluna + promo 30% / lista 70%).")
+print("✅ index.html gerado no estilo da referência (madeira + oferta + duas colunas).")
