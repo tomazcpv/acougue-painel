@@ -2,15 +2,73 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="30">
+<meta http-equiv="refresh" content="60">
+
 <style>
-body { font-family: Arial; background: #111; color: white; }
-table { width: 100%; font-size: 26px; }
-td { padding: 8px; }
-.preco { text-align: right; color: yellow; }
+
+body {
+    margin:0;
+    font-family: Arial;
+    background:#111;
+    color:white;
+    overflow:hidden;
+}
+
+.slide {
+    display:none;
+    padding:40px;
+}
+
+table {
+    width:100%;
+    font-size:32px;
+}
+
+td {
+    padding:10px;
+}
+
+.preco {
+    text-align:right;
+    color:yellow;
+}
+
+h1 {
+    text-align:center;
+    font-size:50px;
+}
+
 </style>
+
 </head>
+
 <body>
+
 <h1>OFERTAS DO AÇOUGUE</h1>
-<table>
-</table></body></html>
+
+
+
+<script>
+
+let slide = 0;
+let slides = document.getElementsByClassName("slide");
+
+function mostrar() {
+
+    for (let i=0; i<slides.length; i++)
+        slides[i].style.display="none";
+
+    slides[slide].style.display="block";
+
+    slide++;
+    if (slide>=slides.length)
+        slide=0;
+}
+
+mostrar();
+setInterval(mostrar,10000);
+
+</script>
+
+</body>
+</html>

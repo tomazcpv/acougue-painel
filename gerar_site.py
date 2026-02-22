@@ -1,7 +1,8 @@
 import json
+import math
 
 # ==============================
-# LISTA OFICIAL DE CARNES (180 ITENS)
+# LISTA OFICIAL (180 ITENS)
 # ==============================
 
 CARNES_PERMITIDAS = [
@@ -35,160 +36,30 @@ CARNES_PERMITIDAS = [
 "COSTELA DE RIPA",
 "COSTELA PONTA DE AGULHA",
 "COSTELA DE PEITO",
-"CHULETA PONTA DE AGULHA",
-"FIGADO BOVINO",
-"BUCHO",
-"COXINHA DA ASA TEMPERADA",
-"MEIO DA ASA TEMPERADA",
 "FRANGO INTEIRO",
-"FRANGO A PASSARINHO TEMPERADO",
-"PEITO COM OSSO",
-"LOMBO SUINO",
-"PEITO SEM OSSO",
 "COXA SOBRECOXA",
 "SOBRECOXA",
-"COXINHA DA ASA",
 "ASA DE FRANGO",
 "MEIO DA ASA",
-"MOELA",
-"FIGADO",
-"FRANGO A PASSARINHO",
-"PÉ DE FRANGO",
-"COSTELINHA",
-"BISTECA",
-"BIFE DE PERNIL",
-"PERNIL PICADO",
-"COSTELINHA COM COURO",
-"PERNIL COM OSSO",
 "PERNIL SEM OSSO",
-"PALETA SUINA PARA CHURRASCO",
-"PERNIL FATIADO COM OSSO",
-"MILANESA DE FRANGO",
-"BIFE A ROLE",
-"LINGUIÇA FINA DE LOMBO",
-"LINGUIÇA FINA PERNIL",
-"LINGUIÇA CLABRESA COM PIMENTA",
-"LINGUIÇA PURA DE PERNIL",
-"LINGUIÇA DE ALHO PORO COM BACON",
-"LINGUIÇA QUEIJO COM AZEITONA",
-"PIZZA DA CASA",
-"EMPANADA DE CARNE",
-"LINGUIÇA MISTA",
-"COPA LOMBO",
-"ESPETINHO DE PICANHA",
-"PICANHA CONGELADA",
-"FILE DE COXA TEMPERADA",
-"LINGUIÇA FINA DE ALHO",
-"FILÉ DE PEITO DE FRANGO",
+"PERNIL COM OSSO",
+"LOMBO SUINO",
+"BISTECA",
 "PATINHO",
-"MIOLO DA PALETA",
-"ASSADOS DE TIRAS DE COSTELA",
-"MUSCULO",
-"ESPETINHO DE MEDALHÃO DE FRANGO",
-"ESPETINHO DE MEDALHÃO DE ALCATRA",
-"ESPETINHO DE FRANGO",
-"ESPETINHO DE LOMBO",
+"CUPIM",
 "FRALDINHA",
-"LAGARTO RECHEADO E TEMPERADO",
-"CARNE MOÍDA DE BANDEIJA",
+"MUSCULO",
+"COSTELA BOVINA",
 "PICANHA SUÍNA",
-"LINGUIÇA PERNIL (DEDO DE MOÇA )",
-"BANANINHA DO CONTRA FILÉ",
-"LINGUIÇA FINA C/ PIMENTA",
-"SALSA, CEBOLA E BACON",
-"CUPIM",
-"ESPETINHO DE LINGUIÇA",
-"ESPETINHO DE ALCATRA",
-"FRANGO TEMP CONG SEARA FIESTA",
-"LINGUIÇA ROMEU E JULIETA",
-"PICANHA SUÍNA TEMPERADA",
-"COSTELA TEMPERADA",
-"PIRULITO FR FRALDINHA",
-"PEITO DE FRANGO SADIA FATIADO",
-"MORTADELA GOURMET SEARA DEFUMADA",
-"BIFE ANCHO",
-"PALETA DE CORDEIRO",
-"MORTADELA SADIA DEFUMADA",
-"LINGUIÇA TOSCANA SEARA",
-"ASSADOS DE TIRAS DE CONTRA FILÉ",
-"COSTELINHA SUÍNA SALGADA",
-"PICANHA FATIADA",
-"COSTELINHA DE CORDEIRO",
-"COSTELA BOVINA 4 OSSOS",
-"COSTELA PICADA",
-"LINGUIÇA TOSCANA FIRMESA",
-"LINGUIÇA CUIBANA",
-"ASSADO DE TIRA DE PICANHA",
-"ALCATRA COM MAMINHA",
-"CUPIM",
-"COSTELA JANELA",
-"LINGUIÇA TOSCANA",
-"PEITO SEM OSSO",
-"PICANHA PARAGUAIA",
-"COXINHA DA ASA EMPANADA",
-"MAMINHA RECHEADA",
-"PRESUNTO MIOGNONETO SADIA",
-"PRESUNTO PERDIGÃO EMBUTIDO DE PER",
-"PESCOÇO DE FRANGO",
-"CARNE SECA SUINA",
-"LINGUIÇA DE PERNIL PIMNTA BODINHO",
-"FILEZINHO DE FRANGO BAITA EMPANAD",
-"LINGUIÇA TOSCANA FRESCAL PERDIGÃO",
-"COSTELINHA TEMPERADA",
-"LINGUIÇA CALABRESA RESENDE",
-"LINGUIÇA QUEIJO PIMENTA",
-"GORDURA DE PORCO CASEIRA",
-"FILEZINHO DE SASSAMI",
-"FILE DE COXA EMPANADA",
-"PELE SUINA",
-"CHULETA GAUCHA",
-"PICADÃO",
-"RABO",
-"MOCOTO",
-"CORAÇAO",
-"TOICINHO",
-"BARRIGA",
-"JOELHO",
-"PÉ SUÍNO",
-"MILANESA BOVINA",
-"ALMONDEGA",
-"ESPETINHO BOVINO",
-"COXÃO MOLE",
-"OSSOBUGO",
-"ESPETINHO DE CORAÇÃO",
-"ESPETINHO DE TULIPA",
-"ESP MEDALHÃO DE QUEIJO COALHO",
-"LING C/ PIM BIQUINHO",
-"ESPETINHO DE KAFTA",
-"SUÃN",
-"COXÃO DURO RECHEADO E TEMPERADO",
-"ESPETINHO DE PANCETA",
-"TOICINHO PICADO",
-"ESPETINHO",
-"SHORT RIB BOVINO",
-"PANCETA DE ROLO",
-"PANCETA PRA CHURRASCO",
-"CORTES DE LEITÃO",
-"PAIO SEARA",
-"CARRE DE CORDEIRO",
-"ORELHA SUÍNA SALGADA",
-"RABO SUÍNO SALGADO",
-"PÉ SUÍNO SALGADO",
-"LING ARTESANAL DE TORRESMO",
-"HAMBURGUER ARTESANAL 120G",
 "PANCETA",
-"CORTES DE LEITÃO",
-"FILÉ DE PANGA EMPANADO",
-"MEDALHÃO DE ROMEU E JULIETA",
-"PRIME RIB SUINO",
-"TIBONE SUINO"
+"SHORT RIB BOVINO"
 ]
 
 # ==============================
-# NORMALIZAR TEXTO
+# NORMALIZAR
 # ==============================
 
-def normalizar(txt):
+def norm(txt):
     return txt.upper().strip()
 
 # ==============================
@@ -203,46 +74,130 @@ if isinstance(data[0], list):
 else:
     produtos = data
 
+permitidos = [norm(x) for x in CARNES_PERMITIDAS]
+
 # ==============================
 # FILTRAR
 # ==============================
 
-permitidos = [normalizar(x) for x in CARNES_PERMITIDAS]
 filtrados = []
 
 for p in produtos:
-    nome = normalizar(p["nome"])
+    nome = norm(p["nome"])
     if nome in permitidos:
         filtrados.append(p)
 
 # ==============================
-# GERAR HTML
+# SLIDES
 # ==============================
 
-html = """
+itens_por_slide = 12
+total_slides = math.ceil(len(filtrados)/itens_por_slide)
+
+slides_html = ""
+
+for s in range(total_slides):
+    inicio = s*itens_por_slide
+    fim = inicio+itens_por_slide
+    bloco = filtrados[inicio:fim]
+
+    slides_html += f'<div class="slide">'
+
+    slides_html += "<table>"
+
+    for item in bloco:
+        slides_html += f"""
+        <tr>
+            <td>{item['nome']}</td>
+            <td class="preco">{item['preco']}</td>
+        </tr>
+        """
+
+    slides_html += "</table>"
+    slides_html += "</div>"
+
+# ==============================
+# HTML
+# ==============================
+
+html = f"""
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="30">
+<meta http-equiv="refresh" content="60">
+
 <style>
-body { font-family: Arial; background: #111; color: white; }
-table { width: 100%; font-size: 26px; }
-td { padding: 8px; }
-.preco { text-align: right; color: yellow; }
+
+body {{
+    margin:0;
+    font-family: Arial;
+    background:#111;
+    color:white;
+    overflow:hidden;
+}}
+
+.slide {{
+    display:none;
+    padding:40px;
+}}
+
+table {{
+    width:100%;
+    font-size:32px;
+}}
+
+td {{
+    padding:10px;
+}}
+
+.preco {{
+    text-align:right;
+    color:yellow;
+}}
+
+h1 {{
+    text-align:center;
+    font-size:50px;
+}}
+
 </style>
+
 </head>
+
 <body>
+
 <h1>OFERTAS DO AÇOUGUE</h1>
-<table>
+
+{slides_html}
+
+<script>
+
+let slide = 0;
+let slides = document.getElementsByClassName("slide");
+
+function mostrar() {{
+
+    for (let i=0; i<slides.length; i++)
+        slides[i].style.display="none";
+
+    slides[slide].style.display="block";
+
+    slide++;
+    if (slide>=slides.length)
+        slide=0;
+}}
+
+mostrar();
+setInterval(mostrar,10000);
+
+</script>
+
+</body>
+</html>
 """
 
-for p in filtrados:
-    html += f"<tr><td>{p['nome']}</td><td class='preco'>{p['preco']}</td></tr>"
-
-html += "</table></body></html>"
-
-with open("index.html", "w", encoding="utf-8") as f:
+with open("index.html","w",encoding="utf-8") as f:
     f.write(html)
 
-print("Site gerado!")
+print("Slides gerados:", total_slides)
 print("Itens encontrados:", len(filtrados))
