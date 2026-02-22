@@ -7,7 +7,7 @@ arquivo_json = "produtos.json"
 
 ITENS_POR_SLIDE = 12
 
-# Apenas carnes que queremos mostrar
+# Carnes verdadeiras
 CARNES = [
     "PATINHO",
     "ACEM",
@@ -18,27 +18,72 @@ CARNES = [
     "FRALDA",
     "COSTELA",
     "CUPIM",
-    "LINGUIÇA",
-    "LINGUICA",
-    "CALABRESA",
+    "LOMBO",
+    "PERNIL",
+    "BISTECA",
     "FRANGO",
     "COXA",
     "SOBRECOXA",
-    "PEITO",
     "ASA",
-    "PERNIL",
-    "LOMBO",
-    "BISTECA",
+    "PEITO",
     "BACON",
+    "LINGUIÇA",
+    "LINGUICA",
+    "CALABRESA",
     "SALSICHA"
 ]
 
+# Coisas que NÃO são açougue
+PROIBIDOS = [
+    "PIZZA",
+    "EMPADA",
+    "EMPANADO",
+    "EMPANADINHO",
+    "ENROLADO",
+    "ENROLADINHO",
+    "MASSA",
+    "PÃO",
+    "PAO",
+    "BOLO",
+    "TORTA",
+    "FATIA",
+    "FAROFA",
+    "BALA",
+    "DOCE",
+    "SEMENTE",
+    "TEMPERO",
+    "PIMENTA",
+    "ORÉGANO",
+    "OREGANO",
+    "QUEIJO",
+    "QJO",
+    "AZEITONA",
+    "MILHO",
+    "BETERRABA",
+    "BATATA",
+    "CEBOLA",
+    "ALHO",
+    "VERDURA",
+    "LEGUME",
+    "FRUTA"
+]
+
+
 def eh_carne(nome):
     nome = nome.upper()
+
+    # Se tiver algo proibido → ignora
+    for p in PROIBIDOS:
+        if p in nome:
+            return False
+
+    # Se tiver carne → aceita
     for carne in CARNES:
         if carne in nome:
             return True
+
     return False
+
 
 def formatar_preco(preco_str):
     try:
@@ -47,6 +92,7 @@ def formatar_preco(preco_str):
     except:
         return "R$ 0,00"
 
+
 produtos = []
 
 with open(arquivo_txt, "r", encoding="latin-1") as f:
@@ -54,48 +100,40 @@ with open(arquivo_txt, "r", encoding="latin-1") as f:
 
 for linha in linhas:
 
-    # Extrai o nome procurando o bloco de texto no meio da linha
+    # Nome
     resultado = re.search(r'[A-ZÇÃÉÍÓÚÂÊÔÀ ]{3,}', linha.upper())
-
     if not resultado:
         continue
 
     nome = resultado.group().strip()
 
-    # Extrai preço (normalmente fica antes do nome)
+    # Preço
     numeros = re.findall(r'\d{4,6}', linha)
     if not numeros:
         continue
 
     preco_str = numeros[0]
 
-    # Filtra apenas carnes
     if eh_carne(nome):
-
-        produto = {
+        produtos.append({
             "nome": nome + " KG",
             "preco": formatar_preco(preco_str)
-        }
+        })
 
-        produtos.append(produto)
-
-# Divide em slides
+# Divide slides
 slides = []
 total_slides = math.ceil(len(produtos) / ITENS_POR_SLIDE)
 
 for i in range(total_slides):
-    inicio = i * ITENS_POR_SLIDE
-    fim = inicio + ITENS_POR_SLIDE
-    slides.append(produtos[inicio:fim])
+    slides.append(produtos[i*ITENS_POR_SLIDE:(i+1)*ITENS_POR_SLIDE])
 
-# Salva JSON
+# Salva
 with open(arquivo_json, "w", encoding="utf-8") as f:
     json.dump(slides, f, indent=2, ensure_ascii=False)
 
 print("OK!")
 print("Produtos encontrados:", len(produtos))
-print("Slides:", total_slides)
 
-print("\nProdutos encontrados:")
+print("\nLista final:")
 for p in produtos:
     print("-", p["nome"])
