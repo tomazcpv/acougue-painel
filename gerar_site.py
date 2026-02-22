@@ -1,108 +1,248 @@
 import json
 
-# Palavras que indicam carne
-CARNES = [
-    "BOV", "PATINHO", "ACEM", "ALCATRA", "PICANHA", "CUPIM",
-    "MAMINHA", "FRALDINHA", "COSTELA", "CARNE", "BIFE",
+# ==============================
+# LISTA OFICIAL DE CARNES (180 ITENS)
+# ==============================
 
-    "FRANGO", "COXA", "SOBRECOXA", "ASA", "PEITO",
-    "FILE", "PÉ DE FRANGO", "PESCOÇO",
-
-    "SUINO", "PERNIL", "LOMBO", "BISTECA",
-
-    "LINGUIÇA", "CALABRESA", "TOSCANA",
-    "SALSICHA", "BACON"
+CARNES_PERMITIDAS = [
+"LINGUIÇA BRAGANÇA",
+"CALABRESA PERDIGÃO",
+"SALSICHA SADIA",
+"SALSICHA AURORA KG",
+"SALSICHA PERDIGÃO KG",
+"CALABRESA SADIA",
+"LINGUIÇA TOSCANA SADIA",
+"LINGUIÇA TOSCANA AURORA",
+"BACON",
+"LINGUIÇA PERDIGÃO NA BRASA",
+"LINGUIÇA FINA MISTA",
+"SALSICHA RESFRIADA SEARA",
+"SALSICHA PIF PAF",
+"PICANHA",
+"MAMINHA",
+"MIOLO DE ALCATRA",
+"ALCATRA EM PEÇA",
+"CONTRA FILE",
+"CONTRA FILE EM PEÇA",
+"LAGARTO",
+"ALCATRA COM MAMINHA",
+"CHULETA DE CONTRA FILE",
+"FILE MIGNOM",
+"CAPA DE FILE",
+"ACEM",
+"PALETA",
+"PEITO BOVINO",
+"COSTELA DE RIPA",
+"COSTELA PONTA DE AGULHA",
+"COSTELA DE PEITO",
+"CHULETA PONTA DE AGULHA",
+"FIGADO BOVINO",
+"BUCHO",
+"COXINHA DA ASA TEMPERADA",
+"MEIO DA ASA TEMPERADA",
+"FRANGO INTEIRO",
+"FRANGO A PASSARINHO TEMPERADO",
+"PEITO COM OSSO",
+"LOMBO SUINO",
+"PEITO SEM OSSO",
+"COXA SOBRECOXA",
+"SOBRECOXA",
+"COXINHA DA ASA",
+"ASA DE FRANGO",
+"MEIO DA ASA",
+"MOELA",
+"FIGADO",
+"FRANGO A PASSARINHO",
+"PÉ DE FRANGO",
+"COSTELINHA",
+"BISTECA",
+"BIFE DE PERNIL",
+"PERNIL PICADO",
+"COSTELINHA COM COURO",
+"PERNIL COM OSSO",
+"PERNIL SEM OSSO",
+"PALETA SUINA PARA CHURRASCO",
+"PERNIL FATIADO COM OSSO",
+"MILANESA DE FRANGO",
+"BIFE A ROLE",
+"LINGUIÇA FINA DE LOMBO",
+"LINGUIÇA FINA PERNIL",
+"LINGUIÇA CLABRESA COM PIMENTA",
+"LINGUIÇA PURA DE PERNIL",
+"LINGUIÇA DE ALHO PORO COM BACON",
+"LINGUIÇA QUEIJO COM AZEITONA",
+"PIZZA DA CASA",
+"EMPANADA DE CARNE",
+"LINGUIÇA MISTA",
+"COPA LOMBO",
+"ESPETINHO DE PICANHA",
+"PICANHA CONGELADA",
+"FILE DE COXA TEMPERADA",
+"LINGUIÇA FINA DE ALHO",
+"FILÉ DE PEITO DE FRANGO",
+"PATINHO",
+"MIOLO DA PALETA",
+"ASSADOS DE TIRAS DE COSTELA",
+"MUSCULO",
+"ESPETINHO DE MEDALHÃO DE FRANGO",
+"ESPETINHO DE MEDALHÃO DE ALCATRA",
+"ESPETINHO DE FRANGO",
+"ESPETINHO DE LOMBO",
+"FRALDINHA",
+"LAGARTO RECHEADO E TEMPERADO",
+"CARNE MOÍDA DE BANDEIJA",
+"PICANHA SUÍNA",
+"LINGUIÇA PERNIL (DEDO DE MOÇA )",
+"BANANINHA DO CONTRA FILÉ",
+"LINGUIÇA FINA C/ PIMENTA",
+"SALSA, CEBOLA E BACON",
+"CUPIM",
+"ESPETINHO DE LINGUIÇA",
+"ESPETINHO DE ALCATRA",
+"FRANGO TEMP CONG SEARA FIESTA",
+"LINGUIÇA ROMEU E JULIETA",
+"PICANHA SUÍNA TEMPERADA",
+"COSTELA TEMPERADA",
+"PIRULITO FR FRALDINHA",
+"PEITO DE FRANGO SADIA FATIADO",
+"MORTADELA GOURMET SEARA DEFUMADA",
+"BIFE ANCHO",
+"PALETA DE CORDEIRO",
+"MORTADELA SADIA DEFUMADA",
+"LINGUIÇA TOSCANA SEARA",
+"ASSADOS DE TIRAS DE CONTRA FILÉ",
+"COSTELINHA SUÍNA SALGADA",
+"PICANHA FATIADA",
+"COSTELINHA DE CORDEIRO",
+"COSTELA BOVINA 4 OSSOS",
+"COSTELA PICADA",
+"LINGUIÇA TOSCANA FIRMESA",
+"LINGUIÇA CUIBANA",
+"ASSADO DE TIRA DE PICANHA",
+"ALCATRA COM MAMINHA",
+"CUPIM",
+"COSTELA JANELA",
+"LINGUIÇA TOSCANA",
+"PEITO SEM OSSO",
+"PICANHA PARAGUAIA",
+"COXINHA DA ASA EMPANADA",
+"MAMINHA RECHEADA",
+"PRESUNTO MIOGNONETO SADIA",
+"PRESUNTO PERDIGÃO EMBUTIDO DE PER",
+"PESCOÇO DE FRANGO",
+"CARNE SECA SUINA",
+"LINGUIÇA DE PERNIL PIMNTA BODINHO",
+"FILEZINHO DE FRANGO BAITA EMPANAD",
+"LINGUIÇA TOSCANA FRESCAL PERDIGÃO",
+"COSTELINHA TEMPERADA",
+"LINGUIÇA CALABRESA RESENDE",
+"LINGUIÇA QUEIJO PIMENTA",
+"GORDURA DE PORCO CASEIRA",
+"FILEZINHO DE SASSAMI",
+"FILE DE COXA EMPANADA",
+"PELE SUINA",
+"CHULETA GAUCHA",
+"PICADÃO",
+"RABO",
+"MOCOTO",
+"CORAÇAO",
+"TOICINHO",
+"BARRIGA",
+"JOELHO",
+"PÉ SUÍNO",
+"MILANESA BOVINA",
+"ALMONDEGA",
+"ESPETINHO BOVINO",
+"COXÃO MOLE",
+"OSSOBUGO",
+"ESPETINHO DE CORAÇÃO",
+"ESPETINHO DE TULIPA",
+"ESP MEDALHÃO DE QUEIJO COALHO",
+"LING C/ PIM BIQUINHO",
+"ESPETINHO DE KAFTA",
+"SUÃN",
+"COXÃO DURO RECHEADO E TEMPERADO",
+"ESPETINHO DE PANCETA",
+"TOICINHO PICADO",
+"ESPETINHO",
+"SHORT RIB BOVINO",
+"PANCETA DE ROLO",
+"PANCETA PRA CHURRASCO",
+"CORTES DE LEITÃO",
+"PAIO SEARA",
+"CARRE DE CORDEIRO",
+"ORELHA SUÍNA SALGADA",
+"RABO SUÍNO SALGADO",
+"PÉ SUÍNO SALGADO",
+"LING ARTESANAL DE TORRESMO",
+"HAMBURGUER ARTESANAL 120G",
+"PANCETA",
+"CORTES DE LEITÃO",
+"FILÉ DE PANGA EMPANADO",
+"MEDALHÃO DE ROMEU E JULIETA",
+"PRIME RIB SUINO",
+"TIBONE SUINO"
 ]
 
-# Palavras proibidas
-PROIBIDOS = [
-    "BOLO", "PÃO", "PAO", "DOCE", "BISCOITO", "FARINHA",
-    "QUEIJO", "MUSSARELA", "PRESUNTO", "PERU",
-    "ALHO", "CEBOLA", "BATATA", "VERDURA",
-    "TEMPERO", "OREGANO", "ALECRIM",
-    "AÇUCAR", "ACUCAR", "AVEIA", "CACAU",
-    "CHA", "COCO", "GRANOLA",
-    "BALA", "DOCINHO",
-    "PIZZA", "ESFIHA", "EMPADA",
-    "BROA"
-]
+# ==============================
+# NORMALIZAR TEXTO
+# ==============================
 
-def eh_carne(nome):
-    nome = nome.upper()
+def normalizar(txt):
+    return txt.upper().strip()
 
-    for p in PROIBIDOS:
-        if p in nome:
-            return False
+# ==============================
+# CARREGAR JSON
+# ==============================
 
-    for c in CARNES:
-        if c in nome:
-            return True
-
-    return False
-
-
-# Abre o JSON
 with open("produtos.json", encoding="utf-8") as f:
     data = json.load(f)
 
-# Corrige lista dupla
 if isinstance(data[0], list):
     produtos = data[0]
 else:
     produtos = data
 
-# Filtra carnes
-produtos_filtrados = []
+# ==============================
+# FILTRAR
+# ==============================
+
+permitidos = [normalizar(x) for x in CARNES_PERMITIDAS]
+filtrados = []
 
 for p in produtos:
-    nome = p["nome"]
+    nome = normalizar(p["nome"])
+    if nome in permitidos:
+        filtrados.append(p)
 
-    if eh_carne(nome):
-        produtos_filtrados.append(p)
-        print("OK:", nome)
-    else:
-        print("REMOVIDO:", nome)
+# ==============================
+# GERAR HTML
+# ==============================
 
-print("\nTotal carnes:", len(produtos_filtrados))
-
-
-# Gera HTML
 html = """
 <html>
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="refresh" content="30">
 <style>
-body {
-    font-family: Arial;
-    background: black;
-    color: white;
-    font-size: 28px;
-}
-.produto {
-    margin: 10px;
-    padding: 10px;
-    border-bottom: 1px solid gray;
-}
-.preco {
-    float: right;
-}
+body { font-family: Arial; background: #111; color: white; }
+table { width: 100%; font-size: 26px; }
+td { padding: 8px; }
+.preco { text-align: right; color: yellow; }
 </style>
 </head>
 <body>
-<h1>AÇOUGUE - OFERTAS</h1>
+<h1>OFERTAS DO AÇOUGUE</h1>
+<table>
 """
 
-for p in produtos_filtrados:
-    html += f"""
-    <div class='produto'>
-        {p['nome']}
-        <span class='preco'>{p['preco']}</span>
-    </div>
-    """
+for p in filtrados:
+    html += f"<tr><td>{p['nome']}</td><td class='preco'>{p['preco']}</td></tr>"
 
-html += "</body></html>"
+html += "</table></body></html>"
 
 with open("index.html", "w", encoding="utf-8") as f:
     f.write(html)
 
-print("\nSite gerado com sucesso!")
+print("Site gerado!")
+print("Itens encontrados:", len(filtrados))
