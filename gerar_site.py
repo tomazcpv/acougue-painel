@@ -1,12 +1,13 @@
 import json
 import math
+import re
 
 arquivo_txt = "ITENSMGV.txt"
 arquivo_json = "produtos.json"
 
 ITENS_POR_SLIDE = 12
 
-# Carnes permitidas
+# Apenas carnes que queremos mostrar
 CARNES = [
     "PATINHO",
     "ACEM",
@@ -53,15 +54,22 @@ with open(arquivo_txt, "r", encoding="latin-1") as f:
 
 for linha in linhas:
 
-    # Nome do produto começa na posição 18 e vai até 60
-    nome = linha[18:60].strip()
+    # Extrai o nome procurando o bloco de texto no meio da linha
+    resultado = re.search(r'[A-ZÇÃÉÍÓÚÂÊÔÀ ]{3,}', linha.upper())
 
-    # Preço fica entre posição 10 e 16
-    preco_str = linha[10:16].strip()
-
-    if not nome:
+    if not resultado:
         continue
 
+    nome = resultado.group().strip()
+
+    # Extrai preço (normalmente fica antes do nome)
+    numeros = re.findall(r'\d{4,6}', linha)
+    if not numeros:
+        continue
+
+    preco_str = numeros[0]
+
+    # Filtra apenas carnes
     if eh_carne(nome):
 
         produto = {
@@ -87,3 +95,7 @@ with open(arquivo_json, "w", encoding="utf-8") as f:
 print("OK!")
 print("Produtos encontrados:", len(produtos))
 print("Slides:", total_slides)
+
+print("\nProdutos encontrados:")
+for p in produtos:
+    print("-", p["nome"])

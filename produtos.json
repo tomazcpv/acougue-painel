@@ -2,469 +2,465 @@
   [
     {
       "nome": "PATINHO KG",
-      "preco": "R$ 929,00"
+      "preco": "R$ 100,00"
     },
     {
       "nome": "LINGUIÇA BRAGANÇA KG",
-      "preco": "R$ 175,00"
+      "preco": "R$ 110,02"
     },
     {
       "nome": "CALABRESA PERDIGÃO KG",
-      "preco": "R$ 239,00"
+      "preco": "R$ 100,02"
     },
     {
       "nome": "SALSICHA SADIA KG",
-      "preco": "R$ 169,00"
+      "preco": "R$ 100,01"
     },
     {
       "nome": "SALSICHA AURORA KG KG",
-      "preco": "R$ 149,00"
+      "preco": "R$ 100,01"
     },
     {
       "nome": "SALSICHA PERDIGÃO KG KG",
-      "preco": "R$ 169,00"
+      "preco": "R$ 100,01"
     },
     {
       "nome": "CALABRESA SADIA KG",
-      "preco": "R$ 299,00"
+      "preco": "R$ 100,01"
     },
     {
       "nome": "LINGUIÇA TOSCANA SADIA KG",
-      "preco": "R$ 269,00"
+      "preco": "R$ 100,01"
     },
     {
       "nome": "LINGUIÇA TOSCANA AURORA KG",
-      "preco": "R$ 269,00"
+      "preco": "R$ 100,01"
     },
     {
       "nome": "PEITO DE PERU KG KG",
-      "preco": "R$ 549,00"
+      "preco": "R$ 100,01"
     },
     {
       "nome": "EMPANADINHO DE FRANGO KG",
-      "preco": "R$ 269,00"
+      "preco": "R$ 100,01"
     },
     {
       "nome": "BACON KG",
-      "preco": "R$ 369,00"
+      "preco": "R$ 100,01"
     }
   ],
   [
     {
       "nome": "EMPADA DE FRANGO KG",
-      "preco": "R$ 55,00"
+      "preco": "R$ 110,01"
     },
     {
       "nome": "LINGUIÇA PERDIGÃO NA BRASA KG",
-      "preco": "R$ 269,00"
+      "preco": "R$ 100,02"
     },
     {
       "nome": "PIMENTA CALABRESA EM FLOCOS KG",
-      "preco": "R$ 435,00"
+      "preco": "R$ 100,02"
     },
     {
       "nome": "ENROLADINHO DE SALSICHA KG",
-      "preco": "R$ 350,00"
+      "preco": "R$ 100,03"
     },
     {
       "nome": "BAGUETE DA CASA KG",
-      "preco": "R$ 50,00"
+      "preco": "R$ 110,03"
     },
     {
-      "nome": "massa de pizza da casa c/ 2 un KG",
-      "preco": "R$ 70,00"
+      "nome": "MASSA DE PIZZA DA CASA C KG",
+      "preco": "R$ 110,03"
     },
     {
       "nome": "LINGUIÇA FINA MISTA KG",
-      "preco": "R$ 150,00"
+      "preco": "R$ 110,03"
     },
     {
       "nome": "SALSICHA RESFRIADA SEARA KG",
-      "preco": "R$ 149,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "ENROLADO DE FRANGO KG",
-      "preco": "R$ 60,00"
+      "preco": "R$ 110,04"
     },
     {
       "nome": "ENROLADO DE CALABRESA KG",
-      "preco": "R$ 60,00"
+      "preco": "R$ 110,04"
     },
     {
       "nome": "PIZZA FATIA CALABRESA KG",
-      "preco": "R$ 50,00"
+      "preco": "R$ 110,04"
     },
     {
       "nome": "SALSICHA PIF PAF KG",
-      "preco": "R$ 129,90"
+      "preco": "R$ 100,04"
     }
   ],
   [
     {
-      "nome": "PÃO DE BATATA DE FRANGO C/ REQ KG",
-      "preco": "R$ 50,00"
+      "nome": "PÃO DE BATATA DE FRANGO C KG",
+      "preco": "R$ 110,04"
     },
     {
       "nome": "PICANHA KG",
-      "preco": "R$ 799,00"
+      "preco": "R$ 100,04"
     },
     {
-      "nome": "MINI TORTA DE FRANGO C/REQUEIJÃO KG",
-      "preco": "R$ 85,00"
+      "nome": "MINI TORTA DE FRANGO C KG",
+      "preco": "R$ 110,04"
     },
     {
       "nome": "MAMINHA KG",
-      "preco": "R$ 569,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "MIOLO DE ALCATRA KG",
-      "preco": "R$ 829,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "ALCATRA EM PEÇA KG",
-      "preco": "R$ 449,90"
+      "preco": "R$ 110,04"
     },
     {
       "nome": "ALCATRA COM MAMINHA KG",
-      "preco": "R$ 599,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "ACEM KG",
-      "preco": "R$ 349,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "PEITO BOVINO KG",
-      "preco": "R$ 369,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "COSTELA DE RIPA KG",
-      "preco": "R$ 269,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "COSTELA PONTA DE AGULHA KG",
-      "preco": "R$ 249,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "COSTELA DE PEITO KG",
-      "preco": "R$ 239,00"
+      "preco": "R$ 100,04"
     }
   ],
   [
     {
-      "nome": "coxinha da asa temperada KG",
-      "preco": "R$ 169,00"
+      "nome": "COXINHA DA ASA TEMPERADA KG",
+      "preco": "R$ 100,04"
     },
     {
       "nome": "MEIO DA ASA TEMPERADA KG",
-      "preco": "R$ 269,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "FRANGO INTEIRO KG",
-      "preco": "R$ 99,90"
+      "preco": "R$ 100,04"
     },
     {
-      "nome": "frango a passarinho temperado KG",
-      "preco": "R$ 149,00"
+      "nome": "FRANGO A PASSARINHO TEMPERADO KG",
+      "preco": "R$ 100,04"
     },
     {
       "nome": "PEITO COM OSSO KG",
-      "preco": "R$ 169,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "LOMBO SUINO KG",
-      "preco": "R$ 299,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "PEITO SEM OSSO KG",
-      "preco": "R$ 210,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "COXA SOBRECOXA KG",
-      "preco": "R$ 89,90"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "SOBRECOXA KG",
-      "preco": "R$ 169,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "COXINHA DA ASA KG",
-      "preco": "R$ 159,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "ASA DE FRANGO KG",
-      "preco": "R$ 169,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "MEIO DA ASA KG",
-      "preco": "R$ 229,00"
+      "preco": "R$ 100,04"
     }
   ],
   [
     {
       "nome": "FRANGO A PASSARINHO KG",
-      "preco": "R$ 129,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "PÉ DE FRANGO KG",
-      "preco": "R$ 89,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "BISTECA KG",
-      "preco": "R$ 249,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "BIFE DE PERNIL KG",
-      "preco": "R$ 229,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "PERNIL PICADO KG",
-      "preco": "R$ 229,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "PERNIL COM OSSO KG",
-      "preco": "R$ 199,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "PERNIL SEM OSSO KG",
-      "preco": "R$ 299,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "PERNIL FATIADO COM OSSO KG",
-      "preco": "R$ 149,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "MILANESA DE FRANGO KG",
-      "preco": "R$ 369,00"
+      "preco": "R$ 100,04"
     },
     {
-      "nome": "linguiça fina de lombo KG",
-      "preco": "R$ 269,00"
+      "nome": "LINGUIÇA FINA DE LOMBO KG",
+      "preco": "R$ 100,04"
     },
     {
-      "nome": "linguiça fina pernil KG",
-      "preco": "R$ 299,00"
+      "nome": "LINGUIÇA FINA PERNIL KG",
+      "preco": "R$ 100,04"
     },
     {
-      "nome": "linguiça clabresa com pimenta KG",
-      "preco": "R$ 249,00"
+      "nome": "LINGUIÇA CLABRESA COM PIMENTA KG",
+      "preco": "R$ 100,04"
     }
   ],
   [
     {
-      "nome": "linguiça pura de pernil KG",
-      "preco": "R$ 289,00"
+      "nome": "LINGUIÇA PURA DE PERNIL KG",
+      "preco": "R$ 100,04"
     },
     {
       "nome": "LINGUIÇA DE ALHO PORO COM BACON KG",
-      "preco": "R$ 299,00"
+      "preco": "R$ 100,04"
     },
     {
-      "nome": "linguiça queijo com azeitona KG",
-      "preco": "R$ 289,00"
+      "nome": "LINGUIÇA QUEIJO COM AZEITONA KG",
+      "preco": "R$ 100,04"
     },
     {
       "nome": "PIZZA DA CASA KG",
-      "preco": "R$ 149,90"
+      "preco": "R$ 110,04"
     },
     {
       "nome": "LINGUIÇA MISTA KG",
-      "preco": "R$ 269,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "COPA LOMBO KG",
-      "preco": "R$ 299,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "ESPETINHO DE PICANHA KG",
-      "preco": "R$ 90,00"
+      "preco": "R$ 110,04"
     },
     {
-      "nome": "picanha congelada KG",
-      "preco": "R$ 599,00"
+      "nome": "PICANHA CONGELADA KG",
+      "preco": "R$ 100,04"
     },
     {
       "nome": "FILE DE COXA TEMPERADA KG",
-      "preco": "R$ 199,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "LINGUIÇA FINA DE ALHO KG",
-      "preco": "R$ 249,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "FILÉ DE PEITO DE FRANGO KG",
-      "preco": "R$ 219,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "PATINHO KG",
-      "preco": "R$ 449,00"
+      "preco": "R$ 100,04"
     }
   ],
   [
     {
       "nome": "ASSADOS DE TIRAS DE COSTELA KG",
-      "preco": "R$ 269,00"
+      "preco": "R$ 100,04"
     },
     {
       "nome": "ESPETINHO DE MEDALHÃO DE FRANGO KG",
-      "preco": "R$ 90,00"
+      "preco": "R$ 110,04"
     },
     {
       "nome": "ESPETINHO DE MEDALHÃO DE ALCATRA KG",
-      "preco": "R$ 80,00"
+      "preco": "R$ 110,04"
     },
     {
       "nome": "ESPETINHO DE FRANGO KG",
-      "preco": "R$ 35,00"
+      "preco": "R$ 110,04"
     },
     {
       "nome": "ESPETINHO DE LOMBO KG",
-      "preco": "R$ 40,00"
+      "preco": "R$ 110,04"
     },
     {
       "nome": "PICANHA SUÍNA KG",
-      "preco": "R$ 269,00"
+      "preco": "R$ 100,04"
     },
     {
-      "nome": "LINGUIÇA PERNIL (DEDO DE MOÇA ) KG",
-      "preco": "R$ 269,00"
+      "nome": "LINGUIÇA PERNIL KG",
+      "preco": "R$ 100,05"
     },
     {
-      "nome": "LINGUIÇA FINA C/ PIMENTA KG",
-      "preco": "R$ 249,00"
-    },
-    {
-      "nome": "SALSA, CEBOLA E BACON KG",
-      "preco": "R$ 549,00"
+      "nome": "LINGUIÇA FINA C KG",
+      "preco": "R$ 100,05"
     },
     {
       "nome": "CUPIM KG",
-      "preco": "R$ 429,00"
+      "preco": "R$ 100,05"
     },
     {
       "nome": "ESPETINHO DE LINGUIÇA KG",
-      "preco": "R$ 40,00"
+      "preco": "R$ 110,05"
     },
     {
       "nome": "ESPETINHO DE ALCATRA KG",
-      "preco": "R$ 50,00"
+      "preco": "R$ 110,05"
+    },
+    {
+      "nome": "FRANGO TEMP CONG SEARA FIESTA KG",
+      "preco": "R$ 100,05"
     }
   ],
   [
     {
-      "nome": "FRANGO TEMP CONG SEARA FIESTA KG",
-      "preco": "R$ 299,00"
-    },
-    {
       "nome": "LINGUIÇA ROMEU E JULIETA KG",
-      "preco": "R$ 289,00"
+      "preco": "R$ 100,05"
     },
     {
       "nome": "PICANHA SUÍNA TEMPERADA KG",
-      "preco": "R$ 299,00"
+      "preco": "R$ 100,05"
     },
     {
       "nome": "COSTELA TEMPERADA KG",
-      "preco": "R$ 249,00"
+      "preco": "R$ 100,05"
     },
     {
       "nome": "PEITO DE FRANGO SADIA FATIADO KG",
-      "preco": "R$ 349,00"
+      "preco": "R$ 100,05"
     },
     {
       "nome": "LINGUIÇA TOSCANA SEARA KG",
-      "preco": "R$ 249,00"
+      "preco": "R$ 100,05"
     },
     {
       "nome": "PICANHA FATIADA KG",
-      "preco": "R$ 599,00"
+      "preco": "R$ 100,05"
     },
     {
-      "nome": "COSTELA BOVINA 4 OSSOS KG",
-      "preco": "R$ 269,00"
+      "nome": "COSTELA BOVINA KG",
+      "preco": "R$ 100,05"
     },
     {
       "nome": "COSTELA PICADA KG",
-      "preco": "R$ 199,90"
+      "preco": "R$ 100,06"
     },
     {
       "nome": "LINGUIÇA TOSCANA FIRMESA KG",
-      "preco": "R$ 229,00"
+      "preco": "R$ 100,06"
     },
     {
       "nome": "LINGUIÇA CUIBANA KG",
-      "preco": "R$ 269,00"
+      "preco": "R$ 100,06"
     },
     {
       "nome": "ASSADO DE TIRA DE PICANHA KG",
-      "preco": "R$ 649,00"
+      "preco": "R$ 100,06"
+    },
+    {
+      "nome": "ALCATRA COM MAMINHA KG",
+      "preco": "R$ 100,06"
     }
   ],
   [
     {
-      "nome": "ALCATRA COM MAMINHA KG",
-      "preco": "R$ 489,00"
-    },
-    {
       "nome": "CUPIM KG",
-      "preco": "R$ 449,00"
+      "preco": "R$ 100,06"
     },
     {
       "nome": "COSTELA JANELA KG",
-      "preco": "R$ 259,00"
+      "preco": "R$ 100,06"
     },
     {
       "nome": "LINGUIÇA TOSCANA KG",
-      "preco": "R$ 219,00"
+      "preco": "R$ 100,06"
     },
     {
       "nome": "PEITO SEM OSSO KG",
-      "preco": "R$ 199,90"
+      "preco": "R$ 100,06"
     },
     {
       "nome": "PICANHA PARAGUAIA KG",
-      "preco": "R$ 599,00"
+      "preco": "R$ 100,06"
     },
     {
       "nome": "COXINHA DA ASA EMPANADA KG",
-      "preco": "R$ 399,00"
+      "preco": "R$ 100,06"
     },
     {
       "nome": "MAMINHA RECHEADA KG",
-      "preco": "R$ 599,00"
+      "preco": "R$ 100,06"
     },
     {
       "nome": "PESCOÇO DE FRANGO KG",
-      "preco": "R$ 99,90"
+      "preco": "R$ 100,06"
     },
     {
-      "nome": "linguiça de pernil pimnta bodinho KG",
-      "preco": "R$ 289,00"
+      "nome": "LINGUIÇA DE PERNIL PIMNTA BODINHO KG",
+      "preco": "R$ 100,07"
     },
     {
       "nome": "FILEZINHO DE FRANGO BAITA EMPANAD KG",
-      "preco": "R$ 349,00"
+      "preco": "R$ 100,07"
     },
     {
       "nome": "LINGUIÇA TOSCANA FRESCAL PERDIGÃO KG",
-      "preco": "R$ 199,90"
+      "preco": "R$ 100,07"
+    },
+    {
+      "nome": "QJO MONTANHÊS SERRA DO QUILOMBO KG",
+      "preco": "R$ 100,07"
     }
   ],
   [
     {
-      "nome": "QJO MONTANHÊS SERRA DO QUILOMBO KG",
-      "preco": "R$ 614,90"
-    },
-    {
       "nome": "LINGUIÇA CALABRESA RESENDE KG",
-      "preco": "R$ 249,00"
+      "preco": "R$ 100,07"
     },
     {
       "nome": "LINGUIÇA QUEIJO PIMENTA KG",
-      "preco": "R$ 299,00"
+      "preco": "R$ 100,07"
     },
     {
       "nome": "FILE DE COXA EMPANADA KG",
-      "preco": "R$ 339,00"
+      "preco": "R$ 100,07"
     }
   ]
 ]
