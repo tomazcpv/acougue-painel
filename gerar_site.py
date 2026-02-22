@@ -1,31 +1,35 @@
 import json
-import re
+import unicodedata
 
-# Palavras que DEFINITIVAMENTE são carnes
-PALAVRAS_CARNE = [
-    "ACEM", "ALCATRA", "CONTRA FILE", "CONTRAFILE", "PATINHO", "COXAO",
-    "MUSCULO", "COSTELA", "PICANHA", "FRALDA", "CAPA", "FILE",
-    "CARNE", "BIFE", "FIGADO", "RABADA",
+# Lista MUITO específica de carnes
+CARNES = [
+    "ACEM", "ALCATRA", "PICANHA", "CONTRA FILE", "CONTRAFILE", "FILE",
+    "PATINHO", "COXAO", "MUSCULO", "COSTELA", "FRALDA", "CAPA",
+    "CUPIM", "PALETA", "OSSOBUCO", "RABADA", "BIFE", "CARNE",
 
     # Frango
-    "FRANGO", "COXA", "SOBRECOXA", "ASA", "PEITO", "DORSO",
+    "FRANGO", "COXA", "SOBRECOXA", "ASA", "PEITO",
 
     # Porco
-    "SUINO", "SUINA", "PERNIL", "LOMBO", "BACON", "TOUCINHO", "COSTELINHA",
+    "SUINO", "PERNIL", "LOMBO", "BACON", "TOUCINHO", "COSTELINHA",
 
-    # Linguiça e embutidos de açougue
-    "LINGUICA", "TOSCANA", "CALABRESA",
-
-    # Outros comuns
-    "CUPIM", "PALETA", "OSSOBUCO"
+    # Linguiça
+    "LINGUICA", "TOSCANA", "CALABRESA"
 ]
 
 
-def eh_carne(nome):
-    nome = nome.upper()
+def normalizar(texto):
+    texto = texto.upper()
+    texto = unicodedata.normalize('NFD', texto)
+    texto = ''.join(c for c in texto if unicodedata.category(c) != 'Mn')
+    return texto
 
-    for palavra in PALAVRAS_CARNE:
-        if palavra in nome:
+
+def eh_carne(nome):
+    nome = normalizar(nome)
+
+    for carne in CARNES:
+        if carne in nome:
             return True
 
     return False
@@ -36,7 +40,7 @@ with open("produtos.json", "r", encoding="utf-8") as f:
     produtos = json.load(f)
 
 
-# Filtrar apenas carnes
+# Filtrar
 produtos_filtrados = []
 for p in produtos:
     nome = p["nome"]
@@ -45,9 +49,9 @@ for p in produtos:
         produtos_filtrados.append(p)
 
 
-# Salvar apenas carnes
+# Salvar
 with open("produtos_filtrados.json", "w", encoding="utf-8") as f:
     json.dump(produtos_filtrados, f, indent=2, ensure_ascii=False)
 
 
-print(f"{len(produtos_filtrados)} produtos de carne encontrados.")
+print(f"{len(produtos_filtrados)} carnes encontradas.")
