@@ -2,277 +2,149 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aliança Supermercado - Painel de Preços</title>
+<title>Aliança Supermercado</title>
 
 <style>
-  * { box-sizing: border-box; }
-
-  body {
-    margin: 0;
-    background: #0b0b0b;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
-  }
-
-  .topo {
-    height: 120px;
-    background: #7a0000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 48px;
-  }
-
-  .brand {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .titulo {
-    font-size: 56px;
-    font-weight: 900;
-    letter-spacing: 0.5px;
-    line-height: 1;
-  }
-
-  .subtitulo {
-    font-size: 20px;
-    color: #d7d7d7;
-    font-weight: 700;
-  }
-
-  .logo {
-    height: 78px;
-    width: auto;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.10);
-    padding: 6px;
-  }
-
-  .conteudo {
-    height: calc(100vh - 120px - 54px);
-    padding: 22px 48px;
-  }
-
-  .slide {
-    display: none;
-    height: 100%;
-  }
-
-  .slide.ativo {
-    display: block;
-  }
-
-
-
-.layout {
-  height: 100%;
-  display: grid;
-  grid-template-columns: 0.30fr 0.70fr; /* 30% promo / 70% tabela */
-  gap: 22px;
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden;
 }
 
-  /* PROMOÇÃO */
-  .promo {
-    height: 100%;
-    background: #1a0b0b;
-    border-radius: 26px;
-    padding: 28px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.50);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border: 2px solid rgba(255, 215, 0, 0.22);
-  }
+.slide { display: none; height: 100vh; }
+.slide.ativo { display: block; }
 
-  .promo-badge {
-    display: inline-block;
-    align-self: flex-start;
-    padding: 10px 16px;
-    border-radius: 999px;
-    background: rgba(255, 215, 0, 0.12);
-    color: #ffd700;
-    font-weight: 900;
-    letter-spacing: 1px;
-    font-size: 22px;
-    margin-bottom: 18px;
-  }
+.layout {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 100vh;
+}
 
-  .promo-nome {
-    font-size: 42px;
-    font-weight: 900;
-    line-height: 1.08;
-    margin-bottom: 18px;
-  }
+.lista {
+  background: url('bg.jpg') center/cover no-repeat, #8b0000;
+  padding: 30px 40px;
+}
 
-  .promo-preco {
-    font-size: 66px;
-    font-weight: 900;
-    color: #ffd700;
-    line-height: 1;
-    margin-bottom: 18px;
-  }
+.categoria {
+  font-size: 42px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
 
-  .promo-detalhe {
-    font-size: 18px;
-    color: #d7d7d7;
-    font-weight: 700;
-  }
+.linha {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #b30000, #7a0000);
+  margin-bottom: 10px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 32px;
+  font-weight: 800;
+}
 
-  /* TABELA */
-  .card-tabela {
-    height: 100%;
-    background: #121212;
-    border-radius: 26px;
-    padding: 24px 28px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.50);
-  }
+.item-preco {
+  color: #fff;
+  font-size: 34px;
+}
 
-  .tabela {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px 40px;
-    height: 100%;
-    align-content: start;
-  }
+.promo {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-  .coluna {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+.promo-logo img {
+  max-width: 160px;
+  margin-bottom: 20px;
+}
 
-  .linha {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 10px 0;
-    border-bottom: 1px solid #2a2a2a;
-  }
+.promo-nome {
+  font-size: 36px;
+  font-weight: 900;
+  color: #c00;
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-  .nome {
-    font-size: 32px;
-    font-weight: 850;
-    max-width: 72%;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
-
-  .preco {
-    font-size: 36px;
-    font-weight: 900;
-    color: #ffd700;
-    padding-left: 16px;
-    white-space: nowrap;
-  }
-
-  .rodape {
-    height: 54px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 48px;
-    color: #d7d7d7;
-    background: rgba(255,255,255,0.04);
-    font-size: 18px;
-    font-weight: 700;
-  }
-
-  .relogio {
-    font-variant-numeric: tabular-nums;
-  }
+.promo-preco {
+  font-size: 72px;
+  font-weight: 900;
+  color: #c00;
+}
 </style>
 </head>
 
 <body>
-  <header class="topo">
-    <div class="brand">
-      <div class="titulo">Aliança Supermercado</div>
-      <div class="subtitulo">Painel de preços</div>
-    </div>
-    <img src="logo.png" class="logo" alt="Logo">
-  </header>
 
-  <main class="conteudo">
-    
+
     <section class="slide ativo">
       <div class="layout">
 
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA BRAGANÇA KG</span>
+            <span class="item-preco">R$ 17,50</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CALABRESA PERDIGÃO KG</span>
+            <span class="item-preco">R$ 23,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">SALSICHA SADIA KG</span>
+            <span class="item-preco">R$ 16,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">SALSICHA AURORA KG KG</span>
+            <span class="item-preco">R$ 14,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">SALSICHA PERDIGÃO KG KG</span>
+            <span class="item-preco">R$ 16,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CALABRESA SADIA KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA TOSCANA SADIA KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA TOSCANA AURORA KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">BACON KG</span>
+            <span class="item-preco">R$ 36,90</span>
+          </div>
+        
+        </div>
+
+        <!-- PROMOÇÃO (30%) -->
         <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
+          </div>
           <div class="promo-nome">PATINHO KG</div>
           <div class="promo-preco">R$ 42,90</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
-        </div>
-
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">LINGUIÇA BRAGANÇA KG</div>
-            <div class="preco">R$ 17,50</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">CALABRESA PERDIGÃO KG</div>
-            <div class="preco">R$ 23,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">SALSICHA SADIA KG</div>
-            <div class="preco">R$ 16,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">SALSICHA AURORA KG KG</div>
-            <div class="preco">R$ 14,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">SALSICHA PERDIGÃO KG KG</div>
-            <div class="preco">R$ 16,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">CALABRESA SADIA KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">LINGUIÇA TOSCANA SADIA KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA TOSCANA AURORA KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">BACON KG</div>
-            <div class="preco">R$ 36,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA PERDIGÃO NA BRASA KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA FINA MISTA KG</div>
-            <div class="preco">R$ 15,00</div>
-          </div>
-        
-            </div>
-          </div>
         </div>
 
       </div>
@@ -281,77 +153,64 @@
     <section class="slide ">
       <div class="layout">
 
-        <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">SALSICHA RESFRIADA SEARA KG</div>
-          <div class="promo-preco">R$ 14,90</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA FINA MISTA KG</span>
+            <span class="item-preco">R$ 15,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">SALSICHA RESFRIADA SEARA KG</span>
+            <span class="item-preco">R$ 14,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">SALSICHA PIF PAF KG</span>
+            <span class="item-preco">R$ 12,99</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PELE SUINA KG</span>
+            <span class="item-preco">R$ 4,99</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PRIME RIB SUÍNO KG</span>
+            <span class="item-preco">R$ 19,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PICANHA KG</span>
+            <span class="item-preco">R$ 79,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">MAMINHA KG</span>
+            <span class="item-preco">R$ 56,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">MIOLO DE ALCATRA KG</span>
+            <span class="item-preco">R$ 82,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ALCATRA EM PEÇA KG</span>
+            <span class="item-preco">R$ 44,99</span>
+          </div>
+        
         </div>
 
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">SALSICHA PIF PAF KG</div>
-            <div class="preco">R$ 12,99</div>
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
           </div>
-        
-          <div class="linha">
-            <div class="nome">PELE SUINA KG</div>
-            <div class="preco">R$ 4,99</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PRIME RIB SUÍNO KG</div>
-            <div class="preco">R$ 19,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PICANHA KG</div>
-            <div class="preco">R$ 79,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MAMINHA KG</div>
-            <div class="preco">R$ 56,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MIOLO DE ALCATRA KG</div>
-            <div class="preco">R$ 82,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">ALCATRA EM PEÇA KG</div>
-            <div class="preco">R$ 44,99</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">CONTRA FILE KG</div>
-            <div class="preco">R$ 62,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">CONTRA FILE EM PEÇA KG</div>
-            <div class="preco">R$ 45,00</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LAGARTO KG</div>
-            <div class="preco">R$ 48,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ALCATRA COM MAMINHA KG</div>
-            <div class="preco">R$ 59,90</div>
-          </div>
-        
-            </div>
-          </div>
+          <div class="promo-nome">LINGUIÇA PERDIGÃO NA BRASA KG</div>
+          <div class="promo-preco">R$ 26,90</div>
         </div>
 
       </div>
@@ -360,77 +219,64 @@
     <section class="slide ">
       <div class="layout">
 
-        <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">CHULETA DE CONTRA FILE KG</div>
-          <div class="promo-preco">R$ 39,90</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">CONTRA FILE EM PEÇA KG</span>
+            <span class="item-preco">R$ 45,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LAGARTO KG</span>
+            <span class="item-preco">R$ 48,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ALCATRA COM MAMINHA KG</span>
+            <span class="item-preco">R$ 59,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CHULETA DE CONTRA FILE KG</span>
+            <span class="item-preco">R$ 39,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FILE MIGNOM KG</span>
+            <span class="item-preco">R$ 79,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CAPA DE FILE KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ACEM KG</span>
+            <span class="item-preco">R$ 34,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PALETA KG</span>
+            <span class="item-preco">R$ 37,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PEITO BOVINO KG</span>
+            <span class="item-preco">R$ 36,90</span>
+          </div>
+        
         </div>
 
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">FILE MIGNOM KG</div>
-            <div class="preco">R$ 79,90</div>
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
           </div>
-        
-          <div class="linha">
-            <div class="nome">CAPA DE FILE KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ACEM KG</div>
-            <div class="preco">R$ 34,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PALETA KG</div>
-            <div class="preco">R$ 37,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PEITO BOVINO KG</div>
-            <div class="preco">R$ 36,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COSTELA DE RIPA KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">COSTELA PONTA DE AGULHA KG</div>
-            <div class="preco">R$ 24,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COSTELA DE PEITO KG</div>
-            <div class="preco">R$ 23,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">CHULETA PONTA DE AGULHA KG</div>
-            <div class="preco">R$ 28,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">CHULETA GAUCHA KG</div>
-            <div class="preco">R$ 22,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PICADÃO KG</div>
-            <div class="preco">R$ 34,90</div>
-          </div>
-        
-            </div>
-          </div>
+          <div class="promo-nome">CONTRA FILE KG</div>
+          <div class="promo-preco">R$ 62,90</div>
         </div>
 
       </div>
@@ -439,77 +285,130 @@
     <section class="slide ">
       <div class="layout">
 
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">COSTELA PONTA DE AGULHA KG</span>
+            <span class="item-preco">R$ 24,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COSTELA DE PEITO KG</span>
+            <span class="item-preco">R$ 23,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CHULETA PONTA DE AGULHA KG</span>
+            <span class="item-preco">R$ 28,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CHULETA GAUCHA KG</span>
+            <span class="item-preco">R$ 22,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PICADÃO KG</span>
+            <span class="item-preco">R$ 34,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FIGADO BOVINO KG</span>
+            <span class="item-preco">R$ 16,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">BUCHO KG</span>
+            <span class="item-preco">R$ 19,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">RABO KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">MOCOTO KG</span>
+            <span class="item-preco">R$ 13,90</span>
+          </div>
+        
+        </div>
+
+        <!-- PROMOÇÃO (30%) -->
         <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">FIGADO BOVINO KG</div>
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
+          </div>
+          <div class="promo-nome">COSTELA DE RIPA KG</div>
+          <div class="promo-preco">R$ 26,90</div>
+        </div>
+
+      </div>
+    </section>
+    
+    <section class="slide ">
+      <div class="layout">
+
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">MEIO DA ASA TEMPERADA KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FRANGO INTEIRO KG</span>
+            <span class="item-preco">R$ 9,99</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">frango a passarinho temperado KG</span>
+            <span class="item-preco">R$ 14,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PEITO COM OSSO KG</span>
+            <span class="item-preco">R$ 16,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LOMBO SUINO KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PEITO SEM OSSO KG</span>
+            <span class="item-preco">R$ 21,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COXA SOBRECOXA KG</span>
+            <span class="item-preco">R$ 8,99</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">SOBRECOXA KG</span>
+            <span class="item-preco">R$ 16,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COXINHA DA ASA KG</span>
+            <span class="item-preco">R$ 15,90</span>
+          </div>
+        
+        </div>
+
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
+          </div>
+          <div class="promo-nome">coxinha da asa temperada KG</div>
           <div class="promo-preco">R$ 16,90</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
-        </div>
-
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">BUCHO KG</div>
-            <div class="preco">R$ 19,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">RABO KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MOCOTO KG</div>
-            <div class="preco">R$ 13,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">coxinha da asa temperada KG</div>
-            <div class="preco">R$ 16,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MEIO DA ASA TEMPERADA KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">FRANGO INTEIRO KG</div>
-            <div class="preco">R$ 9,99</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">frango a passarinho temperado KG</div>
-            <div class="preco">R$ 14,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PEITO COM OSSO KG</div>
-            <div class="preco">R$ 16,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LOMBO SUINO KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PEITO SEM OSSO KG</div>
-            <div class="preco">R$ 21,00</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COXA SOBRECOXA KG</div>
-            <div class="preco">R$ 8,99</div>
-          </div>
-        
-            </div>
-          </div>
         </div>
 
       </div>
@@ -518,77 +417,64 @@
     <section class="slide ">
       <div class="layout">
 
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">MEIO DA ASA KG</span>
+            <span class="item-preco">R$ 22,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">MOELA KG</span>
+            <span class="item-preco">R$ 8,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FIGADO KG</span>
+            <span class="item-preco">R$ 6,99</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FRANGO A PASSARINHO KG</span>
+            <span class="item-preco">R$ 12,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CORAÇAO KG</span>
+            <span class="item-preco">R$ 29,50</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PÉ DE FRANGO KG</span>
+            <span class="item-preco">R$ 8,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">TOICINHO KG</span>
+            <span class="item-preco">R$ 22,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">BARRIGA KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COSTELINHA KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+        </div>
+
+        <!-- PROMOÇÃO (30%) -->
         <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">SOBRECOXA KG</div>
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
+          </div>
+          <div class="promo-nome">ASA DE FRANGO KG</div>
           <div class="promo-preco">R$ 16,90</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
-        </div>
-
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">COXINHA DA ASA KG</div>
-            <div class="preco">R$ 15,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ASA DE FRANGO KG</div>
-            <div class="preco">R$ 16,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MEIO DA ASA KG</div>
-            <div class="preco">R$ 22,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MOELA KG</div>
-            <div class="preco">R$ 8,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">FIGADO KG</div>
-            <div class="preco">R$ 6,99</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">FRANGO A PASSARINHO KG</div>
-            <div class="preco">R$ 12,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">CORAÇAO KG</div>
-            <div class="preco">R$ 29,50</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PÉ DE FRANGO KG</div>
-            <div class="preco">R$ 8,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">TOICINHO KG</div>
-            <div class="preco">R$ 22,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">BARRIGA KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COSTELINHA KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-            </div>
-          </div>
         </div>
 
       </div>
@@ -597,77 +483,64 @@
     <section class="slide ">
       <div class="layout">
 
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">BIFE DE PERNIL KG</span>
+            <span class="item-preco">R$ 22,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PERNIL PICADO KG</span>
+            <span class="item-preco">R$ 22,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COSTELINHA COM COURO KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PERNIL COM OSSO KG</span>
+            <span class="item-preco">R$ 19,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PERNIL SEM OSSO KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PALETA SUINA PARA CHURRASCO KG</span>
+            <span class="item-preco">R$ 22,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PERNIL FATIADO COM OSSO KG</span>
+            <span class="item-preco">R$ 14,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">JOELHO KG</span>
+            <span class="item-preco">R$ 16,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PÉ SUÍNO KG</span>
+            <span class="item-preco">R$ 9,99</span>
+          </div>
+        
+        </div>
+
+        <!-- PROMOÇÃO (30%) -->
         <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
+          </div>
           <div class="promo-nome">BISTECA KG</div>
           <div class="promo-preco">R$ 24,90</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
-        </div>
-
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">BIFE DE PERNIL KG</div>
-            <div class="preco">R$ 22,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PERNIL PICADO KG</div>
-            <div class="preco">R$ 22,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COSTELINHA COM COURO KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PERNIL COM OSSO KG</div>
-            <div class="preco">R$ 19,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PERNIL SEM OSSO KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PALETA SUINA PARA CHURRASCO KG</div>
-            <div class="preco">R$ 22,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">PERNIL FATIADO COM OSSO KG</div>
-            <div class="preco">R$ 14,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">JOELHO KG</div>
-            <div class="preco">R$ 16,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PÉ SUÍNO KG</div>
-            <div class="preco">R$ 9,99</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MILANESA BOVINA KG</div>
-            <div class="preco">R$ 48,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MILANESA DE FRANGO KG</div>
-            <div class="preco">R$ 36,90</div>
-          </div>
-        
-            </div>
-          </div>
         </div>
 
       </div>
@@ -676,77 +549,64 @@
     <section class="slide ">
       <div class="layout">
 
-        <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">ALMONDEGA KG</div>
-          <div class="promo-preco">R$ 36,90</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">MILANESA DE FRANGO KG</span>
+            <span class="item-preco">R$ 36,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ALMONDEGA KG</span>
+            <span class="item-preco">R$ 36,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">BIFE A ROLE KG</span>
+            <span class="item-preco">R$ 44,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">linguiça fina de lombo KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">linguiça fina pernil KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">linguiça clabresa com pimenta KG</span>
+            <span class="item-preco">R$ 24,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">linguiça pura de pernil KG</span>
+            <span class="item-preco">R$ 28,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA DE ALHO PORO COM BACON KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">linguiça queijo com azeitona KG</span>
+            <span class="item-preco">R$ 28,90</span>
+          </div>
+        
         </div>
 
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">BIFE A ROLE KG</div>
-            <div class="preco">R$ 44,90</div>
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
           </div>
-        
-          <div class="linha">
-            <div class="nome">linguiça fina de lombo KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">linguiça fina pernil KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">linguiça clabresa com pimenta KG</div>
-            <div class="preco">R$ 24,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">linguiça pura de pernil KG</div>
-            <div class="preco">R$ 28,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA DE ALHO PORO COM BACON KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">linguiça queijo com azeitona KG</div>
-            <div class="preco">R$ 28,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">EMPANADA DE CARNE KG</div>
-            <div class="preco">R$ 5,00</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA MISTA KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COPA LOMBO KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ESPETINHO BOVINO KG</div>
-            <div class="preco">R$ 4,50</div>
-          </div>
-        
-            </div>
-          </div>
+          <div class="promo-nome">MILANESA BOVINA KG</div>
+          <div class="promo-preco">R$ 48,90</div>
         </div>
 
       </div>
@@ -755,77 +615,64 @@
     <section class="slide ">
       <div class="layout">
 
-        <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">ESPETINHO DE PICANHA KG</div>
-          <div class="promo-preco">R$ 9,00</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA MISTA KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COPA LOMBO KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO BOVINO KG</span>
+            <span class="item-preco">R$ 4,50</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE PICANHA KG</span>
+            <span class="item-preco">R$ 9,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">picanha congelada KG</span>
+            <span class="item-preco">R$ 59,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FILE DE COXA TEMPERADA KG</span>
+            <span class="item-preco">R$ 19,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA FINA DE ALHO KG</span>
+            <span class="item-preco">R$ 24,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COXÃO MOLE KG</span>
+            <span class="item-preco">R$ 46,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FILÉ DE PEITO DE FRANGO KG</span>
+            <span class="item-preco">R$ 21,90</span>
+          </div>
+        
         </div>
 
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">picanha congelada KG</div>
-            <div class="preco">R$ 59,90</div>
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
           </div>
-        
-          <div class="linha">
-            <div class="nome">FILE DE COXA TEMPERADA KG</div>
-            <div class="preco">R$ 19,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA FINA DE ALHO KG</div>
-            <div class="preco">R$ 24,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COXÃO MOLE KG</div>
-            <div class="preco">R$ 46,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">FILÉ DE PEITO DE FRANGO KG</div>
-            <div class="preco">R$ 21,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">OSSOBUGO KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">PATINHO KG</div>
-            <div class="preco">R$ 44,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MIOLO DA PALETA KG</div>
-            <div class="preco">R$ 34,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ASSADOS DE TIRAS DE COSTELA KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MUSCULO KG</div>
-            <div class="preco">R$ 34,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ESPETINHO DE CORAÇÃO KG</div>
-            <div class="preco">R$ 5,00</div>
-          </div>
-        
-            </div>
-          </div>
+          <div class="promo-nome">EMPANADA DE CARNE KG</div>
+          <div class="promo-preco">R$ 5,00</div>
         </div>
 
       </div>
@@ -834,77 +681,64 @@
     <section class="slide ">
       <div class="layout">
 
-        <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">ESPETINHO DE TULIPA KG</div>
-          <div class="promo-preco">R$ 6,00</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">PATINHO KG</span>
+            <span class="item-preco">R$ 44,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">MIOLO DA PALETA KG</span>
+            <span class="item-preco">R$ 34,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ASSADOS DE TIRAS DE COSTELA KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">MUSCULO KG</span>
+            <span class="item-preco">R$ 34,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE CORAÇÃO KG</span>
+            <span class="item-preco">R$ 5,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE TULIPA KG</span>
+            <span class="item-preco">R$ 6,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE MEDALHÃO DE FRANGO KG</span>
+            <span class="item-preco">R$ 9,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE MEDALHÃO DE ALCATRA KG</span>
+            <span class="item-preco">R$ 8,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE FRANGO KG</span>
+            <span class="item-preco">R$ 3,50</span>
+          </div>
+        
         </div>
 
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">ESPETINHO DE MEDALHÃO DE FRANGO KG</div>
-            <div class="preco">R$ 9,00</div>
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
           </div>
-        
-          <div class="linha">
-            <div class="nome">ESPETINHO DE MEDALHÃO DE ALCATRA KG</div>
-            <div class="preco">R$ 8,00</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ESPETINHO DE FRANGO KG</div>
-            <div class="preco">R$ 3,50</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ESP MEDALHÃO DE QUEIJO COALHO KG</div>
-            <div class="preco">R$ 8,00</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LING C/ PIM BIQUINHO KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ESPETINHO DE KAFTA KG</div>
-            <div class="preco">R$ 4,00</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">ESPETINHO DE LOMBO KG</div>
-            <div class="preco">R$ 4,00</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">FRALDINHA KG</div>
-            <div class="preco">R$ 44,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">SUÃN KG</div>
-            <div class="preco">R$ 19,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COXÃO DURO RECHEADO E TEMPERADO KG</div>
-            <div class="preco">R$ 39,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LAGARTO RECHEADO E TEMPERADO KG</div>
-            <div class="preco">R$ 56,90</div>
-          </div>
-        
-            </div>
-          </div>
+          <div class="promo-nome">OSSOBUGO KG</div>
+          <div class="promo-preco">R$ 29,90</div>
         </div>
 
       </div>
@@ -913,77 +747,64 @@
     <section class="slide ">
       <div class="layout">
 
-        <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">ESPETINHO DE PANCETA KG</div>
-          <div class="promo-preco">R$ 3,50</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">LING C/ PIM BIQUINHO KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE KAFTA KG</span>
+            <span class="item-preco">R$ 4,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE LOMBO KG</span>
+            <span class="item-preco">R$ 4,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FRALDINHA KG</span>
+            <span class="item-preco">R$ 44,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">SUÃN KG</span>
+            <span class="item-preco">R$ 19,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COXÃO DURO RECHEADO E TEMPERADO KG</span>
+            <span class="item-preco">R$ 39,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LAGARTO RECHEADO E TEMPERADO KG</span>
+            <span class="item-preco">R$ 56,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE PANCETA KG</span>
+            <span class="item-preco">R$ 3,50</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CARNE MOÍDA DE BANDEIJA KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
         </div>
 
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">CARNE MOÍDA DE BANDEIJA KG</div>
-            <div class="preco">R$ 29,90</div>
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
           </div>
-        
-          <div class="linha">
-            <div class="nome">PICANHA SUÍNA KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA PERNIL (DEDO DE MOÇA ) KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">BANANINHA DO CONTRA FILÉ KG</div>
-            <div class="preco">R$ 36,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">TOICINHO PICADO KG</div>
-            <div class="preco">R$ 17,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA FINA C/ PIMENTA KG</div>
-            <div class="preco">R$ 24,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">SALSA, CEBOLA E BACON KG</div>
-            <div class="preco">R$ 54,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ESPETINHO KG</div>
-            <div class="preco">R$ 3,30</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">CUPIM KG</div>
-            <div class="preco">R$ 42,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ESPETINHO DE LINGUIÇA KG</div>
-            <div class="preco">R$ 4,00</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">SHORT RIB BOVINO KG</div>
-            <div class="preco">R$ 54,90</div>
-          </div>
-        
-            </div>
-          </div>
+          <div class="promo-nome">ESP MEDALHÃO DE QUEIJO COALHO KG</div>
+          <div class="promo-preco">R$ 8,00</div>
         </div>
 
       </div>
@@ -992,77 +813,130 @@
     <section class="slide ">
       <div class="layout">
 
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA PERNIL (DEDO DE MOÇA ) KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">BANANINHA DO CONTRA FILÉ KG</span>
+            <span class="item-preco">R$ 36,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">TOICINHO PICADO KG</span>
+            <span class="item-preco">R$ 17,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA FINA C/ PIMENTA KG</span>
+            <span class="item-preco">R$ 24,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">SALSA, CEBOLA E BACON KG</span>
+            <span class="item-preco">R$ 54,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO KG</span>
+            <span class="item-preco">R$ 3,30</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CUPIM KG</span>
+            <span class="item-preco">R$ 42,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE LINGUIÇA KG</span>
+            <span class="item-preco">R$ 4,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">SHORT RIB BOVINO KG</span>
+            <span class="item-preco">R$ 54,90</span>
+          </div>
+        
+        </div>
+
+        <!-- PROMOÇÃO (30%) -->
         <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
+          </div>
+          <div class="promo-nome">PICANHA SUÍNA KG</div>
+          <div class="promo-preco">R$ 26,90</div>
+        </div>
+
+      </div>
+    </section>
+    
+    <section class="slide ">
+      <div class="layout">
+
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">ESPETINHO DE ALCATRA KG</span>
+            <span class="item-preco">R$ 5,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PANCETA PRA CHURRASCO KG</span>
+            <span class="item-preco">R$ 28,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FRANGO TEMP CONG SEARA FIESTA KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CORTES DE LEITÃO KG</span>
+            <span class="item-preco">R$ 19,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA ROMEU E JULIETA KG</span>
+            <span class="item-preco">R$ 28,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PICANHA SUÍNA TEMPERADA KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COSTELA TEMPERADA KG</span>
+            <span class="item-preco">R$ 24,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PIRULITO FR FRALDINHA KG</span>
+            <span class="item-preco">R$ 36,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PEITO DE FRANGO SADIA FATIADO KG</span>
+            <span class="item-preco">R$ 34,90</span>
+          </div>
+        
+        </div>
+
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
+          </div>
           <div class="promo-nome">PANCETA DE ROLO KG</div>
           <div class="promo-preco">R$ 29,90</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
-        </div>
-
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">ESPETINHO DE ALCATRA KG</div>
-            <div class="preco">R$ 5,00</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PANCETA PRA CHURRASCO KG</div>
-            <div class="preco">R$ 28,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">FRANGO TEMP CONG SEARA FIESTA KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">CORTES DE LEITÃO KG</div>
-            <div class="preco">R$ 19,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA ROMEU E JULIETA KG</div>
-            <div class="preco">R$ 28,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PICANHA SUÍNA TEMPERADA KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">COSTELA TEMPERADA KG</div>
-            <div class="preco">R$ 24,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PIRULITO FR FRALDINHA KG</div>
-            <div class="preco">R$ 36,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PEITO DE FRANGO SADIA FATIADO KG</div>
-            <div class="preco">R$ 34,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">BIFE ANCHO KG</div>
-            <div class="preco">R$ 44,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">bife ancho KG</div>
-            <div class="preco">R$ 59,90</div>
-          </div>
-        
-            </div>
-          </div>
         </div>
 
       </div>
@@ -1071,77 +945,64 @@
     <section class="slide ">
       <div class="layout">
 
-        <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">PALETA DE CORDEIRO KG</div>
-          <div class="promo-preco">R$ 56,90</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">bife ancho KG</span>
+            <span class="item-preco">R$ 59,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PALETA DE CORDEIRO KG</span>
+            <span class="item-preco">R$ 56,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA TOSCANA SEARA KG</span>
+            <span class="item-preco">R$ 24,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PAIO SEARA KG</span>
+            <span class="item-preco">R$ 28,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CARRE DE CORDEIRO KG</span>
+            <span class="item-preco">R$ 69,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ASSADOS DE TIRAS DE CONTRA FILÉ KG</span>
+            <span class="item-preco">R$ 79,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ORELHA SUÍNA SALGADA KG</span>
+            <span class="item-preco">R$ 19,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">RABO SUÍNO SALGADO KG</span>
+            <span class="item-preco">R$ 27,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COSTELINHA SUÍNA SALGADA KG</span>
+            <span class="item-preco">R$ 27,90</span>
+          </div>
+        
         </div>
 
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">LINGUIÇA TOSCANA SEARA KG</div>
-            <div class="preco">R$ 24,90</div>
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
           </div>
-        
-          <div class="linha">
-            <div class="nome">PAIO SEARA KG</div>
-            <div class="preco">R$ 28,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">CARRE DE CORDEIRO KG</div>
-            <div class="preco">R$ 69,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ASSADOS DE TIRAS DE CONTRA FILÉ KG</div>
-            <div class="preco">R$ 79,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ORELHA SUÍNA SALGADA KG</div>
-            <div class="preco">R$ 19,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">RABO SUÍNO SALGADO KG</div>
-            <div class="preco">R$ 27,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">COSTELINHA SUÍNA SALGADA KG</div>
-            <div class="preco">R$ 27,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PÉ SUÍNO SALGADO KG</div>
-            <div class="preco">R$ 14,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PICANHA FATIADA KG</div>
-            <div class="preco">R$ 59,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COSTELINHA DE CORDEIRO KG</div>
-            <div class="preco">R$ 44,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COSTELA BOVINA 4 OSSOS KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-            </div>
-          </div>
+          <div class="promo-nome">BIFE ANCHO KG</div>
+          <div class="promo-preco">R$ 44,90</div>
         </div>
 
       </div>
@@ -1150,77 +1011,64 @@
     <section class="slide ">
       <div class="layout">
 
-        <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">COSTELA PICADA KG</div>
-          <div class="promo-preco">R$ 19,99</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">PICANHA FATIADA KG</span>
+            <span class="item-preco">R$ 59,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COSTELINHA DE CORDEIRO KG</span>
+            <span class="item-preco">R$ 44,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COSTELA BOVINA 4 OSSOS KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COSTELA PICADA KG</span>
+            <span class="item-preco">R$ 19,99</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA TOSCANA FIRMESA KG</span>
+            <span class="item-preco">R$ 22,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA CUIBANA KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LING ARTESANAL DE TORRESMO KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">HAMBURGUER ARTESANAL 120G KG</span>
+            <span class="item-preco">R$ 4,99</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">ASSADO DE TIRA DE PICANHA KG</span>
+            <span class="item-preco">R$ 64,90</span>
+          </div>
+        
         </div>
 
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">LINGUIÇA TOSCANA FIRMESA KG</div>
-            <div class="preco">R$ 22,90</div>
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
           </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA CUIBANA KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LING ARTESANAL DE TORRESMO KG</div>
-            <div class="preco">R$ 26,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">HAMBURGUER ARTESANAL 120G KG</div>
-            <div class="preco">R$ 4,99</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">ASSADO DE TIRA DE PICANHA KG</div>
-            <div class="preco">R$ 64,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">contra file KG</div>
-            <div class="preco">R$ 52,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">ALCATRA COM MAMINHA KG</div>
-            <div class="preco">R$ 48,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">CUPIM KG</div>
-            <div class="preco">R$ 44,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PANCETA KG</div>
-            <div class="preco">R$ 22,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COSTELA JANELA KG</div>
-            <div class="preco">R$ 25,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA TOSCANA KG</div>
-            <div class="preco">R$ 21,90</div>
-          </div>
-        
-            </div>
-          </div>
+          <div class="promo-nome">PÉ SUÍNO SALGADO KG</div>
+          <div class="promo-preco">R$ 14,90</div>
         </div>
 
       </div>
@@ -1229,77 +1077,64 @@
     <section class="slide ">
       <div class="layout">
 
-        <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">PEITO SEM OSSO KG</div>
-          <div class="promo-preco">R$ 19,99</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">ALCATRA COM MAMINHA KG</span>
+            <span class="item-preco">R$ 48,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CUPIM KG</span>
+            <span class="item-preco">R$ 44,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PANCETA KG</span>
+            <span class="item-preco">R$ 22,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COSTELA JANELA KG</span>
+            <span class="item-preco">R$ 25,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA TOSCANA KG</span>
+            <span class="item-preco">R$ 21,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PEITO SEM OSSO KG</span>
+            <span class="item-preco">R$ 19,99</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PICANHA PARAGUAIA KG</span>
+            <span class="item-preco">R$ 59,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CORTES DE LEITÃO KG</span>
+            <span class="item-preco">R$ 22,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COXINHA DA ASA EMPANADA KG</span>
+            <span class="item-preco">R$ 39,90</span>
+          </div>
+        
         </div>
 
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">PICANHA PARAGUAIA KG</div>
-            <div class="preco">R$ 59,90</div>
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
           </div>
-        
-          <div class="linha">
-            <div class="nome">CORTES DE LEITÃO KG</div>
-            <div class="preco">R$ 22,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">COXINHA DA ASA EMPANADA KG</div>
-            <div class="preco">R$ 39,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MAMINHA RECHEADA KG</div>
-            <div class="preco">R$ 59,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">FILÉ DE PANGA EMPANADO KG</div>
-            <div class="preco">R$ 42,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">PESCOÇO DE FRANGO KG</div>
-            <div class="preco">R$ 9,99</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">CARNE SECA SUINA KG</div>
-            <div class="preco">R$ 24,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">linguiça de pernil pimnta bodinho KG</div>
-            <div class="preco">R$ 28,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">FILEZINHO DE FRANGO BAITA EMPANAD KG</div>
-            <div class="preco">R$ 34,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">MEDALHÃO DE ROMEU E JULIETA KG</div>
-            <div class="preco">R$ 8,00</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA TOSCANA FRESCAL PERDIGÃO KG</div>
-            <div class="preco">R$ 19,99</div>
-          </div>
-        
-            </div>
-          </div>
+          <div class="promo-nome">contra file KG</div>
+          <div class="promo-preco">R$ 52,90</div>
         </div>
 
       </div>
@@ -1308,104 +1143,128 @@
     <section class="slide ">
       <div class="layout">
 
-        <div class="promo">
-          <div class="promo-badge">PROMOÇÃO DO DIA</div>
-          <div class="promo-nome">COSTELINHA TEMPERADA KG</div>
-          <div class="promo-preco">R$ 26,90</div>
-          <div class="promo-detalhe">Aproveite! Oferta válida enquanto durar o estoque.</div>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">FILÉ DE PANGA EMPANADO KG</span>
+            <span class="item-preco">R$ 42,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PESCOÇO DE FRANGO KG</span>
+            <span class="item-preco">R$ 9,99</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">CARNE SECA SUINA KG</span>
+            <span class="item-preco">R$ 24,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">linguiça de pernil pimnta bodinho KG</span>
+            <span class="item-preco">R$ 28,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FILEZINHO DE FRANGO BAITA EMPANAD KG</span>
+            <span class="item-preco">R$ 34,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">MEDALHÃO DE ROMEU E JULIETA KG</span>
+            <span class="item-preco">R$ 8,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA TOSCANA FRESCAL PERDIGÃO KG</span>
+            <span class="item-preco">R$ 19,99</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">COSTELINHA TEMPERADA KG</span>
+            <span class="item-preco">R$ 26,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">LINGUIÇA CALABRESA RESENDE KG</span>
+            <span class="item-preco">R$ 24,90</span>
+          </div>
+        
         </div>
 
-        <div class="card-tabela">
-          <div class="tabela">
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">LINGUIÇA CALABRESA RESENDE KG</div>
-            <div class="preco">R$ 24,90</div>
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
           </div>
-        
-          <div class="linha">
-            <div class="nome">LINGUIÇA QUEIJO PIMENTA KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">GORDURA DE PORCO CASEIRA KG</div>
-            <div class="preco">R$ 15,00</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">FILEZINHO DE SASSAMI KG</div>
-            <div class="preco">R$ 22,90</div>
-          </div>
-        
-            </div>
-            <div class="coluna">
-              
-          <div class="linha">
-            <div class="nome">PRIME RIB SUINO KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">TIBONE SUINO KG</div>
-            <div class="preco">R$ 29,90</div>
-          </div>
-        
-          <div class="linha">
-            <div class="nome">FILE DE COXA EMPANADA KG</div>
-            <div class="preco">R$ 33,90</div>
-          </div>
-        
-            </div>
-          </div>
+          <div class="promo-nome">MAMINHA RECHEADA KG</div>
+          <div class="promo-preco">R$ 59,90</div>
         </div>
 
       </div>
     </section>
     
-  </main>
+    <section class="slide ">
+      <div class="layout">
 
-  <footer class="rodape">
-    <div>Preços sujeitos a alteração sem aviso prévio.</div>
-    <div class="relogio" id="relogio"></div>
-  </footer>
+        <!-- LISTA (70%) -->
+        <div class="lista">
+          <div class="categoria">Bovino / Suíno / Aves</div>
+          
+          <div class="linha">
+            <span class="item-nome">GORDURA DE PORCO CASEIRA KG</span>
+            <span class="item-preco">R$ 15,00</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FILEZINHO DE SASSAMI KG</span>
+            <span class="item-preco">R$ 22,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">PRIME RIB SUINO KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">TIBONE SUINO KG</span>
+            <span class="item-preco">R$ 29,90</span>
+          </div>
+        
+          <div class="linha">
+            <span class="item-nome">FILE DE COXA EMPANADA KG</span>
+            <span class="item-preco">R$ 33,90</span>
+          </div>
+        
+        </div>
+
+        <!-- PROMOÇÃO (30%) -->
+        <div class="promo">
+          <div class="promo-logo">
+            <img src="logo.png" alt="Logo">
+          </div>
+          <div class="promo-nome">LINGUIÇA QUEIJO PIMENTA KG</div>
+          <div class="promo-preco">R$ 29,90</div>
+        </div>
+
+      </div>
+    </section>
+    
 
 <script>
-  const TEMPO = 10000;
-  let idx = 0;
-  const slides = document.querySelectorAll(".slide");
+let idx = 0;
+const slides = document.querySelectorAll(".slide");
 
-  function mostrar(i) {
-    slides.forEach(s => s.classList.remove("ativo"));
-    slides[i].classList.add("ativo");
-  }
+function trocar() {
+  slides.forEach(s => s.classList.remove("ativo"));
+  slides[idx].classList.add("ativo");
+  idx = (idx + 1) % slides.length;
+}
 
-  function avancar() {
-    if (slides.length === 0) return;
-    idx = (idx + 1) % slides.length;
-    mostrar(idx);
-  }
-
-  if (slides.length > 0) mostrar(0);
-  setInterval(avancar, TEMPO);
-
-  // Relógio
-  const mostrarRelogio = true;
-  const el = document.getElementById("relogio");
-
-  function tick() {
-    if (!mostrarRelogio) {
-      el.textContent = "";
-      return;
-    }
-    const now = new Date();
-    const h = String(now.getHours()).padStart(2, "0");
-    const m = String(now.getMinutes()).padStart(2, "0");
-    el.textContent = h + ":" + m;
-  }
-  tick();
-  setInterval(tick, 1000);
+trocar();
+setInterval(trocar, 10000);
 </script>
 
 </body>
