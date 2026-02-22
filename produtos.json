@@ -45,15 +45,11 @@
       "preco": "R$ 26,90"
     },
     {
-      "nome": "massa de pizza da casa c/ 2 un KG",
-      "preco": "R$ 7,00"
+      "nome": "LINGUIÇA FINA MISTA KG",
+      "preco": "R$ 15,00"
     }
   ],
   [
-    {
-      "nome": "LINGUIÇA FINA MISTA KG",
-      "preco": "R$ 15,00"
-    },
     {
       "nome": "SALSICHA RESFRIADA SEARA KG",
       "preco": "R$ 14,90"
@@ -97,13 +93,13 @@
     {
       "nome": "LAGARTO KG",
       "preco": "R$ 48,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "ALCATRA COM MAMINHA KG",
       "preco": "R$ 59,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "CHULETA DE CONTRA FILE KG",
       "preco": "R$ 39,90"
@@ -147,13 +143,13 @@
     {
       "nome": "CHULETA GAUCHA KG",
       "preco": "R$ 22,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "PICADÃO KG",
       "preco": "R$ 34,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "FIGADO BOVINO KG",
       "preco": "R$ 16,90"
@@ -197,13 +193,13 @@
     {
       "nome": "PEITO SEM OSSO KG",
       "preco": "R$ 21,00"
-    }
-  ],
-  [
+    },
     {
       "nome": "COXA SOBRECOXA KG",
       "preco": "R$ 8,99"
-    },
+    }
+  ],
+  [
     {
       "nome": "SOBRECOXA KG",
       "preco": "R$ 16,90"
@@ -247,13 +243,13 @@
     {
       "nome": "BARRIGA KG",
       "preco": "R$ 26,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "COSTELINHA KG",
       "preco": "R$ 29,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "BISTECA KG",
       "preco": "R$ 24,90"
@@ -297,13 +293,13 @@
     {
       "nome": "MILANESA BOVINA KG",
       "preco": "R$ 48,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "MILANESA DE FRANGO KG",
       "preco": "R$ 36,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "ALMONDEGA KG",
       "preco": "R$ 36,90"
@@ -337,19 +333,13 @@
       "preco": "R$ 28,90"
     },
     {
-      "nome": "PIZZA DA CASA KG",
-      "preco": "R$ 14,99"
-    },
-    {
       "nome": "EMPANADA DE CARNE KG",
       "preco": "R$ 5,00"
     },
     {
       "nome": "LINGUIÇA MISTA KG",
       "preco": "R$ 26,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "COPA LOMBO KG",
       "preco": "R$ 29,90"
@@ -357,7 +347,9 @@
     {
       "nome": "ESPETINHO BOVINO KG",
       "preco": "R$ 4,50"
-    },
+    }
+  ],
+  [
     {
       "nome": "ESPETINHO DE PICANHA KG",
       "preco": "R$ 9,00"
@@ -397,9 +389,7 @@
     {
       "nome": "ASSADOS DE TIRAS DE COSTELA KG",
       "preco": "R$ 26,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "MUSCULO KG",
       "preco": "R$ 34,90"
@@ -407,7 +397,9 @@
     {
       "nome": "ESPETINHO DE CORAÇÃO KG",
       "preco": "R$ 5,00"
-    },
+    }
+  ],
+  [
     {
       "nome": "ESPETINHO DE TULIPA KG",
       "preco": "R$ 6,00"
@@ -447,9 +439,7 @@
     {
       "nome": "SUÃN KG",
       "preco": "R$ 19,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "COXÃO DURO RECHEADO E TEMPERADO KG",
       "preco": "R$ 39,90"
@@ -457,7 +447,9 @@
     {
       "nome": "LAGARTO RECHEADO E TEMPERADO KG",
       "preco": "R$ 56,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "ESPETINHO DE PANCETA KG",
       "preco": "R$ 3,50"
@@ -497,9 +489,7 @@
     {
       "nome": "CUPIM KG",
       "preco": "R$ 42,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "ESPETINHO DE LINGUIÇA KG",
       "preco": "R$ 4,00"
@@ -507,7 +497,9 @@
     {
       "nome": "SHORT RIB BOVINO KG",
       "preco": "R$ 54,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "PANCETA DE ROLO KG",
       "preco": "R$ 29,90"
@@ -547,12 +539,6 @@
     {
       "nome": "PEITO DE FRANGO SADIA FATIADO KG",
       "preco": "R$ 34,90"
-    }
-  ],
-  [
-    {
-      "nome": "MORTADELA GOURMET SEARA DEFUMADA KG",
-      "preco": "R$ 19,90"
     },
     {
       "nome": "BIFE ANCHO KG",
@@ -561,14 +547,12 @@
     {
       "nome": "bife ancho KG",
       "preco": "R$ 59,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "PALETA DE CORDEIRO KG",
       "preco": "R$ 56,90"
-    },
-    {
-      "nome": "MORTADELA SADIA DEFUMADA KG",
-      "preco": "R$ 19,90"
     },
     {
       "nome": "LINGUIÇA TOSCANA SEARA KG",
@@ -597,9 +581,7 @@
     {
       "nome": "COSTELINHA SUÍNA SALGADA KG",
       "preco": "R$ 27,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "PÉ SUÍNO SALGADO KG",
       "preco": "R$ 14,90"
@@ -615,7 +597,9 @@
     {
       "nome": "COSTELA BOVINA 4 OSSOS KG",
       "preco": "R$ 26,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "COSTELA PICADA KG",
       "preco": "R$ 19,99"
@@ -647,9 +631,7 @@
     {
       "nome": "ALCATRA COM MAMINHA KG",
       "preco": "R$ 48,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "CUPIM KG",
       "preco": "R$ 44,90"
@@ -665,7 +647,9 @@
     {
       "nome": "LINGUIÇA TOSCANA KG",
       "preco": "R$ 21,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "PEITO SEM OSSO KG",
       "preco": "R$ 19,99"
@@ -683,26 +667,12 @@
       "preco": "R$ 39,90"
     },
     {
-      "nome": "BAGUETE PRESUNTO E QUEIJO KG",
-      "preco": "R$ 6,00"
-    },
-    {
       "nome": "MAMINHA RECHEADA KG",
       "preco": "R$ 59,90"
     },
     {
-      "nome": "PRESUNTO MIOGNONETO SADIA KG",
-      "preco": "R$ 34,90"
-    },
-    {
       "nome": "FILÉ DE PANGA EMPANADO KG",
       "preco": "R$ 42,90"
-    }
-  ],
-  [
-    {
-      "nome": "PRESUNTO PERDIGÃO EMBUTIDO DE PER KG",
-      "preco": "R$ 26,50"
     },
     {
       "nome": "PESCOÇO DE FRANGO KG",
@@ -727,7 +697,9 @@
     {
       "nome": "LINGUIÇA TOSCANA FRESCAL PERDIGÃO KG",
       "preco": "R$ 19,99"
-    },
+    }
+  ],
+  [
     {
       "nome": "COSTELINHA TEMPERADA KG",
       "preco": "R$ 26,90"
@@ -747,9 +719,7 @@
     {
       "nome": "FILEZINHO DE SASSAMI KG",
       "preco": "R$ 22,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "PRIME RIB SUINO KG",
       "preco": "R$ 29,90"
