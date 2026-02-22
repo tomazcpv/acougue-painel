@@ -182,12 +182,14 @@ html = f"""<!DOCTYPE html>
     display: block;
   }}
 
-  .layout {{
-    height: 100%;
-    display: grid;
-    grid-template-columns: 0.42fr 0.58fr;
-    gap: 22px;
-  }}
+
+
+.layout {{
+  height: 100%;
+  display: grid;
+  grid-template-columns: 0.30fr 0.70fr; /* 30% promo / 70% tabela */
+  gap: 22px;
+}}
 
   /* PROMOÇÃO */
   .promo {{
@@ -216,14 +218,14 @@ html = f"""<!DOCTYPE html>
   }}
 
   .promo-nome {{
-    font-size: 46px;
+    font-size: 42px;
     font-weight: 900;
     line-height: 1.08;
     margin-bottom: 18px;
   }}
 
   .promo-preco {{
-    font-size: 74px;
+    font-size: 66px;
     font-weight: 900;
     color: {COR_DESTAQUE};
     line-height: 1;
