@@ -1,20 +1,40 @@
 import json
 import unicodedata
 
-# Lista MUITO específica de carnes
+# Palavras que indicam carne
 CARNES = [
-    "ACEM", "ALCATRA", "PICANHA", "CONTRA FILE", "CONTRAFILE", "FILE",
-    "PATINHO", "COXAO", "MUSCULO", "COSTELA", "FRALDA", "CAPA",
-    "CUPIM", "PALETA", "OSSOBUCO", "RABADA", "BIFE", "CARNE",
-
-    # Frango
+    "ACEM", "ALCATRA", "PICANHA", "PATINHO", "COSTELA", "CUPIM",
     "FRANGO", "COXA", "SOBRECOXA", "ASA", "PEITO",
+    "SUINO", "PERNIL", "LOMBO", "BACON",
+    "LINGUICA", "TOSCANA", "CALABRESA",
+    "BIFE", "CARNE", "FILE", "MAMINHA", "PALETA"
+]
 
-    # Porco
-    "SUINO", "PERNIL", "LOMBO", "BACON", "TOUCINHO", "COSTELINHA",
-
-    # Linguiça
-    "LINGUICA", "TOSCANA", "CALABRESA"
+# Palavras proibidas (NUNCA são carne)
+PROIBIDOS = [
+    "BOLO",
+    "QUEIJO",
+    "ALECRIM",
+    "BALA",
+    "CEBOLA",
+    "ALHO",
+    "BATATA",
+    "PÃO",
+    "DOCE",
+    "AÇUCAR",
+    "ACUCAR",
+    "AVEIA",
+    "CACAU",
+    "COCO",
+    "FARINHA",
+    "ARROZ",
+    "FEIJAO",
+    "TEMPERO",
+    "ERVA",
+    "CHA",
+    "SEMENTE",
+    "FATIADO",
+    "RECHEADO"
 ]
 
 
@@ -28,8 +48,14 @@ def normalizar(texto):
 def eh_carne(nome):
     nome = normalizar(nome)
 
-    for carne in CARNES:
-        if carne in nome:
+    # Se tiver palavra proibida → NÃO é carne
+    for p in PROIBIDOS:
+        if p in nome:
+            return False
+
+    # Se tiver palavra de carne → É carne
+    for c in CARNES:
+        if c in nome:
             return True
 
     return False
@@ -40,8 +66,8 @@ with open("produtos.json", "r", encoding="utf-8") as f:
     produtos = json.load(f)
 
 
-# Filtrar
 produtos_filtrados = []
+
 for p in produtos:
     nome = p["nome"]
 
