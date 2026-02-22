@@ -7,8 +7,8 @@ arquivo_json = "produtos.json"
 
 ITENS_POR_SLIDE = 12
 
-# Palavras EXATAS de carne
-PALAVRAS_CARNE = [
+# SOMENTE carnes permitidas
+CARNES_PERMITIDAS = [
     "PICANHA",
     "ALCATRA",
     "MAMINHA",
@@ -18,9 +18,8 @@ PALAVRAS_CARNE = [
     "COSTELA",
     "CUPIM",
     "FRALDA",
-    "CONTRA",
-    "FILE",
-    "FILÉ",
+    "CONTRA FILE",
+    "CONTRA-FILE",
     "BISTECA",
     "PERNIL",
     "LOMBO",
@@ -44,12 +43,8 @@ PALAVRAS_CARNE = [
 def eh_carne(nome):
     nome = nome.upper()
 
-    # Divide em palavras
-    palavras = re.findall(r'\b\w+\b', nome)
-
-    # Só aceita se alguma palavra for carne EXATA
-    for palavra in palavras:
-        if palavra in PALAVRAS_CARNE:
+    for carne in CARNES_PERMITIDAS:
+        if carne in nome:
             return True
 
     return False
@@ -79,6 +74,7 @@ for linha in linhas:
     preco_str = partes[-1]
     nome = " ".join(partes[:-1])
 
+    # Só entra se for carne permitida
     if eh_carne(nome):
 
         produto = {
