@@ -1,168 +1,64 @@
-<!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Açougue</title>
-
 <style>
-
 body {
-    margin: 0;
     font-family: Arial;
-    background: #111;
+    background: black;
     color: white;
-}
-
-.slide {
-    display: none;
-    width: 100vw;
-    height: 100vh;
-}
-
-.ativo {
-    display: flex;
-}
-
-.esquerda {
-    width: 50%;
-    background: #222;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.direita {
-    width: 50%;
-    padding: 40px;
-}
-
-.categoria {
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.oferta_nome {
-    font-size: 50px;
-}
-
-.oferta_preco {
-    font-size: 90px;
-    color: yellow;
-    font-weight: bold;
-}
-
-table {
-    width: 100%;
     font-size: 28px;
 }
-
-td {
+.produto {
+    margin: 10px;
     padding: 10px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid gray;
 }
-
 .preco {
-    text-align: right;
-    color: yellow;
-    font-weight: bold;
+    float: right;
 }
-
 </style>
 </head>
-
 <body>
+<h1>AÇOUGUE - OFERTAS</h1>
 
-<div id="slides"></div>
-
-<script>
-
-async function carregar() {
-
-    let res = await fetch("dados.json");
-    let produtos = await res.json();
-
-    let categorias = {};
-
-    produtos.forEach(p => {
-        if (!categorias[p.categoria])
-            categorias[p.categoria] = [];
-
-        categorias[p.categoria].push(p);
-    });
-
-    let slidesDiv = document.getElementById("slides");
-
-    for (let categoria in categorias) {
-
-        let lista = categorias[categoria];
-
-        for (let i = 0; i < lista.length; i += 12) {
-
-            let grupo = lista.slice(i, i + 12);
-
-            let oferta = grupo[0];
-
-            let slide = document.createElement("div");
-            slide.className = "slide";
-
-            let tabela = "";
-
-            grupo.forEach(p => {
-                tabela += `
-                <tr>
-                    <td>${p.nome}</td>
-                    <td class="preco">R$ ${p.preco}</td>
-                </tr>
-                `;
-            });
-
-            slide.innerHTML = `
-            <div class="esquerda">
-                <div class="categoria">${categoria}</div>
-                <div class="oferta_nome">${oferta.nome}</div>
-                <div class="oferta_preco">R$ ${oferta.preco}</div>
-            </div>
-
-            <div class="direita">
-                <table>
-                    ${tabela}
-                </table>
-            </div>
-            `;
-
-            slidesDiv.appendChild(slide);
-        }
-    }
-
-    iniciarSlides();
-}
-
-let slideAtual = 0;
-
-function iniciarSlides() {
-
-    let slides = document.querySelectorAll(".slide");
-
-    slides[0].classList.add("ativo");
-
-    setInterval(() => {
-
-        slides[slideAtual].classList.remove("ativo");
-
-        slideAtual++;
-
-        if (slideAtual >= slides.length)
-            slideAtual = 0;
-
-        slides[slideAtual].classList.add("ativo");
-
-    }, 10000);
-}
-
-carregar();
-
-</script>
-
-</body>
-</html>
+    <div class='produto'>
+        PATINHO KG
+        <span class='preco'>R$ 100,00</span>
+    </div>
+    
+    <div class='produto'>
+        LINGUIÇA BRAGANÇA KG
+        <span class='preco'>R$ 110,02</span>
+    </div>
+    
+    <div class='produto'>
+        CALABRESA PERDIGÃO KG
+        <span class='preco'>R$ 100,02</span>
+    </div>
+    
+    <div class='produto'>
+        CALABRESA SADIA KG
+        <span class='preco'>R$ 100,01</span>
+    </div>
+    
+    <div class='produto'>
+        LINGUIÇA TOSCANA SADIA KG
+        <span class='preco'>R$ 100,01</span>
+    </div>
+    
+    <div class='produto'>
+        LINGUIÇA TOSCANA AURORA KG
+        <span class='preco'>R$ 100,01</span>
+    </div>
+    
+    <div class='produto'>
+        BACON KG
+        <span class='preco'>R$ 100,01</span>
+    </div>
+    
+    <div class='produto'>
+        LINGUIÇA PERDIGÃO NA BRASA KG
+        <span class='preco'>R$ 100,02</span>
+    </div>
+    </body></html>

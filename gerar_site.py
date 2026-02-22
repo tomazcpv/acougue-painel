@@ -1,59 +1,39 @@
 import json
-import unicodedata
 
 # Palavras que indicam carne
 CARNES = [
-    "ACEM", "ALCATRA", "PICANHA", "PATINHO", "COSTELA", "CUPIM",
+    "BOV", "PATINHO", "ACEM", "ALCATRA", "PICANHA", "CUPIM",
+    "MAMINHA", "FRALDINHA", "COSTELA", "CARNE", "BIFE",
+
     "FRANGO", "COXA", "SOBRECOXA", "ASA", "PEITO",
-    "SUINO", "PERNIL", "LOMBO", "BACON",
-    "LINGUICA", "TOSCANA", "CALABRESA",
-    "BIFE", "CARNE", "FILE", "MAMINHA", "PALETA"
+    "FILE", "PÉ DE FRANGO", "PESCOÇO",
+
+    "SUINO", "PERNIL", "LOMBO", "BISTECA",
+
+    "LINGUIÇA", "CALABRESA", "TOSCANA",
+    "SALSICHA", "BACON"
 ]
 
-# Palavras proibidas (NUNCA são carne)
+# Palavras proibidas
 PROIBIDOS = [
-    "BOLO",
-    "QUEIJO",
-    "ALECRIM",
-    "BALA",
-    "CEBOLA",
-    "ALHO",
-    "BATATA",
-    "PÃO",
-    "DOCE",
-    "AÇUCAR",
-    "ACUCAR",
-    "AVEIA",
-    "CACAU",
-    "COCO",
-    "FARINHA",
-    "ARROZ",
-    "FEIJAO",
-    "TEMPERO",
-    "ERVA",
-    "CHA",
-    "SEMENTE",
-    "FATIADO",
-    "RECHEADO"
+    "BOLO", "PÃO", "PAO", "DOCE", "BISCOITO", "FARINHA",
+    "QUEIJO", "MUSSARELA", "PRESUNTO", "PERU",
+    "ALHO", "CEBOLA", "BATATA", "VERDURA",
+    "TEMPERO", "OREGANO", "ALECRIM",
+    "AÇUCAR", "ACUCAR", "AVEIA", "CACAU",
+    "CHA", "COCO", "GRANOLA",
+    "BALA", "DOCINHO",
+    "PIZZA", "ESFIHA", "EMPADA",
+    "BROA"
 ]
-
-
-def normalizar(texto):
-    texto = texto.upper()
-    texto = unicodedata.normalize('NFD', texto)
-    texto = ''.join(c for c in texto if unicodedata.category(c) != 'Mn')
-    return texto
-
 
 def eh_carne(nome):
-    nome = normalizar(nome)
+    nome = nome.upper()
 
-    # Se tiver palavra proibida → NÃO é carne
     for p in PROIBIDOS:
         if p in nome:
             return False
 
-    # Se tiver palavra de carne → É carne
     for c in CARNES:
         if c in nome:
             return True
@@ -61,11 +41,17 @@ def eh_carne(nome):
     return False
 
 
-# Carregar produtos
-with open("produtos.json", "r", encoding="utf-8") as f:
-    produtos = json.load(f)
+# Abre o JSON
+with open("produtos.json", encoding="utf-8") as f:
+    data = json.load(f)
 
+# Corrige lista dupla
+if isinstance(data[0], list):
+    produtos = data[0]
+else:
+    produtos = data
 
+# Filtra carnes
 produtos_filtrados = []
 
 for p in produtos:
@@ -73,11 +59,50 @@ for p in produtos:
 
     if eh_carne(nome):
         produtos_filtrados.append(p)
+        print("OK:", nome)
+    else:
+        print("REMOVIDO:", nome)
+
+print("\nTotal carnes:", len(produtos_filtrados))
 
 
-# Salvar
-with open("produtos_filtrados.json", "w", encoding="utf-8") as f:
-    json.dump(produtos_filtrados, f, indent=2, ensure_ascii=False)
+# Gera HTML
+html = """
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+    font-family: Arial;
+    background: black;
+    color: white;
+    font-size: 28px;
+}
+.produto {
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+.preco {
+    float: right;
+}
+</style>
+</head>
+<body>
+<h1>AÇOUGUE - OFERTAS</h1>
+"""
 
+for p in produtos_filtrados:
+    html += f"""
+    <div class='produto'>
+        {p['nome']}
+        <span class='preco'>{p['preco']}</span>
+    </div>
+    """
 
-print(f"{len(produtos_filtrados)} carnes encontradas.")
+html += "</body></html>"
+
+with open("index.html", "w", encoding="utf-8") as f:
+    f.write(html)
+
+print("\nSite gerado com sucesso!")
