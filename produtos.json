@@ -5,66 +5,16 @@
       "preco": "R$ 92,90"
     },
     {
-      "nome": "BOLO DE MILHO VERDE REDONDO KG",
-      "preco": "R$ 22,50"
-    },
-    {
       "nome": "LINGUIÇA BRAGANÇA KG",
       "preco": "R$ 17,50"
-    },
-    {
-      "nome": "PESSÊGO KG",
-      "preco": "R$ 10,45"
     },
     {
       "nome": "CALABRESA PERDIGÃO KG",
       "preco": "R$ 23,90"
     },
     {
-      "nome": "BISCOITO GANGALHA 350G KG",
-      "preco": "R$ 3,50"
-    },
-    {
-      "nome": "VERDURA KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "DOCE CASEIRO KG",
-      "preco": "R$ 15,00"
-    },
-    {
       "nome": "SALSICHA SADIA KG",
       "preco": "R$ 16,90"
-    },
-    {
-      "nome": "FERMENTO BIOLOGICO ( PEÇA) KG",
-      "preco": "R$ 12,00"
-    },
-    {
-      "nome": "QUIABO KG",
-      "preco": "R$ 18,99"
-    },
-    {
-      "nome": "PAO INTEGRAL KG",
-      "preco": "R$ 0,85"
-    }
-  ],
-  [
-    {
-      "nome": "CAQUI KG",
-      "preco": "R$ 6,99"
-    },
-    {
-      "nome": "APRESUNTADO SADIA KG KG",
-      "preco": "R$ 29,50"
-    },
-    {
-      "nome": "PRESUNTO SADIA KG KG",
-      "preco": "R$ 39,90"
-    },
-    {
-      "nome": "MUSSARELA PAIOLZINHO KG KG",
-      "preco": "R$ 54,90"
     },
     {
       "nome": "SALSICHA AURORA KG KG",
@@ -75,58 +25,8 @@
       "preco": "R$ 16,90"
     },
     {
-      "nome": "MORTADELA MARBA KG KG",
-      "preco": "R$ 19,50"
-    },
-    {
-      "nome": "MORTADELA OURO PERDIGÃO DEFUMADA KG",
-      "preco": "R$ 27,50"
-    },
-    {
-      "nome": "PÃO DE SAL KG",
-      "preco": "R$ 0,70"
-    },
-    {
-      "nome": "PÃO DE SAL KG",
-      "preco": "R$ 13,99"
-    },
-    {
-      "nome": "CARTELA COM 30 OVOS KG",
-      "preco": "R$ 19,90"
-    },
-    {
-      "nome": "AÇAFRAO CURCUMA MOIDO KG",
-      "preco": "R$ 35,50"
-    }
-  ],
-  [
-    {
-      "nome": "AÇUCAR DE COCO KG",
-      "preco": "R$ 59,90"
-    },
-    {
       "nome": "CALABRESA SADIA KG",
       "preco": "R$ 29,90"
-    },
-    {
-      "nome": "QUEIJO PRATO KG",
-      "preco": "R$ 59,90"
-    },
-    {
-      "nome": "QUEIJO FRESCAL COMEVAP KG",
-      "preco": "R$ 45,50"
-    },
-    {
-      "nome": "QUEIJO MEIA CURA KG",
-      "preco": "R$ 63,50"
-    },
-    {
-      "nome": "QUEIJO RALADO PARMESÃO KG KG",
-      "preco": "R$ 69,50"
-    },
-    {
-      "nome": "QUEIJO RALADO MUSSARELA KG",
-      "preco": "R$ 65,00"
     },
     {
       "nome": "LINGUIÇA TOSCANA SADIA KG",
@@ -137,1422 +37,34 @@
       "preco": "R$ 26,90"
     },
     {
-      "nome": "PEITO DE PERU KG KG",
-      "preco": "R$ 54,90"
-    },
-    {
-      "nome": "EMPANADINHO DE FRANGO KG",
-      "preco": "R$ 26,90"
-    },
-    {
-      "nome": "FARINHA DE ROSCA KG",
-      "preco": "R$ 12,00"
-    }
-  ],
-  [
-    {
-      "nome": "FERMENTO P\\ PÃO KG",
-      "preco": "R$ 40,00"
-    },
-    {
       "nome": "BACON KG",
       "preco": "R$ 36,90"
-    },
-    {
-      "nome": "PONTA DE FRIOS KG",
-      "preco": "R$ 12,90"
-    },
-    {
-      "nome": "MINI PÃO DE QUEIJO KG",
-      "preco": "R$ 29,90"
-    },
-    {
-      "nome": "PÃO DE QUEIJO KG",
-      "preco": "R$ 2,75"
-    },
-    {
-      "nome": "CEBOLA KG",
-      "preco": "R$ 3,49"
-    },
-    {
-      "nome": "ALHO KG",
-      "preco": "R$ 39,90"
-    },
-    {
-      "nome": "BATATA KG",
-      "preco": "R$ 4,69"
-    },
-    {
-      "nome": "MUSSARELA KG",
-      "preco": "R$ 38,90"
-    },
-    {
-      "nome": "CARTELA C/ 12 OVOS KG",
-      "preco": "R$ 12,99"
-    },
-    {
-      "nome": "CARTELA C/ 6 OVOS KG",
-      "preco": "R$ 6,50"
-    },
-    {
-      "nome": "ROSQUINHA SAMANTA KG",
-      "preco": "R$ 35,00"
-    }
-  ],
-  [
-    {
-      "nome": "BOLO PEDAÇO KG",
-      "preco": "R$ 2,00"
-    },
-    {
-      "nome": "BOLO C\\COBERTURA KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "BOLO DE CHOCOLATE KG",
-      "preco": "R$ 8,50"
-    },
-    {
-      "nome": "BOLO DE CENOURA KG",
-      "preco": "R$ 8,50"
-    },
-    {
-      "nome": "PAO DOCE KG",
-      "preco": "R$ 1,00"
-    },
-    {
-      "nome": "PÃO DOCE CARECA KG",
-      "preco": "R$ 0,90"
-    },
-    {
-      "nome": "BROA KG",
-      "preco": "R$ 2,00"
-    },
-    {
-      "nome": "SONHO KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "PÃO DE FRIOS KG",
-      "preco": "R$ 4,00"
-    },
-    {
-      "nome": "PÃO AMANHECIDO KG",
-      "preco": "R$ 0,45"
-    },
-    {
-      "nome": "MINI PÃO CARECA KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "MINI PÃO DOCE KG",
-      "preco": "R$ 6,00"
-    }
-  ],
-  [
-    {
-      "nome": "EMPADA DE FRANGO KG",
-      "preco": "R$ 5,50"
-    },
-    {
-      "nome": "SALGADO KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "OVOS UNIDADE KG",
-      "preco": "R$ 1,50"
-    },
-    {
-      "nome": "AÇUCAR MASCAVO JOCAL KG",
-      "preco": "R$ 9,99"
-    },
-    {
-      "nome": "AÇUCAR DEMERARA KG",
-      "preco": "R$ 15,90"
-    },
-    {
-      "nome": "ALHO EM FLOCOS DESIDATRADO KG",
-      "preco": "R$ 69,50"
-    },
-    {
-      "nome": "ALHO EM PÓ KG",
-      "preco": "R$ 44,50"
-    },
-    {
-      "nome": "ALHO FRITO DESIDRATADO KG",
-      "preco": "R$ 58,90"
-    },
-    {
-      "nome": "AMEIXA SEM CAROÇO KG",
-      "preco": "R$ 52,50"
-    },
-    {
-      "nome": "ALECRIM KG",
-      "preco": "R$ 29,90"
-    },
-    {
-      "nome": "GRANOLA C/ FRUTAS LIGHT KG",
-      "preco": "R$ 36,50"
-    },
-    {
-      "nome": "AMENDOIN CROC SALSA\\CEBOLA KG",
-      "preco": "R$ 53,50"
-    }
-  ],
-  [
-    {
-      "nome": "AMENDOIN CROCANTE KG",
-      "preco": "R$ 44,50"
-    },
-    {
-      "nome": "AMENDOIN CR PICANTE KG",
-      "preco": "R$ 49,90"
-    },
-    {
-      "nome": "AMENDOIN OVINHO KG",
-      "preco": "R$ 41,50"
-    },
-    {
-      "nome": "AMENDOIM  C/ SAL S/ PELE TORRADO KG",
-      "preco": "R$ 27,75"
-    },
-    {
-      "nome": "AMENDOIM  S/ SAL S/ PELE TORRADO KG",
-      "preco": "R$ 31,00"
-    },
-    {
-      "nome": "AMENDOIM DOCE KG",
-      "preco": "R$ 29,90"
-    },
-    {
-      "nome": "AMENDOA TORRADA S/SAL KG",
-      "preco": "R$ 74,90"
-    },
-    {
-      "nome": "AMIDO DE MILHO KG",
-      "preco": "R$ 12,50"
-    },
-    {
-      "nome": "AVEIA FLOCOS FINO KG",
-      "preco": "R$ 24,90"
-    },
-    {
-      "nome": "AVEIA FLOCOS GRAUDO KG",
-      "preco": "R$ 15,90"
-    },
-    {
-      "nome": "BALA DELIKET GOMA KG",
-      "preco": "R$ 48,50"
-    },
-    {
-      "nome": "BALA DE GOMA KG",
-      "preco": "R$ 34,80"
-    }
-  ],
-  [
-    {
-      "nome": "CHIPS BANANA SALG. KG",
-      "preco": "R$ 79,90"
-    },
-    {
-      "nome": "BICARBONATO KG",
-      "preco": "R$ 26,90"
-    },
-    {
-      "nome": "CACAU EM PÓ 50% KG",
-      "preco": "R$ 36,50"
-    },
-    {
-      "nome": "CAMOMILA FLORES KG",
-      "preco": "R$ 64,90"
-    },
-    {
-      "nome": "CANELA EM CASCA KG",
-      "preco": "R$ 112,00"
-    },
-    {
-      "nome": "CANELA EM PÓ KG",
-      "preco": "R$ 38,50"
-    },
-    {
-      "nome": "CAPIM CIDREIRA KG",
-      "preco": "R$ 39,90"
-    },
-    {
-      "nome": "CASTANHA DE CAJU C\\SAL KG",
-      "preco": "R$ 99,00"
-    },
-    {
-      "nome": "CASTANHA CAJU S\\SAL KG",
-      "preco": "R$ 99,00"
-    },
-    {
-      "nome": "CASTANHA DO PARÁ KG",
-      "preco": "R$ 126,90"
-    },
-    {
-      "nome": "CHOCO BOOL  CEREAL ALCAFOODS KG",
-      "preco": "R$ 39,50"
-    },
-    {
-      "nome": "CHÁ VERDE KG",
-      "preco": "R$ 32,90"
-    }
-  ],
-  [
-    {
-      "nome": "CHIMI CHURRI KG",
-      "preco": "R$ 89,50"
-    },
-    {
-      "nome": "COCO RALADO FINO KG",
-      "preco": "R$ 48,75"
-    },
-    {
-      "nome": "COLAGENO EM PÓ KG",
-      "preco": "R$ 149,00"
-    },
-    {
-      "nome": "COLORIFICO KG",
-      "preco": "R$ 45,90"
-    },
-    {
-      "nome": "CREME DE CEBOLA KG",
-      "preco": "R$ 29,90"
-    },
-    {
-      "nome": "DAMASCO TURCO KG",
-      "preco": "R$ 124,50"
-    },
-    {
-      "nome": "ERITRITOL KG",
-      "preco": "R$ 69,50"
-    },
-    {
-      "nome": "ERVA DOCE KG",
-      "preco": "R$ 49,90"
-    },
-    {
-      "nome": "FRUT RINGS KG",
-      "preco": "R$ 29,50"
-    },
-    {
-      "nome": "FARINHA DE AMENDOA KG",
-      "preco": "R$ 98,00"
-    },
-    {
-      "nome": "FARINHA DE AMENDOIN KG",
-      "preco": "R$ 26,90"
-    },
-    {
-      "nome": "FARINHA ARROZ CRU KG",
-      "preco": "R$ 12,00"
-    }
-  ],
-  [
-    {
-      "nome": "FARINHA DE AVEIA KG",
-      "preco": "R$ 17,75"
-    },
-    {
-      "nome": "FARINHA CASTANHA CAJU KG",
-      "preco": "R$ 63,50"
-    },
-    {
-      "nome": "FARINHA DE COCO KG",
-      "preco": "R$ 33,50"
-    },
-    {
-      "nome": "FARINHA LINHAÇA DOURADA KG",
-      "preco": "R$ 26,90"
-    },
-    {
-      "nome": "FIBRA MARACUJA KG",
-      "preco": "R$ 26,80"
-    },
-    {
-      "nome": "FAR TRIGO INTEGRAL KG",
-      "preco": "R$ 11,50"
-    },
-    {
-      "nome": "FARELO DE AVEIA KG",
-      "preco": "R$ 14,90"
-    },
-    {
-      "nome": "FAR.LINHAÇA MARRON KG",
-      "preco": "R$ 21,50"
-    },
-    {
-      "nome": "GRANOLA C\\FRUTAS KG",
-      "preco": "R$ 26,90"
-    },
-    {
-      "nome": "GIRASSOL SEM CASCA KG",
-      "preco": "R$ 25,90"
-    },
-    {
-      "nome": "HIBISCO FLOR KG",
-      "preco": "R$ 89,90"
-    },
-    {
-      "nome": "FAR/GRAO BICO KG",
-      "preco": "R$ 24,50"
-    }
-  ],
-  [
-    {
-      "nome": "FECULA DE BATATA KG",
-      "preco": "R$ 15,50"
-    },
-    {
-      "nome": "FUMAÇA EM PÓ KG",
-      "preco": "R$ 41,50"
-    },
-    {
-      "nome": "FAR/MACA PERUANA KG",
-      "preco": "R$ 50,00"
-    },
-    {
-      "nome": "GERGILIN DESPELICULADO KG",
-      "preco": "R$ 61,50"
-    },
-    {
-      "nome": "GRANOLA BIOSOFT KG",
-      "preco": "R$ 42,50"
-    },
-    {
-      "nome": "LEMON PEPPER TRADICIONAL KG",
-      "preco": "R$ 99,00"
-    },
-    {
-      "nome": "LENTILHA CANADENSE KG",
-      "preco": "R$ 28,00"
-    },
-    {
-      "nome": "LIMÃO/ERVAS FINAS KG",
-      "preco": "R$ 94,90"
-    },
-    {
-      "nome": "LINHAÇA MARRON KG",
-      "preco": "R$ 18,50"
-    },
-    {
-      "nome": "LINHAÇA DOURADA KG",
-      "preco": "R$ 19,90"
-    },
-    {
-      "nome": "MILHO DEFUMADO KG",
-      "preco": "R$ 68,00"
-    },
-    {
-      "nome": "MILHO BARBECUE KG",
-      "preco": "R$ 74,00"
-    }
-  ],
-  [
-    {
-      "nome": "NOZ DE MACADAMIA S\\ SAL KG",
-      "preco": "R$ 145,00"
-    },
-    {
-      "nome": "NOZES MARIPOSA KG",
-      "preco": "R$ 91,50"
-    },
-    {
-      "nome": "OREGANO KG",
-      "preco": "R$ 49,90"
-    },
-    {
-      "nome": "PAPRICA DOCE KG",
-      "preco": "R$ 37,50"
-    },
-    {
-      "nome": "PAPRICA DOCE DEFUMADA KG",
-      "preco": "R$ 39,90"
-    },
-    {
-      "nome": "PAPRICA PICANTE KG",
-      "preco": "R$ 34,00"
-    },
-    {
-      "nome": "PAPRICA PICANTE DEF KG",
-      "preco": "R$ 39,90"
-    },
-    {
-      "nome": "PIMENTA DO REINO KG",
-      "preco": "R$ 47,50"
-    },
-    {
-      "nome": "POLVILHO DOCE KG",
-      "preco": "R$ 19,90"
-    },
-    {
-      "nome": "POLVILHO AZEDO KG",
-      "preco": "R$ 10,50"
-    },
-    {
-      "nome": "PSYLLIUM KG",
-      "preco": "R$ 189,00"
-    },
-    {
-      "nome": "SENE EM FOLHAS KG",
-      "preco": "R$ 15,50"
-    }
-  ],
-  [
-    {
-      "nome": "PTS GRANULADO GALINHA KG",
-      "preco": "R$ 31,00"
-    },
-    {
-      "nome": "SAL DE HIMALAIA FINO KG",
-      "preco": "R$ 6,50"
-    },
-    {
-      "nome": "SAL MARINHO KG",
-      "preco": "R$ 32,00"
-    },
-    {
-      "nome": "SEMENTE DE CHIA KG",
-      "preco": "R$ 82,00"
-    },
-    {
-      "nome": "SALSA/CEBOLA/TOMATE KG",
-      "preco": "R$ 57,90"
-    },
-    {
-      "nome": "TAMARA SEM CAROÇO KG",
-      "preco": "R$ 43,00"
-    },
-    {
-      "nome": "TEMPERO ANA MARIA KG",
-      "preco": "R$ 90,00"
-    },
-    {
-      "nome": "TEMPERO BAIANO KG",
-      "preco": "R$ 17,50"
-    },
-    {
-      "nome": "TEMPERO EDU GUEDES KG",
-      "preco": "R$ 44,00"
-    },
-    {
-      "nome": "UVA PASSA S/SEMENTE KG",
-      "preco": "R$ 44,90"
-    },
-    {
-      "nome": "VINAGRETE EM FLOCOS KG",
-      "preco": "R$ 54,90"
-    },
-    {
-      "nome": "XEREM DE AMENDOIM KG",
-      "preco": "R$ 28,90"
-    }
-  ],
-  [
-    {
-      "nome": "ALHO /CEBOLA/SALSA KG",
-      "preco": "R$ 75,00"
-    },
-    {
-      "nome": "XILITOL KG",
-      "preco": "R$ 87,00"
-    },
-    {
-      "nome": "PAO DE MILHO KG",
-      "preco": "R$ 4,50"
-    },
-    {
-      "nome": "PAO DE MILHO KG",
-      "preco": "R$ 4,50"
-    },
-    {
-      "nome": "PAO SOVADO KG",
-      "preco": "R$ 7,50"
-    },
-    {
-      "nome": "PÃO DE HAMBURGUER KG",
-      "preco": "R$ 1,50"
-    },
-    {
-      "nome": "PAO AMANTEGADO KG",
-      "preco": "R$ 0,50"
-    },
-    {
-      "nome": "FERMENTO BIOLOGIO(PEÇA) KG",
-      "preco": "R$ 15,00"
-    },
-    {
-      "nome": "FERMENTO BIOLOGICO KG",
-      "preco": "R$ 12,00"
-    },
-    {
-      "nome": "PÃO INTEGRAL KG",
-      "preco": "R$ 7,00"
     },
     {
       "nome": "LINGUIÇA PERDIGÃO NA BRASA KG",
       "preco": "R$ 26,90"
     },
     {
-      "nome": "BROCOLIS KG",
-      "preco": "R$ 7,99"
-    }
-  ],
-  [
-    {
-      "nome": "AMORA SEM ESPINHO KG",
-      "preco": "R$ 36,90"
-    },
-    {
-      "nome": "ARROZ NEGRO KG",
-      "preco": "R$ 46,50"
-    },
-    {
-      "nome": "CEBOLA EM PÓ KG",
-      "preco": "R$ 39,90"
-    },
-    {
-      "nome": "CHA DE CAVALINHA KG",
-      "preco": "R$ 69,90"
-    },
-    {
-      "nome": "CHA DE MELISSA KG",
-      "preco": "R$ 43,90"
-    },
-    {
-      "nome": "COMINHO EM PÓ KG",
-      "preco": "R$ 32,50"
-    },
-    {
-      "nome": "CRAVO EM PÓ KG",
-      "preco": "R$ 35,90"
-    },
-    {
-      "nome": "CRAVO KG",
-      "preco": "R$ 181,50"
-    },
-    {
-      "nome": "CONFETE KG",
-      "preco": "R$ 31,90"
-    },
-    {
-      "nome": "GENGIBRE EM PÓ KG",
-      "preco": "R$ 35,00"
-    },
-    {
-      "nome": "HORTELÃ EM FLOCOS KG",
-      "preco": "R$ 22,50"
-    },
-    {
-      "nome": "LOURO EM FOLHA KG",
-      "preco": "R$ 71,00"
-    }
-  ],
-  [
-    {
-      "nome": "MIX DE CASTANHA KG",
-      "preco": "R$ 139,90"
-    },
-    {
-      "nome": "NOZ MOSCADA EM PÓ KG",
-      "preco": "R$ 79,90"
-    },
-    {
-      "nome": "PIMENTA CALABRESA EM FLOCOS KG",
-      "preco": "R$ 43,50"
-    },
-    {
-      "nome": "PIMENTA DO REINO EM GRÃO KG",
-      "preco": "R$ 56,00"
-    },
-    {
-      "nome": "QUINOA EM GRÃO KG",
-      "preco": "R$ 31,50"
-    },
-    {
-      "nome": "SEMENTE DE ABOBORA S/CASCA KG",
-      "preco": "R$ 55,00"
-    },
-    {
-      "nome": "PTS GRANULADO CARAMELO KG",
-      "preco": "R$ 19,90"
-    },
-    {
-      "nome": "PCT PAO DE HAMBURGUER 4UN KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "MARSHMALLOWS RECHEADO KG",
-      "preco": "R$ 49,90"
-    },
-    {
-      "nome": "QUEIJO COALHO COMEVAP KG",
-      "preco": "R$ 67,20"
-    },
-    {
-      "nome": "MARSHMALLOWS KG",
-      "preco": "R$ 49,90"
-    },
-    {
-      "nome": "LIMÃO KG",
-      "preco": "R$ 4,99"
-    }
-  ],
-  [
-    {
-      "nome": "TORRADA KG",
-      "preco": "R$ 3,50"
-    },
-    {
-      "nome": "MINI PALITO DE QUEIJO KG",
-      "preco": "R$ 1,00"
-    },
-    {
-      "nome": "AMEIXA KG",
-      "preco": "R$ 14,69"
-    },
-    {
-      "nome": "HAMBURGAO KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "CHOCOTONE KG",
-      "preco": "R$ 14,00"
-    },
-    {
-      "nome": "QUIJO MINAS SANTIAGO KG",
-      "preco": "R$ 55,00"
-    },
-    {
-      "nome": "QUEIJO MINAS SANTIAGO KG",
-      "preco": "R$ 55,00"
-    },
-    {
-      "nome": "AMARANTO EM GRÃO KG",
-      "preco": "R$ 49,50"
-    },
-    {
-      "nome": "CHA DE BOLDO KG",
-      "preco": "R$ 135,00"
-    },
-    {
-      "nome": "BOLO KG",
-      "preco": "R$ 7,99"
-    },
-    {
-      "nome": "CARDAMONO KG",
-      "preco": "R$ 320,00"
-    },
-    {
-      "nome": "ESPINHEIRA SANTA KG",
-      "preco": "R$ 59,90"
-    }
-  ],
-  [
-    {
-      "nome": "GRANULADO EM FLOCOS KG",
-      "preco": "R$ 39,00"
-    },
-    {
-      "nome": "CHOCO BOLL KG",
-      "preco": "R$ 39,90"
-    },
-    {
-      "nome": "FARINHA DE BERINGELA KG",
-      "preco": "R$ 34,80"
-    },
-    {
-      "nome": "FRUTAS CRISTALIZADAS KG",
-      "preco": "R$ 29,90"
-    },
-    {
-      "nome": "GOTAS DE CHOCOLATE KG",
-      "preco": "R$ 52,50"
-    },
-    {
-      "nome": "GRANOLA SEM AÇUCAR KG",
-      "preco": "R$ 29,90"
-    },
-    {
-      "nome": "PÓ DE GUARANA KG",
-      "preco": "R$ 47,80"
-    },
-    {
-      "nome": "PANETONE FRUTA KG",
-      "preco": "R$ 12,99"
-    },
-    {
-      "nome": "MANJERICÃO KG",
-      "preco": "R$ 32,90"
-    },
-    {
-      "nome": "SPIRULINA KG",
-      "preco": "R$ 20,00"
-    },
-    {
-      "nome": "TEMPERO SIRIO KG",
-      "preco": "R$ 110,00"
-    },
-    {
-      "nome": "TOMILHO KG",
-      "preco": "R$ 24,50"
-    }
-  ],
-  [
-    {
-      "nome": "BETERRABA KG",
-      "preco": "R$ 5,99"
-    },
-    {
-      "nome": "ABOBRINHA KG",
-      "preco": "R$ 8,99"
-    },
-    {
-      "nome": "BANANA PRATA KG",
-      "preco": "R$ 6,49"
-    },
-    {
-      "nome": "BANANA NANICA KG",
-      "preco": "R$ 4,99"
-    },
-    {
-      "nome": "CHUCHU KG",
-      "preco": "R$ 13,49"
-    },
-    {
-      "nome": "LARANJA PERA KG",
-      "preco": "R$ 4,99"
-    },
-    {
-      "nome": "LARANJA LIMA KG",
-      "preco": "R$ 9,49"
-    },
-    {
-      "nome": "TOMATE KG",
-      "preco": "R$ 6,50"
-    },
-    {
-      "nome": "CENOURA KG",
-      "preco": "R$ 2,99"
-    },
-    {
-      "nome": "VAGEM KG",
-      "preco": "R$ 15,49"
-    },
-    {
-      "nome": "TOMATE CEREJA KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "MELÃO KG",
-      "preco": "R$ 7,69"
-    }
-  ],
-  [
-    {
-      "nome": "PIMENTÃO KG",
-      "preco": "R$ 8,99"
-    },
-    {
-      "nome": "ABOBORA KG",
-      "preco": "R$ 3,99"
-    },
-    {
-      "nome": "PIMENTÃO COLORIDO KG",
-      "preco": "R$ 18,90"
-    },
-    {
-      "nome": "MORANGO KG",
-      "preco": "R$ 8,50"
-    },
-    {
-      "nome": "MELANCIA KG",
-      "preco": "R$ 3,99"
-    },
-    {
-      "nome": "LEITE DE COCO KG",
-      "preco": "R$ 79,90"
-    },
-    {
-      "nome": "PERA KG",
-      "preco": "R$ 17,99"
-    },
-    {
-      "nome": "MARACUJA KG",
-      "preco": "R$ 9,70"
-    },
-    {
-      "nome": "UVA KG",
-      "preco": "R$ 15,00"
-    },
-    {
-      "nome": "PEPINO CAIPIRA KG",
-      "preco": "R$ 5,99"
-    },
-    {
-      "nome": "MAÇÃ KG",
-      "preco": "R$ 14,99"
-    },
-    {
-      "nome": "BATATA DOCE KG",
-      "preco": "R$ 4,99"
-    }
-  ],
-  [
-    {
-      "nome": "PAO DE QUEIJO RECHEADO KG",
-      "preco": "R$ 49,90"
-    },
-    {
-      "nome": "UVA ROSADA 1,500G KG",
-      "preco": "R$ 21,69"
-    },
-    {
-      "nome": "UVA VERDE KG",
-      "preco": "R$ 9,99"
-    },
-    {
-      "nome": "COCO SECO KG",
-      "preco": "R$ 5,99"
-    },
-    {
-      "nome": "MANDIOQUINHA  SALSA KG",
-      "preco": "R$ 11,49"
-    },
-    {
-      "nome": "INHAME KG",
-      "preco": "R$ 8,49"
-    },
-    {
-      "nome": "GOIABA KG",
-      "preco": "R$ 13,79"
-    },
-    {
-      "nome": "JILO KG",
-      "preco": "R$ 10,49"
-    },
-    {
-      "nome": "BERINGELA KG",
-      "preco": "R$ 12,99"
-    },
-    {
-      "nome": "MANGA KG",
-      "preco": "R$ 5,99"
-    },
-    {
-      "nome": "ABACATE KG",
-      "preco": "R$ 5,99"
-    },
-    {
-      "nome": "BATATA KG",
-      "preco": "R$ 1,99"
-    }
-  ],
-  [
-    {
-      "nome": "PEPINO JAPONES KG",
-      "preco": "R$ 13,49"
-    },
-    {
-      "nome": "COUVE PICADA KG",
-      "preco": "R$ 3,00"
-    },
-    {
-      "nome": "POCAN KG",
-      "preco": "R$ 7,49"
-    },
-    {
-      "nome": "SALGADO C/50UNI KG",
-      "preco": "R$ 20,00"
-    },
-    {
-      "nome": "PÃO DE BATATA RECHEADO KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "castanha de caju caramelizada KG",
-      "preco": "R$ 69,90"
-    },
-    {
-      "nome": "COCO RALADO EM FLOCOS KG",
-      "preco": "R$ 55,00"
-    },
-    {
-      "nome": "BOLO INDIANO KG",
-      "preco": "R$ 21,00"
-    },
-    {
-      "nome": "BOLO FUBA CREMOSO KG",
-      "preco": "R$ 35,00"
-    },
-    {
-      "nome": "SALGADO ASSADO KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "presunto aurora KG",
-      "preco": "R$ 34,90"
-    },
-    {
-      "nome": "OVO CAIPIRA 12UN KG",
-      "preco": "R$ 14,00"
-    }
-  ],
-  [
-    {
-      "nome": "OVO CAIPIRA C\\6 UN KG",
-      "preco": "R$ 7,00"
-    },
-    {
-      "nome": "OVO CAIPIRA KG",
-      "preco": "R$ 1,25"
-    },
-    {
-      "nome": "ENROLADINHO DE SALSICHA KG",
-      "preco": "R$ 35,00"
-    },
-    {
-      "nome": "apresuntado perdigão lanche KG",
-      "preco": "R$ 24,90"
-    },
-    {
-      "nome": "SALGADO CONGELADO 50UNI KG",
-      "preco": "R$ 25,00"
-    },
-    {
-      "nome": "MUSSARELA RANCHO DE MINAS KG",
-      "preco": "R$ 48,00"
-    },
-    {
-      "nome": "BAGUETE DA CASA KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "QUEIJO MINAS FRESCAL SERRAMAR KG",
-      "preco": "R$ 41,00"
-    },
-    {
-      "nome": "PAO CANUDO KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "SALGADO FOLHADO KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "SALGADO CROASSAN KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "ROCAMBOLE KG",
-      "preco": "R$ 4,00"
-    }
-  ],
-  [
-    {
-      "nome": "BROA GOTA CHOCOLATE KG",
-      "preco": "R$ 3,00"
-    },
-    {
-      "nome": "ROSCA DE AÇUCAR KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "ROSCA DE CREME KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "PAO TATU KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "FATIA HUNGARA C/ CHOCOLATE KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "MUSSARELA CRISTAL LAT KG",
-      "preco": "R$ 58,00"
-    },
-    {
-      "nome": "ROSCA DE COCO KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "BOLO DE BANANA CARAMELIZADO KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "BOLO DE BANANA CARAM KG",
-      "preco": "R$ 3,50"
-    },
-    {
-      "nome": "MINI SALGADO KG",
-      "preco": "R$ 39,00"
-    },
-    {
-      "nome": "CHÁ VALERIANA KG",
-      "preco": "R$ 225,00"
-    },
-    {
-      "nome": "DENTE DE LEÃO KG",
-      "preco": "R$ 39,90"
-    }
-  ],
-  [
-    {
-      "nome": "ESTRELA DE ANIS KG",
-      "preco": "R$ 127,50"
-    },
-    {
-      "nome": "TEMPERO PEGA MARIDO KG",
-      "preco": "R$ 69,90"
-    },
-    {
-      "nome": "TORTA DOCE KG",
-      "preco": "R$ 16,00"
-    },
-    {
-      "nome": "MINI PÃO DE FRIOS KG",
-      "preco": "R$ 25,00"
-    },
-    {
-      "nome": "PÃO SOVADO KG",
-      "preco": "R$ 4,00"
-    },
-    {
-      "nome": "CAJU KG",
-      "preco": "R$ 13,99"
-    },
-    {
       "nome": "massa de pizza da casa c/ 2 un KG",
       "preco": "R$ 7,00"
-    },
-    {
-      "nome": "MASSA DE PIZZA KG",
-      "preco": "R$ 3,50"
-    },
-    {
-      "nome": "CAROLINA KG",
-      "preco": "R$ 69,90"
-    },
-    {
-      "nome": "MINI PAO DE SAL KG",
-      "preco": "R$ 0,40"
-    },
-    {
-      "nome": "MINI PAO CARECA KG",
-      "preco": "R$ 0,50"
-    },
-    {
-      "nome": "CREATINA MONOHIDRATADA KG",
-      "preco": "R$ 550,00"
     }
   ],
   [
-    {
-      "nome": "APRESUNTADO REZENDE KG",
-      "preco": "R$ 23,90"
-    },
-    {
-      "nome": "PIZZA PEDAÇO KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "mini pão de sal KG",
-      "preco": "R$ 12,90"
-    },
-    {
-      "nome": "bolo prestigio KG",
-      "preco": "R$ 15,00"
-    },
-    {
-      "nome": "bolo laranja s cobertura KG",
-      "preco": "R$ 7,50"
-    },
-    {
-      "nome": "BROA C/ GOIABADA KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "FUBA C/ERVA DOCE KG",
-      "preco": "R$ 13,50"
-    },
-    {
-      "nome": "BOLO  C/ CALDA KG",
-      "preco": "R$ 13,00"
-    },
-    {
-      "nome": "BOLO REDONDO C COBERTURA KG",
-      "preco": "R$ 18,00"
-    },
-    {
-      "nome": "APRESUNTADO SEARA KG",
-      "preco": "R$ 22,00"
-    },
-    {
-      "nome": "TORTA CHEESECAKE KG",
-      "preco": "R$ 8,00"
-    },
     {
       "nome": "LINGUIÇA FINA MISTA KG",
       "preco": "R$ 15,00"
-    }
-  ],
-  [
-    {
-      "nome": "BOLO DE POTE KG",
-      "preco": "R$ 12,00"
-    },
-    {
-      "nome": "TORTA HOLANDESA KG",
-      "preco": "R$ 13,75"
-    },
-    {
-      "nome": "AZEITONA COM CAROÇO KG",
-      "preco": "R$ 59,90"
-    },
-    {
-      "nome": "AZEITONA FATIADA KG",
-      "preco": "R$ 39,90"
-    },
-    {
-      "nome": "CEREJA EM CALDA C/ CABO KG",
-      "preco": "R$ 99,00"
-    },
-    {
-      "nome": "NOZ MOSCADA BOLA KG",
-      "preco": "R$ 149,90"
-    },
-    {
-      "nome": "PUDIM PEDAÇO KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "PUDIM INTEIRO KG",
-      "preco": "R$ 25,00"
-    },
-    {
-      "nome": "mousse KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "mortadela rezende KG",
-      "preco": "R$ 14,90"
-    },
-    {
-      "nome": "BOLO INDIANO KG",
-      "preco": "R$ 7,00"
-    },
-    {
-      "nome": "PUDIM DE PÃO KG",
-      "preco": "R$ 3,00"
-    }
-  ],
-  [
-    {
-      "nome": "PAO INTEGRAL KG",
-      "preco": "R$ 1,25"
-    },
-    {
-      "nome": "PÃO DE MILHO KG",
-      "preco": "R$ 1,25"
-    },
-    {
-      "nome": "farofa caseira KG",
-      "preco": "R$ 15,00"
-    },
-    {
-      "nome": "SEMENTE DE GIRASOL KG",
-      "preco": "R$ 1,00"
-    },
-    {
-      "nome": "GOMA DE TAPIOCA KG",
-      "preco": "R$ 14,50"
-    },
-    {
-      "nome": "CURRY KG",
-      "preco": "R$ 22,00"
-    },
-    {
-      "nome": "PAO CASEIRO KG",
-      "preco": "R$ 2,00"
-    },
-    {
-      "nome": "bolo redondo brig grande KG",
-      "preco": "R$ 22,00"
-    },
-    {
-      "nome": "AMENDOA CRUA KG",
-      "preco": "R$ 79,90"
-    },
-    {
-      "nome": "MORTADELA AURORA KG",
-      "preco": "R$ 15,00"
-    },
-    {
-      "nome": "bolo de laranja KG",
-      "preco": "R$ 4,00"
-    },
-    {
-      "nome": "PÃO DE HOT DOG KG",
-      "preco": "R$ 1,50"
-    }
-  ],
-  [
-    {
-      "nome": "ORA PRO NOBIS KG",
-      "preco": "R$ 140,00"
-    },
-    {
-      "nome": "FARINHA DE MAÇA KG",
-      "preco": "R$ 47,50"
-    },
-    {
-      "nome": "BETERRABA EM PO KG",
-      "preco": "R$ 64,00"
-    },
-    {
-      "nome": "FATIA DE BOLO DE CENOURA C/ CHOC KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "PIMENTA DO REINO BRANCA KG",
-      "preco": "R$ 69,00"
     },
     {
       "nome": "SALSICHA RESFRIADA SEARA KG",
       "preco": "R$ 14,90"
     },
     {
-      "nome": "ENROLADO DE FRANGO KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "ENROLADO DE CALABRESA KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "CUP COKES KG",
-      "preco": "R$ 6,50"
-    },
-    {
-      "nome": "MOUSSE KG",
-      "preco": "R$ 8,00"
-    },
-    {
-      "nome": "FATIA DE BOLO FESTA KG",
-      "preco": "R$ 19,50"
-    },
-    {
-      "nome": "DOCINHOS KG",
-      "preco": "R$ 2,00"
-    }
-  ],
-  [
-    {
-      "nome": "PÃO INTEGRAL 7 GRÃOS KG",
-      "preco": "R$ 9,90"
-    },
-    {
-      "nome": "PALITO DE PARMESÃO KG",
-      "preco": "R$ 54,90"
-    },
-    {
-      "nome": "PUDIM KG",
-      "preco": "R$ 30,00"
-    },
-    {
-      "nome": "TEMPERO CASEIRO KG",
-      "preco": "R$ 9,50"
-    },
-    {
-      "nome": "PRESUNTO PERDIGÃO KG",
-      "preco": "R$ 37,90"
-    },
-    {
-      "nome": "PÃO DE QUEIJO PARMESÃO KG",
-      "preco": "R$ 3,00"
-    },
-    {
-      "nome": "PIZZA FATIA CALABRESA KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "apresuntado aurora KG",
-      "preco": "R$ 22,50"
-    },
-    {
-      "nome": "FIBRA DE MAÇA KG",
-      "preco": "R$ 31,00"
-    },
-    {
-      "nome": "CEBOLA ROXA KG",
-      "preco": "R$ 6,49"
-    },
-    {
-      "nome": "CEVADA SOLUVEL KG",
-      "preco": "R$ 99,90"
-    },
-    {
-      "nome": "GERMEN DE TRIGO KG",
-      "preco": "R$ 16,90"
-    }
-  ],
-  [
-    {
-      "nome": "FIBRA DE MARACUJA KG",
-      "preco": "R$ 22,50"
-    },
-    {
-      "nome": "FLOR  DE SAL KG",
-      "preco": "R$ 75,00"
-    },
-    {
-      "nome": "BOLO REDONDO DE LARANJA KG",
-      "preco": "R$ 20,00"
-    },
-    {
       "nome": "SALSICHA PIF PAF KG",
       "preco": "R$ 12,99"
     },
     {
-      "nome": "CACAU EM PO 100% KG",
-      "preco": "R$ 119,00"
-    },
-    {
-      "nome": "BALA FINI MINHOCA KG",
-      "preco": "R$ 85,00"
-    },
-    {
-      "nome": "PRESUNTO COZIDO MAGRO SEARA KG",
-      "preco": "R$ 31,90"
-    },
-    {
       "nome": "PELE SUINA KG",
       "preco": "R$ 4,99"
-    },
-    {
-      "nome": "DONUTS KG",
-      "preco": "R$ 6,50"
-    },
-    {
-      "nome": "BAURU ASSADO KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "CHIPITA DE GOIABA KG",
-      "preco": "R$ 48,50"
-    },
-    {
-      "nome": "PÃO DE BATATA DE FRANGO C/ REQ KG",
-      "preco": "R$ 5,00"
-    }
-  ],
-  [
-    {
-      "nome": "SALGADO ASSADO KG",
-      "preco": "R$ 6,00"
     },
     {
       "nome": "PRIME RIB SUÍNO KG",
@@ -1561,18 +73,6 @@
     {
       "nome": "PICANHA KG",
       "preco": "R$ 79,90"
-    },
-    {
-      "nome": "CROISSANT PRESUNTO C/ MUSSARELA KG",
-      "preco": "R$ 6,50"
-    },
-    {
-      "nome": "MINI TORTA DE FRANGO C/REQUEIJÃO KG",
-      "preco": "R$ 8,50"
-    },
-    {
-      "nome": "BOLO MILHO VERDE CREMOSO KG",
-      "preco": "R$ 6,00"
     },
     {
       "nome": "MAMINHA KG",
@@ -1595,23 +95,11 @@
       "preco": "R$ 45,00"
     },
     {
-      "nome": "COXÃO DURO KG",
-      "preco": "R$ 46,90"
+      "nome": "LAGARTO KG",
+      "preco": "R$ 48,90"
     }
   ],
   [
-    {
-      "nome": "COXÃO DURO EM PEÇA KG",
-      "preco": "R$ 29,90"
-    },
-    {
-      "nome": "COUVE FLOR KG",
-      "preco": "R$ 6,99"
-    },
-    {
-      "nome": "LAGARTO KG",
-      "preco": "R$ 48,90"
-    },
     {
       "nome": "ALCATRA COM MAMINHA KG",
       "preco": "R$ 59,90"
@@ -1637,19 +125,9 @@
       "preco": "R$ 37,90"
     },
     {
-      "nome": "PEIXINHO KG",
-      "preco": "R$ 34,90"
-    },
-    {
-      "nome": "TRUFA KG",
-      "preco": "R$ 6,00"
-    },
-    {
       "nome": "PEITO BOVINO KG",
       "preco": "R$ 36,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "COSTELA DE RIPA KG",
       "preco": "R$ 26,90"
@@ -1669,7 +147,9 @@
     {
       "nome": "CHULETA GAUCHA KG",
       "preco": "R$ 22,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "PICADÃO KG",
       "preco": "R$ 34,90"
@@ -1697,9 +177,7 @@
     {
       "nome": "MEIO DA ASA TEMPERADA KG",
       "preco": "R$ 26,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "FRANGO INTEIRO KG",
       "preco": "R$ 9,99"
@@ -1719,19 +197,9 @@
     {
       "nome": "PEITO SEM OSSO KG",
       "preco": "R$ 21,00"
-    },
-    {
-      "nome": "MEIO REPOLHO KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "BOLO DE CENOURA CASEIRO KG",
-      "preco": "R$ 6,50"
-    },
-    {
-      "nome": "TORTA CHEESECAKE FRUTAS VERMELHA KG",
-      "preco": "R$ 15,50"
-    },
+    }
+  ],
+  [
     {
       "nome": "COXA SOBRECOXA KG",
       "preco": "R$ 8,99"
@@ -1747,9 +215,7 @@
     {
       "nome": "ASA DE FRANGO KG",
       "preco": "R$ 16,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "MEIO DA ASA KG",
       "preco": "R$ 22,90"
@@ -1781,7 +247,9 @@
     {
       "nome": "BARRIGA KG",
       "preco": "R$ 26,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "COSTELINHA KG",
       "preco": "R$ 29,90"
@@ -1797,9 +265,7 @@
     {
       "nome": "PERNIL PICADO KG",
       "preco": "R$ 22,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "COSTELINHA COM COURO KG",
       "preco": "R$ 29,90"
@@ -1831,7 +297,9 @@
     {
       "nome": "MILANESA BOVINA KG",
       "preco": "R$ 48,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "MILANESA DE FRANGO KG",
       "preco": "R$ 36,90"
@@ -1845,18 +313,8 @@
       "preco": "R$ 44,90"
     },
     {
-      "nome": "PCT MINI ASSADO KG",
-      "preco": "R$ 19,00"
-    }
-  ],
-  [
-    {
       "nome": "linguiça fina de lombo KG",
       "preco": "R$ 26,90"
-    },
-    {
-      "nome": "PIMENTA KG",
-      "preco": "R$ 27,00"
     },
     {
       "nome": "linguiça fina pernil KG",
@@ -1869,10 +327,6 @@
     {
       "nome": "linguiça pura de pernil KG",
       "preco": "R$ 28,90"
-    },
-    {
-      "nome": "BOLO DE LEITE NINHO KG",
-      "preco": "R$ 6,00"
     },
     {
       "nome": "LINGUIÇA DE ALHO PORO COM BACON KG",
@@ -1893,16 +347,12 @@
     {
       "nome": "LINGUIÇA MISTA KG",
       "preco": "R$ 26,90"
-    },
-    {
-      "nome": "COPA LOMBO KG",
-      "preco": "R$ 29,90"
     }
   ],
   [
     {
-      "nome": "TORTA HOLANDESA KG",
-      "preco": "R$ 13,50"
+      "nome": "COPA LOMBO KG",
+      "preco": "R$ 29,90"
     },
     {
       "nome": "ESPETINHO BOVINO KG",
@@ -1955,10 +405,6 @@
       "preco": "R$ 34,90"
     },
     {
-      "nome": "BATATA ASTERIX KG",
-      "preco": "R$ 5,99"
-    },
-    {
       "nome": "ESPETINHO DE CORAÇÃO KG",
       "preco": "R$ 5,00"
     },
@@ -1997,13 +443,13 @@
     {
       "nome": "FRALDINHA KG",
       "preco": "R$ 44,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "SUÃN KG",
       "preco": "R$ 19,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "COXÃO DURO RECHEADO E TEMPERADO KG",
       "preco": "R$ 39,90"
@@ -2025,96 +471,12 @@
       "preco": "R$ 26,90"
     },
     {
-      "nome": "PÃO CARACOL KG",
-      "preco": "R$ 1,50"
-    },
-    {
-      "nome": "BOLO CONFEITADO EM FATIA KG",
-      "preco": "R$ 10,49"
-    },
-    {
-      "nome": "BOLO RED VELVET REDONDO KG",
-      "preco": "R$ 50,00"
-    },
-    {
-      "nome": "BOLO DOCE DE LEITE C/ AMEIXA PDC KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "BOLO DOCE DE LEITE C/ AMEIXA RED KG",
-      "preco": "R$ 50,00"
-    },
-    {
-      "nome": "TRANCINHA COM CREME KG",
-      "preco": "R$ 1,50"
-    }
-  ],
-  [
-    {
-      "nome": "BAGUETINHA DE CREME KG",
-      "preco": "R$ 1,50"
-    },
-    {
-      "nome": "BENGALA COM CREME KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "PÃO TATUZINHO KG",
-      "preco": "R$ 1,25"
-    },
-    {
-      "nome": "PÃO TRANÇA KG",
-      "preco": "R$ 3,00"
-    },
-    {
-      "nome": "PÃO CHINES KG",
-      "preco": "R$ 3,00"
-    },
-    {
-      "nome": "PÃO DO PADRE C/ AÇUCAR KG",
-      "preco": "R$ 6,00"
-    },
-    {
       "nome": "LINGUIÇA PERNIL (DEDO DE MOÇA ) KG",
       "preco": "R$ 26,90"
     },
     {
       "nome": "BANANINHA DO CONTRA FILÉ KG",
       "preco": "R$ 36,90"
-    },
-    {
-      "nome": "mini pão de queijo recheado KG",
-      "preco": "R$ 49,90"
-    },
-    {
-      "nome": "CHIPA KG",
-      "preco": "R$ 2,00"
-    },
-    {
-      "nome": "PÃO DE ALHO KG",
-      "preco": "R$ 4,50"
-    },
-    {
-      "nome": "GENGIBRE KG",
-      "preco": "R$ 12,99"
-    }
-  ],
-  [
-    {
-      "nome": "CHÁ QUEBRA PEDRA KG",
-      "preco": "R$ 87,90"
-    },
-    {
-      "nome": "TRIBULUS TERRESTRE KG",
-      "preco": "R$ 197,90"
-    },
-    {
-      "nome": "PÃO DE CEBOLA KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "TORTA DE FRIOS KG",
-      "preco": "R$ 6,00"
     },
     {
       "nome": "TOICINHO PICADO KG",
@@ -2133,38 +495,14 @@
       "preco": "R$ 3,30"
     },
     {
-      "nome": "PRETZEL KG",
-      "preco": "R$ 1,75"
-    },
-    {
       "nome": "CUPIM KG",
       "preco": "R$ 42,90"
-    },
-    {
-      "nome": "PÃO MINUTO KG",
-      "preco": "R$ 1,75"
-    },
-    {
-      "nome": "MARIA MOLE KG",
-      "preco": "R$ 2,00"
     }
   ],
   [
     {
       "nome": "ESPETINHO DE LINGUIÇA KG",
       "preco": "R$ 4,00"
-    },
-    {
-      "nome": "TRANÇA DE FRIOS KG",
-      "preco": "R$ 7,50"
-    },
-    {
-      "nome": "TRANÇA DOCE KG",
-      "preco": "R$ 7,50"
-    },
-    {
-      "nome": "LANCHE NATURAL KG",
-      "preco": "R$ 10,00"
     },
     {
       "nome": "SHORT RIB BOVINO KG",
@@ -2177,10 +515,6 @@
     {
       "nome": "ESPETINHO DE ALCATRA KG",
       "preco": "R$ 5,00"
-    },
-    {
-      "nome": "POLPA DE FRUTA KG",
-      "preco": "R$ 7,50"
     },
     {
       "nome": "PANCETA PRA CHURRASCO KG",
@@ -2197,91 +531,25 @@
     {
       "nome": "LINGUIÇA ROMEU E JULIETA KG",
       "preco": "R$ 28,90"
-    }
-  ],
-  [
-    {
-      "nome": "BAGUETE RECHEADA KG",
-      "preco": "R$ 10,00"
-    },
-    {
-      "nome": "BAGUETE GRANDE PT DE PERU KG",
-      "preco": "R$ 13,50"
-    },
-    {
-      "nome": "CEVADA KG",
-      "preco": "R$ 14,90"
-    },
-    {
-      "nome": "MINI CANUDO RECHEADO KG",
-      "preco": "R$ 1,50"
-    },
-    {
-      "nome": "BOLINHO DE CHUVA KG",
-      "preco": "R$ 20,00"
-    },
-    {
-      "nome": "BANANA DA TERRA KG",
-      "preco": "R$ 8,99"
     },
     {
       "nome": "PICANHA SUÍNA TEMPERADA KG",
       "preco": "R$ 29,90"
     },
     {
-      "nome": "QUICHE DE ESPINAFRE KG",
-      "preco": "R$ 9,00"
-    },
-    {
-      "nome": "TORTA KG",
-      "preco": "R$ 7,00"
-    },
-    {
-      "nome": "BAGUETE KG",
-      "preco": "R$ 7,00"
-    },
-    {
       "nome": "COSTELA TEMPERADA KG",
       "preco": "R$ 24,90"
-    },
-    {
-      "nome": "SONHO ABERTO KG",
-      "preco": "R$ 5,00"
-    }
-  ],
-  [
-    {
-      "nome": "SONHO ABERTO KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "PÃO DE LEITE NINHO KG",
-      "preco": "R$ 7,00"
-    },
-    {
-      "nome": "MINEIRINHO KG",
-      "preco": "R$ 3,00"
-    },
-    {
-      "nome": "CANGALA KG",
-      "preco": "R$ 3,50"
     },
     {
       "nome": "PIRULITO FR FRALDINHA KG",
       "preco": "R$ 36,90"
     },
     {
-      "nome": "rosquinha KG",
-      "preco": "R$ 1,00"
-    },
-    {
       "nome": "PEITO DE FRANGO SADIA FATIADO KG",
       "preco": "R$ 34,90"
-    },
-    {
-      "nome": "PÃO RECHEADO KG",
-      "preco": "R$ 8,00"
-    },
+    }
+  ],
+  [
     {
       "nome": "MORTADELA GOURMET SEARA DEFUMADA KG",
       "preco": "R$ 19,90"
@@ -2291,50 +559,16 @@
       "preco": "R$ 44,90"
     },
     {
-      "nome": "ROSQUINHA DE PINGA KG",
-      "preco": "R$ 3,50"
-    },
-    {
-      "nome": "PÃO BRIOCHI KG",
-      "preco": "R$ 2,00"
-    }
-  ],
-  [
-    {
       "nome": "bife ancho KG",
       "preco": "R$ 59,90"
-    },
-    {
-      "nome": "PÃO BRIOCHI SALGADO KG",
-      "preco": "R$ 9,50"
-    },
-    {
-      "nome": "MINI SONHO KG",
-      "preco": "R$ 1,25"
     },
     {
       "nome": "PALETA DE CORDEIRO KG",
       "preco": "R$ 56,90"
     },
     {
-      "nome": "TIBONE DE CORDEIRO KG",
-      "preco": "R$ 59,90"
-    },
-    {
       "nome": "MORTADELA SADIA DEFUMADA KG",
       "preco": "R$ 19,90"
-    },
-    {
-      "nome": "LÍNGUA DE SOGRA KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "BAQUETE DOCE KG",
-      "preco": "R$ 2,00"
-    },
-    {
-      "nome": "TEMPERO 200G KG",
-      "preco": "R$ 6,99"
     },
     {
       "nome": "LINGUIÇA TOSCANA SEARA KG",
@@ -2347,9 +581,7 @@
     {
       "nome": "CARRE DE CORDEIRO KG",
       "preco": "R$ 69,90"
-    }
-  ],
-  [
+    },
     {
       "nome": "ASSADOS DE TIRAS DE CONTRA FILÉ KG",
       "preco": "R$ 79,90"
@@ -2365,7 +597,9 @@
     {
       "nome": "COSTELINHA SUÍNA SALGADA KG",
       "preco": "R$ 27,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "PÉ SUÍNO SALGADO KG",
       "preco": "R$ 14,90"
@@ -2375,96 +609,16 @@
       "preco": "R$ 59,90"
     },
     {
-      "nome": "LARANJA BHAIA KG",
-      "preco": "R$ 8,90"
-    },
-    {
-      "nome": "MORT PERDIGÃO TRADICIONAL KG",
-      "preco": "R$ 19,90"
-    },
-    {
-      "nome": "SALSA DESIDRATADA KG",
-      "preco": "R$ 40,00"
-    },
-    {
-      "nome": "CARQUEIJA DOCE KG",
-      "preco": "R$ 80,00"
-    },
-    {
       "nome": "COSTELINHA DE CORDEIRO KG",
       "preco": "R$ 44,90"
     },
     {
       "nome": "COSTELA BOVINA 4 OSSOS KG",
       "preco": "R$ 26,90"
-    }
-  ],
-  [
-    {
-      "nome": "EXTRATO DE SOJA KG",
-      "preco": "R$ 30,00"
-    },
-    {
-      "nome": "TEMPERO MINEIRO KG",
-      "preco": "R$ 70,00"
-    },
-    {
-      "nome": "LOURO EM PO KG",
-      "preco": "R$ 98,00"
-    },
-    {
-      "nome": "BOLO GELADO KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "BOMBA DE CHOCOLATE KG",
-      "preco": "R$ 7,00"
     },
     {
       "nome": "COSTELA PICADA KG",
       "preco": "R$ 19,99"
-    },
-    {
-      "nome": "KIT DOS PAIS KG",
-      "preco": "R$ 169,90"
-    },
-    {
-      "nome": "COXINHA DE MORANGO KG",
-      "preco": "R$ 10,00"
-    },
-    {
-      "nome": "PÃO DE FORMA C/ FRIOS KG",
-      "preco": "R$ 7,50"
-    },
-    {
-      "nome": "CARQUEJA DOCE KG",
-      "preco": "R$ 12,90"
-    },
-    {
-      "nome": "SALSA DESIDRATADA KG",
-      "preco": "R$ 34,80"
-    },
-    {
-      "nome": "AMENDOIM GRAUDO TORRADO E SALGADO KG",
-      "preco": "R$ 25,00"
-    }
-  ],
-  [
-    {
-      "nome": "LOURO EM PÓ KG",
-      "preco": "R$ 18,90"
-    },
-    {
-      "nome": "EXTRATO DE SOJÁ NUTRIALY KG",
-      "preco": "R$ 19,65"
-    },
-    {
-      "nome": "CHOCOLATE EM PÓ SOLUVEL PADRE KG",
-      "preco": "R$ 29,30"
-    },
-    {
-      "nome": "GOMA DO NORTE KG",
-      "preco": "R$ 10,00"
     },
     {
       "nome": "LINGUIÇA TOSCANA FIRMESA KG",
@@ -2475,31 +629,9 @@
       "preco": "R$ 26,90"
     },
     {
-      "nome": "ROSCA DOCE KG",
-      "preco": "R$ 5,00"
-    },
-    {
-      "nome": "PCT DE MINI PÃO DE CENOURA KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "PÃO CARACOL KG",
-      "preco": "R$ 1,00"
-    },
-    {
       "nome": "LING ARTESANAL DE TORRESMO KG",
       "preco": "R$ 26,90"
     },
-    {
-      "nome": "queijo meia cura serra de minas KG",
-      "preco": "R$ 55,50"
-    },
-    {
-      "nome": "BALA SENSAÇÃO DUTACHO 100G KG",
-      "preco": "R$ 7,00"
-    }
-  ],
-  [
     {
       "nome": "HAMBURGUER ARTESANAL 120G KG",
       "preco": "R$ 4,99"
@@ -2509,17 +641,15 @@
       "preco": "R$ 64,90"
     },
     {
-      "nome": "ESFIRRINHA KG",
-      "preco": "R$ 1,50"
-    },
-    {
       "nome": "contra file KG",
       "preco": "R$ 52,90"
     },
     {
       "nome": "ALCATRA COM MAMINHA KG",
       "preco": "R$ 48,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "CUPIM KG",
       "preco": "R$ 44,90"
@@ -2537,112 +667,32 @@
       "preco": "R$ 21,90"
     },
     {
-      "nome": "chips de mandioquinha KG",
-      "preco": "R$ 88,00"
-    },
-    {
-      "nome": "KIWI KG",
-      "preco": "R$ 13,69"
-    },
-    {
       "nome": "PEITO SEM OSSO KG",
       "preco": "R$ 19,99"
-    }
-  ],
-  [
+    },
     {
       "nome": "PICANHA PARAGUAIA KG",
       "preco": "R$ 59,90"
-    },
-    {
-      "nome": "CONE TRUFADO KG",
-      "preco": "R$ 6,50"
-    },
-    {
-      "nome": "MUSSARELA MANDAKA KG",
-      "preco": "R$ 36,90"
-    },
-    {
-      "nome": "BOLO CASEIRO KG",
-      "preco": "R$ 31,00"
-    },
-    {
-      "nome": "BOLO CASEIRO KG",
-      "preco": "R$ 29,99"
     },
     {
       "nome": "CORTES DE LEITÃO KG",
       "preco": "R$ 22,90"
     },
     {
-      "nome": "NECTARINA KG",
-      "preco": "R$ 16,99"
-    },
-    {
-      "nome": "BOLO CASEIRO KG",
-      "preco": "R$ 24,50"
-    },
-    {
       "nome": "COXINHA DA ASA EMPANADA KG",
       "preco": "R$ 39,90"
     },
     {
-      "nome": "BATATA PIRULITO KG",
-      "preco": "R$ 3,00"
-    },
-    {
-      "nome": "QUEIJO MINAS PADRÃO SERRAMAR KG",
-      "preco": "R$ 65,00"
-    },
-    {
       "nome": "BAGUETE PRESUNTO E QUEIJO KG",
       "preco": "R$ 6,00"
-    }
-  ],
-  [
-    {
-      "nome": "BOLO DE BANANA(PEDAÇO) KG",
-      "preco": "R$ 3,50"
     },
     {
       "nome": "MAMINHA RECHEADA KG",
       "preco": "R$ 59,90"
     },
     {
-      "nome": "BOLO CASEIRO KG",
-      "preco": "R$ 19,99"
-    },
-    {
       "nome": "PRESUNTO MIOGNONETO SADIA KG",
       "preco": "R$ 34,90"
-    },
-    {
-      "nome": "BOLO CASEIRO KG",
-      "preco": "R$ 24,50"
-    },
-    {
-      "nome": "BOLO CASEIRO KG",
-      "preco": "R$ 33,99"
-    },
-    {
-      "nome": "BOLO CASEIRO KG",
-      "preco": "R$ 31,00"
-    },
-    {
-      "nome": "MORANGA KG",
-      "preco": "R$ 2,49"
-    },
-    {
-      "nome": "BATATA DOCE BRANCA KG",
-      "preco": "R$ 8,99"
-    },
-    {
-      "nome": "LANCHE NATURAL KG",
-      "preco": "R$ 4,00"
-    },
-    {
-      "nome": "NINI LANCHE NATURAL KG",
-      "preco": "R$ 2,50"
     },
     {
       "nome": "FILÉ DE PANGA EMPANADO KG",
@@ -2651,20 +701,8 @@
   ],
   [
     {
-      "nome": "MINI BROA KG",
-      "preco": "R$ 39,90"
-    },
-    {
-      "nome": "SALGADO INTEGRAL KG",
-      "preco": "R$ 6,00"
-    },
-    {
       "nome": "PRESUNTO PERDIGÃO EMBUTIDO DE PER KG",
       "preco": "R$ 26,50"
-    },
-    {
-      "nome": "ATEMOIA KG",
-      "preco": "R$ 17,99"
     },
     {
       "nome": "PESCOÇO DE FRANGO KG",
@@ -2675,120 +713,24 @@
       "preco": "R$ 24,90"
     },
     {
-      "nome": "LUA DE MEL KG",
-      "preco": "R$ 2,50"
-    },
-    {
-      "nome": "PÃO DE HAMBURGUER 1 UNI KG",
-      "preco": "R$ 1,50"
-    },
-    {
-      "nome": "MUSSARELA CPMEVAP ZERO LACTOSE KG",
-      "preco": "R$ 54,90"
-    },
-    {
-      "nome": "MAMAO FORMOSA KG",
-      "preco": "R$ 7,99"
-    },
-    {
       "nome": "linguiça de pernil pimnta bodinho KG",
       "preco": "R$ 28,90"
-    },
-    {
-      "nome": "MUSSARELA COMEVAP KG",
-      "preco": "R$ 38,90"
-    }
-  ],
-  [
-    {
-      "nome": "MASSA DE MANDIOCA CONGELADA KG",
-      "preco": "R$ 7,85"
-    },
-    {
-      "nome": "MINI ESFIHA KG",
-      "preco": "R$ 2,50"
     },
     {
       "nome": "FILEZINHO DE FRANGO BAITA EMPANAD KG",
       "preco": "R$ 34,90"
     },
     {
-      "nome": "LARANJA MORGOTE KG",
-      "preco": "R$ 7,49"
-    },
-    {
       "nome": "MEDALHÃO DE ROMEU E JULIETA KG",
       "preco": "R$ 8,00"
-    },
-    {
-      "nome": "PÃO DE LARANJA KG",
-      "preco": "R$ 1,50"
     },
     {
       "nome": "LINGUIÇA TOSCANA FRESCAL PERDIGÃO KG",
       "preco": "R$ 19,99"
     },
     {
-      "nome": "PÃO DE BRIOCHE RECHEADO KG",
-      "preco": "R$ 6,00"
-    },
-    {
-      "nome": "PÃO DE TORRESMO KG",
-      "preco": "R$ 7,00"
-    },
-    {
-      "nome": "PÃO DE SAL COM QUEIJO KG",
-      "preco": "R$ 1,50"
-    },
-    {
-      "nome": "TEMPERO PARA FEIJÃO KG",
-      "preco": "R$ 59,90"
-    },
-    {
-      "nome": "SALADA DE FRUTAS KG",
-      "preco": "R$ 5,00"
-    }
-  ],
-  [
-    {
-      "nome": "CAÇÃO EM POSTA KG",
-      "preco": "R$ 29,90"
-    },
-    {
-      "nome": "PÃO DE CENOURA KG",
-      "preco": "R$ 1,50"
-    },
-    {
       "nome": "COSTELINHA TEMPERADA KG",
       "preco": "R$ 26,90"
-    },
-    {
-      "nome": "PÃO DE FRIOS MASSA BATATA KG",
-      "preco": "R$ 3,50"
-    },
-    {
-      "nome": "PÃO DE BATATA KG",
-      "preco": "R$ 1,50"
-    },
-    {
-      "nome": "CUCA DE BANANA KG",
-      "preco": "R$ 4,50"
-    },
-    {
-      "nome": "PIZZA ENROLADA MASSA DE BATATA KG",
-      "preco": "R$ 5,50"
-    },
-    {
-      "nome": "MOLHO ARTESANAL BLACK KG",
-      "preco": "R$ 1,00"
-    },
-    {
-      "nome": "QJO MONTANHÊS SERRA DO QUILOMBO KG",
-      "preco": "R$ 61,49"
-    },
-    {
-      "nome": "QUEIJO ARTESANAL DINART JR KG",
-      "preco": "R$ 61,49"
     },
     {
       "nome": "LINGUIÇA CALABRESA RESENDE KG",
@@ -2797,36 +739,20 @@
     {
       "nome": "LINGUIÇA QUEIJO PIMENTA KG",
       "preco": "R$ 29,90"
-    }
-  ],
-  [
-    {
-      "nome": "FATIA DE BOLO SALGADO KG",
-      "preco": "R$ 8,50"
-    },
-    {
-      "nome": "ROSCA RECHEADA KG",
-      "preco": "R$ 9,50"
     },
     {
       "nome": "GORDURA DE PORCO CASEIRA KG",
       "preco": "R$ 15,00"
     },
     {
-      "nome": "POLPA DE MORANGO KG",
-      "preco": "R$ 5,00"
-    },
-    {
       "nome": "FILEZINHO DE SASSAMI KG",
       "preco": "R$ 22,90"
-    },
+    }
+  ],
+  [
     {
       "nome": "PRIME RIB SUINO KG",
       "preco": "R$ 29,90"
-    },
-    {
-      "nome": "AMEIXA AMARELA KG",
-      "preco": "R$ 13,99"
     },
     {
       "nome": "TIBONE SUINO KG",
@@ -2835,36 +761,6 @@
     {
       "nome": "FILE DE COXA EMPANADA KG",
       "preco": "R$ 33,90"
-    },
-    {
-      "nome": "AVE FIESTA SEARA KG",
-      "preco": "R$ 24,50"
-    },
-    {
-      "nome": "DOCE SOBREMESA KG",
-      "preco": "R$ 110,00"
-    },
-    {
-      "nome": "DOCE SOBREMESA KG",
-      "preco": "R$ 75,00"
-    }
-  ],
-  [
-    {
-      "nome": "BANANA MAÇA KG",
-      "preco": "R$ 8,49"
-    },
-    {
-      "nome": "AMENDOIN SEM PELE E SEM SAL KG",
-      "preco": "R$ 19,90"
-    },
-    {
-      "nome": "QUEIJO PARMESAO COMEVAP KG",
-      "preco": "R$ 139,90"
-    },
-    {
-      "nome": "LICHIA KG",
-      "preco": "R$ 13,49"
     }
   ]
 ]
