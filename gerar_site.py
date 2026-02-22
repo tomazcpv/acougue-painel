@@ -1,63 +1,50 @@
 import json
 import math
-import re
 
 arquivo_txt = "ITENSMGV.txt"
 arquivo_json = "produtos.json"
 
 ITENS_POR_SLIDE = 12
 
-# SOMENTE carnes permitidas
-CARNES_PERMITIDAS = [
-    "PICANHA",
-    "ALCATRA",
-    "MAMINHA",
+# Carnes permitidas
+CARNES = [
     "PATINHO",
     "ACEM",
     "ACÉM",
+    "PICANHA",
+    "ALCATRA",
+    "MAMINHA",
+    "FRALDA",
     "COSTELA",
     "CUPIM",
-    "FRALDA",
-    "CONTRA FILE",
-    "CONTRA-FILE",
-    "BISTECA",
-    "PERNIL",
-    "LOMBO",
-    "SUINO",
-    "SUÍNO",
-    "FRANGO",
-    "COXA",
-    "SOBRECOXA",
-    "ASA",
-    "PEITO",
     "LINGUIÇA",
     "LINGUICA",
     "CALABRESA",
-    "TOSCANA",
+    "FRANGO",
+    "COXA",
+    "SOBRECOXA",
+    "PEITO",
+    "ASA",
+    "PERNIL",
+    "LOMBO",
+    "BISTECA",
     "BACON",
-    "PALETA",
-    "MUSCULO",
-    "MÚSCULO"
+    "SALSICHA"
 ]
 
 def eh_carne(nome):
     nome = nome.upper()
-
-    for carne in CARNES_PERMITIDAS:
+    for carne in CARNES:
         if carne in nome:
             return True
-
     return False
 
-
-def formatar_preco(valor):
+def formatar_preco(preco_str):
     try:
-        valor = valor.replace("R$", "").replace(",", ".")
-        valor = float(valor)
+        valor = int(preco_str) / 100
         return f"R$ {valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
     except:
         return "R$ 0,00"
-
 
 produtos = []
 
@@ -66,15 +53,15 @@ with open(arquivo_txt, "r", encoding="latin-1") as f:
 
 for linha in linhas:
 
-    partes = linha.strip().split()
+    # Nome do produto começa na posição 18 e vai até 60
+    nome = linha[18:60].strip()
 
-    if len(partes) < 2:
+    # Preço fica entre posição 10 e 16
+    preco_str = linha[10:16].strip()
+
+    if not nome:
         continue
 
-    preco_str = partes[-1]
-    nome = " ".join(partes[:-1])
-
-    # Só entra se for carne permitida
     if eh_carne(nome):
 
         produto = {
@@ -84,7 +71,6 @@ for linha in linhas:
 
         produtos.append(produto)
 
-
 # Divide em slides
 slides = []
 total_slides = math.ceil(len(produtos) / ITENS_POR_SLIDE)
@@ -93,7 +79,6 @@ for i in range(total_slides):
     inicio = i * ITENS_POR_SLIDE
     fim = inicio + ITENS_POR_SLIDE
     slides.append(produtos[inicio:fim])
-
 
 # Salva JSON
 with open(arquivo_json, "w", encoding="utf-8") as f:
