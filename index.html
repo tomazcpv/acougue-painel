@@ -265,19 +265,49 @@
     }
 
     function categoria(nome) {
-      const n = String(nome ?? "").toUpperCase();
-      const suinos_kw = [
-        "SUIN","SUÍN","PORCO","PERNIL","BISTECA","COSTELINHA","PANCETA",
-        "TOICINHO","TORRESMO","PAIO","LINGUIÇA","LINGUICA","CUIBANA",
-        "JOELHO","ORELHA","RABO SU","PELE SU","PRIME RIB SU","TIBONE SU"
-      ];
-      const aves_kw = [
-        "FRANGO","ASA","COXA","SOBRECOXA","SASSAMI","PERU",
-        "PESCOÇO","PÉ DE FRANGO","PE DE FRANGO","MOELA"
-      ];
-      if (suinos_kw.some(k => n.includes(k))) return "SUINOS";
-      if (aves_kw.some(k => n.includes(k))) return "BOVINOS"; // mantém 2 colunas
-      return "BOVINOS";
+  const n = String(nome ?? "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase();
+
+  // PROCESSADOS / EMBUTIDOS (mostraremos junto de SUÍNOS por padrão)
+  const proc = [
+    "LINGUICA","SALSI","SALSICHA","MORTADELA","PRESUNTO","APRESUNTADO",
+    "PEITO DE PERU","BLANQUET","SALAME","COPA","LOMBO DEFUM","BACON",
+    "PAIO","CALABRESA","FRANKFURT","HAMBUR","NUGGET","EMPANAD",
+    "ALMONDEGA","KIBE","KIBE","KAFTA","DEFUM"
+  ];
+
+  // AVES
+  const aves = [
+    "FRANGO","GALINHA","COXA","SOBRECOXA","ASA","FILE DE FRANGO",
+    "SASSAMI","PEITO DE FRANGO","PERU","CHESTER","PATO",
+    "MOELA","CORACAO","FIGADO DE FRANGO","PESCOCO","PE DE FRANGO","CARCACA"
+  ];
+
+  // SUÍNOS
+  const suinos = [
+    "SUIN","PORCO","PERNIL","LOMBO","BISTECA","COSTELINHA","COSTELA SU",
+    "PANCETA","TOUCINHO","TORRESMO","CABECA SU","ORELHA","RABO SU",
+    "JOELHO","PE SU"
+  ];
+
+  // BOVINOS (nem precisa listar tudo; é o fallback quando não bate outras)
+  // Mas ajuda em casos ambíguos:
+  const bovinos = [
+    "BOV","BOI","VACA","NOVILHO","BEZERRO","VITELA",
+    "PICANHA","CONTRA FILE","FILE MIGNON","ALCATRA","PATINHO",
+    "MUSCULO","ACEM","PALETA","CUPIM","COSTELA BOV","FRALDINHA",
+    "MAMINHA","COXAO","LAGARTO","PEITO BOV"
+  ];
+
+  // Ordem importa: primeiro detecta o que mais “vaza”
+  if (proc.some(k => n.includes(k))) return "SUINOS"; // ou "PROCESSADOS" se você quiser uma 3ª coluna
+  if (aves.some(k => n.includes(k))) return "AVES";
+  if (suinos.some(k => n.includes(k))) return "SUINOS";
+  if (bovinos.some(k => n.includes(k))) return "BOVINOS";
+
+  // Fallback: se não reconhecer, deixa em bovinos (ou cria "OUTROS")
+  return "BOVINOS";
     }
 
     function chunk(lista, n) {
