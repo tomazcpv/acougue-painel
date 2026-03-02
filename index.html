@@ -6,7 +6,7 @@
   <title>Painel Açougue</title>
   <style>
   * { box-sizing: border-box; }
-  body { margin:0; background:#000; font-family: Arial, Helvetica, sans-serif; overflow:hidden; }
+  body { margin:0; background:#000 url("background.jpg") center/cover no-repeat fixed; font-family: Arial, Helvetica, sans-serif; overflow:hidden; }
 
   /* Transição suave entre slides */
   .slide {
@@ -158,14 +158,23 @@
   margin-bottom: 18px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.45);
   border: 2px solid rgba(255,255,255,0.15);
-  }
+  
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 12px;
+  align-items: center;
+}
+
 
   .banner-photo {
     border-radius: 14px;
     overflow: hidden;
     background: rgba(255,255,255,0.08);
     border: 2px solid rgba(255,255,255,0.12);
+  
+    height: 100%;
   }
+
   .banner-photo img {
  width: 100%;
   height: 100%;
@@ -183,17 +192,8 @@
     gap: 14px;
     padding: 10px 12px;
     border: 2px solid rgba(255,255,255,0.15);
-  }
-  .brand .logo {
-    height: 82px;
-    width: auto;
-  }
-  .brand-name {
-    font-size: 24px;
-    font-weight: 900;
-    color: #111;
-    text-align:center;
-    line-height: 1.1;
+  
+    height: 100%;
   }
 
   .tables {
@@ -226,24 +226,24 @@
   }
 
   .table-body {
-    padding: 12px 14px;
+    padding: 10px 12px;
     display:flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
   }
 
   .row {
     display:flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 10px 12px;
+    padding: 6px 10px;
     border-radius: 10px;
     background: rgba(0,0,0,0.22);
     border: 1px solid rgba(255,255,255,0.10);
   }
 
   .row-name {
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 800;
     color: #fff;
     max-width: 72%;
@@ -254,7 +254,7 @@
 
   /* Preço com borda + sombra (bem legível na TV) */
   .row-price {
-    font-size: 30px;
+    font-size: 22px;
     font-weight: 900;
     color: #fff;
     white-space: nowrap;
@@ -274,11 +274,10 @@
   const TEMPO_SLIDE_MS = 10000;   // tempo de cada slide
   const REFETCH_MS    = 60000;    // re-busca produtos.json
   const VERSION_MS    = 30000;    // checa version.txt pra recarregar layout
-  const NOME_EMPRESA  = "Aliança Supermercado";
   const TEXTO_PROMO   = "OFERTA DO DIA";
-  const ITENS_POR_SLIDE = 21;     // 1 promo + 10 bovinos + 10 suínos
-  const MAX_BOVINOS = 10;
-  const MAX_SUINOS  = 10;
+  const ITENS_POR_SLIDE = 33;     // 1 promo + 16 bovinos + 16 suínos     // 1 promo + 10 bovinos + 10 suínos
+  const MAX_BOVINOS = 16;
+  const MAX_SUINOS  = 16;
 
   // =========================
   // Utils
@@ -287,7 +286,24 @@
     "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
   }[c]));
 
-  function categoria(nome) {
+  
+  function slugifyNomeProduto(nome) {
+    return String(nome ?? "")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g,"") // remove acentos
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  }
+
+  function imagemOferta(promo) {
+    // 1) Se vier "imagem" no JSON, use
+    if (promo && promo.imagem) return String(promo.imagem);
+    // 2) Senão, tenta por nome em /ofertas/<slug>.jpg
+    const slug = slugifyNomeProduto(promo?.nome ?? "");
+    if (!slug) return "ofertas/padrao.png";
+    return `ofertas/${slug}.png`;
+  }
+function categoria(nome) {
     const n = String(nome ?? "").toUpperCase();
     const suinos_kw = [
       "SUIN","SUÍN","PORCO","PERNIL","BISTECA","COSTELINHA","PANCETA",
@@ -372,7 +388,7 @@
         <div class="promo-title">${promoNome}</div>
         <div class="promo-image">
           <!-- opcional: coloque promo.jpg na pasta -->
-          <img src="promo.jpg" alt="" onerror="this.style.display='none'">
+          <img src="${esc(imagemOferta(promo))}" alt="" onerror="this.src='ofertas/padrao.png'">
         </div>
         <div class="promo-price">
           <span class="rs">R$</span>
