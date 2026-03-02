@@ -1,288 +1,501 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Painel - Açougue</title>
-
-<style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel Açougue</title>
+  <style>
   * { box-sizing: border-box; }
-  body {
-    margin:0;
-    background:#000 url("bg.jpg") center/cover no-repeat fixed;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow:hidden;
-    color:#fff;
-  }
-  .overlay { position:fixed; inset:0; background:rgba(0,0,0,.55); }
-  .wrap { position:relative; height:100vh; width:100vw; padding:24px; display:flex; flex-direction:column; gap:18px; }
+  body { margin:0; background:#000; font-family: Arial, Helvetica, sans-serif; overflow:hidden; }
 
-  header {
-    display:flex; align-items:center; gap:18px;
-    padding:14px 18px;
-    background:rgba(0,0,0,.55);
-    border-radius:18px;
-    box-shadow:0 6px 18px rgba(0,0,0,.25);
-  }
-  header img { height:56px; width:auto; object-fit:contain; }
-  header .title { display:flex; flex-direction:column; gap:2px; }
-  header h1 { margin:0; font-size:28px; letter-spacing:.3px; }
-  header .sub { opacity:.9; font-size:14px; }
-
-  .stage {
-    position:relative;
-    flex:1;
-    border-radius:18px;
-    overflow:hidden;
-    background:rgba(0,0,0,.40);
-    box-shadow:0 10px 30px rgba(0,0,0,.30);
-  }
-
-  /* Slides */
+  /* Transição suave entre slides */
   .slide {
-    position:absolute;
-    inset:0;
-    padding:26px 30px;
-    opacity:0;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
     transform: translateX(18px);
     transition: opacity 700ms ease, transform 700ms ease;
+    pointer-events: none;
+  }
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .screen {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 30% 70%; /* como você pediu */
+  }
+
+  /* Fundo madeira “fake” (não precisa imagem) */
+  .wood {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.35)),
+      repeating-linear-gradient(
+        90deg,
+        #3a2a1d 0px,
+        #3a2a1d 22px,
+        #2f2218 22px,
+        #2f2218 44px
+      );
+  }
+
+  /* ======= ESQUERDA (OFERTA) ======= */
+  .left {
+    padding: 22px;
+  }
+  .left {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45)),
+      repeating-linear-gradient(
+        90deg,
+        #3a2a1d 0px,
+        #3a2a1d 22px,
+        #2f2218 22px,
+        #2f2218 44px
+      );
+  }
+
+  .wood-plaque {
+    background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
+    border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+    color: #fff;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 34px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.45);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+
+  .promo-card {
+    height: calc(100% - 92px);
+    border-radius: 18px;
+    background: radial-gradient(circle at 30% 20%, #fff3a3, #ffd400 60%, #f0b400);
+    border: 3px solid rgba(255,255,255,0.40);
+    box-shadow: 0 18px 28px rgba(0,0,0,0.55);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .promo-title {
+    font-size: 44px;
+    font-weight: 900;
+    color: #b10000;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.05;
+    text-shadow: 0 2px 0 rgba(255,255,255,0.35);
+  }
+
+  .promo-image {
     display:flex;
-    flex-direction:column;
-    gap:14px;
+    justify-content:center;
+    align-items:center;
+    padding: 10px 0;
   }
-  .slide.active { opacity:1; transform: translateX(0); }
+  .promo-image img {
+    width: 88%;
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 16px;
+    box-shadow: 0 10px 18px rgba(0,0,0,0.30);
+    background: rgba(255,255,255,0.35);
+  }
 
-  .grid {
-    display:grid;
-    grid-template-columns: 1fr 220px;
-    gap:12px;
-    align-items:start;
-    width:100%;
+  .promo-price {
+    display:flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: 8px;
   }
+  .promo-price .rs {
+    font-size: 42px;
+    font-weight: 900;
+    color: #b10000;
+  }
+  .promo-price .big {
+    font-size: 92px;
+    font-weight: 900;
+    color: #b10000;
+    letter-spacing: 1px;
+    text-shadow: 0 8px 16px rgba(0,0,0,0.20);
+  }
+  .promo-price .unit {
+    font-size: 26px;
+    font-weight: 900;
+    color: #222;
+  }
+
+  /* ======= DIREITA (TABELAS) ======= */
+  .right {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,0.20), rgba(0,0,0,0.35)),
+      repeating-linear-gradient(
+        90deg,
+        #3a2a1d 0px,
+        #3a2a1d 22px,
+        #2f2218 22px,
+        #2f2218 44px
+      );
+    padding: 18px 22px 22px 22px;
+  }
+
+  .top-banner {
+  height: 140px;               /* pode ajustar */
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.45);
+  border: 2px solid rgba(255,255,255,0.15);
+  }
+
+  .banner-photo {
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.08);
+    border: 2px solid rgba(255,255,255,0.12);
+  }
+  .banner-photo img {
+ width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  }
+
+  .brand {
+    border-radius: 14px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.92);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap: 14px;
+    padding: 10px 12px;
+    border: 2px solid rgba(255,255,255,0.15);
+  }
+  .brand .logo {
+    height: 82px;
+    width: auto;
+  }
+  .brand-name {
+    font-size: 24px;
+    font-weight: 900;
+    color: #111;
+    text-align:center;
+    line-height: 1.1;
+  }
+
+  .tables {
+    height: calc(100% - 136px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .table-box {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.12);
+    box-shadow: 0 14px 24px rgba(0,0,0,0.45);
+    background: rgba(0,0,0,0.18);
+    display:flex;
+    flex-direction: column;
+  }
+
+  .table-title {
+    padding: 12px 14px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 900;
+    color: #fff;
+    background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .table-body {
+    padding: 12px 14px;
+    display:flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   .row {
-    display:contents;
-  }
-  .name {
-    padding:10px 12px;
-    background:rgba(255,255,255,.06);
-    border-radius:12px;
-    font-size:24px;
-    line-height:1.15;
-  }
-  .price {
-    padding:10px 12px;
-    background:rgba(255,255,255,.10);
-    border-radius:12px;
-    font-size:26px;
-    font-weight:700;
-    text-align:right;
-    white-space:nowrap;
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.22);
+    border: 1px solid rgba(255,255,255,0.10);
   }
 
-  /* Rodapé discreto */
-  .foot {
-    position:absolute;
-    right:14px;
-    bottom:10px;
-    font-size:12px;
-    opacity:.75;
+  .row-name {
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+    max-width: 72%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  /* Tela pequena */
-  @media (max-width: 900px) {
-    header img { height:42px; }
-    header h1 { font-size:20px; }
-    .name { font-size:18px; }
-    .price { font-size:20px; }
-    .grid { grid-template-columns: 1fr 140px; }
+  /* Preço com borda + sombra (bem legível na TV) */
+  .row-price {
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+    white-space: nowrap;
+    text-shadow: 0 6px 14px rgba(0,0,0,0.55);
+    -webkit-text-stroke: 1px rgba(255,255,255,0.55);
   }
+
 </style>
 </head>
-
 <body>
-  <div class="overlay"></div>
-  <div class="wrap">
-    <header>
-      <img src="logo.png" alt="Logo">
-      <div class="title">
-        <h1 id="nomeEmpresa">Tabela de Preços</h1>
-        <div class="sub" id="status">Carregando…</div>
-      </div>
-    </header>
+  <div id="slides-root"></div>
 
-    <div class="stage" id="stage">
-      <div class="foot" id="ultimaAtualizacao"></div>
-    </div>
-  </div>
+  <script>
+  // =========================
+  // CONFIG
+  // =========================
+  const TEMPO_SLIDE_MS = 10000;   // tempo de cada slide
+  const REFETCH_MS    = 60000;    // re-busca produtos.json
+  const VERSION_MS    = 30000;    // checa version.txt pra recarregar layout
+  const NOME_EMPRESA  = "Aliança Supermercado";
+  const TEXTO_PROMO   = "OFERTA DO DIA";
+  const ITENS_POR_SLIDE = 21;     // 1 promo + 10 bovinos + 10 suínos
+  const MAX_BOVINOS = 10;
+  const MAX_SUINOS  = 10;
 
-<script>
-  // ============================
-  // CONFIGURAÇÕES
-  // ============================
-  const NOME_EMPRESA = "Açougue";
-  const TEMPO_SLIDE_MS = 10_000;   // tempo de cada slide
-  const REFETCH_MS    = 60_000;    // busca novos preços a cada 60s
-  const VERSION_MS    = 30_000;    // checa se o site mudou (layout/código) a cada 30s
+  // =========================
+  // Utils
+  // =========================
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
+  }[c]));
 
-  // ============================
-  // ESTADO
-  // ============================
-  const stage = document.getElementById("stage");
-  const statusEl = document.getElementById("status");
-  const nomeEl = document.getElementById("nomeEmpresa");
-  const updEl = document.getElementById("ultimaAtualizacao");
-
-  nomeEl.textContent = NOME_EMPRESA;
-
-  let slidesData = [];
-  let slideIndex = 0;
-  let slideTimer = null;
-
-  let currentVersion = null; // lido de version.txt
-  let lastHash = null;       // hash do produtos.json (pra evitar redesenho desnecessário)
-
-  // ============================
-  // HELPERS
-  // ============================
-  function hashJson(obj) {
-    try { return JSON.stringify(obj); } catch (e) { return String(Date.now()); }
+  function categoria(nome) {
+    const n = String(nome ?? "").toUpperCase();
+    const suinos_kw = [
+      "SUIN","SUÍN","PORCO","PERNIL","BISTECA","COSTELINHA","PANCETA",
+      "TOICINHO","TORRESMO","PAIO","LINGUIÇA","LINGUICA","CUIBANA",
+      "JOELHO","ORELHA","RABO SU","PELE SU","PRIME RIB SU","TIBONE SU"
+    ];
+    const aves_kw = [
+      "FRANGO","ASA","COXA","SOBRECOXA","SASSAMI","PERU",
+      "PESCOÇO","PÉ DE FRANGO","PE DE FRANGO","MOELA"
+    ];
+    if (suinos_kw.some(k => n.includes(k))) return "SUINOS";
+    if (aves_kw.some(k => n.includes(k))) return "BOVINOS"; // mantém 2 colunas
+    return "BOVINOS";
   }
 
-  function fmtNow() {
-    const d = new Date();
-    const dd = String(d.getDate()).padStart(2,'0');
-    const mm = String(d.getMonth()+1).padStart(2,'0');
-    const yy = d.getFullYear();
-    const hh = String(d.getHours()).padStart(2,'0');
-    const mi = String(d.getMinutes()).padStart(2,'0');
-    return `${dd}/${mm}/${yy} ${hh}:${mi}`;
+  function chunk(lista, n) {
+    const out = [];
+    for (let i = 0; i < lista.length; i += n) out.push(lista.slice(i, i+n));
+    return out;
   }
 
-  function clearSlides() {
-    stage.querySelectorAll(".slide").forEach(el => el.remove());
-  }
-
-  function buildSlides(slides) {
-    clearSlides();
-    if (!Array.isArray(slides) || !slides.length) {
-      statusEl.textContent = "Sem itens para exibir";
-      return;
+  function normalizarDados(data) {
+    // Aceita:
+    // - lista de itens: [{nome,preco}, ...]
+    // - lista de listas: [[{...}, ...], ...]
+    if (!Array.isArray(data)) return [];
+    if (data.length && Array.isArray(data[0])) {
+      return data.flat();
     }
+    return data;
+  }
 
-    slides.forEach((items, i) => {
-      const slide = document.createElement("div");
-      slide.className = "slide" + (i === 0 ? " active" : "");
+  function renderLinhas(lista) {
+    return lista.map(p => {
+      const nome = esc(p?.nome ?? "");
+      const preco = esc(p?.preco ?? "");
+      return `
+        <div class="row">
+          <div class="row-name">${nome}</div>
+          <div class="row-price">${preco}</div>
+        </div>
+      `;
+    }).join("");
+  }
 
-      const grid = document.createElement("div");
-      grid.className = "grid";
+  function renderSlides(produtos) {
+    const root = document.getElementById("slides-root");
+    if (!root) return;
 
-      (items || []).forEach(p => {
-        const name = document.createElement("div");
-        name.className = "name";
-        name.textContent = (p && p.nome) ? p.nome : "";
+    const blocos = chunk(produtos, ITENS_POR_SLIDE).filter(b => b.length);
+    let html = "";
 
-        const price = document.createElement("div");
-        price.className = "price";
-        price.textContent = (p && p.preco) ? p.preco : "";
+    blocos.forEach((bloco, idx) => {
+      const promo = bloco[0] ?? {};
+      const resto = bloco.slice(1);
 
-        grid.appendChild(name);
-        grid.appendChild(price);
-      });
+      const bovinos = [];
+      const suinos = [];
 
-      slide.appendChild(grid);
-      stage.appendChild(slide);
+      for (const p of resto) {
+        const nome = p?.nome ?? "";
+        if (categoria(nome) === "SUINOS") {
+          if (suinos.length < MAX_SUINOS) suinos.push(p);
+        } else {
+          if (bovinos.length < MAX_BOVINOS) bovinos.push(p);
+        }
+      }
+
+      const active = idx === 0 ? " active" : "";
+      const promoNome = esc(promo?.nome ?? "");
+      // promo.preco costuma vir "R$ 42,90" — precisamos só do número grande no layout antigo
+      const precoTxt = String(promo?.preco ?? "").replace(/^\s*R\$\s*/i,"").trim();
+      const precoBig = esc(precoTxt || "");
+
+      html += `
+<section class="slide${active}">
+  <div class="screen">
+    <!-- LADO ESQUERDO: OFERTA -->
+    <aside class="left">
+      <div class="wood-plaque">${esc(TEXTO_PROMO)}</div>
+      <div class="promo-card">
+        <div class="promo-title">${promoNome}</div>
+        <div class="promo-image">
+          <!-- opcional: coloque promo.jpg na pasta -->
+          <img src="promo.jpg" alt="" onerror="this.style.display='none'">
+        </div>
+        <div class="promo-price">
+          <span class="rs">R$</span>
+          <span class="big">${precoBig}</span>
+          <span class="unit">/KG</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- LADO DIREITO: LISTAS -->
+    <main class="right">
+      <div class="top-banner">
+        <div class="banner-photo">
+          <!-- opcional: coloque banner.jpg na pasta -->
+          <img src="banner.jpg" alt="" onerror="this.style.display='none'">
+        </div>
+        <div class="brand">
+          <img class="logo" src="logo.png" alt="Logo">
+          <div class="brand-name">${esc(NOME_EMPRESA)}</div>
+        </div>
+      </div>
+
+      <div class="tables">
+        <section class="table-box">
+          <div class="table-title">BOVINOS</div>
+          <div class="table-body">
+            ${renderLinhas(bovinos)}
+          </div>
+        </section>
+
+        <section class="table-box">
+          <div class="table-title">SUÍNOS</div>
+          <div class="table-body">
+            ${renderLinhas(suinos)}
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</section>
+      `;
     });
 
-    // reinicia rotação
-    slideIndex = 0;
-    startRotation();
+    root.innerHTML = html;
   }
 
-  function showSlide(i) {
-    const els = stage.querySelectorAll(".slide");
-    if (!els.length) return;
-    els.forEach(s => s.classList.remove("active"));
-    els[i].classList.add("active");
-  }
+  // =========================
+  // Slideshow
+  // =========================
+  let slideIdx = 0;
+  let slideTimer = null;
 
-  function nextSlide() {
-    const els = stage.querySelectorAll(".slide");
-    if (!els.length) return;
-    slideIndex = (slideIndex + 1) % els.length;
-    showSlide(slideIndex);
-  }
-
-  function startRotation() {
+  function startSlideshow() {
     if (slideTimer) clearInterval(slideTimer);
-    const els = stage.querySelectorAll(".slide");
-    if (!els.length) return;
-    showSlide(0);
-    slideTimer = setInterval(nextSlide, TEMPO_SLIDE_MS);
+    slideIdx = 0;
+
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const show = (i) => {
+      slides.forEach(s => s.classList.remove("active"));
+      if (slides[i]) slides[i].classList.add("active");
+    };
+
+    if (slides.length) show(0);
+
+    slideTimer = setInterval(() => {
+      if (!slides.length) return;
+      slideIdx = (slideIdx + 1) % slides.length;
+      show(slideIdx);
+    }, TEMPO_SLIDE_MS);
   }
 
-  async function fetchNoCache(url) {
-    const u = url + (url.includes("?") ? "&" : "?") + "v=" + Date.now();
-    const res = await fetch(u, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status} ao buscar ${url}`);
-    return res;
-  }
+  // =========================
+  // Data refresh (produtos.json)
+  // =========================
+  let lastHash = "";
 
-  // ============================
-  // ATUALIZA PREÇOS (produtos.json)
-  // ============================
-  async function atualizarProdutos() {
+  function simpleHash(obj) {
     try {
-      statusEl.textContent = "Atualizando preços…";
-      const res = await fetchNoCache("produtos.json");
-      const json = await res.json();
-
-      const h = hashJson(json);
-      if (h !== lastHash) {
-        lastHash = h;
-        slidesData = json;
-        buildSlides(slidesData);
-        updEl.textContent = "Atualizado em " + fmtNow();
-      }
-
-      statusEl.textContent = "Online";
-    } catch (e) {
-      statusEl.textContent = "Offline (mantendo último preço)";
-      // mantém o que já está na tela
-      console.warn(e);
+      return JSON.stringify(obj);
+    } catch {
+      return String(Date.now());
     }
   }
 
-  // ============================
-  // ATUALIZA SITE (version.txt)
-  // - se mudar, recarrega a página (pega novo index.html/css)
-  // ============================
+  async function carregarProdutos() {
+    const url = `produtos.json?v=${Date.now()}`;
+    const resp = await fetch(url, { cache: "no-store" });
+    if (!resp.ok) throw new Error(`Falha ao carregar ${url}: ${resp.status}`);
+    const data = await resp.json();
+
+    const produtos = normalizarDados(data);
+    const h = simpleHash(produtos);
+    if (h !== lastHash) {
+      lastHash = h;
+      renderSlides(produtos);
+      startSlideshow();
+    }
+  }
+
+  // =========================
+  // Layout refresh (version.txt)
+  // =========================
+  let lastVersion = null;
+
   async function checarVersao() {
-    try {
-      const res = await fetchNoCache("version.txt");
-      const txt = (await res.text()).trim();
-
-      if (!currentVersion) {
-        currentVersion = txt || "0";
-        return;
-      }
-      if (txt && txt !== currentVersion) {
-        // mudou a "versão" do site -> recarrega
-        location.reload(true);
-      }
-    } catch (e) {
-      // se falhar, não faz nada
-      console.warn(e);
+    const url = `version.txt?v=${Date.now()}`;
+    const resp = await fetch(url, { cache: "no-store" });
+    if (!resp.ok) return;
+    const v = (await resp.text()).trim();
+    if (lastVersion === null) {
+      lastVersion = v;
+      return;
+    }
+    if (v && v !== lastVersion) {
+      location.reload();
     }
   }
 
-  // Inicialização
-  (async function init() {
-    await checarVersao();
-    await atualizarProdutos();
-
-    setInterval(atualizarProdutos, REFETCH_MS);
-    setInterval(checarVersao, VERSION_MS);
-  })();
-</script>
+  // Boot
+  carregarProdutos().catch(console.warn);
+  checarVersao().catch(() => {});
+  setInterval(() => carregarProdutos().catch(console.warn), REFETCH_MS);
+  setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
+  </script>
 </body>
 </html>
