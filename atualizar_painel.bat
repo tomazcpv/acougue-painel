@@ -1,45 +1,27 @@
 @echo off
-setlocal
+echo ===============================
+echo Atualizando painel do acougue
+echo ===============================
 
-cd /d C:\acougue-painel
+REM 1 - Gerar produtos.json (se você usa script python)
+python gerar_produtos.py
 
-echo ==============================
-echo Atualizando painel do açougue
-echo ==============================
+REM 2 - Atualizar version.txt com timestamp atual
+for /f %%i in ('powershell -command "[int][double]::Parse((Get-Date -UFormat %%s))"') do set VERSAO=%%i
+echo %VERSAO% > version.txt
 
-echo [1/4] Gerando produtos.json (filtrado)...
-python gerar_produtos_json.py
-if errorlevel 1 goto erro
+echo Nova versao: %VERSAO%
 
-echo [2/4] Atualizando versao do site (version.txt)...
-for /f %%i in ('powershell -NoProfile -Command "[DateTimeOffset]::Now.ToUnixTimeSeconds()"') do set VERSAO=%%i
-echo %VERSAO%> version.txt
-
-echo [3/4] Commit e push no GitHub...
+REM 3 - Adicionar tudo
 git add .
-if errorlevel 1 goto erro
 
-REM Commit com data/hora (evita erro "nothing to commit" caso nao haja mudanca)
-for /f "tokens=1-3 delims=/" %%a in ("%date%") do set DATA=%%c-%%b-%%a
-for /f "tokens=1-2 delims=:" %%a in ("%time%") do set HORA=%%a%%b
+REM 4 - Commit automatico
+git commit -m "Atualizacao automatica painel - %VERSAO%"
 
-git commit -m "Atualiza painel %DATA% %HORA%" >nul 2>&1
-REM Se nao tiver nada para commitar, segue mesmo assim
+REM 5 - Enviar para GitHub
 git push
-if errorlevel 1 goto erro
 
-echo.
-echo ✅ Painel atualizado com sucesso!
-echo A TV vai atualizar sozinha:
-echo - Precos/itens: em ate 60s
-echo - Layout/codigo: em ate 30s
-echo.
+echo ===============================
+echo Painel atualizado com sucesso!
+echo ===============================
 pause
-exit /b 0
-
-:erro
-echo.
-echo ❌ Ocorreu um erro. Veja as mensagens acima.
-echo.
-pause
-exit /b 1
