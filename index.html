@@ -76,69 +76,85 @@
       text-transform: uppercase;
     }
 
-    .promo-card {
-      height: calc(100% - 92px);
-      border-radius: 18px;
-      background: radial-gradient(circle at 30% 20%, #fff3a3, #ffd400 60%, #f0b400);
-      border: 3px solid rgba(255,255,255,0.40);
-      box-shadow: 0 18px 28px rgba(0,0,0,0.55);
-      padding: 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+.promo-card {
+  height: calc(100% - 92px);
+  border-radius: 18px;
+  background: radial-gradient(circle at 30% 20%, #fff3a3, #ffd400 60%, #f0b400);
+  border: 3px solid rgba(255,255,255,0.40);
+  box-shadow: 0 18px 28px rgba(0,0,0,0.55);
 
-    .promo-title {
-      font-size: 44px;
-      font-weight: 900;
-      color: #b10000;
-      text-align: center;
-      text-transform: uppercase;
-      line-height: 1.05;
-      text-shadow: 0 2px 0 rgba(255,255,255,0.35);
-      padding: 0 6px;
-    }
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
 
-    .promo-image {
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      padding: 10px 0;
-      flex: 1;
-    }
-    .promo-image img {
-      width: 92%;
-      max-height: 360px;
-      object-fit: contain;
-      border-radius: 16px;
-      box-shadow: 0 10px 18px rgba(0,0,0,0.30);
-      background: rgba(255,255,255,0.0); /* transparente para PNG */
-    }
+  /* novo */
+  justify-content: flex-start;
+  gap: 14px;
+}
 
-    .promo-price {
-      display:flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 10px;
-      padding-bottom: 8px;
-    }
-    .promo-price .rs {
-      font-size: 42px;
-      font-weight: 900;
-      color: #b10000;
-    }
-    .promo-price .big {
-      font-size: 92px;
-      font-weight: 900;
-      color: #b10000;
-      letter-spacing: 1px;
-      text-shadow: 0 8px 16px rgba(0,0,0,0.20);
-    }
-    .promo-price .unit {
-      font-size: 26px;
-      font-weight: 900;
-      color: #222;
-    }
+.promo-title {
+  font-size: 48px;          /* antes 44 */
+  font-weight: 900;
+  color: #b10000;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.05;
+  text-shadow: 0 2px 0 rgba(255,255,255,0.35);
+  margin: 0;                /* novo */
+  padding: 0 6px;
+}
+
+.promo-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* novo: controla espaço */
+  padding: 0;
+  flex: 0 0 auto;
+}
+
+.promo-image img {
+  width: 100%;
+  max-width: 92%;
+  max-height: 520px;        /* antes 360 -> aumenta bastante */
+  object-fit: contain;
+
+  border-radius: 18px;
+  box-shadow: 0 12px 20px rgba(0,0,0,0.30);
+  background: transparent;
+}
+
+.promo-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 12px;
+
+  /* novo */
+  margin-top: 4px;
+  padding: 0;
+}
+
+.promo-price .rs {
+  font-size: 54px;          /* antes 42 */
+  font-weight: 900;
+  color: #b10000;
+}
+
+.promo-price .big {
+  font-size: 120px;         /* antes 92 */
+  font-weight: 900;
+  color: #b10000;
+  letter-spacing: 1px;
+  text-shadow: 0 10px 18px rgba(0,0,0,0.20);
+}
+
+.promo-price .unit {
+  font-size: 30px;          /* antes 26 */
+  font-weight: 900;
+  color: #222;
+}
 
     /* ======= DIREITA (TABELAS) ======= */
     .right {
