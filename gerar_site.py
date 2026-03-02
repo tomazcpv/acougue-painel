@@ -320,12 +320,13 @@ html = f"""<!doctype html>
   }}
 
   .top-banner {{
-    height: 120px;
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 18px;
-    margin-bottom: 16px;
-    align-items: stretch;
+  height: 140px;               /* pode ajustar */
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.45);
+  border: 2px solid rgba(255,255,255,0.15);
   }}
 
   .banner-photo {{
@@ -335,9 +336,10 @@ html = f"""<!doctype html>
     border: 2px solid rgba(255,255,255,0.12);
   }}
   .banner-photo img {{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+ width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
   }}
 
   .brand {{
