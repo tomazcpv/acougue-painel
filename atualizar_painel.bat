@@ -11,9 +11,9 @@ echo [1/4] Gerando produtos.json (filtrado)...
 python gerar_produtos_json.py
 if errorlevel 1 goto erro
 
-echo [2/4] Gerando index.html (site)...
-python gerar_site.py
-if errorlevel 1 goto erro
+echo [2/4] Atualizando versao do site (version.txt)...
+for /f %%i in ('powershell -NoProfile -Command "[DateTimeOffset]::Now.ToUnixTimeSeconds()"') do set VERSAO=%%i
+echo %VERSAO%> version.txt
 
 echo [3/4] Commit e push no GitHub...
 git add .
@@ -30,7 +30,9 @@ if errorlevel 1 goto erro
 
 echo.
 echo ✅ Painel atualizado com sucesso!
-echo Abra na TV e recarregue a pagina.
+echo A TV vai atualizar sozinha:
+echo - Precos/itens: em ate 60s
+echo - Layout/codigo: em ate 30s
 echo.
 pause
 exit /b 0
