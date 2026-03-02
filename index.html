@@ -235,6 +235,9 @@
   <div id="slides-root"></div>
 
   <script>
+  
+
+  
     // =========================
     // CONFIG
     // =========================
@@ -242,10 +245,9 @@
     const REFETCH_MS    = 60000;    // re-busca produtos.json
     const VERSION_MS    = 30000;    // checa version.txt pra recarregar layout
     const TEXTO_PROMO   = "OFERTA DO DIA";
-
+	const ITENS_POR_COLUNA = 16;  // 16 itens na coluna esquerda e 16 na direita
     // 1 promo + (16 bovinos + 16 suínos) = 33 itens por slide
-    const MAX_BOVINOS = 16;
-    const MAX_SUINOS  = 16;
+
     const ITENS_POR_SLIDE = 1 + MAX_BOVINOS + MAX_SUINOS; // 33
 
     // =========================
@@ -264,51 +266,39 @@
         .replace(/(^-+)|(-+$)/g, "");                     // trim hífen
     }
 
-    function categoria(nome) {
+function categoria(nome) {
   const n = String(nome ?? "")
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     .toUpperCase();
 
-  // PROCESSADOS / EMBUTIDOS (mostraremos junto de SUÍNOS por padrão)
-  const proc = [
+  // PROCESSADOS / EMBUTIDOS
+  const processados = [
     "LINGUICA","SALSI","SALSICHA","MORTADELA","PRESUNTO","APRESUNTADO",
-    "PEITO DE PERU","BLANQUET","SALAME","COPA","LOMBO DEFUM","BACON",
-    "PAIO","CALABRESA","FRANKFURT","HAMBUR","NUGGET","EMPANAD",
-    "ALMONDEGA","KIBE","KIBE","KAFTA","DEFUM"
+    "BLANQUET","SALAME","COPA","LOMBO DEFUM","BACON","PAIO","CALABRESA",
+    "FRANKFURT","HAMBUR","NUGGET","EMPANAD","ALMONDEGA","KIBE","KAFTA",
+    "DEFUM","FATIADO","RECHEADO"
   ];
 
   // AVES
   const aves = [
-    "FRANGO","GALINHA","COXA","SOBRECOXA","ASA","FILE DE FRANGO",
-    "SASSAMI","PEITO DE FRANGO","PERU","CHESTER","PATO",
-    "MOELA","CORACAO","FIGADO DE FRANGO","PESCOCO","PE DE FRANGO","CARCACA"
+    "FRANGO","GALINHA","COXA","SOBRECOXA","ASA","SASSAMI","PEITO DE FRANGO",
+    "FILE DE FRANGO","PERU","CHESTER","PATO","MOELA","CORACAO",
+    "FIGADO DE FRANGO","PESCOCO","PE DE FRANGO","CARCACA"
   ];
 
   // SUÍNOS
   const suinos = [
     "SUIN","PORCO","PERNIL","LOMBO","BISTECA","COSTELINHA","COSTELA SU",
-    "PANCETA","TOUCINHO","TORRESMO","CABECA SU","ORELHA","RABO SU",
-    "JOELHO","PE SU"
+    "PANCETA","TOUCINHO","TORRESMO","ORELHA","RABO SU","JOELHO","PE SU"
   ];
 
-  // BOVINOS (nem precisa listar tudo; é o fallback quando não bate outras)
-  // Mas ajuda em casos ambíguos:
-  const bovinos = [
-    "BOV","BOI","VACA","NOVILHO","BEZERRO","VITELA",
-    "PICANHA","CONTRA FILE","FILE MIGNON","ALCATRA","PATINHO",
-    "MUSCULO","ACEM","PALETA","CUPIM","COSTELA BOV","FRALDINHA",
-    "MAMINHA","COXAO","LAGARTO","PEITO BOV"
-  ];
-
-  // Ordem importa: primeiro detecta o que mais “vaza”
-  if (proc.some(k => n.includes(k))) return "SUINOS"; // ou "PROCESSADOS" se você quiser uma 3ª coluna
+  // Ordem importa
+  if (processados.some(k => n.includes(k))) return "PROCESSADOS";
   if (aves.some(k => n.includes(k))) return "AVES";
-  if (suinos.some(k => n.includes(k))) return "SUINOS";
-  if (bovinos.some(k => n.includes(k))) return "BOVINOS";
+  if (suinos.some(k => n.includes(k))) return "SUÍNOS";
 
-  // Fallback: se não reconhecer, deixa em bovinos (ou cria "OUTROS")
   return "BOVINOS";
-    }
+}
 
     function chunk(lista, n) {
       const out = [];
@@ -344,40 +334,62 @@
       return `ofertas/${slug}.png`;
     }
 
-    function renderSlides(produtos) {
-      const root = document.getElementById("slides-root");
-      if (!root) return;
+function renderSlides(produtos) {
+  const root = document.getElementById("slides-root");
+  if (!root) return;
 
-      const blocos = chunk(produtos, ITENS_POR_SLIDE).filter(b => b.length);
-      let html = "";
+  // Oferta do dia: vou manter como o PRIMEIRO item do JSON (como já estava)
+  // Assim você controla a oferta colocando ela no topo da lista.
+  const promo = (produtos && produtos.length) ? produtos[0] : {};
+  const itens = (produtos && produtos.length) ? produtos.slice(1) : [];
 
-      blocos.forEach((bloco, idx) => {
-        const promo = bloco[0] ?? {};
-        const resto = bloco.slice(1);
+  // Agrupa por categoria
+  const grupos = {
+    "BOVINOS": [],
+    "SUÍNOS": [],
+    "AVES": [],
+    "PROCESSADOS": []
+  };
 
-        const bovinos = [];
-        const suinos = [];
+  for (const p of itens) {
+    const cat = categoria(p?.nome);
+    if (!grupos[cat]) grupos[cat] = [];
+    grupos[cat].push(p);
+  }
 
-        for (const p of resto) {
-          const nome = p?.nome ?? "";
-          if (categoria(nome) === "SUINOS") {
-            if (suinos.length < MAX_SUINOS) suinos.push(p);
-          } else {
-            if (bovinos.length < MAX_BOVINOS) bovinos.push(p);
-          }
-        }
+  const ordem = ["BOVINOS", "SUÍNOS", "AVES", "PROCESSADOS"];
+  const porSlide = ITENS_POR_COLUNA * 2;
 
-        const active = idx === 0 ? " active" : "";
-        const promoNome = String(promo?.nome ?? "");
-        const promoNomeEsc = esc(promoNome);
+  // Quebra cada categoria em "páginas" (slides)
+  const slidesData = [];
+  for (const cat of ordem) {
+    const lista = grupos[cat] || [];
+    for (let i = 0; i < lista.length; i += porSlide) {
+      const page = lista.slice(i, i + porSlide);
+      const colEsq = page.slice(0, ITENS_POR_COLUNA);
+      const colDir = page.slice(ITENS_POR_COLUNA);
+      slidesData.push({ cat, colEsq, colDir });
+    }
+  }
 
-        // promo.preco costuma vir "R$ 42,90" — separa para o layout
-        const precoTxt = String(promo?.preco ?? "").replace(/^\s*R\$\s*/i,"").trim();
-        const precoBig = esc(precoTxt || "");
+  // Se estiver vazio, ainda renderiza 1 slide “em branco”
+  if (!slidesData.length) {
+    slidesData.push({ cat: "BOVINOS", colEsq: [], colDir: [] });
+  }
 
-        const promoImg = ofertaImgSrc(promoNome);
+  // Promo (imagem e preço)
+  const promoNome = String(promo?.nome ?? "");
+  const promoNomeEsc = esc(promoNome);
+  const promoImg = ofertaImgSrc(promoNome);
+  const precoTxt = String(promo?.preco ?? "").replace(/^\s*R\$\s*/i,"").trim();
+  const precoBig = esc(precoTxt || "");
 
-        html += `
+  let html = "";
+  slidesData.forEach((s, idx) => {
+    const active = idx === 0 ? " active" : "";
+    const titulo = esc(s.cat);
+
+    html += `
 <section class="slide${active}">
   <div class="screen">
     <!-- LADO ESQUERDO: OFERTA -->
@@ -403,7 +415,7 @@
       </div>
     </aside>
 
-    <!-- LADO DIREITO: LISTAS -->
+    <!-- LADO DIREITO: LISTAS (2 colunas DA MESMA CATEGORIA) -->
     <main class="right panel-wood">
       <div class="top-banner">
         <img src="banner.jpg" alt="Banner" onerror="this.style.display='none'">
@@ -411,27 +423,27 @@
 
       <div class="tables">
         <section class="table-box">
-          <div class="table-title">BOVINOS</div>
+          <div class="table-title">${titulo}</div>
           <div class="table-body">
-            ${renderLinhas(bovinos)}
+            ${renderLinhas(s.colEsq)}
           </div>
         </section>
 
         <section class="table-box">
-          <div class="table-title">SUÍNOS</div>
+          <div class="table-title">${titulo}</div>
           <div class="table-body">
-            ${renderLinhas(suinos)}
+            ${renderLinhas(s.colDir)}
           </div>
         </section>
       </div>
     </main>
   </div>
 </section>
-        `;
-      });
+    `;
+  });
 
-      root.innerHTML = html;
-    }
+  root.innerHTML = html;
+}
 
     // =========================
     // Slideshow
