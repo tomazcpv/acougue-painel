@@ -362,12 +362,14 @@ function renderSlides(produtos) {
   // Oferta do dia: vou manter como o PRIMEIRO item do JSON (como já estava)
   // Assim você controla a oferta colocando ela no topo da lista.
 
-  const itens = (produtos && produtos.length) ? produtos.slice(1) : [];
-  const promo = PROMOS.length ? PROMOS[idx % PROMOS.length] : {};
-const promoNome = String(promo?.nome ?? "");
-const promoPrecoTxt = String(promo?.preco ?? "").replace(/^\s*R\$\s*/i,"").trim();
-const promoUnidade = String(promo?.unidade ?? "KG").toUpperCase();
-const promoImg = ofertaImgSrc(promoNome);
+	const itens = (produtos && produtos.length) ? produtos.slice(1) : [];
+	const promo = PROMOS.length ? PROMOS[idx % PROMOS.length] : {};
+	const promoNome = String(promo?.nome ?? "");
+	const promoPrecoTxt = String(promo?.preco ?? "").replace(/^\s*R\$\s*/i,"").trim();
+	const promoUnidade = String(promo?.unidade ?? "KG").toUpperCase();
+	const promoImg = ofertaImgSrc(promoNome);
+	const promoNomeEsc = esc(promoNome);
+	const precoBig = esc(precoTxt || "");
 
   // Agrupa por categoria
   const grupos = {
@@ -404,11 +406,8 @@ const promoImg = ofertaImgSrc(promoNome);
   }
 
   // Promo (imagem e preço)
-  const promoNome = String(promo?.nome ?? "");
-  const promoNomeEsc = esc(promoNome);
-  const promoImg = ofertaImgSrc(promoNome);
-  const precoTxt = String(promo?.preco ?? "").replace(/^\s*R\$\s*/i,"").trim();
-  const precoBig = esc(precoTxt || "");
+
+
 
   let html = "";
   slidesData.forEach((s, idx) => {
