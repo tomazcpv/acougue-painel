@@ -418,7 +418,7 @@ function renderSlides(produtos) {
     <!-- LADO DIREITO: LISTAS (2 colunas DA MESMA CATEGORIA) -->
     <main class="right panel-wood">
       <div class="top-banner">
-        <img src="banner.jpg" alt="Banner" onerror="this.style.display='none'">
+        <img id="banner-img" src="banner.jpg" alt="Banner" onerror="this.style.display='none'">
       </div>
 
       <div class="tables">
@@ -469,7 +469,11 @@ function renderSlides(produtos) {
         show(slideIdx);
       }, TEMPO_SLIDE_MS);
     }
-
+function aplicarVersaoNoBanner(v) {
+  const img = document.getElementById("banner-img");
+  if (!img) return;
+  img.src = `banner.jpg?v=${encodeURIComponent(v || Date.now())}`;
+}
     // =========================
     // Data refresh (produtos.json)
     // =========================
@@ -507,6 +511,9 @@ function renderSlides(produtos) {
       if (!resp.ok) return;
 
       const v = (await resp.text()).trim();
+	  
+	  aplicarVersaoNoBanner(v);
+		
       if (lastVersion === null) { lastVersion = v; return; }
       if (v && v !== lastVersion) location.reload();
     }
