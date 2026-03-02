@@ -127,7 +127,6 @@
   align-items: baseline;
   justify-content: center;
   gap: 12px;
-
   /* novo */
   margin-top: 4px;
   padding: 0;
@@ -137,6 +136,7 @@
   font-size: 54px;          /* antes 42 */
   font-weight: 900;
   color: #b10000;
+  <span class="unit">/${esc(promoUnidade)}</span>
 }
 
 .promo-price .big {
@@ -260,7 +260,8 @@
     const TEXTO_PROMO   = "OFERTA DO DIA";
 	const ITENS_POR_COLUNA = 16;  // 16 itens na coluna esquerda e 16 na direita
     // 1 promo + (16 bovinos + 16 suínos) = 33 itens por slide
-
+	const PROMOS_URL = "promocoes.json";
+	let PROMOS = [];
 
 
     // =========================
@@ -269,6 +270,13 @@
     const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
     }[c]));
+
+	async function carregarPromocoes() {
+	const resp = await fetch(`${PROMOS_URL}?v=${Date.now()}`, { cache: "no-store" });
+	if (!resp.ok) throw new Error(`Falha ao carregar ${PROMOS_URL}: ${resp.status}`);
+	const data = await resp.json();
+	PROMOS = Array.isArray(data) ? data : [];
+}
 
     function slugify(text) {
       // Remove acentos e gera slug com hífen
@@ -353,8 +361,13 @@ function renderSlides(produtos) {
 
   // Oferta do dia: vou manter como o PRIMEIRO item do JSON (como já estava)
   // Assim você controla a oferta colocando ela no topo da lista.
-  const promo = (produtos && produtos.length) ? produtos[0] : {};
+
   const itens = (produtos && produtos.length) ? produtos.slice(1) : [];
+  const promo = PROMOS.length ? PROMOS[idx % PROMOS.length] : {};
+const promoNome = String(promo?.nome ?? "");
+const promoPrecoTxt = String(promo?.preco ?? "").replace(/^\s*R\$\s*/i,"").trim();
+const promoUnidade = String(promo?.unidade ?? "KG").toUpperCase();
+const promoImg = ofertaImgSrc(promoNome);
 
   // Agrupa por categoria
   const grupos = {
@@ -536,6 +549,16 @@ function aplicarVersaoNoBanner(v) {
     checarVersao().catch(() => {});
     setInterval(() => carregarProdutos().catch(console.warn), REFETCH_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
+	
+	async function boot() {
+  try { await carregarPromocoes(); } catch (e) { console.warn(e); }
+  try { await carregarProdutos(); } catch (e) { console.warn(e); }
+}
+boot();
+
+setInterval(() => carregarProdutos().catch(console.warn), REFETCH_MS);
+setInterval(() => carregarPromocoes().catch(console.warn), 60000);
+
   </script>
 </body>
 </html>

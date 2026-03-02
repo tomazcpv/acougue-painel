@@ -1,0 +1,9 @@
+[
+  { "nome": "PATINHO", "preco": "R$ 29,90", "unidade": "KG" },
+  { "nome": "PICANHA", "preco": "R$ 49,90", "unidade": "KG" },
+  { "nome": "ALCATRA", "preco": "R$ 39,90", "unidade": "KG" },
+  { "nome": "COXA DE FRANGO", "preco": "R$ 11,90", "unidade": "KG" },
+  { "nome": "LINGUIÇA TOSCANA", "preco": "R$ 19,90", "unidade": "KG" },
+  { "nome": "BACON", "preco": "R$ 34,90", "unidade": "KG" },
+  { "nome": "SALSICHA", "preco": "R$ 14,90", "unidade": "KG" }
+]
