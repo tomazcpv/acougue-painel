@@ -6,6 +6,39 @@
   <title>Painel Açougue</title>
 
   <style>
+  
+  /* Wrapper geral das listas */
+.tables-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Título único da categoria */
+.category-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  margin-bottom: 14px;
+  padding: 10px 0;
+
+  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+}
+
+/* Ajuste da área das duas colunas */
+.tables {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
@@ -65,7 +98,7 @@
       background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
       border: 2px solid rgba(255,255,255,0.12);
       border-radius: 14px;
-      padding: 18px 16px;
+      padding: 54px 16px;
       text-align: center;
       color: #fff;
       font-weight: 900;
@@ -411,7 +444,9 @@ function renderSlides(produtos) {
 
     const promoNome = String(promo?.nome ?? "");
     const promoNomeEsc = esc(promoNome);
-    const promoImg = ofertaImgSrc(promoNome);
+const promoImg = promo?.imagem
+  ? `ofertas/${String(promo.imagem)}`
+  : ofertaImgSrc(promoNome);
 
     const promoPrecoTxt = String(promo?.preco ?? "")
       .replace(/^\s*R\$\s*/i, "")
@@ -452,21 +487,27 @@ function renderSlides(produtos) {
         <img id="banner-img" src="banner.jpg" alt="Banner" onerror="this.style.display='none'">
       </div>
 
-      <div class="tables">
-        <section class="table-box">
-          <div class="table-title">${titulo}</div>
-          <div class="table-body">
-            ${renderLinhas(s.colEsq)}
-          </div>
-        </section>
+<div class="tables-wrapper">
 
-        <section class="table-box">
-          <div class="table-title">${titulo}</div>
-          <div class="table-body">
-            ${renderLinhas(s.colDir)}
-          </div>
-        </section>
+  <div class="category-title">
+    ${titulo}
+  </div>
+
+  <div class="tables">
+    <section class="table-box">
+      <div class="table-body">
+        ${renderLinhas(s.colEsq)}
       </div>
+    </section>
+
+    <section class="table-box">
+      <div class="table-body">
+        ${renderLinhas(s.colDir)}
+      </div>
+    </section>
+  </div>
+
+</div>
     </main>
   </div>
 </section>
@@ -514,6 +555,11 @@ function aplicarVersaoNoBanner(v) {
       try { return JSON.stringify(obj); }
       catch { return String(Date.now()); }
     }
+	
+	async function boot() {
+		try { await carregarPromocoes(); } catch (e) { console.warn(e); }
+		try { await carregarProdutos(); } catch (e) { console.warn(e); }
+}
 
     async function carregarProdutos() {
       const url = `produtos.json?v=${Date.now()}`;
@@ -555,10 +601,7 @@ function aplicarVersaoNoBanner(v) {
     setInterval(() => carregarProdutos().catch(console.warn), REFETCH_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
 	
-	async function boot() {
-  try { await carregarPromocoes(); } catch (e) { console.warn(e); }
-  try { await carregarProdutos(); } catch (e) { console.warn(e); }
-}
+
 boot();
 
 setInterval(() => carregarProdutos().catch(console.warn), REFETCH_MS);
