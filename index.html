@@ -309,6 +309,9 @@
 	if (!resp.ok) throw new Error(`Falha ao carregar ${PROMOS_URL}: ${resp.status}`);
 	const data = await resp.json();
 	PROMOS = Array.isArray(data) ? data : [];
+	
+	// força atualizar a tela para aplicar nome/preço/imagens novas
+  try { await carregarProdutos(); } catch {}
 }
 
     function slugify(text) {
