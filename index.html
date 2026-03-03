@@ -359,17 +359,8 @@ function renderSlides(produtos) {
   const root = document.getElementById("slides-root");
   if (!root) return;
 
-  // Oferta do dia: vou manter como o PRIMEIRO item do JSON (como já estava)
-  // Assim você controla a oferta colocando ela no topo da lista.
-
-	const itens = (produtos && produtos.length) ? produtos.slice(1) : [];
-	const promo = PROMOS.length ? PROMOS[idx % PROMOS.length] : {};
-	const promoNome = String(promo?.nome ?? "");
-	const promoPrecoTxt = String(promo?.preco ?? "").replace(/^\s*R\$\s*/i,"").trim();
-	const promoUnidade = String(promo?.unidade ?? "KG").toUpperCase();
-	const promoImg = ofertaImgSrc(promoNome);
-	const promoNomeEsc = esc(promoNome);
-	const precoBig = esc(precoTxt || "");
+  // Lista principal (não usa mais o primeiro item como promo)
+  const itens = Array.isArray(produtos) ? produtos : [];
 
   // Agrupa por categoria
   const grupos = {
@@ -381,38 +372,53 @@ function renderSlides(produtos) {
 
   for (const p of itens) {
     const cat = categoria(p?.nome);
-    if (!grupos[cat]) grupos[cat] = [];
-    grupos[cat].push(p);
+    (grupos[cat] ||= []).push(p);
   }
 
+  // Ordem dos slides por categoria
   const ordem = ["BOVINOS", "SUÍNOS", "AVES", "PROCESSADOS"];
   const porSlide = ITENS_POR_COLUNA * 2;
 
-  // Quebra cada categoria em "páginas" (slides)
+  // Quebra cada categoria em páginas (slides)
   const slidesData = [];
   for (const cat of ordem) {
     const lista = grupos[cat] || [];
     for (let i = 0; i < lista.length; i += porSlide) {
       const page = lista.slice(i, i + porSlide);
-      const colEsq = page.slice(0, ITENS_POR_COLUNA);
-      const colDir = page.slice(ITENS_POR_COLUNA);
-      slidesData.push({ cat, colEsq, colDir });
+      slidesData.push({
+        cat,
+        colEsq: page.slice(0, ITENS_POR_COLUNA),
+        colDir: page.slice(ITENS_POR_COLUNA)
+      });
     }
   }
 
-  // Se estiver vazio, ainda renderiza 1 slide “em branco”
+  // Se não tiver itens, cria 1 slide vazio
   if (!slidesData.length) {
     slidesData.push({ cat: "BOVINOS", colEsq: [], colDir: [] });
   }
 
-  // Promo (imagem e preço)
-
-
-
   let html = "";
+
   slidesData.forEach((s, idx) => {
     const active = idx === 0 ? " active" : "";
     const titulo = esc(s.cat);
+
+    // Promoção deste slide (cíclica)
+    const promo = (Array.isArray(PROMOS) && PROMOS.length)
+      ? PROMOS[idx % PROMOS.length]
+      : { nome: "", preco: "", unidade: "KG" };
+
+    const promoNome = String(promo?.nome ?? "");
+    const promoNomeEsc = esc(promoNome);
+    const promoImg = ofertaImgSrc(promoNome);
+
+    const promoPrecoTxt = String(promo?.preco ?? "")
+      .replace(/^\s*R\$\s*/i, "")
+      .trim();
+    const precoBig = esc(promoPrecoTxt || "");
+
+    const promoUnidade = String(promo?.unidade ?? "KG").toUpperCase();
 
     html += `
 <section class="slide${active}">
@@ -435,7 +441,7 @@ function renderSlides(produtos) {
         <div class="promo-price">
           <span class="rs">R$</span>
           <span class="big">${precoBig}</span>
-          <span class="unit">/KG</span>
+          <span class="unit">/${esc(promoUnidade)}</span>
         </div>
       </div>
     </aside>
