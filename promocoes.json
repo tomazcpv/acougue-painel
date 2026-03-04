@@ -4,6 +4,6 @@
   { "nome": "PERNIL PICADO", "preco": "R$ 19,90", "unidade": "KG", "imagem": "pernil-picado.png" },
   { "nome": "SALSICHA SEARA", "preco": "R$ 12,90", "unidade": "KG", "imagem": "salsicha-seara.png" },
   { "nome": "ALCATRA", "preco": "R$ 59,90", "unidade": "KG", "imagem": "alcatra.png" },
-  { "nome": "COXÂO DURO", "preco": "R$ 46,90", "unidade": "KG", "imagem": "coxao-duro.png" },
+  { "nome": "COXÃO DURO", "preco": "R$ 46,90", "unidade": "KG", "imagem": "coxao-duro.png" },
   { "nome": "LINGUIÇA PURA PERNIL", "preco": "R$ 28,90", "unidade": "KG", "imagem": "linguica-pura-pernil.png" }
 ]
