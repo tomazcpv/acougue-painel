@@ -306,6 +306,10 @@ font-family: 'Anton', sans-serif;
       "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
     }[c]));
 
+	const PRODUTOS_EXCLUIDOS = [
+  "PRODUTO TESTE",
+  "SALSA, CEBOLA E BACON KG"
+];
     function slugify(text) {
       return String(text ?? "")
         .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -313,6 +317,19 @@ font-family: 'Anton', sans-serif;
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-+)|(-+$)/g, "");
     }
+	function produtoExcluido(nome) {
+  const n = String(nome ?? "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase()
+    .trim();
+
+  return PRODUTOS_EXCLUIDOS.some(p =>
+    n === p.normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toUpperCase()
+          .trim()
+  );
+}
 
     function ofertaImgSrc(promoNome) {
       const slug = slugify(promoNome);
@@ -399,10 +416,13 @@ font-family: 'Anton', sans-serif;
       const itens = Array.isArray(produtos) ? produtos : [];
 
       const grupos = { "BOVINOS": [], "SUÍNOS": [], "AVES": [], "PROCESSADOS": [] };
-      for (const p of itens) {
-        const cat = categoria(p?.nome);
-        (grupos[cat] ||= []).push(p);
-      }
+for (const p of itens) {
+
+  if (produtoExcluido(p?.nome)) continue;
+
+  const cat = categoria(p?.nome);
+  (grupos[cat] ||= []).push(p);
+}
 
       const ordem = ["BOVINOS", "SUÍNOS", "AVES", "PROCESSADOS"];
       const porSlide = ITENS_POR_COLUNA * 2;
