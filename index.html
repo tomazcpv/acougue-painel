@@ -362,7 +362,7 @@
 
     function renderLinhas(lista) {
       return (lista || []).map(p => {
-        const nome = esc(p?.nome ?? "");
+        const nome = esc((p?.nome ?? "").toUpperCase());
         const preco = esc(p?.preco ?? "");
         return `
           <div class="row">
