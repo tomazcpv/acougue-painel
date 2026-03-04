@@ -6,39 +6,6 @@
   <title>Painel Açougue</title>
 
   <style>
-  
-  /* Wrapper geral das listas */
-.tables-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-/* Título único da categoria */
-.category-title {
-  text-align: center;
-  font-size: 40px;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  margin-bottom: 14px;
-  padding: 10px 0;
-
-  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.35);
-}
-
-/* Ajuste da área das duas colunas */
-.tables {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
@@ -46,14 +13,13 @@
       font-family: Arial, Helvetica, sans-serif;
       overflow: hidden;
       background: #000;
-      /* Background por imagem */
       background-image: url("background.jpg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
 
-    /* Camada escura por cima do background pra dar contraste */
+    /* Camada escura para contraste */
     body::before{
       content:"";
       position: fixed;
@@ -63,10 +29,8 @@
       z-index: 0;
     }
 
-    /* Root acima do overlay */
     #slides-root { position: relative; z-index: 1; }
 
-    /* Transição suave entre slides */
     .slide {
       position: absolute;
       inset: 0;
@@ -90,15 +54,13 @@
     }
 
     /* ======= ESQUERDA (OFERTA) ======= */
-    .left {
-      padding: 22px;
-    }
+    .left { padding: 22px; }
 
     .wood-plaque {
       background: linear-gradient(180deg, #1a1a1a, #0f0f0f);
       border: 2px solid rgba(255,255,255,0.12);
       border-radius: 14px;
-      padding: 54px 16px;
+      padding: 24px 16px;
       text-align: center;
       color: #fff;
       font-weight: 900;
@@ -109,92 +71,122 @@
       text-transform: uppercase;
     }
 
-.promo-card {
-  height: calc(100% - 92px);
-  border-radius: 18px;
-  background: radial-gradient(circle at 30% 20%, #fff3a3, #ffd400 60%, #f0b400);
-  border: 3px solid rgba(255,255,255,0.40);
-  box-shadow: 0 18px 28px rgba(0,0,0,0.55);
+    .promo-card {
+      height: calc(100% - 92px);
+      border-radius: 18px;
+      background: radial-gradient(circle at 30% 20%, #fff3a3, #ffd400 60%, #f0b400);
+      border: 3px solid rgba(255,255,255,0.40);
+      box-shadow: 0 18px 28px rgba(0,0,0,0.55);
+      padding: 18px 18px 16px;
 
-  padding: 18px 18px 16px;
-
-  display: flex;
-  flex-direction: column;
-
-  /* CENTRALIZA TUDO */
-  justify-content: center;
-  align-items: center;
-
-  gap: 18px;
-  text-align: center;
-}
-
-.promo-title {
-  font-size: 48px;          /* antes 44 */
-  font-weight: 900;
-  color: #b10000;
-  text-align: center;
-  text-transform: uppercase;
-  line-height: 1.05;
-  text-shadow: 0 2px 0 rgba(255,255,255,0.35);
-  margin: 0;                /* novo */
-  padding: 0 6px;
-}
-
-.promo-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 0 0 auto;
-  width: 100%;
-}
-
-.promo-image img {
-  width: 85%;
-  max-height: 520px;
-  object-fit: contain;
-}
-
-.promo-price {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 12px;
-  /* novo */
-  margin-top: 4px;
-  padding: 0;
-}
-
-.promo-price .rs {
-  font-size: 54px;          /* antes 42 */
-  font-weight: 900;
-  color: #b10000;
-  <span class="unit">/${esc(promoUnidade)}</span>
-}
-
-.promo-price .big {
-  font-size: 120px;         /* antes 92 */
-  font-weight: 900;
-  color: #b10000;
-  letter-spacing: 1px;
-  text-shadow: 0 10px 18px rgba(0,0,0,0.20);
-}
-
-.promo-price .unit {
-  font-size: 30px;          /* antes 26 */
-  font-weight: 900;
-  color: #222;
-}
-
-    /* ======= DIREITA (TABELAS) ======= */
-    .right {
-      padding: 18px 22px 22px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
     }
 
-    /* Banner 100% da largura da área direita */
+    .promo-card::before{
+      content:"";
+      position:absolute;
+      inset:-40%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.28), transparent 55%);
+      transform: rotate(-12deg);
+      pointer-events:none;
+    }
+
+    .promo-title {
+      width: 92%;
+      font-size: 46px;
+      font-weight: 900;
+      color: #b10000;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin: 0;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(0,0,0,0.20);
+      border: 1px solid rgba(0,0,0,0.18);
+      box-shadow: 0 10px 18px rgba(0,0,0,0.22);
+      text-shadow: 0 2px 0 rgba(255,255,255,0.18), 0 10px 18px rgba(0,0,0,0.30);
+      letter-spacing: 0.5px;
+    }
+
+    .promo-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 0 0 auto;
+      width: 100%;
+    }
+
+    .promo-image img {
+      width: 86%;
+      max-height: 540px;
+      object-fit: contain;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      box-shadow:
+        0 14px 22px rgba(0,0,0,0.28),
+        0 0 0 6px rgba(255,255,255,0.06);
+    }
+
+    .promo-price {
+      position: relative;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.22);
+      border: 1px solid rgba(255,255,255,0.28);
+      box-shadow: 0 14px 22px rgba(0,0,0,0.22);
+    }
+
+    .promo-price::before{
+      content:"";
+      position:absolute;
+      inset: 2px 2px auto 2px;
+      height: 45%;
+      border-radius: 16px 16px 26px 26px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.35), transparent);
+      pointer-events:none;
+    }
+
+    .promo-price .rs {
+      font-size: 54px;
+      font-weight: 900;
+      color: #b10000;
+      text-shadow: 0 10px 18px rgba(0,0,0,0.22);
+      -webkit-text-stroke: 1px rgba(255,255,255,0.45);
+    }
+
+    .promo-price .big {
+      font-size: 120px;
+      font-weight: 900;
+      color: #b10000;
+      letter-spacing: 1px;
+      text-shadow: 0 10px 18px rgba(0,0,0,0.22);
+      -webkit-text-stroke: 1px rgba(255,255,255,0.45);
+    }
+
+    .promo-price .unit {
+      font-size: 30px;
+      font-weight: 900;
+      color: #222;
+    }
+
+    /* ======= DIREITA (TABELAS) ======= */
+    .right { padding: 18px 22px 22px 22px; }
+
     .top-banner {
       width: 100%;
-      height: 160px;          /* <- altura do banner na tela */
+      height: 160px;
       overflow: hidden;
       border-radius: 12px;
       margin-bottom: 18px;
@@ -209,9 +201,32 @@
       display: block;
     }
 
-    /* Área das tabelas ocupa o resto */
+    /* Wrapper geral das listas */
+    .tables-wrapper {
+      height: calc(100% - 178px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Título único da categoria */
+    .category-title {
+      text-align: center;
+      font-size: 40px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      padding: 10px 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.15);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+    }
+
+    /* Duas colunas */
     .tables {
-      height: calc(100% - 178px); /* banner (160) + margem */
+      flex: 1;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 18px;
@@ -227,47 +242,37 @@
       flex-direction: column;
     }
 
-    .table-title {
-      padding: 12px 14px;
-      text-align: center;
-      font-size: 34px;
-      font-weight: 900;
-      color: #fff;
-      background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-
     .table-body {
       padding: 10px 12px;
       display:flex;
       flex-direction: column;
-      gap: 6px; /* compacto para caber 16 */
+      gap: 6px;
     }
 
     .row {
       display:flex;
       justify-content: space-between;
       align-items: baseline;
-      padding: 8px 10px;       /* compacto para caber 16 */
+      padding: 8px 10px;
       border-radius: 10px;
       background: rgba(0,0,0,0.22);
       border: 1px solid rgba(255,255,255,0.10);
     }
 
     .row-name {
-      font-size: 22px;         /* compacto para 16 linhas */
+      font-size: 22px;
       font-weight: 800;
       color: #fff;
       max-width: 72%;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .row-price {
-      font-size: 26px;         /* compacto para 16 linhas */
+      font-size: 26px;
       font-weight: 900;
       color: #fff;
       white-space: nowrap;
@@ -281,21 +286,23 @@
   <div id="slides-root"></div>
 
   <script>
-  
-
-  
     // =========================
     // CONFIG
     // =========================
-    const TEMPO_SLIDE_MS = 10000;   // tempo de cada slide
-    const REFETCH_MS    = 60000;    // re-busca produtos.json
-    const VERSION_MS    = 30000;    // checa version.txt pra recarregar layout
-    const TEXTO_PROMO   = "OFERTA DO DIA";
-	const ITENS_POR_COLUNA = 16;  // 16 itens na coluna esquerda e 16 na direita
-    // 1 promo + (16 bovinos + 16 suínos) = 33 itens por slide
-	const PROMOS_URL = "promocoes.json";
-	let PROMOS = [];
+    const TEMPO_SLIDE_MS = 10000;
+    const REFETCH_MS     = 60000;
+    const VERSION_MS     = 30000;
+    const PROMOS_MS      = 60000;
 
+    const TEXTO_PROMO = "OFERTA DO DIA";
+    const ITENS_POR_COLUNA = 16;
+
+    const PROMOS_URL = "promocoes.json";
+    let PROMOS = [];
+
+    // Cache do último produtos.json para re-render quando promoções mudarem
+    let lastProdutos = [];
+    let lastHash = "";
 
     // =========================
     // Utils
@@ -304,76 +311,57 @@
       "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"
     }[c]));
 
-	async function carregarPromocoes() {
-	const resp = await fetch(`${PROMOS_URL}?v=${Date.now()}`, { cache: "no-store" });
-	if (!resp.ok) throw new Error(`Falha ao carregar ${PROMOS_URL}: ${resp.status}`);
-	const data = await resp.json();
-	PROMOS = Array.isArray(data) ? data : [];
-	
-	// força atualizar a tela para aplicar nome/preço/imagens novas
-  try { await carregarProdutos(); } catch {}
-}
-
     function slugify(text) {
-      // Remove acentos e gera slug com hífen
       return String(text ?? "")
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")  // remove diacríticos
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")                       // não alfanum vira hífen
-        .replace(/(^-+)|(-+$)/g, "");                     // trim hífen
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-+)|(-+$)/g, "");
     }
 
-function categoria(nome) {
-  const n = String(nome ?? "")
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .toUpperCase();
+    function ofertaImgSrc(promoNome) {
+      const slug = slugify(promoNome);
+      if (!slug) return "ofertas/padrao.png";
+      return `ofertas/${slug}.png`;
+    }
 
-  // PROCESSADOS / EMBUTIDOS
-  const processados = [
-    "LINGUICA","SALSI","SALSICHA","MORTADELA","PRESUNTO","APRESUNTADO",
-    "BLANQUET","SALAME","COPA","LOMBO DEFUM","BACON","PAIO","CALABRESA",
-    "FRANKFURT","HAMBUR","NUGGET","EMPANAD","ALMONDEGA","KIBE","KAFTA",
-    "DEFUM","FATIADO","RECHEADO"
-  ];
+    function categoria(nome) {
+      const n = String(nome ?? "")
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .toUpperCase();
 
-  // AVES
-  const aves = [
-    "FRANGO","GALINHA","COXA","SOBRECOXA","ASA","SASSAMI","PEITO DE FRANGO",
-    "FILE DE FRANGO","PERU","CHESTER","PATO","MOELA","CORACAO",
-    "FIGADO DE FRANGO","PESCOCO","PE DE FRANGO","CARCACA"
-  ];
+      const processados = [
+        "LINGUICA","SALSI","SALSICHA","MORTADELA","PRESUNTO","APRESUNTADO",
+        "BLANQUET","SALAME","COPA","LOMBO DEFUM","BACON","PAIO","CALABRESA",
+        "FRANKFURT","HAMBUR","NUGGET","EMPANAD","ALMONDEGA","KIBE","KAFTA",
+        "DEFUM","FATIADO","RECHEADO"
+      ];
 
-  // SUÍNOS
-  const suinos = [
-    "SUIN","PORCO","PERNIL","LOMBO","BISTECA","COSTELINHA","COSTELA SU",
-    "PANCETA","TOUCINHO","TORRESMO","ORELHA","RABO SU","JOELHO","PE SU"
-  ];
+      const aves = [
+        "FRANGO","GALINHA","COXA","SOBRECOXA","ASA","SASSAMI","PEITO DE FRANGO",
+        "FILE DE FRANGO","PERU","CHESTER","PATO","MOELA","CORACAO",
+        "FIGADO DE FRANGO","PESCOCO","PE DE FRANGO","CARCACA"
+      ];
 
-  // Ordem importa
-  if (processados.some(k => n.includes(k))) return "PROCESSADOS";
-  if (aves.some(k => n.includes(k))) return "AVES";
-  if (suinos.some(k => n.includes(k))) return "SUÍNOS";
+      const suinos = [
+        "SUIN","PORCO","PERNIL","LOMBO","BISTECA","COSTELINHA","COSTELA SU",
+        "PANCETA","TOUCINHO","TORRESMO","ORELHA","RABO SU","JOELHO","PE SU"
+      ];
 
-  return "BOVINOS";
-}
-
-    function chunk(lista, n) {
-      const out = [];
-      for (let i = 0; i < lista.length; i += n) out.push(lista.slice(i, i+n));
-      return out;
+      if (processados.some(k => n.includes(k))) return "PROCESSADOS";
+      if (aves.some(k => n.includes(k))) return "AVES";
+      if (suinos.some(k => n.includes(k))) return "SUÍNOS";
+      return "BOVINOS";
     }
 
     function normalizarDados(data) {
-      // Aceita:
-      // - lista de itens: [{nome,preco}, ...]
-      // - lista de listas: [[{...}, ...], ...]
       if (!Array.isArray(data)) return [];
       if (data.length && Array.isArray(data[0])) return data.flat();
       return data;
     }
 
     function renderLinhas(lista) {
-      return lista.map(p => {
+      return (lista || []).map(p => {
         const nome = esc(p?.nome ?? "");
         const preco = esc(p?.preco ?? "");
         return `
@@ -385,84 +373,91 @@ function categoria(nome) {
       }).join("");
     }
 
-    function ofertaImgSrc(promoNome) {
-      const slug = slugify(promoNome);
-      if (!slug) return "ofertas/padrao.png";
-      return `ofertas/${slug}.png`;
+    function simpleHash(obj) {
+      try { return JSON.stringify(obj); }
+      catch { return String(Date.now()); }
     }
 
-function renderSlides(produtos) {
-  const root = document.getElementById("slides-root");
-  if (!root) return;
+    // =========================
+    // Promoções
+    // =========================
+    async function carregarPromocoes() {
+      const resp = await fetch(`${PROMOS_URL}?v=${Date.now()}`, { cache: "no-store" });
+      if (!resp.ok) throw new Error(`Falha ao carregar ${PROMOS_URL}: ${resp.status}`);
+      const data = await resp.json();
+      PROMOS = Array.isArray(data) ? data : [];
 
-  // Lista principal (não usa mais o primeiro item como promo)
-  const itens = Array.isArray(produtos) ? produtos : [];
-
-  // Agrupa por categoria
-  const grupos = {
-    "BOVINOS": [],
-    "SUÍNOS": [],
-    "AVES": [],
-    "PROCESSADOS": []
-  };
-
-  for (const p of itens) {
-    const cat = categoria(p?.nome);
-    (grupos[cat] ||= []).push(p);
-  }
-
-  // Ordem dos slides por categoria
-  const ordem = ["BOVINOS", "SUÍNOS", "AVES", "PROCESSADOS"];
-  const porSlide = ITENS_POR_COLUNA * 2;
-
-  // Quebra cada categoria em páginas (slides)
-  const slidesData = [];
-  for (const cat of ordem) {
-    const lista = grupos[cat] || [];
-    for (let i = 0; i < lista.length; i += porSlide) {
-      const page = lista.slice(i, i + porSlide);
-      slidesData.push({
-        cat,
-        colEsq: page.slice(0, ITENS_POR_COLUNA),
-        colDir: page.slice(ITENS_POR_COLUNA)
-      });
+      // Força re-render com os últimos produtos, mesmo que o hash não mude
+      if (Array.isArray(lastProdutos) && lastProdutos.length) {
+        renderSlides(lastProdutos);
+        startSlideshow();
+      }
     }
-  }
 
-  // Se não tiver itens, cria 1 slide vazio
-  if (!slidesData.length) {
-    slidesData.push({ cat: "BOVINOS", colEsq: [], colDir: [] });
-  }
+    // =========================
+    // Render
+    // =========================
+    function renderSlides(produtos) {
+      const root = document.getElementById("slides-root");
+      if (!root) return;
 
-  let html = "";
+      const itens = Array.isArray(produtos) ? produtos : [];
 
-  slidesData.forEach((s, idx) => {
-    const active = idx === 0 ? " active" : "";
-    const titulo = esc(s.cat);
+      const grupos = { "BOVINOS": [], "SUÍNOS": [], "AVES": [], "PROCESSADOS": [] };
+      for (const p of itens) {
+        const cat = categoria(p?.nome);
+        (grupos[cat] ||= []).push(p);
+      }
 
-    // Promoção deste slide (cíclica)
-    const promo = (Array.isArray(PROMOS) && PROMOS.length)
-      ? PROMOS[idx % PROMOS.length]
-      : { nome: "", preco: "", unidade: "KG" };
+      const ordem = ["BOVINOS", "SUÍNOS", "AVES", "PROCESSADOS"];
+      const porSlide = ITENS_POR_COLUNA * 2;
 
-    const promoNome = String(promo?.nome ?? "");
-    const promoNomeEsc = esc(promoNome);
-const promoImg = promo?.imagem
-  ? `ofertas/${String(promo.imagem)}`
-  : ofertaImgSrc(promoNome);
+      const slidesData = [];
+      for (const cat of ordem) {
+        const lista = grupos[cat] || [];
+        for (let i = 0; i < lista.length; i += porSlide) {
+          const page = lista.slice(i, i + porSlide);
+          slidesData.push({
+            cat,
+            colEsq: page.slice(0, ITENS_POR_COLUNA),
+            colDir: page.slice(ITENS_POR_COLUNA)
+          });
+        }
+      }
 
-    const promoPrecoTxt = String(promo?.preco ?? "")
-      .replace(/^\s*R\$\s*/i, "")
-      .trim();
-    const precoBig = esc(promoPrecoTxt || "");
+      if (!slidesData.length) {
+        slidesData.push({ cat: "BOVINOS", colEsq: [], colDir: [] });
+      }
 
-    const promoUnidade = String(promo?.unidade ?? "KG").toUpperCase();
+      let html = "";
 
-    html += `
+      slidesData.forEach((s, idx) => {
+        const active = idx === 0 ? " active" : "";
+        const titulo = esc(s.cat);
+
+        const promo = (Array.isArray(PROMOS) && PROMOS.length)
+          ? PROMOS[idx % PROMOS.length]
+          : { nome: "OFERTA", preco: "R$ --,--", unidade: "KG", imagem: "padrao.png" };
+
+        const promoNome = String(promo?.nome ?? "");
+        const promoNomeEsc = esc(promoNome);
+
+        const promoImg = promo?.imagem
+          ? `ofertas/${String(promo.imagem)}`
+          : (promoNome ? ofertaImgSrc(promoNome) : "ofertas/padrao.png");
+
+        const promoPrecoTxt = String(promo?.preco ?? "")
+          .replace(/^\s*R\$\s*/i, "")
+          .trim();
+        const precoBig = esc(promoPrecoTxt || "--,--");
+
+        const promoUnidade = String(promo?.unidade ?? "KG").toUpperCase();
+
+        html += `
 <section class="slide${active}">
   <div class="screen">
-    <!-- LADO ESQUERDO: OFERTA -->
-    <aside class="left panel-wood">
+
+    <aside class="left">
       <div class="wood-plaque">${esc(TEXTO_PROMO)}</div>
 
       <div class="promo-card">
@@ -484,41 +479,37 @@ const promoImg = promo?.imagem
       </div>
     </aside>
 
-    <!-- LADO DIREITO: LISTAS (2 colunas DA MESMA CATEGORIA) -->
-    <main class="right panel-wood">
+    <main class="right">
       <div class="top-banner">
         <img id="banner-img" src="banner.jpg" alt="Banner" onerror="this.style.display='none'">
       </div>
 
-<div class="tables-wrapper">
+      <div class="tables-wrapper">
+        <div class="category-title">${titulo}</div>
 
-  <div class="category-title">
-    ${titulo}
-  </div>
+        <div class="tables">
+          <section class="table-box">
+            <div class="table-body">
+              ${renderLinhas(s.colEsq)}
+            </div>
+          </section>
 
-  <div class="tables">
-    <section class="table-box">
-      <div class="table-body">
-        ${renderLinhas(s.colEsq)}
+          <section class="table-box">
+            <div class="table-body">
+              ${renderLinhas(s.colDir)}
+            </div>
+          </section>
+        </div>
       </div>
-    </section>
-
-    <section class="table-box">
-      <div class="table-body">
-        ${renderLinhas(s.colDir)}
-      </div>
-    </section>
-  </div>
-
-</div>
     </main>
+
   </div>
 </section>
-    `;
-  });
+        `;
+      });
 
-  root.innerHTML = html;
-}
+      root.innerHTML = html;
+    }
 
     // =========================
     // Slideshow
@@ -544,36 +535,22 @@ const promoImg = promo?.imagem
         show(slideIdx);
       }, TEMPO_SLIDE_MS);
     }
-function aplicarVersaoNoBanner(v) {
-  const img = document.getElementById("banner-img");
-  if (!img) return;
-  img.src = `banner.jpg?v=${encodeURIComponent(v || Date.now())}`;
-}
-    // =========================
-    // Data refresh (produtos.json)
-    // =========================
-    let lastHash = "";
 
-    function simpleHash(obj) {
-      try { return JSON.stringify(obj); }
-      catch { return String(Date.now()); }
-    }
-	
-	async function boot() {
-		try { await carregarPromocoes(); } catch (e) { console.warn(e); }
-		try { await carregarProdutos(); } catch (e) { console.warn(e); }
-}
-
-    async function carregarProdutos() {
+    // =========================
+    // Produtos
+    // =========================
+    async function carregarProdutos(forceRender = false) {
       const url = `produtos.json?v=${Date.now()}`;
       const resp = await fetch(url, { cache: "no-store" });
       if (!resp.ok) throw new Error(`Falha ao carregar ${url}: ${resp.status}`);
-      const data = await resp.json();
 
+      const data = await resp.json();
       const produtos = normalizarDados(data);
+      lastProdutos = produtos;
+
       const h = simpleHash(produtos);
 
-      if (h !== lastHash) {
+      if (forceRender || h !== lastHash) {
         lastHash = h;
         renderSlides(produtos);
         startSlideshow();
@@ -581,8 +558,14 @@ function aplicarVersaoNoBanner(v) {
     }
 
     // =========================
-    // Layout refresh (version.txt)
+    // Banner cache-busting via version.txt
     // =========================
+    function aplicarVersaoNoBanner(v) {
+      const img = document.getElementById("banner-img");
+      if (!img) return;
+      img.src = `banner.jpg?v=${encodeURIComponent(v || Date.now())}`;
+    }
+
     let lastVersion = null;
 
     async function checarVersao() {
@@ -591,25 +574,26 @@ function aplicarVersaoNoBanner(v) {
       if (!resp.ok) return;
 
       const v = (await resp.text()).trim();
-	  
-	  aplicarVersaoNoBanner(v);
-		
+      aplicarVersaoNoBanner(v);
+
       if (lastVersion === null) { lastVersion = v; return; }
       if (v && v !== lastVersion) location.reload();
     }
 
-    // Boot
-    carregarProdutos().catch(console.warn);
-    checarVersao().catch(() => {});
-    setInterval(() => carregarProdutos().catch(console.warn), REFETCH_MS);
+    // =========================
+    // Boot (uma vez só, sem duplicar intervals)
+    // =========================
+    async function boot() {
+      try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
+      try { await carregarProdutos(true); } catch (e) { console.warn("Produtos:", e); }
+      try { await checarVersao(); } catch {}
+    }
+
+    boot();
+
+    setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
+    setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
-	
-
-boot();
-
-setInterval(() => carregarProdutos().catch(console.warn), REFETCH_MS);
-setInterval(() => carregarPromocoes().catch(console.warn), 60000);
-
   </script>
 </body>
 </html>
