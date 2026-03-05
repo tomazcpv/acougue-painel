@@ -437,6 +437,16 @@ for (const p of itens) {
   const cat = categoria(p?.nome);
   (grupos[cat] ||= []).push(p);
 }
+// Ordenar produtos alfabeticamente dentro de cada categoria
+Object.keys(grupos).forEach(cat => {
+  grupos[cat].sort((a, b) =>
+    String(a?.nome ?? "").localeCompare(
+      String(b?.nome ?? ""),
+      "pt-BR",
+      { sensitivity: "base" }
+    )
+  );
+});
 
       const ordem = ["BOVINOS", "SUÍNOS", "AVES", "PROCESSADOS"];
       const porSlide = ITENS_POR_COLUNA * 2;
