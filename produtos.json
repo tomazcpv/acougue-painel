@@ -26,7 +26,7 @@
     },
     {
       "nome": "CALABRESA SADIA KG",
-      "preco": "R$ 29,90"
+      "preco": "R$ 24,90"
     },
     {
       "nome": "LINGUIÇA TOSCANA SADIA KG",
@@ -52,7 +52,7 @@
   [
     {
       "nome": "SALSICHA RESFRIADA SEARA KG",
-      "preco": "R$ 12,90"
+      "preco": "R$ 9,99"
     },
     {
       "nome": "SALSICHA PIF PAF KG",
@@ -84,7 +84,7 @@
     },
     {
       "nome": "CONTRA FILE KG",
-      "preco": "R$ 62,90"
+      "preco": "R$ 59,90"
     },
     {
       "nome": "CONTRA FILE EM PEÇA KG",
@@ -92,11 +92,11 @@
     },
     {
       "nome": "LAGARTO KG",
-      "preco": "R$ 46,90"
+      "preco": "R$ 42,90"
     },
     {
       "nome": "ALCATRA COM MAMINHA KG",
-      "preco": "R$ 59,90"
+      "preco": "R$ 57,90"
     }
   ],
   [
@@ -184,7 +184,7 @@
     },
     {
       "nome": "PEITO COM OSSO KG",
-      "preco": "R$ 16,90"
+      "preco": "R$ 13,90"
     },
     {
       "nome": "LOMBO SUINO KG",
@@ -202,19 +202,19 @@
   [
     {
       "nome": "SOBRECOXA KG",
-      "preco": "R$ 14,90"
+      "preco": "R$ 11,90"
     },
     {
       "nome": "COXINHA DA ASA KG",
-      "preco": "R$ 15,90"
+      "preco": "R$ 13,90"
     },
     {
       "nome": "ASA DE FRANGO KG",
-      "preco": "R$ 16,90"
+      "preco": "R$ 14,90"
     },
     {
       "nome": "MEIO DA ASA KG",
-      "preco": "R$ 22,90"
+      "preco": "R$ 17,90"
     },
     {
       "nome": "MOELA KG",
@@ -237,26 +237,30 @@
       "preco": "R$ 8,90"
     },
     {
+      "nome": "TOICINHO KG",
+      "preco": "R$ 22,90"
+    },
+    {
       "nome": "BARRIGA KG",
       "preco": "R$ 26,90"
     },
     {
       "nome": "COSTELINHA KG",
       "preco": "R$ 29,90"
-    },
-    {
-      "nome": "BISTECA KG",
-      "preco": "R$ 24,90"
     }
   ],
   [
+    {
+      "nome": "BISTECA KG",
+      "preco": "R$ 24,90"
+    },
     {
       "nome": "BIFE DE PERNIL KG",
       "preco": "R$ 22,90"
     },
     {
       "nome": "PERNIL PICADO KG",
-      "preco": "R$ 19,90"
+      "preco": "R$ 17,90"
     },
     {
       "nome": "COSTELINHA COM COURO KG",
@@ -264,7 +268,7 @@
     },
     {
       "nome": "PERNIL COM OSSO KG",
-      "preco": "R$ 17,90"
+      "preco": "R$ 15,90"
     },
     {
       "nome": "PERNIL SEM OSSO KG",
@@ -293,13 +297,13 @@
     {
       "nome": "MILANESA DE FRANGO KG",
       "preco": "R$ 36,90"
-    },
-    {
-      "nome": "ALMONDEGA KG",
-      "preco": "R$ 39,90"
     }
   ],
   [
+    {
+      "nome": "ALMONDEGA KG",
+      "preco": "R$ 39,90"
+    },
     {
       "nome": "BIFE A ROLE KG",
       "preco": "R$ 44,90"
@@ -343,20 +347,20 @@
     {
       "nome": "ESPETINHO BOVINO KG",
       "preco": "R$ 4,50"
-    },
-    {
-      "nome": "ESPETINHO DE PICANHA KG",
-      "preco": "R$ 9,00"
     }
   ],
   [
+    {
+      "nome": "ESPETINHO DE PICANHA KG",
+      "preco": "R$ 9,00"
+    },
     {
       "nome": "picanha congelada KG",
       "preco": "R$ 59,90"
     },
     {
       "nome": "FILE DE COXA TEMPERADA KG",
-      "preco": "R$ 19,90"
+      "preco": "R$ 16,90"
     },
     {
       "nome": "LINGUIÇA FINA DE ALHO KG",
@@ -368,7 +372,7 @@
     },
     {
       "nome": "FILÉ DE PEITO DE FRANGO KG",
-      "preco": "R$ 22,90"
+      "preco": "R$ 19,90"
     },
     {
       "nome": "OSSOBUGO KG",
@@ -393,13 +397,13 @@
     {
       "nome": "ESPETINHO DE CORAÇÃO KG",
       "preco": "R$ 5,00"
-    },
-    {
-      "nome": "ESPETINHO DE TULIPA KG",
-      "preco": "R$ 6,00"
     }
   ],
   [
+    {
+      "nome": "ESPETINHO DE TULIPA KG",
+      "preco": "R$ 6,00"
+    },
     {
       "nome": "ESPETINHO DE MEDALHÃO DE FRANGO KG",
       "preco": "R$ 9,00"
@@ -443,13 +447,13 @@
     {
       "nome": "LAGARTO RECHEADO E TEMPERADO KG",
       "preco": "R$ 56,90"
-    },
-    {
-      "nome": "ESPETINHO DE PANCETA KG",
-      "preco": "R$ 3,50"
     }
   ],
   [
+    {
+      "nome": "ESPETINHO DE PANCETA KG",
+      "preco": "R$ 3,50"
+    },
     {
       "nome": "CARNE MOÍDA DE BANDEIJA KG",
       "preco": "R$ 29,90"
@@ -493,13 +497,13 @@
     {
       "nome": "SHORT RIB BOVINO KG",
       "preco": "R$ 54,90"
-    },
-    {
-      "nome": "PANCETA DE ROLO KG",
-      "preco": "R$ 29,90"
     }
   ],
   [
+    {
+      "nome": "PANCETA DE ROLO KG",
+      "preco": "R$ 29,90"
+    },
     {
       "nome": "ESPETINHO DE ALCATRA KG",
       "preco": "R$ 5,00"
@@ -543,13 +547,13 @@
     {
       "nome": "bife ancho KG",
       "preco": "R$ 59,90"
-    },
-    {
-      "nome": "PALETA DE CORDEIRO KG",
-      "preco": "R$ 56,90"
     }
   ],
   [
+    {
+      "nome": "PALETA DE CORDEIRO KG",
+      "preco": "R$ 56,90"
+    },
     {
       "nome": "LINGUIÇA TOSCANA SEARA KG",
       "preco": "R$ 24,90"
@@ -564,7 +568,7 @@
     },
     {
       "nome": "ASSADOS DE TIRAS DE CONTRA FILÉ KG",
-      "preco": "R$ 79,90"
+      "preco": "R$ 69,90"
     },
     {
       "nome": "ORELHA SUÍNA SALGADA KG",
@@ -593,13 +597,13 @@
     {
       "nome": "COSTELA BOVINA 4 OSSOS KG",
       "preco": "R$ 26,90"
-    },
-    {
-      "nome": "COSTELA PICADA KG",
-      "preco": "R$ 19,99"
     }
   ],
   [
+    {
+      "nome": "COSTELA PICADA KG",
+      "preco": "R$ 19,99"
+    },
     {
       "nome": "LINGUIÇA TOSCANA FIRMESA KG",
       "preco": "R$ 22,90"
@@ -643,13 +647,13 @@
     {
       "nome": "LINGUIÇA TOSCANA KG",
       "preco": "R$ 21,90"
-    },
-    {
-      "nome": "PEITO SEM OSSO KG",
-      "preco": "R$ 19,99"
     }
   ],
   [
+    {
+      "nome": "PEITO SEM OSSO KG",
+      "preco": "R$ 19,99"
+    },
     {
       "nome": "PICANHA PARAGUAIA KG",
       "preco": "R$ 59,90"
@@ -693,13 +697,13 @@
     {
       "nome": "MEDALHÃO DE ROMEU E JULIETA KG",
       "preco": "R$ 8,00"
-    },
-    {
-      "nome": "LINGUIÇA TOSCANA FRESCAL PERDIGÃO KG",
-      "preco": "R$ 19,99"
     }
   ],
   [
+    {
+      "nome": "LINGUIÇA TOSCANA FRESCAL PERDIGÃO KG",
+      "preco": "R$ 19,99"
+    },
     {
       "nome": "COSTELINHA TEMPERADA KG",
       "preco": "R$ 26,90"
