@@ -1,7 +1,7 @@
 [
   { "nome": "FILÉ DE COXA", "preco": "R$ 19,90", "unidade": "KG", "imagem": "file-de-coxa.png" },
-  { "nome": "PERNIL PICADO", "preco": "R$ 17,90", "unidade": "KG", "imagem": "pernil-picado.png" },
+  { "nome": "PICADÃO BOVINO", "preco": "R$ 34,90", "unidade": "KG", "imagem": "picadaobov.png" },
   { "nome": "SALSICHA SEARA", "preco": "R$ 12,90", "unidade": "KG", "imagem": "salsicha-seara.png" },
   { "nome": "ALCATRA C/ MAMINHA", "preco": "R$ 59,90", "unidade": "KG", "imagem": "alcatra.png" },
-  { "nome": "LINGUIÇA PURA DE PERNIL", "preco": "R$ 28,90", "unidade": "KG", "imagem": "linguica-pura-pernil.png" }
+  { "nome": "BISTECA", "preco": "R$ 24,90", "unidade": "KG", "imagem": "bisteca.png" }
 ]
