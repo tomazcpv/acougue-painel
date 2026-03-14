@@ -1,7 +1,7 @@
 [
-  { "nome": "FILÉ DE COXA", "preco": "R$ 19,90", "unidade": "KG", "imagem": "file-de-coxa.png" },
-  { "nome": "PICADÃO BOVINO", "preco": "R$ 34,90", "unidade": "KG", "imagem": "picadaobov.png" },
+  { "nome": "FILÉ DE COXA", "preco": "R$ 16,90", "unidade": "KG", "imagem": "file-de-coxa.png" },
+  { "nome": "CHULETA CONTRA FILÉ", "preco": "R$ 36,90", "unidade": "KG", "imagem": "chuletacontrafile.png" },
   { "nome": "SALSICHA SEARA", "preco": "R$ 12,90", "unidade": "KG", "imagem": "salsicha-seara.png" },
-  { "nome": "ALCATRA C/ MAMINHA", "preco": "R$ 59,90", "unidade": "KG", "imagem": "alcatra.png" },
-  { "nome": "BISTECA", "preco": "R$ 24,90", "unidade": "KG", "imagem": "bisteca.png" }
+  { "nome": "ALCATRA C/ MAMINHA", "preco": "R$ 57,90", "unidade": "KG", "imagem": "alcatra.png" },
+  { "nome": "PANCETA", "preco": "R$ 22,90", "unidade": "KG", "imagem": "panceta.png" }
 ]
