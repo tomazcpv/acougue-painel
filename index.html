@@ -310,8 +310,6 @@ font-family: 'Anton', sans-serif;
     const PROMOS_URL = "promocoes.json";
     let PROMOS = [];
 	
-	const UNIDADES_URL = "unidades_override.json";
-	let UNIDADES_OVERRIDE = {};
 
     // Cache do último produtos.json para re-render quando promoções mudarem
     let lastProdutos = [];
@@ -401,7 +399,6 @@ function renderLinhas(lista) {
     const nomeOriginal = String(p?.nome ?? "");
     const nome = esc(limparNomeProduto(nomeOriginal).toUpperCase());
     const preco = esc(p?.preco ?? "");
-    const unidade = esc(unidadeProduto(nomeOriginal));
 
     return `
       <div class="row">
@@ -432,24 +429,7 @@ function renderLinhas(lista) {
         startSlideshow();
       }
     }
-	    // =========================
-    // UNIDADES DE MEDIDA
-    // =========================
-	async function carregarOverrideUnidades() {
-  try {
-    const resp = await fetch(`${UNIDADES_URL}?v=${Date.now()}`, { cache: "no-store" });
-    if (!resp.ok) { UNIDADES_OVERRIDE = {}; return; }
-    const data = await resp.json();
-    UNIDADES_OVERRIDE = (data && typeof data === "object") ? data : {};
-  } catch {
-    UNIDADES_OVERRIDE = {};
-  }
 
-  if (Array.isArray(lastProdutos) && lastProdutos.length) {
-    renderSlides(lastProdutos);
-    startSlideshow();
-  }
-}
 
     // =========================
     // Render
@@ -635,18 +615,7 @@ Object.keys(grupos).forEach(cat => {
     .replace(/\s+/g, " ")
     .trim();
 }
-    // =========================
-    // DESCOBRIR UNIDADE
-    // =========================
-function unidadeProduto(nome) {
-  const key = chaveNormalizada(nome);
 
-  if (UNIDADES_OVERRIDE[key]) {
-    return UNIDADES_OVERRIDE[key];
-  }
-
-  return "KG";
-}
 
     // =========================
     // Banner cache-busting via version.txt
@@ -676,13 +645,11 @@ function unidadeProduto(nome) {
     // =========================
     async function boot() {
       try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
-	  try { await carregarOverrideUnidades(); } catch (e) { console.warn("Unidades:", e); }
       try { await carregarProdutos(true); } catch (e) { console.warn("Produtos:", e); }
       try { await checarVersao(); } catch {}
     }
 
     boot();
-	setInterval(() => carregarOverrideUnidades().catch(() => {}), 60000);
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
     setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
