@@ -605,6 +605,7 @@ Object.keys(grupos).forEach(cat => {
         show(slideIdx);
       }, TEMPO_SLIDE_MS);
     }
+	
 
     // =========================
     // Produtos
@@ -675,12 +676,13 @@ function unidadeProduto(nome) {
     // =========================
     async function boot() {
       try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
+	  try { await carregarOverrideUnidades(); } catch (e) { console.warn("Unidades:", e); }
       try { await carregarProdutos(true); } catch (e) { console.warn("Produtos:", e); }
       try { await checarVersao(); } catch {}
     }
 
     boot();
-
+	setInterval(() => carregarOverrideUnidades().catch(() => {}), 60000);
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
     setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
