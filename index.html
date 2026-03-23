@@ -435,7 +435,10 @@ function renderLinhas(lista) {
 }
 function limparNome(nome) {
   return String(nome ?? "")
-    .replace(/^(KG|UN|PCT|PC|BANDEJA)\s*/i, "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase()
+    // remove QUALQUER unidade repetida no começo (1x ou várias)
+    .replace(/^((KG|UN|PCT|PC|BANDEJA)\s*)+/gi, "")
     .trim();
 }
 
