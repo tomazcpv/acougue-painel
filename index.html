@@ -454,27 +454,32 @@ function limparNome(nome) {
     // =========================
     // Promoções
     // =========================
-   function gerarPromosComPreco(produtos) {
+function gerarPromosComPreco(produtos) {
   try {
     if (!Array.isArray(PROMOS) || !Array.isArray(produtos)) return [];
 
-    const lista = PROMOS.map(nome => {
-      const nomeNorm = normalizar(nome);
+    const lista = [];
 
-      const prod = produtos.find(p =>
-        normalizar(p.nome).includes(nomeNorm)
-      );
+    for (const nomePromo of PROMOS) {
+      const nomeBusca = normalizar(nomePromo);
 
-      if (!prod) return null;
+      const prod = produtos.find(p => {
+        const nomeProd = normalizar(p.nome);
 
-      return {
+        // 🔥 MAIS FLEXÍVEL (resolve seu problema)
+        return nomeProd.includes(nomeBusca) || nomeBusca.includes(nomeProd);
+      });
+
+      if (!prod) continue;
+
+      lista.push({
         nome: prod.nome,
         preco: prod.preco,
         imagem: `${slugify(prod.nome)}.png`
-      };
-    }).filter(Boolean);
+      });
+    }
 
-    // embaralhar
+    // 🔀 embaralhar
     for (let i = lista.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [lista[i], lista[j]] = [lista[j], lista[i]];
