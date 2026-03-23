@@ -718,7 +718,7 @@ const promo = promosAuto.length
     // Boot (uma vez só, sem duplicar intervals)
     // =========================
     async function boot() {
-      try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
+      try { await gerarPromosComPreco(); } catch (e) { console.warn("Promocoes:", e); }
       try { await carregarProdutos(true); } catch (e) { console.warn("Produtos:", e); }
       try { await checarVersao(); } catch {}
     }
@@ -726,7 +726,7 @@ const promo = promosAuto.length
     boot();
 
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
-    setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
+    setInterval(() => gerarPromosComPreco().catch(console.warn), PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
   </script>
 </body>
