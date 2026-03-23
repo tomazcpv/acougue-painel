@@ -454,18 +454,46 @@ function limparNome(nome) {
     // =========================
     // Promoções
     // =========================
-    async function carregarPromocoes() {
-      const resp = await fetch(`${PROMOS_URL}?v=${Date.now()}`, { cache: "no-store" });
-      if (!resp.ok) throw new Error(`Falha ao carregar ${PROMOS_URL}: ${resp.status}`);
-      const data = await resp.json();
-      PROMOS = Array.isArray(data) ? data : [];
+   function gerarPromosComPreco(produtos) {
+  try {
+    if (!Array.isArray(PROMOS) || !Array.isArray(produtos)) return [];
 
-      // Força re-render com os últimos produtos, mesmo que o hash não mude
-      if (Array.isArray(lastProdutos) && lastProdutos.length) {
-        renderSlides(lastProdutos);
-        startSlideshow();
-      }
+    const lista = PROMOS.map(nome => {
+      const nomeNorm = normalizar(nome);
+
+      const prod = produtos.find(p =>
+        normalizar(p.nome).includes(nomeNorm)
+      );
+
+      if (!prod) return null;
+
+      return {
+        nome: prod.nome,
+        preco: prod.preco,
+        imagem: `${slugify(prod.nome)}.png`
+      };
+    }).filter(Boolean);
+
+    // embaralhar
+    for (let i = lista.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [lista[i], lista[j]] = [lista[j], lista[i]];
     }
+
+    return lista.slice(0, 5);
+
+  } catch (e) {
+    console.error("ERRO PROMO:", e);
+    return [];
+  }
+}
+
+function normalizar(texto) {
+  return String(texto ?? "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase()
+    .trim();
+}
 
     // =========================
     // Render
@@ -521,9 +549,11 @@ Object.keys(grupos).forEach(cat => {
         const active = idx === 0 ? " active" : "";
         const titulo = esc(s.cat);
 
-        const promo = (Array.isArray(PROMOS) && PROMOS.length)
-          ? PROMOS[idx % PROMOS.length]
-          : { nome: "OFERTA", preco: "R$ --,--", unidade: "KG", imagem: "padrao.png" };
+        const promosAuto = gerarPromosComPreco(produtos);
+
+const promo = promosAuto.length
+  ? promosAuto[idx % promosAuto.length]
+  : { nome: "", preco: "" };
 
         const promoNome = String(promo?.nome ?? "");
         const promoNomeEsc = esc(promoNome);
