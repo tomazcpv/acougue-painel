@@ -454,64 +454,18 @@ function limparNome(nome) {
     // =========================
     // Promoções
     // =========================
-	
-	function precoNumero(preco) {
-  return Number(
-    String(preco ?? "")
-      .replace(/[^\d,]/g, "")
-      .replace(",", ".")
-  ) || 0;
-}
+    async function carregarPromocoes() {
+      const resp = await fetch(`${PROMOS_URL}?v=${Date.now()}`, { cache: "no-store" });
+      if (!resp.ok) throw new Error(`Falha ao carregar ${PROMOS_URL}: ${resp.status}`);
+      const data = await resp.json();
+      PROMOS = Array.isArray(data) ? data : [];
 
-function gerarPromosComPreco(produtos) {
-  try {
-    if (!Array.isArray(PROMOS) || !Array.isArray(produtos)) return [];
-
-    const lista = [];
-
-    for (const nomePromo of PROMOS) {
-      const busca = normalizar(nomePromo);
-
-      // 🔥 procura qualquer produto que contenha a palavra-chave
-      const candidatos = produtos.filter(p => {
-        const nomeProd = normalizar(p.nome);
-        return nomeProd.includes(busca);
-      });
-
-      if (!candidatos.length) continue;
-
-      // 🔥 pega o MAIS BARATO entre os encontrados
-      const escolhido = candidatos.sort((a, b) =>
-        precoNumero(a.preco) - precoNumero(b.preco)
-      )[0];
-
-      lista.push({
-        nome: escolhido.nome,
-        preco: escolhido.preco,
-        imagem: `${slugify(escolhido.nome)}.png`
-      });
+      // Força re-render com os últimos produtos, mesmo que o hash não mude
+      if (Array.isArray(lastProdutos) && lastProdutos.length) {
+        renderSlides(lastProdutos);
+        startSlideshow();
+      }
     }
-
-    // embaralhar
-    for (let i = lista.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [lista[i], lista[j]] = [lista[j], lista[i]];
-    }
-
-    return lista.slice(0, 5);
-
-  } catch (e) {
-    console.error("ERRO PROMO:", e);
-    return [];
-  }
-}
-
-function normalizar(texto) {
-  return String(texto ?? "")
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    .toUpperCase()
-    .trim();
-}
 
     // =========================
     // Render
@@ -567,11 +521,9 @@ Object.keys(grupos).forEach(cat => {
         const active = idx === 0 ? " active" : "";
         const titulo = esc(s.cat);
 
-        const promosAuto = gerarPromosComPreco(produtos);
-
-const promo = promosAuto.length
-  ? promosAuto[idx % promosAuto.length]
-  : { nome: "", preco: "" };
+        const promo = (Array.isArray(PROMOS) && PROMOS.length)
+          ? PROMOS[idx % PROMOS.length]
+          : { nome: "OFERTA", preco: "R$ --,--", unidade: "KG", imagem: "padrao.png" };
 
         const promoNome = String(promo?.nome ?? "");
         const promoNomeEsc = esc(promoNome);
@@ -690,30 +642,6 @@ const promo = promosAuto.length
         startSlideshow();
       }
     }
-	
-	    // =========================
-    // Carregar Promocoes
-    // =========================
-	const PROMOS_URL = "promocoes.json";
-let PROMOS = [];
-
-async function carregarPromocoes() {
-  try {
-    const resp = await fetch(`${PROMOS_URL}?v=${Date.now()}`, { cache: "no-store" });
-
-    if (!resp.ok) throw new Error("Erro ao carregar promocoes.json");
-
-    const data = await resp.json();
-
-    PROMOS = Array.isArray(data) ? data : [];
-
-    console.log("PROMOS carregadas:", PROMOS);
-
-  } catch (e) {
-    console.error("Erro ao carregar promoções:", e);
-    PROMOS = [];
-  }
-}
 
     // =========================
     // Banner cache-busting via version.txt
