@@ -397,12 +397,6 @@ font-family: 'Anton', sans-serif;
   return "KG";
 }
 
-function limparNome(nome) {
-  return String(nome ?? "")
-    .replace(/^(KG|UN|PCT|PC|BANDEJA)\s*/i, "")
-    .trim();
-}
-
 function definirUnidade(nome) {
   const n = String(nome ?? "")
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -438,6 +432,11 @@ function renderLinhas(lista) {
       </div>
     `;
   }).join("");
+}
+function limparNome(nome) {
+  return String(nome ?? "")
+    .replace(/^(KG|UN|PCT|PC|BANDEJA)\s*/i, "")
+    .trim();
 }
 
     function simpleHash(obj) {
