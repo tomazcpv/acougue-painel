@@ -304,6 +304,8 @@ font-family: 'Anton', sans-serif;
     const PROMOS_MS      = 60000;
 
     const TEXTO_PROMO = "OFERTA DO DIA";
+	const PROMOS_URL = "promocoes.json";
+	let PROMOS = [];
     const ITENS_POR_COLUNA = 19;
 
     const PROMOS_URL = "promocoes.json";
@@ -520,17 +522,19 @@ Object.keys(grupos).forEach(cat => {
       slidesData.forEach((s, idx) => {
         const active = idx === 0 ? " active" : "";
         const titulo = esc(s.cat);
-
-        const promo = (Array.isArray(PROMOS) && PROMOS.length)
-          ? PROMOS[idx % PROMOS.length]
-          : { nome: "OFERTA", preco: "R$ --,--", unidade: "KG", imagem: "padrao.png" };
+		const promo = (Array.isArray(PROMOS) && PROMOS.length)
+  ? PROMOS[idx % PROMOS.length]
+  : { nome: "", preco: "", imagem: "padrao.png", unidade: "KG" };
+        //const promo = (Array.isArray(PROMOS) && PROMOS.length)
+          //? PROMOS[idx % PROMOS.length]
+          //: { nome: "OFERTA", preco: "R$ --,--", unidade: "KG", imagem: "padrao.png" };
 
         const promoNome = String(promo?.nome ?? "");
         const promoNomeEsc = esc(promoNome);
 
         const promoImg = promo?.imagem
-          ? `ofertas/${String(promo.imagem)}`
-          : (promoNome ? ofertaImgSrc(promoNome) : "ofertas/padrao.png");
+  ? `ofertas/${promo.imagem}`
+  : "ofertas/padrao.png";
 
         const promoPrecoTxt = String(promo?.preco ?? "")
           .replace(/^\s*R\$\s*/i, "")
@@ -642,6 +646,24 @@ Object.keys(grupos).forEach(cat => {
         startSlideshow();
       }
     }
+	
+	async function carregarPromocoes() {
+  try {
+    const resp = await fetch(`${PROMOS_URL}?v=${Date.now()}`, { cache: "no-store" });
+
+    if (!resp.ok) throw new Error("Erro ao carregar promocoes.json");
+
+    const data = await resp.json();
+
+    PROMOS = Array.isArray(data) ? data : [];
+
+    console.log("PROMOS carregadas:", PROMOS);
+
+  } catch (e) {
+    console.error("Erro ao carregar promoções:", e);
+    PROMOS = [];
+  }
+}
 
     // =========================
     // Banner cache-busting via version.txt
@@ -669,16 +691,23 @@ Object.keys(grupos).forEach(cat => {
     // =========================
     // Boot (uma vez só, sem duplicar intervals)
     // =========================
+	
+
+
+boot();
     async function boot() {
-      try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
-      try { await carregarProdutos(true); } catch (e) { console.warn("Produtos:", e); }
+		await carregarPromocoes();   // primeiro carrega promo
+		await carregarProdutos();    // depois produtos
+      //try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
+      //try { await carregarProdutos(true); } catch (e) { console.warn("Produtos:", e); }
       try { await checarVersao(); } catch {}
     }
 
     boot();
 
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
-    setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
+	setInterval(() => carregarPromocoes().catch(() => {}), 60000);
+   // setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
 	
 	// ===== TESTE SEGURO PROMOÇÕES =====
