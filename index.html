@@ -690,6 +690,30 @@ const promo = promosAuto.length
         startSlideshow();
       }
     }
+	
+	    // =========================
+    // Carregar Promocoes
+    // =========================
+	const PROMOS_URL = "promocoes.json";
+let PROMOS = [];
+
+async function carregarPromocoes() {
+  try {
+    const resp = await fetch(`${PROMOS_URL}?v=${Date.now()}`, { cache: "no-store" });
+
+    if (!resp.ok) throw new Error("Erro ao carregar promocoes.json");
+
+    const data = await resp.json();
+
+    PROMOS = Array.isArray(data) ? data : [];
+
+    console.log("PROMOS carregadas:", PROMOS);
+
+  } catch (e) {
+    console.error("Erro ao carregar promoções:", e);
+    PROMOS = [];
+  }
+}
 
     // =========================
     // Banner cache-busting via version.txt
@@ -718,7 +742,7 @@ const promo = promosAuto.length
     // Boot (uma vez só, sem duplicar intervals)
     // =========================
     async function boot() {
-      try { await gerarPromosComPreco(); } catch (e) { console.warn("Promocoes:", e); }
+      try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
       try { await carregarProdutos(true); } catch (e) { console.warn("Produtos:", e); }
       try { await checarVersao(); } catch {}
     }
@@ -726,7 +750,7 @@ const promo = promosAuto.length
     boot();
 
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
-    setInterval(() => gerarPromosComPreco().catch(console.warn), PROMOS_MS);
+    setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
   </script>
 </body>
