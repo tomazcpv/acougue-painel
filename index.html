@@ -450,6 +450,40 @@ function limparNome(nome) {
       try { return JSON.stringify(obj); }
       catch { return String(Date.now()); }
     }
+	
+	function normalizar(texto) {
+  return String(texto ?? "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase()
+    .trim();
+}
+
+function encontrarProduto(nomePromo, produtos) {
+  const alvo = normalizar(nomePromo);
+
+  return produtos.find(p =>
+    normalizar(p.nome).includes(alvo)
+  );
+}
+
+function gerarPromosComPreco(produtos) {
+  if (!Array.isArray(PROMOS)) return [];
+
+  const lista = PROMOS
+    .map(nome => {
+      const prod = encontrarProduto(nome, produtos);
+
+      if (!prod) return null;
+
+      return {
+        nome: prod.nome,
+        preco: prod.preco,
+        imagem: `${slugify(prod.nome)}.png`
+      };
+    })
+    .filter(Boolean);
+
+  // embaralhar (aleatório)
 
     // =========================
     // Promoções
