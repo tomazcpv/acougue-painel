@@ -454,6 +454,15 @@ function limparNome(nome) {
     // =========================
     // Promoções
     // =========================
+	
+	function precoNumero(preco) {
+  return Number(
+    String(preco ?? "")
+      .replace(/[^\d,]/g, "")
+      .replace(",", ".")
+  ) || 0;
+}
+
 function gerarPromosComPreco(produtos) {
   try {
     if (!Array.isArray(PROMOS) || !Array.isArray(produtos)) return [];
@@ -461,25 +470,29 @@ function gerarPromosComPreco(produtos) {
     const lista = [];
 
     for (const nomePromo of PROMOS) {
-      const nomeBusca = normalizar(nomePromo);
+      const busca = normalizar(nomePromo);
 
-      const prod = produtos.find(p => {
+      // 🔥 procura qualquer produto que contenha a palavra-chave
+      const candidatos = produtos.filter(p => {
         const nomeProd = normalizar(p.nome);
-
-        // 🔥 MAIS FLEXÍVEL (resolve seu problema)
-        return nomeProd.includes(nomeBusca) || nomeBusca.includes(nomeProd);
+        return nomeProd.includes(busca);
       });
 
-      if (!prod) continue;
+      if (!candidatos.length) continue;
+
+      // 🔥 pega o MAIS BARATO entre os encontrados
+      const escolhido = candidatos.sort((a, b) =>
+        precoNumero(a.preco) - precoNumero(b.preco)
+      )[0];
 
       lista.push({
-        nome: prod.nome,
-        preco: prod.preco,
-        imagem: `${slugify(prod.nome)}.png`
+        nome: escolhido.nome,
+        preco: escolhido.preco,
+        imagem: `${slugify(escolhido.nome)}.png`
       });
     }
 
-    // 🔀 embaralhar
+    // embaralhar
     for (let i = lista.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [lista[i], lista[j]] = [lista[j], lista[i]];
