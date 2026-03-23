@@ -385,19 +385,45 @@ font-family: 'Anton', sans-serif;
       if (data.length && Array.isArray(data[0])) return data.flat();
       return data;
     }
+	
+	function definirUnidade(nome) {
+  const n = String(nome ?? "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase();
 
-    function renderLinhas(lista) {
-      return (lista || []).map(p => {
-        const nome = esc((p?.nome ?? "").toUpperCase());
-        const preco = esc(p?.preco ?? "");
-        return `
-          <div class="row">
-            <div class="row-name">${nome}</div>
-            <div class="row-price">${preco}</div>
-          </div>
-        `;
-      }).join("");
-    }
+  if (n.includes("ESPETINHO")) return "UN";
+  if (n.includes("BANDEJA")) return "BANDEJA";
+
+  return "KG";
+}
+
+function limparNome(nome) {
+  return String(nome ?? "")
+    .replace(/^(KG|UN|PCT|PC|BANDEJA)\s*/i, "")
+    .trim();
+}
+
+function renderLinhas(lista) {
+  return (lista || []).map(p => {
+
+    const nomeOriginal = String(p?.nome ?? "");
+
+    const unidade = definirUnidade(nomeOriginal);
+
+    const nomeLimpo = limparNome(nomeOriginal).toUpperCase();
+
+    const nomeFinal = `${nomeLimpo} ${unidade}`;
+
+    const preco = esc(p?.preco ?? "");
+
+    return `
+      <div class="row">
+        <div class="row-name">${esc(nomeFinal)}</div>
+        <div class="row-price">${preco}</div>
+      </div>
+    `;
+  }).join("");
+}
 
     function simpleHash(obj) {
       try { return JSON.stringify(obj); }
