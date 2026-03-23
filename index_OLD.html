@@ -302,12 +302,14 @@ font-family: 'Anton', sans-serif;
     const REFETCH_MS     = 60000;
     const VERSION_MS     = 30000;
     const PROMOS_MS      = 60000;
+	
 
     const TEXTO_PROMO = "OFERTA DO DIA";
     const ITENS_POR_COLUNA = 19;
 
     const PROMOS_URL = "promocoes.json";
     let PROMOS = [];
+	
 
     // Cache do último produtos.json para re-render quando promoções mudarem
     let lastProdutos = [];
@@ -386,18 +388,26 @@ font-family: 'Anton', sans-serif;
       return data;
     }
 
-    function renderLinhas(lista) {
-      return (lista || []).map(p => {
-        const nome = esc((p?.nome ?? "").toUpperCase());
-        const preco = esc(p?.preco ?? "");
-        return `
-          <div class="row">
-            <div class="row-name">${nome}</div>
-            <div class="row-price">${preco}</div>
-          </div>
-        `;
-      }).join("");
-    }
+function limparNomeProduto(nome) {
+  return String(nome ?? "")
+    .replace(/^(KG|UN|PCT|PC|BANDEJA)\s*/i, "")
+    .trim();
+}
+
+function renderLinhas(lista) {
+  return (lista || []).map(p => {
+    const nomeOriginal = String(p?.nome ?? "");
+    const nome = esc(limparNomeProduto(nomeOriginal).toUpperCase());
+    const preco = esc(p?.preco ?? "");
+
+    return `
+      <div class="row">
+        <div class="row-name">${nome}</div>
+        <div class="row-price">${preco}/${unidade}</div>
+      </div>
+    `;
+  }).join("");
+}
 
     function simpleHash(obj) {
       try { return JSON.stringify(obj); }
@@ -419,6 +429,7 @@ font-family: 'Anton', sans-serif;
         startSlideshow();
       }
     }
+
 
     // =========================
     // Render
@@ -574,6 +585,7 @@ Object.keys(grupos).forEach(cat => {
         show(slideIdx);
       }, TEMPO_SLIDE_MS);
     }
+	
 
     // =========================
     // Produtos
@@ -595,6 +607,15 @@ Object.keys(grupos).forEach(cat => {
         startSlideshow();
       }
     }
+	
+	function chaveNormalizada(nome) {
+  return String(nome ?? "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 
     // =========================
     // Banner cache-busting via version.txt
@@ -629,7 +650,6 @@ Object.keys(grupos).forEach(cat => {
     }
 
     boot();
-
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
     setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
