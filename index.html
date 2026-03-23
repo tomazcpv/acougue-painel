@@ -344,7 +344,36 @@ font-family: 'Anton', sans-serif;
           .trim()
   );
 }
+function pegarPromocoesAleatorias(lista, quantidade = 5) {
+  const copia = [...lista];
 
+  // embaralhar (Fisher-Yates)
+  for (let i = copia.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copia[i], copia[j]] = [copia[j], copia[i]];
+  }
+
+  return copia.slice(0, quantidade);
+}
+function buscarPrecoProduto(nomePromo, produtos) {
+  const normalizar = (txt) =>
+    String(txt ?? "")
+      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+      .toUpperCase()
+      .trim();
+
+  const nomeBusca = normalizar(nomePromo);
+
+  for (const grupo of produtos) {
+    for (const item of grupo) {
+      if (normalizar(item.nome).includes(nomeBusca)) {
+        return item.preco;
+      }
+    }
+  }
+
+  return "R$ --,--";
+}
     function ofertaImgSrc(promoNome) {
       const slug = slugify(promoNome);
       if (!slug) return "ofertas/padrao.png";
@@ -454,18 +483,28 @@ function limparNome(nome) {
     // =========================
     // Promoções
     // =========================
-    async function carregarPromocoes() {
-      const resp = await fetch(`${PROMOS_URL}?v=${Date.now()}`, { cache: "no-store" });
-      if (!resp.ok) throw new Error(`Falha ao carregar ${PROMOS_URL}: ${resp.status}`);
-      const data = await resp.json();
-      PROMOS = Array.isArray(data) ? data : [];
+async function carregarPromocoes(produtos) {
+  try {
+    const res = await fetch(PROMOS_URL + "?v=" + Date.now());
+    const listaBase = await res.json();
 
-      // Força re-render com os últimos produtos, mesmo que o hash não mude
-      if (Array.isArray(lastProdutos) && lastProdutos.length) {
-        renderSlides(lastProdutos);
-        startSlideshow();
-      }
-    }
+    const selecionados = pegarPromocoesAleatorias(listaBase, 5);
+
+    PROMOS = selecionados.map(p => {
+      const preco = buscarPrecoProduto(p.nome, produtos);
+
+      return {
+        nome: p.nome,
+        preco: preco,
+        unidade: "KG",
+        imagem: ofertaImgSrc(p.nome)
+      };
+    });
+
+  } catch (e) {
+    console.error("Erro ao carregar promoções:", e);
+  }
+}
 
     // =========================
     // Render
@@ -672,13 +711,20 @@ Object.keys(grupos).forEach(cat => {
     async function boot() {
       try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
       try { await carregarProdutos(true); } catch (e) { console.warn("Produtos:", e); }
+	  await carregarPromocoes(lastProdutos);
       try { await checarVersao(); } catch {}
     }
 
     boot();
 
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
-    setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
+    //setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
+	setInterval(async () => {
+  if (lastProdutos.length) {
+    await carregarPromocoes(lastProdutos);
+    render(); // ou função que redesenha a tela
+  }
+}, PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
   </script>
 </body>
