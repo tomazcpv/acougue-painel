@@ -680,6 +680,18 @@ Object.keys(grupos).forEach(cat => {
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
     setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
+	
+	// ===== TESTE SEGURO PROMOÇÕES =====
+setTimeout(async () => {
+  try {
+    const resp = await fetch("promocoes.json?v=" + Date.now());
+    const data = await resp.json();
+    console.log("PROMOCOES JSON:", data);
+  } catch (e) {
+    console.error("ERRO PROMO JSON:", e);
+  }
+}, 2000);
+
   </script>
 </body>
 </html>
