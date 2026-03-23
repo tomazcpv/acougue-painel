@@ -1,7 +1,7 @@
 [
-  { "nome": "BISTECA", "preco": "R$ 19,90", "unidade": "KG", "imagem": "bisteca.png" },
-  { "nome": "LINGUIÇA SADIA", "preco": "R$ 19,99", "unidade": "KG", "imagem": "linguicasadia.png" },
+  { "nome": "BISTECA", "preco": "R$ 24,90", "unidade": "KG", "imagem": "bisteca.png" },
+  { "nome": "FILÉ DE COXA", "preco": "R$ 19,90", "unidade": "KG", "imagem": "file-de-coxa.png" },
   { "nome": "SALSICHA SEARA", "preco": "R$ 9,99", "unidade": "KG", "imagem": "salsicha-seara.png" },
-  { "nome": "TULIPA", "preco": "R$ 18,90", "unidade": "KG", "imagem": "TULIPA.png" },
-  { "nome": "COXINHA DA ASA", "preco": "R$ 13,90", "unidade": "KG", "imagem": "coxinhaasa.png" }
+  { "nome": "PANCETA", "preco": "R$ 22,90", "unidade": "KG", "imagem": "panceta.png" },
+  { "nome": "COXINHA DA ASA", "preco": "R$ 16,90", "unidade": "KG", "imagem": "coxinhaasa.png" }
 ]
