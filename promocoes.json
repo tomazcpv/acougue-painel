@@ -1,10 +1,7 @@
 [
-  { "nome": "BISTECA" },
-  { "nome": "FILÉ DE COXA" },
-  { "nome": "SALSICHA SEARA" },
-  { "nome": "PANCETA" },
-  { "nome": "COXINHA DA ASA" },
-  { "nome": "PATINHO KG" },
-  { "nome": "PICANHA KG" },
-  { "nome": "ALCATRA EM PEÇA KG" }
+  { "nome": "bisteca" },
+  { "nome": "panceta" },
+  { "nome": "alcatra" },
+  { "nome": "picanha" },
+  { "nome": "pernil-picado" }
 ]
