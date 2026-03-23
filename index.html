@@ -403,15 +403,30 @@ function limparNome(nome) {
     .trim();
 }
 
+function definirUnidade(nome) {
+  const n = String(nome ?? "")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toUpperCase();
+
+  if (n.includes("ESPETINHO")) return "UN";
+  if (n.includes("BANDEJA")) return "BANDEJA";
+  if (n.includes("ESP")) return "UN";
+
+  return "KG";
+}
+
 function renderLinhas(lista) {
   return (lista || []).map(p => {
 
     const nomeOriginal = String(p?.nome ?? "");
 
-    const unidade = definirUnidade(nomeOriginal);
-
+    // remove unidade antiga
     const nomeLimpo = limparNome(nomeOriginal).toUpperCase();
 
+    // define unidade correta
+    const unidade = definirUnidade(nomeOriginal);
+
+    // monta nome final (SEM duplicar)
     const nomeFinal = `${nomeLimpo} ${unidade}`;
 
     const preco = esc(p?.preco ?? "");
