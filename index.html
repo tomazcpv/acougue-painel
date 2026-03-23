@@ -439,8 +439,10 @@ function limparNome(nome) {
   return String(nome ?? "")
     .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
     .toUpperCase()
-    // remove QUALQUER unidade repetida no começo (1x ou várias)
+    // remove no começo
     .replace(/^((KG|UN|PCT|PC|BANDEJA)\s*)+/gi, "")
+    // remove no final
+    .replace(/\s*(KG|UN|PCT|PC|BANDEJA)+$/gi, "")
     .trim();
 }
 
