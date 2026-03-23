@@ -324,6 +324,25 @@ font-family: 'Anton', sans-serif;
   "PRODUTO TESTE",
   "SALSA, CEBOLA E BACON KG"
 ];
+
+const PROMOS_URL = "promocoes.json";
+let PROMOS = [];
+
+async function testarPromocoes() {
+  try {
+    const resp = await fetch(`${PROMOS_URL}?v=${Date.now()}`);
+    const data = await resp.json();
+
+    PROMOS = data;
+
+    console.log("PROMOS OK:", PROMOS);
+
+  } catch (e) {
+    console.error("ERRO AO CARREGAR PROMOÇÕES:", e);
+  }
+}
+
+
     function slugify(text) {
       return String(text ?? "")
         .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -680,6 +699,8 @@ Object.keys(grupos).forEach(cat => {
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
     setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
+	testarPromocoes();
+	
   </script>
 </body>
 </html>
