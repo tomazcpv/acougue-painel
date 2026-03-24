@@ -697,6 +697,8 @@ const promoImg = promo?.imagem
 
 if (forceRender || h !== lastHash) {
   lastHash = h;
+  renderSlides(produtos);   // 🔥 VOLTA O RENDER
+  startSlideshow();         // 🔥 VOLTA O SLIDE
 }
     }
 
@@ -726,12 +728,10 @@ if (forceRender || h !== lastHash) {
     // =========================
     // Boot (uma vez só, sem duplicar intervals)
     // =========================
-	  async function boot() {
+async function boot() {
   try {
-    await carregarProdutos(false); // 🔥 NÃO renderiza ainda
-    await carregarPromocoes(lastProdutos);
-    renderSlides(lastProdutos);    // 🔥 renderiza UMA vez só
-    startSlideshow();              // 🔥 inicia slides
+    await carregarProdutos(true); // 🔥 já renderiza aqui
+    await carregarPromocoes(lastProdutos); // só atualiza promos
   } catch (e) {
     console.warn("Erro no boot:", e);
   }
@@ -744,8 +744,7 @@ if (forceRender || h !== lastHash) {
 setInterval(async () => {
   if (lastProdutos.length) {
     await carregarPromocoes(lastProdutos);
-    renderSlides(lastProdutos); // 🔥 mantém, mas controlado
-    startSlideshow(); // 🔥 reinicia o slide corretamente
+    renderSlides(lastProdutos); // 🔥 atualiza tela com promoções
   }
 }, PROMOS_MS);
 
