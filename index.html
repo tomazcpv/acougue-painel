@@ -356,23 +356,6 @@ function pegarPromocoesAleatorias(lista, quantidade = 5) {
   return copia.slice(0, quantidade);
 }
 function buscarPrecoProduto(nomePromo, produtos) {
-  if (!produtos) {
-    console.error("produtos está vazio ou undefined");
-    return "";
-  }
-
-  // 🔥 garante que é array
-  if (!Array.isArray(produtos)) {
-    console.warn("produtos não é array, tentando corrigir:", produtos);
-
-    // tenta pegar dentro de objeto
-    if (produtos.slides) {
-      produtos = produtos.slides;
-    } else {
-      return "";
-    }
-  }
-
   const normalizar = (txt) =>
     String(txt || "")
       .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -382,31 +365,30 @@ function buscarPrecoProduto(nomePromo, produtos) {
   const busca = normalizar(nomePromo);
 
   for (const grupo of produtos) {
-    if (Array.isArray(grupo)) {
-      for (const item of grupo) {
-        const nomeItem = normalizar(item.nome);
+    const lista = Array.isArray(grupo) ? grupo : [grupo];
 
-        if (nomeItem.includes(busca) || busca.includes(nomeItem)) {
-          return item.preco;
-        }
-      }
-    } else if (grupo && grupo.nome) {
-      const nomeItem = normalizar(grupo.nome);
+    for (const item of lista) {
+      const nomeItem = normalizar(item.nome);
 
-      if (nomeItem.includes(busca) || busca.includes(nomeItem)) {
-        return grupo.preco;
+      // 🔥 match mais inteligente
+      if (
+        nomeItem.includes(busca) ||
+        busca.includes(nomeItem)
+      ) {
+        return item.preco;
       }
     }
   }
 
-  console.warn("NÃO ACHOU PREÇO:", nomePromo);
+  console.warn("SEM PREÇO:", nomePromo);
   return "";
 }
+
 function ofertaImgSrc(nome) {
   const slug = nome
     .toLowerCase()
-    .replace(/\s+/g, "-")
-    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, "-");
 
   return `OFERTAS/${slug}.png`;
 }
@@ -523,6 +505,9 @@ async function carregarPromocoes(produtos) {
       const nomeProduto = (p.nome || p.oferta || "").trim();
 
       const preco = buscarPrecoProduto(nomeProduto, produtos);
+	  
+	  // 🔥 COLOQUE ISSO AQUI
+  console.log("PROMO:", nomeProduto, "PREÇO:", preco);
 
       return {
         nome: nomeProduto,
@@ -758,7 +743,7 @@ Object.keys(grupos).forEach(cat => {
 }, PROMOS_MS);
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
 	
-	console.log("PRODUTOS CARREGADOS:", lastProdutos);
+	
 	
   </script>
 </body>
