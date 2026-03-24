@@ -356,11 +356,7 @@ function pegarPromocoesAleatorias(lista, quantidade = 5) {
   return copia.slice(0, quantidade);
 }
 function buscarPrecoProduto(nomePromo, produtos) {
-  // 🔥 proteção TOTAL
-  if (!produtos || !Array.isArray(produtos)) {
-    console.warn("produtos inválido:", produtos);
-    return "";
-  }
+  if (!produtos || !Array.isArray(produtos)) return "";
 
   const normalizar = (txt) =>
     String(txt || "")
@@ -368,18 +364,24 @@ function buscarPrecoProduto(nomePromo, produtos) {
       .toUpperCase()
       .trim();
 
-  const busca = normalizar(nomePromo);
+  const limpar = (txt) =>
+    normalizar(txt)
+      .replace(/^((KG|UN|PCT|PC|BANDEJA)\s*)+/gi, "")
+      .replace(/\s*(KG|UN|PCT|PC|BANDEJA)+$/gi, "")
+      .replace(/\b(ESPETINHO|ESPETO|DE)\b/g, "") // remove palavras que causam conflito
+      .replace(/\s+/g, " ")
+      .trim();
+
+  const busca = limpar(nomePromo);
 
   for (const grupo of produtos) {
     const lista = Array.isArray(grupo) ? grupo : [grupo];
 
     for (const item of lista) {
-      const nomeItem = normalizar(item.nome);
+      const nomeItem = limpar(item.nome);
 
-      if (
-        nomeItem.includes(busca) ||
-        busca.includes(nomeItem)
-      ) {
+      // 🔥 AGORA É COMPARAÇÃO EXATA
+      if (nomeItem === busca) {
         return item.preco;
       }
     }
