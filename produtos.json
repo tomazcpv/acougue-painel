@@ -1,6 +1,688 @@
 [
   [
     {
+      "nome": "PATINHO",
+      "preco": "R$ 44,90"
+    },
+    {
+      "nome": "LINGUIÇA BRAGANÇA",
+      "preco": "R$ 17,50"
+    },
+    {
+      "nome": "CALABRESA PERDIGÃO",
+      "preco": "R$ 23,90"
+    },
+    {
+      "nome": "SALSICHA SADIA",
+      "preco": "R$ 16,90"
+    },
+    {
+      "nome": "SALSICHA AURORA",
+      "preco": "R$ 14,90"
+    },
+    {
+      "nome": "SALSICHA PERDIGÃO",
+      "preco": "R$ 16,90"
+    },
+    {
+      "nome": "CALABRESA SADIA",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "LINGUIÇA TOSCANA SADIA",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "LINGUIÇA TOSCANA AURORA",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "BACON",
+      "preco": "R$ 36,90"
+    },
+    {
+      "nome": "LINGUIÇA PERDIGÃO NA BRASA",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "LINGUIÇA FINA MISTA",
+      "preco": "R$ 15,00"
+    }
+  ],
+  [
+    {
+      "nome": "SALSICHA SEARA 0000000000",
+      "preco": "R$ 9,99"
+    },
+    {
+      "nome": "SALSICHA PIF PAF",
+      "preco": "R$ 12,99"
+    },
+    {
+      "nome": "PELE SUINA",
+      "preco": "R$ 4,99"
+    },
+    {
+      "nome": "PRIME RIB SUINO",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "PICANHA",
+      "preco": "R$ 79,90"
+    },
+    {
+      "nome": "MAMINHA",
+      "preco": "R$ 56,90"
+    },
+    {
+      "nome": "MIOLO DE ALCATRA",
+      "preco": "R$ 82,90"
+    },
+    {
+      "nome": "ALCATRA EM PEÇA",
+      "preco": "R$ 44,99"
+    },
+    {
+      "nome": "CONTRA FILE",
+      "preco": "R$ 62,90"
+    },
+    {
+      "nome": "CONTRA FILE EM PEÇA",
+      "preco": "R$ 45,00"
+    },
+    {
+      "nome": "LAGARTO",
+      "preco": "R$ 46,90"
+    },
+    {
+      "nome": "ALCATRA COM MAMINHA",
+      "preco": "R$ 59,90"
+    }
+  ],
+  [
+    {
+      "nome": "CHULETA DE CONTRA FILE",
+      "preco": "R$ 39,90"
+    },
+    {
+      "nome": "FILE MIGNOM",
+      "preco": "R$ 89,90"
+    },
+    {
+      "nome": "CAPA DE FILE",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "ACEM",
+      "preco": "R$ 34,90"
+    },
+    {
+      "nome": "PALETA",
+      "preco": "R$ 37,90"
+    },
+    {
+      "nome": "PEITO BOVINO",
+      "preco": "R$ 36,90"
+    },
+    {
+      "nome": "COSTELA DE RIPA",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "COSTELA PONTA DE AGULHA",
+      "preco": "R$ 24,90"
+    },
+    {
+      "nome": "COSTELA DE PEITO",
+      "preco": "R$ 23,90"
+    },
+    {
+      "nome": "CHULETA PONTA DE AGULHA",
+      "preco": "R$ 28,90"
+    },
+    {
+      "nome": "CHULETA GAUCHA",
+      "preco": "R$ 22,90"
+    },
+    {
+      "nome": "PICADÃO",
+      "preco": "R$ 34,90"
+    }
+  ],
+  [
+    {
+      "nome": "FIGADO BOVINO",
+      "preco": "R$ 16,90"
+    },
+    {
+      "nome": "BUCHO",
+      "preco": "R$ 19,90"
+    },
+    {
+      "nome": "RABO",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "MOCOTO",
+      "preco": "R$ 13,90"
+    },
+    {
+      "nome": "coxinha da asa temperada",
+      "preco": "R$ 16,90"
+    },
+    {
+      "nome": "MEIO DA ASA TEMPERADA",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "FRANGO INTEIRO",
+      "preco": "R$ 9,99"
+    },
+    {
+      "nome": "frango a passarinho temperado",
+      "preco": "R$ 14,90"
+    },
+    {
+      "nome": "PEITO COM OSSO",
+      "preco": "R$ 16,90"
+    },
+    {
+      "nome": "LOMBO SUINO",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "PEITO SEM OSSO",
+      "preco": "R$ 21,00"
+    },
+    {
+      "nome": "COXA SOBRECOXA",
+      "preco": "R$ 9,99"
+    }
+  ],
+  [
+    {
+      "nome": "SOBRECOXA",
+      "preco": "R$ 14,90"
+    },
+    {
+      "nome": "COXINHA DA ASA",
+      "preco": "R$ 16,90"
+    },
+    {
+      "nome": "ASA DE FRANGO",
+      "preco": "R$ 13,90"
+    },
+    {
+      "nome": "MEIO DA ASA",
+      "preco": "R$ 22,90"
+    },
+    {
+      "nome": "MOELA",
+      "preco": "R$ 8,90"
+    },
+    {
+      "nome": "FIGADO",
+      "preco": "R$ 6,99"
+    },
+    {
+      "nome": "FRANGO A PASSARINHO",
+      "preco": "R$ 12,90"
+    },
+    {
+      "nome": "CORAÇAO",
+      "preco": "R$ 29,50"
+    },
+    {
+      "nome": "PÉ DE FRANGO",
+      "preco": "R$ 8,90"
+    },
+    {
+      "nome": "BARRIGA",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "COSTELINHA",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "BISTECA",
+      "preco": "R$ 24,90"
+    }
+  ],
+  [
+    {
+      "nome": "BIFE DE PERNIL",
+      "preco": "R$ 22,90"
+    },
+    {
+      "nome": "PERNIL PICADO",
+      "preco": "R$ 19,90"
+    },
+    {
+      "nome": "COSTELINHA COM COURO",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "PERNIL COM OSSO",
+      "preco": "R$ 19,90"
+    },
+    {
+      "nome": "PERNIL SEM OSSO",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "PALETA SUINA PARA CHURRASCO",
+      "preco": "R$ 22,90"
+    },
+    {
+      "nome": "PERNIL FATIADO COM OSSO",
+      "preco": "R$ 14,90"
+    },
+    {
+      "nome": "JOELHO",
+      "preco": "R$ 16,90"
+    },
+    {
+      "nome": "PÉ SUÍNO",
+      "preco": "R$ 9,99"
+    },
+    {
+      "nome": "MILANESA BOVINA",
+      "preco": "R$ 48,90"
+    },
+    {
+      "nome": "MILANESA DE FRANGO",
+      "preco": "R$ 36,90"
+    },
+    {
+      "nome": "ALMONDEGA",
+      "preco": "R$ 39,90"
+    }
+  ],
+  [
+    {
+      "nome": "BIFE A ROLE",
+      "preco": "R$ 44,90"
+    },
+    {
+      "nome": "linguiça fina de lombo",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "linguiça fina pernil",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "linguiça pura de pernil",
+      "preco": "R$ 28,90"
+    },
+    {
+      "nome": "LINGUIÇA DE ALHO PORO COM BACON",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "linguiça queijo com azeitona",
+      "preco": "R$ 28,90"
+    },
+    {
+      "nome": "EMPANADA DE CARNE",
+      "preco": "R$ 5,00"
+    },
+    {
+      "nome": "LINGUIÇA MISTA",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "COPA LOMBO",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "ESPETINHO BOVINO",
+      "preco": "R$ 4,50"
+    },
+    {
+      "nome": "ESPETINHO DE PICANHA",
+      "preco": "R$ 9,00"
+    },
+    {
+      "nome": "picanha congelada",
+      "preco": "R$ 59,90"
+    }
+  ],
+  [
+    {
+      "nome": "FILE DE COXA TEMPERADA",
+      "preco": "R$ 19,90"
+    },
+    {
+      "nome": "LINGUIÇA FINA DE ALHO",
+      "preco": "R$ 24,90"
+    },
+    {
+      "nome": "COXÃO MOLE",
+      "preco": "R$ 46,90"
+    },
+    {
+      "nome": "FILÉ DE PEITO DE FRANGO",
+      "preco": "R$ 22,90"
+    },
+    {
+      "nome": "MIOLO DA PALETA",
+      "preco": "R$ 34,90"
+    },
+    {
+      "nome": "ASSADOS DE TIRAS DE COSTELA",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "MUSCULO",
+      "preco": "R$ 34,90"
+    },
+    {
+      "nome": "ESPETINHO DE CORAÇÃO",
+      "preco": "R$ 5,00"
+    },
+    {
+      "nome": "ESPETINHO DE TULIPA",
+      "preco": "R$ 6,00"
+    },
+    {
+      "nome": "ESPETINHO DE MEDALHÃO DE FRANGO",
+      "preco": "R$ 9,00"
+    },
+    {
+      "nome": "ESPETINHO DE MEDALHÃO DE ALCATRA",
+      "preco": "R$ 8,00"
+    },
+    {
+      "nome": "ESPETINHO DE FRANGO",
+      "preco": "R$ 3,50"
+    }
+  ],
+  [
+    {
+      "nome": "ESP MEDALHÃO DE QUEIJO COALHO",
+      "preco": "R$ 8,00"
+    },
+    {
+      "nome": "LING C/ PIM BIQUINHO",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "ESPETINHO DE KAFTA",
+      "preco": "R$ 4,00"
+    },
+    {
+      "nome": "ESPETINHO DE LOMBO",
+      "preco": "R$ 4,00"
+    },
+    {
+      "nome": "FRALDINHA",
+      "preco": "R$ 44,90"
+    },
+    {
+      "nome": "SUÃN",
+      "preco": "R$ 19,90"
+    },
+    {
+      "nome": "COXÃO DURO RECHEADO E TEMPERADO",
+      "preco": "R$ 39,90"
+    },
+    {
+      "nome": "LAGARTO RECHEADO E TEMPERADO",
+      "preco": "R$ 56,90"
+    },
+    {
+      "nome": "ESPETINHO DE PANCETA",
+      "preco": "R$ 4,00"
+    },
+    {
+      "nome": "CARNE MOÍDA DE BANDEIJA",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "PICANHA SUÍNA",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "LINGUIÇA PERNIL (DEDO DE MOÇA )",
+      "preco": "R$ 26,90"
+    }
+  ],
+  [
+    {
+      "nome": "BANANINHA DO CONTRA FILÉ",
+      "preco": "R$ 36,90"
+    },
+    {
+      "nome": "TOICINHO PICADO",
+      "preco": "R$ 17,90"
+    },
+    {
+      "nome": "LINGUIÇA FINA C/ PIMENTA",
+      "preco": "R$ 24,90"
+    },
+    {
+      "nome": "SALSA, CEBOLA E BACON",
+      "preco": "R$ 54,90"
+    },
+    {
+      "nome": "ESPETINHO",
+      "preco": "R$ 3,30"
+    },
+    {
+      "nome": "CUPIM",
+      "preco": "R$ 44,90"
+    },
+    {
+      "nome": "ESPETINHO DE LINGUIÇA",
+      "preco": "R$ 4,00"
+    },
+    {
+      "nome": "SHORT RIB BOVINO",
+      "preco": "R$ 54,90"
+    },
+    {
+      "nome": "PANCETA DE ROLO",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "ESPETINHO DE ALCATRA",
+      "preco": "R$ 7,00"
+    },
+    {
+      "nome": "PANCETA PRA CHURRASCO",
+      "preco": "R$ 28,90"
+    },
+    {
+      "nome": "FRANGO TEMP CONG SEARA FIESTA",
+      "preco": "R$ 29,90"
+    }
+  ],
+  [
+    {
+      "nome": "CORTES DE LEITÃO",
+      "preco": "R$ 22,90"
+    },
+    {
+      "nome": "LINGUIÇA ROMEU E JULIETA",
+      "preco": "R$ 28,90"
+    },
+    {
+      "nome": "PICANHA SUÍNA TEMPERADA",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "COSTELA TEMPERADA",
+      "preco": "R$ 24,90"
+    },
+    {
+      "nome": "PIRULITO FR FRALDINHA",
+      "preco": "R$ 36,90"
+    },
+    {
+      "nome": "PEITO DE FRANGO SADIA FATIADO",
+      "preco": "R$ 34,90"
+    },
+    {
+      "nome": "bife ancho",
+      "preco": "R$ 59,90"
+    },
+    {
+      "nome": "PALETA DE CORDEIRO",
+      "preco": "R$ 56,90"
+    },
+    {
+      "nome": "LINGUIÇA TOSCANA SEARA",
+      "preco": "R$ 24,90"
+    },
+    {
+      "nome": "PAIO SEARA",
+      "preco": "R$ 28,90"
+    },
+    {
+      "nome": "CARRE DE CORDEIRO",
+      "preco": "R$ 69,90"
+    },
+    {
+      "nome": "ASSADOS DE TIRAS DE CONTRA FILÉ",
+      "preco": "R$ 79,90"
+    }
+  ],
+  [
+    {
+      "nome": "ORELHA SUÍNA SALGADA",
+      "preco": "R$ 19,90"
+    },
+    {
+      "nome": "RABO SUÍNO SALGADO",
+      "preco": "R$ 27,90"
+    },
+    {
+      "nome": "COSTELINHA SUÍNA SALGADA",
+      "preco": "R$ 27,90"
+    },
+    {
+      "nome": "PÉ SUÍNO SALGADO",
+      "preco": "R$ 14,90"
+    },
+    {
+      "nome": "PICANHA FATIADA",
+      "preco": "R$ 59,90"
+    },
+    {
+      "nome": "COSTELINHA DE CORDEIRO",
+      "preco": "R$ 44,90"
+    },
+    {
+      "nome": "COSTELA BOVINA 4 OSSOS",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "COSTELA PICADA",
+      "preco": "R$ 19,99"
+    },
+    {
+      "nome": "LINGUIÇA TOSCANA FRIMESA",
+      "preco": "R$ 22,90"
+    },
+    {
+      "nome": "LING ARTESANAL DE TORRESMO",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "HAMBURGUER ARTESANAL 120G",
+      "preco": "R$ 4,99"
+    },
+    {
+      "nome": "ASSADO DE TIRA DE PICANHA",
+      "preco": "R$ 64,90"
+    }
+  ],
+  [
+    {
+      "nome": "PANCETA",
+      "preco": "R$ 22,90"
+    },
+    {
+      "nome": "COSTELA JANELA",
+      "preco": "R$ 25,90"
+    },
+    {
+      "nome": "LINGUIÇA TOSCANA",
+      "preco": "R$ 21,90"
+    },
+    {
+      "nome": "PICANHA PARAGUAIA",
+      "preco": "R$ 59,90"
+    },
+    {
+      "nome": "COXINHA DA ASA EMPANADA",
+      "preco": "R$ 39,90"
+    },
+    {
+      "nome": "MAMINHA RECHEADA",
+      "preco": "R$ 59,90"
+    },
+    {
+      "nome": "FILÉ DE PANGA EMPANADO",
+      "preco": "R$ 42,90"
+    },
+    {
+      "nome": "PESCOÇO DE FRANGO",
+      "preco": "R$ 9,99"
+    },
+    {
+      "nome": "CARNE SECA SUINA",
+      "preco": "R$ 24,90"
+    },
+    {
+      "nome": "BACON EM PEDAÇO SEARA",
+      "preco": "R$ 39,90"
+    },
+    {
+      "nome": "FILEZINHO DE FRANGO BAITA EMPANAD",
+      "preco": "R$ 34,90"
+    },
+    {
+      "nome": "MEDALHÃO DE ROMEU E JULIETA",
+      "preco": "R$ 8,00"
+    }
+  ],
+  [
+    {
+      "nome": "LINGUIÇA TOSCANA FRESCAL PERDIGÃO",
+      "preco": "R$ 19,99"
+    },
+    {
+      "nome": "COSTELINHA TEMPERADA",
+      "preco": "R$ 26,90"
+    },
+    {
+      "nome": "LINGUIÇA CALABRESA RESENDE",
+      "preco": "R$ 24,90"
+    },
+    {
+      "nome": "LINGUIÇA QUEIJO PIMENTA",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "GORDURA DE PORCO CASEIRA",
+      "preco": "R$ 15,00"
+    },
+    {
+      "nome": "FILEZINHO DE SASSAMI",
+      "preco": "R$ 22,90"
+    },
+    {
+      "nome": "TIBONE SUINO",
+      "preco": "R$ 29,90"
+    },
+    {
+      "nome": "FILE DE COXA EMPANADA",
+      "preco": "R$ 33,90"
+    },
+    {
       "nome": "PALETA BOVINA COM OSSO",
       "preco": "R$ 32,90"
     }
