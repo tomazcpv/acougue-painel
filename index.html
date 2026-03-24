@@ -587,9 +587,9 @@ Object.keys(grupos).forEach(cat => {
         const promoNome = String(promo?.nome ?? "");
         const promoNomeEsc = esc(promoNome);
 
-        const promoImg = promo?.imagem
-          ? `ofertas/${String(promo.imagem)}`
-          : (promoNome ? ofertaImgSrc(promoNome) : "ofertas/padrao.png");
+const promoImg = promo?.imagem
+  ? String(promo.imagem)
+  : (promoNome ? ofertaImgSrc(promoNome) : "OFERTAS/padrao.png");
 
         const promoPrecoTxt = String(promo?.preco ?? "")
           .replace(/^\s*R\$\s*/i, "")
@@ -738,13 +738,14 @@ Object.keys(grupos).forEach(cat => {
     boot();
 
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
-    //setInterval(() => carregarPromocoes().catch(console.warn), PROMOS_MS);
+
 	setInterval(async () => {
-  if (lastProdutos.length) {
-    await carregarPromocoes(lastProdutos);
-    render(); // ou função que redesenha a tela
-  }
-}, PROMOS_MS);
+	  if (lastProdutos.length) {
+		await carregarPromocoes(lastProdutos);
+		renderSlides(lastProdutos); // ✅ CORRETO
+	  }
+	}, PROMOS_MS);
+
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
 	
 	
