@@ -516,7 +516,7 @@ async function carregarPromocoes(produtos) {
       return {
         nome: nomeProduto,
         preco: preco,
-        unidade: "", // 🔥 sem KG agora
+        unidade: definirUnidade(nomeProduto),
         imagem: ofertaImgSrc(nomeProduto)
       };
     });
