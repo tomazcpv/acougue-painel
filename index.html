@@ -365,14 +365,27 @@ function buscarPrecoProduto(nomePromo, produtos) {
   const busca = normalizar(nomePromo);
 
   for (const grupo of produtos) {
-    for (const item of grupo) {
-      const nomeItem = normalizar(item.nome);
+    // 🔥 se for array (slide)
+    if (Array.isArray(grupo)) {
+      for (const item of grupo) {
+        const nomeItem = normalizar(item.nome);
+
+        if (
+          nomeItem.includes(busca) ||
+          busca.includes(nomeItem)
+        ) {
+          return item.preco;
+        }
+      }
+    } else {
+      // 🔥 se for item direto
+      const nomeItem = normalizar(grupo.nome);
 
       if (
         nomeItem.includes(busca) ||
         busca.includes(nomeItem)
       ) {
-        return item.preco;
+        return grupo.preco;
       }
     }
   }
