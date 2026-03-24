@@ -92,7 +92,7 @@ with open(ARQUIVO_TXT, "r", encoding="latin-1") as f:
 
         if permitido(nome_norm, permitidos):
             produtos_filtrados.append({
-                "nome": f"{nome.strip()} KG",
+                "nome": {nome.strip()},
                 "preco": formatar_preco_centavos(preco_raw)
             })
         else:
