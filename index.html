@@ -695,11 +695,9 @@ const promoImg = promo?.imagem
 
       const h = simpleHash(produtos);
 
-      if (forceRender || h !== lastHash) {
-        lastHash = h;
-        renderSlides(produtos);
-        startSlideshow();
-      }
+if (forceRender || h !== lastHash) {
+  lastHash = h;
+}
     }
 
     // =========================
@@ -728,23 +726,28 @@ const promoImg = promo?.imagem
     // =========================
     // Boot (uma vez só, sem duplicar intervals)
     // =========================
-    async function boot() {
-      //try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
-      try { await carregarProdutos(true); } catch (e) { console.warn("Produtos:", e); }
-	  await carregarPromocoes(lastProdutos);
-      try { await checarVersao(); } catch {}
-    }
+	  async function boot() {
+  try {
+    await carregarProdutos(false); // 🔥 NÃO renderiza ainda
+    await carregarPromocoes(lastProdutos);
+    renderSlides(lastProdutos);    // 🔥 renderiza UMA vez só
+    startSlideshow();              // 🔥 inicia slides
+  } catch (e) {
+    console.warn("Erro no boot:", e);
+  }
 
-    boot();
+  try { await checarVersao(); } catch {}
+}
 
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
 
-	setInterval(async () => {
-	  if (lastProdutos.length) {
-		await carregarPromocoes(lastProdutos);
-		renderSlides(lastProdutos); // ✅ CORRETO
-	  }
-	}, PROMOS_MS);
+setInterval(async () => {
+  if (lastProdutos.length) {
+    await carregarPromocoes(lastProdutos);
+    renderSlides(lastProdutos); // 🔥 mantém, mas controlado
+    startSlideshow(); // 🔥 reinicia o slide corretamente
+  }
+}, PROMOS_MS);
 
     setInterval(() => checarVersao().catch(() => {}), VERSION_MS);
 	
