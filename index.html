@@ -357,28 +357,37 @@ function pegarPromocoesAleatorias(lista, quantidade = 5) {
 }
 function buscarPrecoProduto(nomePromo, produtos) {
   const normalizar = (txt) =>
-    String(txt ?? "")
+    String(txt || "")
       .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
       .toUpperCase()
       .trim();
 
-  const nomeBusca = normalizar(nomePromo);
+  const busca = normalizar(nomePromo);
 
   for (const grupo of produtos) {
     for (const item of grupo) {
-      if (normalizar(item.nome).includes(nomeBusca)) {
+      const nomeItem = normalizar(item.nome);
+
+      if (
+        nomeItem.includes(busca) ||
+        busca.includes(nomeItem)
+      ) {
         return item.preco;
       }
     }
   }
 
-  return "R$ --,--";
+  console.warn("NÃO ACHOU PREÇO:", nomePromo);
+  return "";
 }
-    function ofertaImgSrc(promoNome) {
-      const slug = slugify(promoNome);
-      if (!slug) return "ofertas/padrao.png";
-      return `ofertas/${slug}.png`;
-    }
+function ofertaImgSrc(nome) {
+  const slug = nome
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  return `OFERTAS/${slug}.png`;
+}
 
     function categoria(nome) {
       const n = String(nome ?? "")
@@ -485,21 +494,25 @@ function limparNome(nome) {
     // =========================
 async function carregarPromocoes(produtos) {
   try {
-    const res = await fetch(PROMOS_URL + "?v=" + Date.now());
+    const res = await fetch("promocoes.json?v=" + Date.now());
     const listaBase = await res.json();
 
     const selecionados = pegarPromocoesAleatorias(listaBase, 5);
 
     PROMOS = selecionados.map(p => {
-      const preco = buscarPrecoProduto(p.nome, produtos);
+      const nomeProduto = (p.nome || p.oferta || "").trim();
+
+      const preco = buscarPrecoProduto(nomeProduto, produtos);
 
       return {
-        nome: p.nome,
+        nome: nomeProduto,
         preco: preco,
-        unidade: "KG",
-        imagem: ofertaImgSrc(p.nome)
+        unidade: "", // 🔥 sem KG agora
+        imagem: ofertaImgSrc(nomeProduto)
       };
     });
+
+    console.log("PROMOS FINAL:", PROMOS);
 
   } catch (e) {
     console.error("Erro ao carregar promoções:", e);
