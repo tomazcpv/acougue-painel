@@ -66,20 +66,24 @@ with open(ARQUIVO_TXT, "r", encoding="latin-1") as f:
         total_lidos += 1
         nome_norm = normalizar(nome_bruto)
 
-        if permitido(nome_norm, permitidos):
-            # 1. NOME DE EXIBIÇÃO (Limpa o KG mas mantém o acento original)
+if permitido(nome_norm, permitidos):
+            # 1. NOME DE EXIBIÇÃO:
+            # - Remove o KG
+            # - Remove sequências de 3 ou mais zeros seguidos (limpa o final do campo fixo)
+            # - Remove espaços extras
             nome_exibicao = re.sub(r"\bKG\b", "", nome_bruto, flags=re.IGNORECASE).strip()
-            nome_exibicao = re.sub(r"\s+", " ", nome_exibicao)
+            nome_exibicao = re.sub(r"0{3,}", "", nome_exibicao) # Remove 3 ou mais zeros seguidos
+            nome_exibicao = re.sub(r"\s+", " ", nome_exibicao).strip()
 
-            # 2. CHAVE DE COMPARAÇÃO (Sem acento, para unir 'SUÍNO' e 'SUINO')
+            # 2. CHAVE DE COMPARAÇÃO (para unificar SALSICHA SEARA e Salsicha Seara)
             chave_unica = normalizar(nome_exibicao)
 
             valor_atual = int(preco_raw)
 
-            # 3. LÓGICA DE UNIFICAÇÃO
+            # 3. LÓGICA DE UNIFICAÇÃO (Mantém o maior preço)
             if chave_unica not in melhores_precos or valor_atual > melhores_precos[chave_unica]["valor_num"]:
                 melhores_precos[chave_unica] = {
-                    "nome": nome_exibicao, # Aqui o 'SUÍNO' com acento é preservado
+                    "nome": nome_exibicao,
                     "preco": formatar_preco_centavos(preco_raw),
                     "valor_num": valor_atual
                 }
