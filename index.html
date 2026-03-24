@@ -533,7 +533,7 @@ async function carregarPromocoes(produtos) {
       const root = document.getElementById("slides-root");
       if (!root) return;
 
-      const itens = Array.isArray(produtos) ? produtos : [];
+      const itens = normalizarDados(produtos);
 
       const grupos = { "BOVINOS": [], "SUÍNOS": [], "AVES": [], "PROCESSADOS": [] };
 for (const p of itens) {
@@ -730,14 +730,17 @@ if (forceRender || h !== lastHash) {
     // =========================
 async function boot() {
   try {
-    await carregarProdutos(true); // 🔥 já renderiza aqui
-    await carregarPromocoes(lastProdutos); // só atualiza promos
+    await carregarProdutos(false);          // NÃO renderiza ainda
+    await carregarPromocoes(lastProdutos);  // carrega promoções
+    renderSlides(lastProdutos);             // 🔥 renderiza com promo pronta
+    startSlideshow();                       // 🔥 inicia slides
   } catch (e) {
     console.warn("Erro no boot:", e);
   }
 
   try { await checarVersao(); } catch {}
 }
+boot();
 
     setInterval(() => carregarProdutos(false).catch(console.warn), REFETCH_MS);
 
