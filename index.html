@@ -356,6 +356,12 @@ function pegarPromocoesAleatorias(lista, quantidade = 5) {
   return copia.slice(0, quantidade);
 }
 function buscarPrecoProduto(nomePromo, produtos) {
+  // 🔥 proteção TOTAL
+  if (!produtos || !Array.isArray(produtos)) {
+    console.warn("produtos inválido:", produtos);
+    return "";
+  }
+
   const normalizar = (txt) =>
     String(txt || "")
       .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
@@ -370,7 +376,6 @@ function buscarPrecoProduto(nomePromo, produtos) {
     for (const item of lista) {
       const nomeItem = normalizar(item.nome);
 
-      // 🔥 match mais inteligente
       if (
         nomeItem.includes(busca) ||
         busca.includes(nomeItem)
@@ -380,7 +385,6 @@ function buscarPrecoProduto(nomePromo, produtos) {
     }
   }
 
-  console.warn("SEM PREÇO:", nomePromo);
   return "";
 }
 
@@ -502,7 +506,7 @@ async function carregarPromocoes(produtos) {
     const selecionados = pegarPromocoesAleatorias(listaBase, 5);
 
     PROMOS = selecionados.map(p => {
-      const nomeProduto = (p.nome || p.oferta || "").trim();
+      const nomeProduto = p.nome ? p.nome : (p.oferta || "");
 
       const preco = buscarPrecoProduto(nomeProduto, produtos);
 	  
@@ -725,7 +729,7 @@ Object.keys(grupos).forEach(cat => {
     // Boot (uma vez só, sem duplicar intervals)
     // =========================
     async function boot() {
-      try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
+      //try { await carregarPromocoes(); } catch (e) { console.warn("Promocoes:", e); }
       try { await carregarProdutos(true); } catch (e) { console.warn("Produtos:", e); }
 	  await carregarPromocoes(lastProdutos);
       try { await checarVersao(); } catch {}
