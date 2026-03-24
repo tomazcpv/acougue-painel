@@ -368,11 +368,12 @@ function buscarPrecoProduto(nomePromo, produtos) {
     normalizar(txt)
       .replace(/^((KG|UN|PCT|PC|BANDEJA)\s*)+/gi, "")
       .replace(/\s*(KG|UN|PCT|PC|BANDEJA)+$/gi, "")
-      .replace(/\b(ESPETINHO|ESPETO|DE)\b/g, "") // remove palavras que causam conflito
       .replace(/\s+/g, " ")
       .trim();
 
   const busca = limpar(nomePromo);
+
+  let candidato = null;
 
   for (const grupo of produtos) {
     const lista = Array.isArray(grupo) ? grupo : [grupo];
@@ -380,14 +381,20 @@ function buscarPrecoProduto(nomePromo, produtos) {
     for (const item of lista) {
       const nomeItem = limpar(item.nome);
 
-      // 🔥 AGORA É COMPARAÇÃO EXATA
+      // ✅ 1. MATCH EXATO (prioridade máxima)
       if (nomeItem === busca) {
         return item.preco;
+      }
+
+      // ✅ 2. COMEÇA COM (ex: PANCETA → PANCETA SUINA)
+      if (!candidato && nomeItem.startsWith(busca + " ")) {
+        candidato = item.preco;
       }
     }
   }
 
-  return "";
+  // 🔥 fallback seguro
+  return candidato || "";
 }
 
 function ofertaImgSrc(nome) {
