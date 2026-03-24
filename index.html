@@ -475,9 +475,7 @@ function renderLinhas(lista) {
     const nomeFinal = `${nomeLimpo} ${unidade}`;
 
     const preco = esc(p?.preco ?? "");
-console.log("ORIGINAL:", nomeOriginal);
-console.log("LIMPO:", nomeLimpo);
-console.log("FINAL:", nomeFinal);
+
     return `
       <div class="row">
         <div class="row-name">${esc(nomeFinal)}</div>
