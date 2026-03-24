@@ -8,105 +8,89 @@ ARQUIVO_LISTA = "carnes_permitidas.txt"
 SAIDA_JSON = "produtos.json"
 ITENS_POR_SLIDE = 12
 
-
 def normalizar(txt: str) -> str:
     """
-    Normaliza para comparar:
-    - maiúsculas
-    - remove acentos
-    - troca pontuação por espaço
-    - remove "KG" no final (se existir)
-    - remove espaços duplicados
+    Remove acentos, espaços duplos e unidade KG para comparar de forma justa.
     """
+    if not txt: return ""
     txt = txt.upper().strip()
+    # Remove acentos
     txt = unicodedata.normalize("NFD", txt)
-    txt = "".join(c for c in txt if unicodedata.category(c) != "Mn")  # remove acentos
-    txt = re.sub(r"[^A-Z0-9]+", " ", txt)  # pontuação -> espaço
-    txt = re.sub(r"\bKG\b$", "", txt).strip()  # remove KG no final
+    txt = "".join(c for c in txt if unicodedata.category(c) != "Mn")
+    # Remove pontuação e KG isolado
+    txt = re.sub(r"[^A-Z0-9]+", " ", txt)
+    txt = re.sub(r"\bKG\b", "", txt).strip()
+    # Remove espaços duplos
     txt = re.sub(r"\s+", " ", txt).strip()
     return txt
 
-
 def carregar_permitidos(caminho: str) -> list[str]:
     permitidos = []
-    with open(caminho, "r", encoding="utf-8") as f:
-        for linha in f:
-            linha = linha.strip()
-            if not linha:
-                continue
-            permitidos.append(normalizar(linha))
-
-    # Ordena do maior pro menor para reduzir matches ruins
+    try:
+        with open(caminho, "r", encoding="utf-8") as f:
+            for linha in f:
+                linha = linha.strip()
+                if not linha: continue
+                permitidos.append(normalizar(linha))
+    except FileNotFoundError:
+        return []
     permitidos.sort(key=len, reverse=True)
     return permitidos
 
-
 def permitido(nome_normalizado: str, permitidos: list[str]) -> bool:
-    """
-    Match por palavra inteira (evita FILE bater em FILEZINHO, PE bater em PEITO, etc.)
-    """
-    # cria uma versão com espaços nas pontas pra facilitar boundary
     texto = f" {nome_normalizado} "
-
     for p in permitidos:
-        # p pode ter espaço; usamos " boundary " com espaços
         alvo = f" {p} "
-        if alvo in texto:
-            return True
-
+        if alvo in texto: return True
     return False
-
 
 def formatar_preco_centavos(preco_5dig: str) -> str:
     valor = int(preco_5dig) / 100
     return f"R$ {valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
+# ----------- PROCESSAMENTO -----------
 
-# ----------- carregar lista permitida -----------
 permitidos = carregar_permitidos(ARQUIVO_LISTA)
-print("Itens permitidos (lista):", len(permitidos))
-
-# ----------- ler TXT e montar lista -----------
-produtos_filtrados = []
+melhores_precos = {} 
 total_lidos = 0
-exemplos_rejeitados = []
 
 with open(ARQUIVO_TXT, "r", encoding="latin-1") as f:
     for linha in f:
-        if len(linha) < 30:
-            continue
+        if len(linha) < 30: continue
 
-        # Nome (campo fixo: começa em 18)
-        nome = linha[18:68].strip()
-        if not nome:
-            continue
-
-        # Preço (5 dígitos: 10:15) -> 04290 = R$ 42,90
+        nome_bruto = linha[18:68].strip()
         preco_raw = linha[10:15]
-        if not preco_raw.isdigit():
-            continue
+
+        if not nome_bruto or not preco_raw.isdigit(): continue
 
         total_lidos += 1
-
-        nome_norm = normalizar(nome)
+        nome_norm = normalizar(nome_bruto)
 
         if permitido(nome_norm, permitidos):
-            produtos_filtrados.append({
-                "nome": {nome.strip()},
-                "preco": formatar_preco_centavos(preco_raw)
-            })
-        else:
-            if len(exemplos_rejeitados) < 25:
-                exemplos_rejeitados.append(nome.strip())
+            # 1. NOME DE EXIBIÇÃO (Limpa o KG mas mantém o acento original)
+            nome_exibicao = re.sub(r"\bKG\b", "", nome_bruto, flags=re.IGNORECASE).strip()
+            nome_exibicao = re.sub(r"\s+", " ", nome_exibicao)
 
-print("Produtos lidos do TXT:", total_lidos)
-print("Produtos aprovados (na lista):", len(produtos_filtrados))
-if exemplos_rejeitados:
-    print("\nExemplos rejeitados (amostra):")
-    for x in exemplos_rejeitados:
-        print("-", x)
+            # 2. CHAVE DE COMPARAÇÃO (Sem acento, para unir 'SUÍNO' e 'SUINO')
+            chave_unica = normalizar(nome_exibicao)
 
-# ----------- dividir em slides -----------
+            valor_atual = int(preco_raw)
+
+            # 3. LÓGICA DE UNIFICAÇÃO
+            if chave_unica not in melhores_precos or valor_atual > melhores_precos[chave_unica]["valor_num"]:
+                melhores_precos[chave_unica] = {
+                    "nome": nome_exibicao, # Aqui o 'SUÍNO' com acento é preservado
+                    "preco": formatar_preco_centavos(preco_raw),
+                    "valor_num": valor_atual
+                }
+
+# Monta a lista final para o JSON
+produtos_filtrados = [
+    {"nome": v["nome"], "preco": v["preco"]} 
+    for v in melhores_precos.values()
+]
+
+# ----------- GERAR SLIDES E SALVAR -----------
 slides = []
 for i in range(0, len(produtos_filtrados), ITENS_POR_SLIDE):
     slides.append(produtos_filtrados[i:i + ITENS_POR_SLIDE])
@@ -114,5 +98,6 @@ for i in range(0, len(produtos_filtrados), ITENS_POR_SLIDE):
 with open(SAIDA_JSON, "w", encoding="utf-8") as f:
     json.dump(slides, f, indent=2, ensure_ascii=False)
 
-print("\nOK! produtos.json gerado (filtrado).")
-print("Slides:", len(slides))
+print(f"Total lidos: {total_lidos}")
+print(f"Total após unificar acentos e preços: {len(produtos_filtrados)}")
+print("Sucesso! Verifique o arquivo produtos.json.")
