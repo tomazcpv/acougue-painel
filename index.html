@@ -671,24 +671,33 @@ const promoImg = promo?.imagem
     let slideIdx = 0;
     let slideTimer = null;
 
-    function startSlideshow() {
-      if (slideTimer) clearInterval(slideTimer);
-      slideIdx = 0;
+function startSlideshow() {
+  if (slideTimer) clearInterval(slideTimer);
 
-      const slides = Array.from(document.querySelectorAll(".slide"));
-      const show = (i) => {
-        slides.forEach(s => s.classList.remove("active"));
-        if (slides[i]) slides[i].classList.add("active");
-      };
+  slideIdx = 0;
 
-      if (slides.length) show(0);
+  const show = (i) => {
+    const slides = document.querySelectorAll(".slide"); // 🔥 pega sempre atualizado
 
-      slideTimer = setInterval(() => {
-        if (!slides.length) return;
-        slideIdx = (slideIdx + 1) % slides.length;
-        show(slideIdx);
-      }, TEMPO_SLIDE_MS);
+    slides.forEach(s => s.classList.remove("active"));
+
+    if (slides[i]) {
+      slides[i].classList.add("active");
     }
+  };
+
+  show(0);
+
+  slideTimer = setInterval(() => {
+    const slides = document.querySelectorAll(".slide"); // 🔥 atualizado sempre
+
+    if (!slides.length) return;
+
+    slideIdx = (slideIdx + 1) % slides.length;
+
+    show(slideIdx);
+  }, TEMPO_SLIDE_MS);
+}
 
     // =========================
     // Produtos
