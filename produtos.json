@@ -6,7 +6,7 @@
     },
     {
       "nome": "ALCATRA COM MAMINHA",
-      "preco": "R$ 59,90"
+      "preco": "R$ 57,90"
     },
     {
       "nome": "ALCATRA EM PEÇA",
@@ -26,7 +26,7 @@
     },
     {
       "nome": "ASSADOS DE TIRAS DE CONTRA FILÉ",
-      "preco": "R$ 79,90"
+      "preco": "R$ 69,90"
     },
     {
       "nome": "ASSADOS DE TIRAS DE COSTELA",
@@ -46,7 +46,7 @@
     },
     {
       "nome": "BARRIGA",
-      "preco": "R$ 26,90"
+      "preco": "R$ 22,90"
     }
   ],
   [
@@ -60,7 +60,7 @@
     },
     {
       "nome": "BISTECA",
-      "preco": "R$ 24,90"
+      "preco": "R$ 19,90"
     },
     {
       "nome": "BUCHO",
@@ -72,7 +72,7 @@
     },
     {
       "nome": "CALABRESA SADIA",
-      "preco": "R$ 29,90"
+      "preco": "R$ 26,90"
     },
     {
       "nome": "CAPA DE FILE",
@@ -106,7 +106,7 @@
     },
     {
       "nome": "CONTRA FILE",
-      "preco": "R$ 62,90"
+      "preco": "R$ 59,90"
     },
     {
       "nome": "CONTRA FILE EM PEÇA",
@@ -180,7 +180,7 @@
     },
     {
       "nome": "COXINHA DA ASA",
-      "preco": "R$ 16,90"
+      "preco": "R$ 13,90"
     },
     {
       "nome": "COXINHA DA ASA EMPANADA",
@@ -276,7 +276,7 @@
     },
     {
       "nome": "FILE DE COXA TEMPERADA",
-      "preco": "R$ 19,90"
+      "preco": "R$ 16,90"
     },
     {
       "nome": "FILE MIGNOM",
@@ -296,7 +296,7 @@
     },
     {
       "nome": "FILÉ DE PEITO DE FRANGO",
-      "preco": "R$ 22,90"
+      "preco": "R$ 19,90"
     }
   ],
   [
@@ -330,7 +330,7 @@
     },
     {
       "nome": "LAGARTO",
-      "preco": "R$ 46,90"
+      "preco": "R$ 42,90"
     },
     {
       "nome": "LAGARTO RECHEADO E TEMPERADO",
@@ -410,7 +410,7 @@
     },
     {
       "nome": "LINGUIÇA TOSCANA SADIA",
-      "preco": "R$ 26,90"
+      "preco": "R$ 19,90"
     },
     {
       "nome": "LINGUIÇA TOSCANA SEARA",
@@ -434,7 +434,7 @@
     },
     {
       "nome": "MEIO DA ASA",
-      "preco": "R$ 22,90"
+      "preco": "R$ 18,90"
     },
     {
       "nome": "MEIO DA ASA TEMPERADA",
@@ -518,7 +518,7 @@
     },
     {
       "nome": "PEITO COM OSSO",
-      "preco": "R$ 16,90"
+      "preco": "R$ 13,90"
     },
     {
       "nome": "PEITO DE FRANGO SADIA FATIADO",
@@ -542,7 +542,7 @@
     },
     {
       "nome": "PERNIL PICADO",
-      "preco": "R$ 19,90"
+      "preco": "R$ 17,90"
     },
     {
       "nome": "PERNIL SEM OSSO",
@@ -625,12 +625,12 @@
       "preco": "R$ 12,99"
     },
     {
-      "nome": "SALSICHA SADIA",
-      "preco": "R$ 16,90"
+      "nome": "SALSICHA RESFRIADA SEARA",
+      "preco": "R$ 9,99"
     },
     {
-      "nome": "SALSICHA SEARA",
-      "preco": "R$ 9,99"
+      "nome": "SALSICHA SADIA",
+      "preco": "R$ 16,90"
     },
     {
       "nome": "SHORT RIB BOVINO",
@@ -638,7 +638,7 @@
     },
     {
       "nome": "SOBRECOXA",
-      "preco": "R$ 14,90"
+      "preco": "R$ 11,90"
     },
     {
       "nome": "SUÃN",
