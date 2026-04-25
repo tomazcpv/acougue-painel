@@ -2,11 +2,11 @@
   [
     {
       "nome": "ACEM",
-      "preco": "R$ 34,90"
+      "preco": "R$ 38,90"
     },
     {
       "nome": "ALCATRA COM MAMINHA",
-      "preco": "R$ 59,90"
+      "preco": "R$ 57,90"
     },
     {
       "nome": "ALCATRA EM PEÇA",
@@ -18,7 +18,7 @@
     },
     {
       "nome": "ASA DE FRANGO",
-      "preco": "R$ 15,90"
+      "preco": "R$ 13,90"
     },
     {
       "nome": "ASSADO DE TIRA DE PICANHA",
@@ -26,7 +26,7 @@
     },
     {
       "nome": "ASSADOS DE TIRAS DE CONTRA FILÉ",
-      "preco": "R$ 79,90"
+      "preco": "R$ 69,90"
     },
     {
       "nome": "ASSADOS DE TIRAS DE COSTELA",
@@ -46,7 +46,7 @@
     },
     {
       "nome": "BARRIGA",
-      "preco": "R$ 26,90"
+      "preco": "R$ 23,90"
     }
   ],
   [
@@ -72,7 +72,7 @@
     },
     {
       "nome": "CALABRESA SADIA",
-      "preco": "R$ 29,90"
+      "preco": "R$ 26,90"
     },
     {
       "nome": "CAPA DE FILE",
@@ -102,11 +102,11 @@
   [
     {
       "nome": "CHULETA PONTA DE AGULHA",
-      "preco": "R$ 28,90"
+      "preco": "R$ 26,90"
     },
     {
       "nome": "CONTRA FILE",
-      "preco": "R$ 62,90"
+      "preco": "R$ 59,90"
     },
     {
       "nome": "CONTRA FILE EM PEÇA",
@@ -180,7 +180,7 @@
     },
     {
       "nome": "COXINHA DA ASA",
-      "preco": "R$ 15,90"
+      "preco": "R$ 14,90"
     },
     {
       "nome": "COXINHA DA ASA EMPANADA",
@@ -296,7 +296,7 @@
     },
     {
       "nome": "FILÉ DE PEITO DE FRANGO",
-      "preco": "R$ 22,90"
+      "preco": "R$ 19,90"
     }
   ],
   [
@@ -330,7 +330,7 @@
     },
     {
       "nome": "LAGARTO",
-      "preco": "R$ 46,90"
+      "preco": "R$ 42,90"
     },
     {
       "nome": "LAGARTO RECHEADO E TEMPERADO",
@@ -434,7 +434,7 @@
     },
     {
       "nome": "MEIO DA ASA",
-      "preco": "R$ 22,90"
+      "preco": "R$ 18,90"
     },
     {
       "nome": "MEIO DA ASA TEMPERADA",
@@ -480,7 +480,7 @@
     },
     {
       "nome": "PALETA",
-      "preco": "R$ 37,90"
+      "preco": "R$ 39,90"
     },
     {
       "nome": "PALETA BOVINA COM OSSO",
@@ -492,11 +492,11 @@
     },
     {
       "nome": "PALETA SUINA PARA CHURRASCO",
-      "preco": "R$ 22,90"
+      "preco": "R$ 17,90"
     },
     {
       "nome": "PANCETA",
-      "preco": "R$ 26,90"
+      "preco": "R$ 22,90"
     }
   ],
   [
@@ -514,11 +514,11 @@
     },
     {
       "nome": "PEITO BOVINO",
-      "preco": "R$ 36,90"
+      "preco": "R$ 39,90"
     },
     {
       "nome": "PEITO COM OSSO",
-      "preco": "R$ 14,90"
+      "preco": "R$ 13,90"
     },
     {
       "nome": "PEITO DE FRANGO SADIA FATIADO",
@@ -542,7 +542,7 @@
     },
     {
       "nome": "PERNIL PICADO",
-      "preco": "R$ 19,90"
+      "preco": "R$ 17,90"
     },
     {
       "nome": "PERNIL SEM OSSO",
@@ -626,7 +626,7 @@
     },
     {
       "nome": "SALSICHA RESFRIADA SEARA",
-      "preco": "R$ 13,90"
+      "preco": "R$ 11,90"
     },
     {
       "nome": "SALSICHA SADIA",
@@ -638,7 +638,7 @@
     },
     {
       "nome": "SOBRECOXA",
-      "preco": "R$ 14,90"
+      "preco": "R$ 12,90"
     },
     {
       "nome": "SUÃN",
