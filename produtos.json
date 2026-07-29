@@ -64,7 +64,7 @@
     },
     {
       "nome": "BISTECA",
-      "preco": "R$ 16,90"
+      "preco": "R$ 19,90"
     },
     {
       "nome": "BUCHO",
@@ -502,7 +502,7 @@
   [
     {
       "nome": "PANCETA",
-      "preco": "R$ 26,90"
+      "preco": "R$ 22,90"
     },
     {
       "nome": "PANCETA DE ROLO",
@@ -546,7 +546,7 @@
     },
     {
       "nome": "PERNIL PICADO",
-      "preco": "R$ 14,90"
+      "preco": "R$ 17,90"
     }
   ],
   [
@@ -630,7 +630,7 @@
     },
     {
       "nome": "SALSICHA RESFRIADA SEARA",
-      "preco": "R$ 13,90"
+      "preco": "R$ 11,90"
     },
     {
       "nome": "SALSICHA SADIA",
