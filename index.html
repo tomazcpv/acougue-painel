@@ -507,33 +507,7 @@ function limparNome(nome) {
     // =========================
     // Promoções
     // =========================
-async function carregarPromocoes(produtos) {
-  try {
-    const res = await fetch("promocoes.json?v=" + Date.now());
-    const listaBase = await res.json();
-
-    const selecionados = pegarPromocoesAleatorias(listaBase, 5);
-
-    PROMOS = selecionados.map(p => {
-      const nomeProduto = p.nome ? p.nome : (p.oferta || "");
-
-      const preco = buscarPrecoProduto(nomeProduto, produtos);
-	  
-	  // 🔥 COLOQUE ISSO AQUI
-  console.log("PROMO:", nomeProduto, "PREÇO:", preco);
-
-      return {
-        nome: nomeProduto,
-        preco: preco,
-        unidade: definirUnidade(nomeProduto),
-        imagem: ofertaImgSrc(nomeProduto)
-      };
-    });
-
-  } catch (e) {
-    console.error("Erro ao carregar promoções:", e);
-  }
-}
+async function carregarPromocoes(produtos) { try { // ===================================================== // 1. TENTA BUSCAR O ARQUIVO DIRETAMENTE DO GITHUB // ===================================================== const URL_GITHUB = "https://tomazcpv.github.io/acougue-painel/promocoes.json"; let listaBase = null; try { const respostaGitHub = await fetch( URL_GITHUB + "?v=" + Date.now(), { cache: "no-store" } ); if (respostaGitHub.ok) { const dadosGitHub = await respostaGitHub.json(); if (Array.isArray(dadosGitHub) && dadosGitHub.length > 0) { listaBase = dadosGitHub; console.log( "PROMOÇÕES CARREGADAS DO GITHUB:", listaBase ); } } } catch (erroGitHub) { console.warn( "Não foi possível carregar promoções do GitHub. Usando arquivo local.", erroGitHub ); } // ===================================================== // 2. SE O GITHUB NÃO FUNCIONAR, USA O ARQUIVO LOCAL // ===================================================== if (!listaBase) { const respostaLocal = await fetch( "promocoes.json?v=" + Date.now(), { cache: "no-store" } ); if (!respostaLocal.ok) { throw new Error( "Não foi possível carregar promocoes.json local." ); } listaBase = await respostaLocal.json(); console.log( "PROMOÇÕES CARREGADAS DO ARQUIVO LOCAL:", listaBase ); } // ===================================================== // 3. ESCOLHE 5 PROMOÇÕES ALEATORIAMENTE // ===================================================== const selecionados = pegarPromocoesAleatorias(listaBase, 5); // ===================================================== // 4. BUSCA PREÇO E IMAGEM // ===================================================== PROMOS = selecionados.map(p => { const nomeProduto = p.nome ? p.nome : (p.oferta || ""); const preco = buscarPrecoProduto( nomeProduto, produtos ); console.log( "PROMO:", nomeProduto, "PREÇO:", preco ); return { nome: nomeProduto, preco: preco, unidade: definirUnidade(nomeProduto), imagem: ofertaImgSrc(nomeProduto) }; }); console.log( "PROMOÇÕES FINAIS:", PROMOS ); } catch (e) { console.error( "Erro ao carregar promoções:", e ); } }
 
     // =========================
     // Render
