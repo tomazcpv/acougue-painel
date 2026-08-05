@@ -306,7 +306,7 @@ font-family: 'Anton', sans-serif;
     const TEXTO_PROMO = "OFERTA DO DIA";
     const ITENS_POR_COLUNA = 19;
 
-    const PROMOS_URL = "https://tomazcpv.github.io/acougue-painel/promocoes.json";
+    const PROMOS_URL = "promocoes.json";
     let PROMOS = [];
 
     // Cache do último produtos.json para re-render quando promoções mudarem
@@ -509,11 +509,8 @@ function limparNome(nome) {
     // =========================
 async function carregarPromocoes(produtos) {
   try {
-	  const res = await fetch(PROMOS_URL + "?v=" + Date.now(), {
-  cache: "no-store"
-});
-    //const res = await fetch("promocoes.json?v=" + Date.now());
-    //const listaBase = await res.json();
+    const res = await fetch("promocoes.json?v=" + Date.now());
+    const listaBase = await res.json();
 
     const selecionados = pegarPromocoesAleatorias(listaBase, 5);
 
