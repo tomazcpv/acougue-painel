@@ -1,8 +1,9 @@
 import json
 import re
 import unicodedata
+import os
 
-ARQUIVO_TXT = "ITENSMGV.txt"
+ARQUIVO_TXT = os.path.join(os.path.expanduser("~"), "Desktop", "ITENSMGV.txt")
 ARQUIVO_LISTA = "carnes_permitidas.txt"
 SAIDA_JSON = "produtos.json"
 ITENS_POR_SLIDE = 12
