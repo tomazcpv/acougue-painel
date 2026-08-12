@@ -2,7 +2,7 @@
   [
     {
       "nome": "ACEM",
-      "preco": "R$ 38,90"
+      "preco": "R$ 42,90"
     },
     {
       "nome": "ALCATRA COM MAMINHA",
@@ -160,7 +160,7 @@
     },
     {
       "nome": "COSTELINHA",
-      "preco": "R$ 19,90"
+      "preco": "R$ 26,90"
     },
     {
       "nome": "COSTELINHA COM COURO",
@@ -172,7 +172,7 @@
     },
     {
       "nome": "COSTELINHA SUÍNA SALGADA",
-      "preco": "R$ 19,90"
+      "preco": "R$ 24,90"
     },
     {
       "nome": "COSTELINHA TEMPERADA",
@@ -426,7 +426,7 @@
     },
     {
       "nome": "MAMINHA",
-      "preco": "R$ 49,90"
+      "preco": "R$ 56,90"
     },
     {
       "nome": "MAMINHA RECHEADA",
@@ -472,7 +472,7 @@
     },
     {
       "nome": "MUSCULO",
-      "preco": "R$ 38,90"
+      "preco": "R$ 39,90"
     },
     {
       "nome": "ORELHA SUÍNA SALGADA",
@@ -556,7 +556,7 @@
     },
     {
       "nome": "PICADÃO",
-      "preco": "R$ 38,90"
+      "preco": "R$ 39,90"
     },
     {
       "nome": "PICANHA",
