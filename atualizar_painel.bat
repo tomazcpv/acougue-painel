@@ -19,7 +19,7 @@ REM 4 - Commit automatico
 git commit -m "Atualizacao automatica painel - %VERSAO%"
 
 REM 5 - Enviar para GitHub
-git push
+git push --set-upstream origin main
 
 echo ===============================
 echo Painel atualizado com sucesso!
